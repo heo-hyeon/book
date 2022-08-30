@@ -11,6 +11,6 @@
 	곧 끝난다아
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> 지금 시간은 ${serverTime}. </P>
 </body>
 </html>
