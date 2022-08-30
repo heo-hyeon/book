@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	곧 끝난다아
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
