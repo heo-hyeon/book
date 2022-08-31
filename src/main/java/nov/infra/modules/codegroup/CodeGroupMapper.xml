@@ -6,7 +6,7 @@
 
 <mapper namespace="nov.infra.modules.codegroup.CodeGroupMapper">
 
-    <resultMap id="resultMapObj" type="nov.infra.modules.code.CodeGroup"></resultMap>
+    <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT

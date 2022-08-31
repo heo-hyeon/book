@@ -1,5 +1,4 @@
-package codegroup;
-
+package nov.infra.modules.codegroup;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +21,6 @@ public class CodeGroupController {
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
+
 	}
 }

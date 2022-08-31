@@ -1,4 +1,4 @@
-package codegroup;
+package nov.infra.modules.codegroup;
 
 import java.util.List;
 

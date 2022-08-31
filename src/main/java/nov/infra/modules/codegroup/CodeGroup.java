@@ -1,4 +1,4 @@
-package codegroup;
+package nov.infra.modules.codegroup;
 
 public class CodeGroup {
 
@@ -20,5 +20,4 @@ public class CodeGroup {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 }
