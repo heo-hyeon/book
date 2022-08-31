@@ -1,0 +1,22 @@
+package codegroup;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+@Repository          //Dao파일이라는 걸 알려주는 것
+public class CodeGroupDao {
+	
+	@Inject
+	@Resource(name = "sqlSession")
+	private SqlSession sqlSession;
+	
+	private static String namespace = "nov.infra.modules.codegroup.CodeGroupMapper";
+	
+	public List<CodeGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
+ //빨간 줄 오류는 ctl + shist + 영어"O"
+}
