@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>
-	a 파일
+	E 파일
 </h1>
 
 <P> 지금 시간은 ${serverTime}. </P>
