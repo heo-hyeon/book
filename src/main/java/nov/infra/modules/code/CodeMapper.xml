@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="nov.infra.modules.code.CodeMapper">
+
+    <resultMap id="resultMapObj" type="nov.infra.modules.code.Code"></resultMap>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			 b.seq
+			,b.ccg_seq
+			,a.name
+		    ,b.code
+		    ,b.code_rep
+		    ,b.codename_ko
+		    ,b.codename_en
+		    ,b.useNY
+		    ,b.delNY
+		    ,b.code_order
+		FROM CCG a
+		 left join CC b on b.ccg_seq = a.seq
+		 WHERE 1=1
+			AND b.delNY = 0
+	</select>
+
+
+</mapper>		
