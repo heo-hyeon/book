@@ -19,8 +19,6 @@ public class CodeGroupController {
 
 		List<CodeGroup> list = service.selectList();
 		model.addAttribute("list", list);
-		
 		return "infra/codegroup/xdmin/codeGroupList";
-
 	}
 }

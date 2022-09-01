@@ -10,9 +10,15 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
-			a.*
+			a.seq
+			,a.name
+			,a.name_en
+			,a.code_count
+			,a.reg_date
+			,a.mod_date
 		FROM NCT.CCG a
-		WHERE 1=1 ;
+		LEFT JOIN CC b on a.seq = b.CCG_seq
+		GROUP BY a.seq 
 	</select>
 
-</mapper>	
+</mapper>		

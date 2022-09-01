@@ -66,7 +66,7 @@ public class HomeController {
 			@RequestMapping(value = "/CodeGroupList", method = RequestMethod.GET)
 			public String CodeGroupList(Locale locale, Model model) {
 			
-				return "CodeGroupList";
+				return "codegroup/infra/CodeGroupList";
 			}
 			
 		}

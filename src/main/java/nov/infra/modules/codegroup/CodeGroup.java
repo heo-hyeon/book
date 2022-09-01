@@ -1,13 +1,18 @@
 package nov.infra.modules.codegroup;
 
-public class CodeGroup {
+import java.util.Date;
 
-//	 infr_code_group
-	private String seq;   //나중에 수정해야하는 경우도 많으니까 int말고 string으로 하는게 편하다.
+public class CodeGroup {
+	
+	
+	private String seq;
 	private String name;
+	private String name_en;
+	private Integer code_count;
+	private Date reg_date;
+	private Date mod_date;
 	
 	
-//----------------------------
 	public String getSeq() {
 		return seq;
 	}
@@ -20,4 +25,29 @@ public class CodeGroup {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getName_en() {
+		return name_en;
+	}
+	public void setName_en(String name_en) {
+		this.name_en = name_en;
+	}
+	public Integer getCode_count() {
+		return code_count;
+	}
+	public void setCode_count(Integer code_count) {
+		this.code_count = code_count;
+	}
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
+	public Date getMod_date() {
+		return mod_date;
+	}
+	public void setMod_date(Date mod_date) {
+		this.mod_date = mod_date;
+	}
+	
 }
