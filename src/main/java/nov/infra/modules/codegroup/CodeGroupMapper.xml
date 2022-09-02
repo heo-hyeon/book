@@ -20,6 +20,7 @@
 		FROM NCT.CCG a
 		LEFT JOIN CC b on a.seq = b.CCG_seq
 		GROUP BY a.seq 
+		AND name LIKE CONCAT('%', #{shname}, '%')
 		
 	</select>
 

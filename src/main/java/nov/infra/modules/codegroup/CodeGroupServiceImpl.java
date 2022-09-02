@@ -10,7 +10,13 @@ import org.springframework.stereotype.Service;
 	@Autowired
 	CodeGroupDao dao;
 	@Override
-	public List<CodeGroup> selectList() throws Exception {
-		return dao.selectList();
+	public List<CodeGroup> selectList(CodeGroupVo vo) throws Exception {
+		
+		return dao.selectList(vo);
+		
+		
+		/*
+		 * List<CodeGroup> list = dao.selectList(vo); return list;
+		 */
 	}
 }

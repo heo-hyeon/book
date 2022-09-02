@@ -4,9 +4,9 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="nov.infra.modules.list.ListMapper">
+<mapper namespace="nov.infra.modules.member.MemberMapper">
 
-	<resultMap id="resultMapObj" type="nov.infra.modules.list.List"></resultMap>
+	<resultMap id="resultMapObj" type="nov.infra.modules.member.Member"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
 	
@@ -14,8 +14,6 @@
 			a.* 
 		FROM member a
 		WHERE 1=1
-			A
-		
 	
 	</select>
 

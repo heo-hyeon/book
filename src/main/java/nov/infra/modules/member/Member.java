@@ -1,8 +1,8 @@
-package nov.infra.modules.list;
+package nov.infra.modules.member;
 
 import java.util.Date;
 
-public class List {
+public class Member {
 
 		private String seq;
 		private String id;
@@ -119,5 +119,5 @@ public class List {
 		public void setCertifiNY(Integer certifiNY) {
 			this.certifiNY = certifiNY;
 		}
-		
+	
 }

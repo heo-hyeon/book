@@ -17,6 +17,6 @@ public class CodeGroupDao {
 	
 	private static String namespace = "nov.infra.modules.codegroup.CodeGroupMapper";
 	
-	public List<CodeGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
- //빨간 줄 오류는 ctl + shist + 영어"O"
+	public List<CodeGroup> selectList(CodeGroupVo vo){
+		return sqlSession.selectList(namespace + ".selectList", vo); }
 }
