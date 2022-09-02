@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Code Group Form</title>
+  <title>Code</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -81,29 +81,12 @@
     </div><!-- End Breadcrumbs -->
     
    
-    <section id="blog" class="blog">
+      <section id="blog" class="blog">
     	<div class="post-item position-relative h-100">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option value="no">N
-						<option value="yes">Y
-					</select>	
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option value=" ">수정일
-						<option value=" ">
-					</select>	
-					<input type="search" id="name-search" placeholder="시작일" style="height:30px; width:180px; margin-right:7px;">
-					<input type="search" id="name-search" placeholder="종료일" style="height:30px; width:180px;">		
-					<br>
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-						<option value=" ">검색구분
-						<option value=" ">
-					</select>									
-					<input type="search" id="name-search" placeholder="검색어" style="height:30px; width:180px; margin-right:7px;">
-				<!--  
-					<select class="job-select" aria-label="Default select example" style="height:30px;">
+					<select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
 					  <option value="md">기획/MD
 					  <option value="it">IT개발
 					  <option value="strategy">기술/전략
@@ -111,24 +94,24 @@
 					  <option value="accounting">회계/총무
 					  <option value="sales">영업/판매
 					</select>
-					<select class="career-select" aria-label="Default select example" style="height:30px;">
+					<select class="career-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
 					  <option value="junior">신입
 					  <option value="senior">경력
 					</select>
-					<select class="certification-select" aria-label="Default select example" style="height:30px;">
+					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
 						<option selected>자격증 유무	 
 						<option value="yes-cer">유
 						<option value="no-cer">무
 					</select>	 
 					<div class="form form-inline">
-					<input type="search" id="name-search" placeholder="이름">
-					<input type="search" id="major-search" placeholder="전공">
-					-->
+					<input type="search" id="name-search" placeholder="이름" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<input type="search" id="major-search" placeholder="전공" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+					</div>
 				</div>
 			</div>
-				<div><br>
+				<br><br>
 					<p style="margin-left:100px;">total : 40
 					<select style="width:80px; height:30px; float:right; margin-right:100px;">
 						<option>1
@@ -136,7 +119,6 @@
 						<option>3
 					</select>
 				</div>
-			<br><br>
 				<table class="table table-striped" style="width:90%; margin:auto;">
 					<tr style="text-align:center; background-color:#D2D2FF">
 						<th width="60px;"><input type="checkbox"></th>
