@@ -133,8 +133,6 @@
 						<th width="100px">사용</th>
 						<th width="100px">삭제</th>
 					</tr>
-				
-			
 					<c:forEach items="${list}" var="list" varStatus="status">
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
@@ -149,7 +147,6 @@
 				      <td><c:out value="${list.delNY }"/></td>
 				    </tr>
 				    </c:forEach>
-			
 				</table>
 			        <div class="blog-pagination">
 			          <ul class="justify-content-center">
