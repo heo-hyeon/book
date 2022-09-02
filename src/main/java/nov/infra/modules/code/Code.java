@@ -11,8 +11,8 @@ public class Code {
 		private Integer code_rep;
 		private String codename_ko;
 		private String codename_en;
-		private String useNY;
-		private String delNY;
+		private Integer useNY;
+		private Integer delNY;
 		private Integer code_order;
 		public String getSeq() {
 			return seq;
@@ -56,16 +56,16 @@ public class Code {
 		public void setCodename_en(String codename_en) {
 			this.codename_en = codename_en;
 		}
-		public String getUseNY() {
+		public Integer getUseNY() {
 			return useNY;
 		}
-		public void setUseNY(String useNY) {
+		public void setUseNY(Integer useNY) {
 			this.useNY = useNY;
 		}
-		public String getDelNY() {
+		public Integer getDelNY() {
 			return delNY;
 		}
-		public void setDelNY(String delNY) {
+		public void setDelNY(Integer delNY) {
 			this.delNY = delNY;
 		}
 		public Integer getCode_order() {
@@ -74,9 +74,5 @@ public class Code {
 		public void setCode_order(Integer code_order) {
 			this.code_order = code_order;
 		}
-	
-
-		
-		
 		
 }

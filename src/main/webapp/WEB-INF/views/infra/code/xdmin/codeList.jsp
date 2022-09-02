@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -135,7 +138,15 @@
 						<th width="100px">등록일</th>
 						<th width="100px">수정일</th>
 					</tr>
-					<c:forEach items="${list}" var="list" varStatus="status">
+
+			<c:choose>
+				<c:when test="${fn:length(list) eq 0}">
+					<tr>
+						<td class="text-center" colspan="13">There is no data!</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${list}" var="list" varStatus="status"> 
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 				     <td><c:out value="${list.seq }"/></td>
@@ -151,8 +162,10 @@
 				      <td> </td>
 				      <td> </td>
 				    </tr>
-				    </c:forEach>
-					
+				    </c:forEach>  
+				</c:otherwise>
+		</c:choose>
+
 				</table>
 			        <div class="blog-pagination">
 			          <ul class="justify-content-center">

@@ -81,34 +81,37 @@
     </div><!-- End Breadcrumbs -->
     
    
-    <section id="blog" class="blog">
+     <section id="blog" class="blog">
     	<div class="post-item position-relative h-100">
-    		<h2 style="margin-left:90px;">코드그룹 관리</h2>
-			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto; border:0.7px solid silver; padding:10px">
+    		<h2 style="margin-left:90px;">코드 관리</h2>
+			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
+					<select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option value="md">기획/MD
+					  <option value="it">IT개발
+					  <option value="strategy">기술/전략
+					  <option value="marketing">마케팅/홍보
+					  <option value="accounting">회계/총무
+					  <option value="sales">영업/판매
+					</select>
+					<select class="career-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option value="junior">신입
+					  <option value="senior">경력
+					</select>
 					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option value="no">N
-						<option value="yes">Y
-					</select>	
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option value=" ">수정일
-						<option value=" ">
-					</select>	
-					<input type="search" id="name-search" placeholder="시작일" style="height:30px; width:180px; margin-right:7px;">
-					<input type="search" id="name-search" placeholder="종료일" style="height:30px; width:180px;">		
-					<br>
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-						<option value=" ">검색구분
-						<option value=" ">
-					</select>									
-					<input type="search" id="name-search" placeholder="검색어" style="height:30px; width:180px; margin-right:7px;">
-		
+						<option selected>자격증 유무	 
+						<option value="yes-cer">유
+						<option value="no-cer">무
+					</select>	 
+					<div class="form form-inline">
+					<input type="search" id="name-search" placeholder="이름" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<input type="search" id="major-search" placeholder="전공" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+					</div>
 				</div>
 			</div>
-			
-				<div style="clear:both;"><br>
+				<div><br>
 					<p style="margin-left:100px;">total : 40
 					<select style="width:80px; height:30px; float:right; margin-right:100px;">
 						<option>1
@@ -127,7 +130,11 @@
 						<th width="70px">코드갯수</th>
 						<th width="100px">등록일</th>
 						<th width="100px">수정일</th>
+						<th width="100px">사용</th>
+						<th width="100px">삭제</th>
 					</tr>
+				
+			
 					<c:forEach items="${list}" var="list" varStatus="status">
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
@@ -138,8 +145,11 @@
 				      <td><c:out value="${list.code_count }"/></td>
 				      <td><c:out value="${list.reg_date }"/></td>
 				      <td><c:out value="${list.mod_date }"/></td>
+				      <td><c:out value="${list.useNY }"/></td>
+				      <td><c:out value="${list.delNY }"/></td>
 				    </tr>
 				    </c:forEach>
+			
 				</table>
 			        <div class="blog-pagination">
 			          <ul class="justify-content-center">

@@ -9,7 +9,16 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
+			
+			
 		SELECT
+			 a.*
+		FROM test_cc a
+		 WHERE 1=1
+			AND a.delNY = 0 
+			
+	
+	<!-- 	SELECT
 			a.seq
 			,a.name
 			,a.name_en
@@ -18,7 +27,7 @@
 			,a.mod_date
 		FROM NCT.CCG a
 		LEFT JOIN CC b on a.seq = b.CCG_seq
-		GROUP BY a.seq 
+		GROUP BY a.seq  -->
 	</select>
 
 </mapper>		

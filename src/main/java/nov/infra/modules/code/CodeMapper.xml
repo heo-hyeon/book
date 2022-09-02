@@ -9,7 +9,15 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.code.Code"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
+	
 		SELECT
+			 a.*
+		FROM test_cc a
+		 WHERE 1=1
+			AND a.delNY = 0 
+			
+
+		<!-- SELECT
 			 b.seq
 			,b.ccg_seq
 			,a.name
@@ -23,7 +31,8 @@
 		FROM CCG a
 		 left join CC b on b.ccg_seq = a.seq
 		 WHERE 1=1
-			AND b.delNY = 0
+			AND b.delNY = 0 -->
+			
 	</select>
 
 
