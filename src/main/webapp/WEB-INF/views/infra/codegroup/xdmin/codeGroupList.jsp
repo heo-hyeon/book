@@ -90,13 +90,18 @@
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
-			 		<%-- <select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					<select class="del-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option value="">삭제여부
+					  <option value="delY">YES
+					  <option value="delN">NO
+					</select>		
+<%-- 			 		 <select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
 					  <option value="md"<c:if test="${empty vo.shname}">selected</select>c:if>>기획/MD<option>
-					  <option value="it"<c:if test="${vo.shname eq 1}"></select>c:if>>IT개발<option>
-					  <option value="strategy"<c:if test="${vo.shname eq 1}"></select>c:if>>기술/전략<option>
-					  <option value="marketing"<c:if test="${vo.shname eq 1}"></select>c:if>>마케팅/홍보<option>
-					  <option value="accounting"<c:if test="${vo.shname eq 1}"></select>c:if>>회계/총무<option>
-					  <option value="sales"<c:if test="${vo.shname eq 1}"></select>c:if>>영업/판매<option>
+					  <option value="it"<c:if test="${vo.shname eq 1}">selected</select>c:if>>IT개발<option>
+					  <option value="strategy"<c:if test="${vo.shname eq 1}">selected</select>c:if>>기술/전략<option>
+					  <option value="marketing"<c:if test="${vo.shname eq 1}">selected</select>c:if>>마케팅/홍보<option>
+					  <option value="accounting"<c:if test="${vo.shname eq 1}">selected</select>c:if>>회계/총무<option>
+					  <option value="sales"<c:if test="${vo.shname eq 1}">selected</select>c:if>>영업/판매<option>
 					</select> --%>
 					<select class="career-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
 					  <option value="junior">신입

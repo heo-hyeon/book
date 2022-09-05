@@ -9,8 +9,28 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
-			
+		
 		SELECT
+			 a.*
+		FROM test_cc a
+		WHERE 1=1
+			AND delNY = 0 
+			AND name Like CONCAT('%',#{shValue}. '%')
+			<if test="shDelNy != null and !shDelNy.equals('')">
+			AND DelNy = #{shDelNy}</if>
+			
+			<choose>
+				<when test="shOption == 1">AND seq = #{shValue}</when>
+				<when test="shOption == 2">AND name LIKE CONCAT('%',#{shValue}, '%')</when>
+				<otherwise></otherwise>
+			</choose>
+		
+	<!-- <choose>
+			<when test="shOption == 1">AND name = #{shValue}</when>
+			<otherwise></otherwise>
+		</choose> -->
+		
+		<!-- SELECT
 			a.seq
 			,a.name
 			,a.name_en
@@ -21,7 +41,8 @@
 		LEFT JOIN CC b on a.seq = b.CCG_seq
 		GROUP BY a.seq 
 		AND name LIKE CONCAT('%', #{shname}, '%')
-		
+ -->		
+ 
 	</select>
 
 </mapper>		

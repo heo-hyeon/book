@@ -4,6 +4,7 @@ public class CodeGroupVo {
 
 		private String shseq;
 		private String shname;
+		private Integer shdelNy;
 		
 		
 		public String getShseq() {
@@ -17,6 +18,12 @@ public class CodeGroupVo {
 		}
 		public void setShname(String shname) {
 			this.shname = shname;
+		}
+		public Integer getShdelNy() {
+			return shdelNy;
+		}
+		public void setShdelNy(Integer shdelNy) {
+			this.shdelNy = shdelNy;
 		}
 		
 		

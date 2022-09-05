@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-@Repository          //Dao파일이라는 걸 알려주는 것
+@Repository          
 public class CodeGroupDao {
 	
 	@Inject
