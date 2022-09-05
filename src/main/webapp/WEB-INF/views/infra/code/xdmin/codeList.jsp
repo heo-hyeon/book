@@ -85,35 +85,36 @@
     
    
       <section id="blog" class="blog">
+      <form method="post" action="/codeGroup/codeGroupList">
     	<div class="post-item position-relative h-100">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
-					<select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="md">기획/MD
-					  <option value="it">IT개발
-					  <option value="strategy">기술/전략
-					  <option value="marketing">마케팅/홍보
-					  <option value="accounting">회계/총무
-					  <option value="sales">영업/판매
+					<select class="use-select" id="shcc_useNY" name="shcc_useNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+						<option selected disable value="">사용여부
+						<option value="1">YES
+						<option value="0">NO
 					</select>
-					<select class="career-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="junior">신입
-					  <option value="senior">경력
+					<select class="del-select" id="shcc_delNY" name="shcc_delNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option selected disable value="">삭제여부
+					  <option value="1">YES
+					  <option value="0">NO
 					</select>
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option selected>자격증 유무	 
-						<option value="yes-cer">유
-						<option value="no-cer">무
-					</select>	 
+					<select class="search-select" id="shcc_name" name="shcc_name" style="height:30px; width:180px; margin-right:7px;">
+						<option selected disable value="">검색구분</option>
+						<option value="1">코드그룹 코드</option>
+						<option value="2">코드그룹 이름(한글)</option>
+						<option value="3">코드그룹 이름(영문)</option>
+					</select>	
+					 
 					<div class="form form-inline">
-					<input type="search" id="name-search" placeholder="이름" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-					<input type="search" id="major-search" placeholder="전공" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<input type="search" id="shcc_seq" name="shcc_seq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shcc_seq}"/>">
 					<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
 					</div>
 				</div>
 			</div>
+			</form>
 				<br><br>
 					<p style="margin-left:100px;">total : 40
 					<select style="width:80px; height:30px; float:right; margin-right:100px;">
@@ -156,7 +157,7 @@
 				      <td><c:out value="${list.code_rep }"/></td>
 				      <td><c:out value="${list.codename_ko }"/></td>
 				      <td><c:out value="${list.codename_en }"/></td>
-				      <td><c:out value="${list.useNY }"/></td>
+				  	  <td><c:out value="${list.useNY }"/></td>
 				      <td><c:out value="${list.delNY }"/></td>
 				      <td><c:out value="${list.code_order }"/></td> 
 				      <td> </td>
@@ -164,9 +165,8 @@
 				    </tr>
 				    </c:forEach>  
 				</c:otherwise>
-		</c:choose>
-
-				</table>
+			</c:choose>
+			</table>
 			        <div class="blog-pagination">
 			          <ul class="justify-content-center">
 			            <li class="active"><a href="#">1</a></li>

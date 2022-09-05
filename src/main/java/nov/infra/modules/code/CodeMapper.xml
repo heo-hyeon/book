@@ -9,18 +9,10 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.code.Code"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
-	
-		SELECT
-			 a.*
-		FROM test_cc a
-		 WHERE 1=1
-			AND a.delNY = 0 
-			
 
-		<!-- SELECT
+		 SELECT
 			 b.seq
 			,b.ccg_seq
-			,a.name
 		    ,b.code
 		    ,b.code_rep
 		    ,b.codename_ko
@@ -28,12 +20,22 @@
 		    ,b.useNY
 		    ,b.delNY
 		    ,b.code_order
-		FROM CCG a
-		 left join CC b on b.ccg_seq = a.seq
-		 WHERE 1=1
-			AND b.delNY = 0 -->
+		    ,b.reg_date
+		    ,b.mod_date
+		FROM NCT.CC b
+	 	WHERE 1=1
+			AND b.delNY = 0
 			
+			<if test="shcc_delNY != null and !shcc_delNY.equals('')">AND delNY = #{shcc_delNY}</if>
+			<if test="shcc_useNY != null and !shcc_useNY.equals('')">AND useNY = #{shcc_useNY}</if>
+			
+			<choose>
+				<when test="shcc_name == 1">and b.seq = #{shcc_seq}</when>
+				<when test="shcc_name == 2">and b.codename_ko LIKE CONCAT('%',#{shcc_seq}, '%')</when>
+				<when test="shcc_name == 3">and b.codename_en LIKE CONCAT('%',#{shcc_seq}, '%')</when>
+				<when test="shcc_delNY == 1">and b.delNY LIKE CONCAT('%', #{shcc_delNY}, '%')</when>
+				<when test="shcc_useNY == 1">and b.useNY LIKE CONCAT('%', #{shcc_useNY}, '%')</when>
+				<otherwise></otherwise>
+			</choose>
 	</select>
-
-
 </mapper>		

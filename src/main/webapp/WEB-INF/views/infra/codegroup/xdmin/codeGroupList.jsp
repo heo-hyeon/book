@@ -90,31 +90,24 @@
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
-					<select class="del-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="">삭제여부
-					  <option value="delY">YES
-					  <option value="delN">NO
+					<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option selected disabled value="">사용여부
+					  <option value="1">YES
+					  <option value="0">NO
 					</select>		
-<%-- 			 		 <select class="job-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="md"<c:if test="${empty vo.shname}">selected</select>c:if>>기획/MD<option>
-					  <option value="it"<c:if test="${vo.shname eq 1}">selected</select>c:if>>IT개발<option>
-					  <option value="strategy"<c:if test="${vo.shname eq 1}">selected</select>c:if>>기술/전략<option>
-					  <option value="marketing"<c:if test="${vo.shname eq 1}">selected</select>c:if>>마케팅/홍보<option>
-					  <option value="accounting"<c:if test="${vo.shname eq 1}">selected</select>c:if>>회계/총무<option>
-					  <option value="sales"<c:if test="${vo.shname eq 1}">selected</select>c:if>>영업/판매<option>
-					</select> --%>
-					<select class="career-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="junior">신입
-					  <option value="senior">경력
+					<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option selected disabled value="">삭제여부
+					  <option value="1">YES
+					  <option value="0">NO
+					</select>		
+		
+					<select class="search-select" id="shname" name="shname" style="height:30px; width:180px; margin-right:7px;">
+						<option selected disabled value="">검색구분</option>
+						<option value="1">코드그룹 코드</option>
+						<option value="2">코드그룹 이름(한글)</option>
+						<option value="3">코드그룹 이름(영문)</option>
 					</select>
-					<select class="certification-select" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option selected>자격증 유무	 
-						<option value="yes-cer">유
-						<option value="no-cer">무
-					</select>	 
-					<div class="form form-inline">
-					<input type="search" id="shname" placeholder="이름" name="shname" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shname}"/>">
-					<input type="search" placeholder="전공" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shname}"/>">
+					<input type="search" id="shseq" name="shseq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shseq}"/>">
 					<button class="btn btn-success" style="height:35px; width:40px;" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button class="btn btn-warning" style="height:35px; width:40px;" type="submit" ><i class="fa-solid fa-arrow-rotate-right"></i></button>
 					</div>
@@ -141,20 +134,17 @@
 						<th width="100px">등록일</th>
 						<th width="100px">수정일</th>
 						<th width="100px">사용</th>
-						<th width="100px">삭제</th>
+						<th width="100px">삭제</th> 
 					</tr>
 					
-					<c:choose>
+			<c:choose>
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
 						<td class="text-center" colspan="13">There is no data!</td>
 					</tr>
 				</c:when>
 				<c:otherwise>
-				 
-				   
 					<c:forEach items="${list}" var="list" varStatus="status">
-					<c:out value="${list.seq}"/> / <c:out value="${list.name }"/>
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 				      <td><c:out value="${list.seq }"/></td>
@@ -162,10 +152,10 @@
 				      <td><c:out value="${list.name }"/></td>
 				      <td><c:out value="${list.name_en}"/></td>
 				      <td><c:out value="${list.code_count }"/></td>
-				      <td><c:out value="${list.reg_date }"/></td>
-				      <td><c:out value="${list.mod_date }"/></td>
-				      <td><c:out value="${list.useNY }"/></td>
-				      <td><c:out value="${list.delNY }"/></td>
+			 	      <td><c:out value="${list.reg_date }"/></td>
+					  <td><c:out value="${list.mod_date }"/></td>
+				  	  <td><c:out value="${list.useNY }"/></td>
+				   	  <td><c:out value="${list.delNY }"/></td> 
 				    </tr>
 				    </c:forEach>
 				    </c:otherwise>

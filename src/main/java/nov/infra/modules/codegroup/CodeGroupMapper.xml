@@ -11,38 +11,30 @@
 	<select id="selectList" resultMap="resultMapObj">
 		
 		SELECT
-			 a.*
-		FROM test_cc a
+			 a.seq
+			 ,a.name
+			 ,a.name_en
+			 , (SELECT COUNT(b.ccg_seq) FROM CC b WHERE a.seq = b.ccg_seq)as code_count
+			 ,a.reg_date
+			 ,a.mod_date
+			 ,a.useNY
+			 ,a.delNY
+		FROM NCT.CCG a
 		WHERE 1=1
 			AND delNY = 0 
-			AND name Like CONCAT('%',#{shValue}. '%')
-			<if test="shDelNy != null and !shDelNy.equals('')">
-			AND DelNy = #{shDelNy}</if>
+
+			<if test="shdelNY != null and !shdelNY.equals('')"> AND delNY = #{shdelNY}</if> 
+			<if test="shuseNY != null and !shuseNY.equals('')"> AND useNY = #{shuseNY}</if>
 			
 			<choose>
-				<when test="shOption == 1">AND seq = #{shValue}</when>
-				<when test="shOption == 2">AND name LIKE CONCAT('%',#{shValue}, '%')</when>
+				<when test="shname == 1">AND a.seq = #{shseq}</when>
+				<when test="shname == 2">AND a.name LIKE CONCAT('%',#{shseq}, '%')</when>
+				<when test="shname == 3">AND a.name_en LIKE CONCAT('%',#{shseq}, '%')</when>
+				<when test="shdelNY == 1">AND a.delNY LIKE CONCAT('%',#{shdelNY}, '%')</when>
+				<when test="shuseNY == 1">AND a.useNY LIKE CONCAT('%', #{shuseNY}, '%')</when>
 				<otherwise></otherwise>
 			</choose>
-		
-	<!-- <choose>
-			<when test="shOption == 1">AND name = #{shValue}</when>
-			<otherwise></otherwise>
-		</choose> -->
-		
-		<!-- SELECT
-			a.seq
-			,a.name
-			,a.name_en
-			,a.code_count
-			,a.reg_date
-			,a.mod_date
-		FROM NCT.CCG a
-		LEFT JOIN CC b on a.seq = b.CCG_seq
-		GROUP BY a.seq 
-		AND name LIKE CONCAT('%', #{shname}, '%')
- -->		
- 
+	
 	</select>
 
 </mapper>		

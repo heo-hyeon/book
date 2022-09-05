@@ -11,11 +11,8 @@ public class CodeGroup {
 	private Integer code_count;
 	private Date reg_date;
 	private Date mod_date;
-	private Integer useNY;
-	private Integer delNY;
-	
-	
-	
+	private String useNY;
+	private String delNY;
 	public String getSeq() {
 		return seq;
 	}
@@ -52,16 +49,16 @@ public class CodeGroup {
 	public void setMod_date(Date mod_date) {
 		this.mod_date = mod_date;
 	}
-	public Integer getUseNY() {
+	public String getUseNY() {
 		return useNY;
 	}
-	public void setUseNY(Integer useNY) {
+	public void setUseNY(String useNY) {
 		this.useNY = useNY;
 	}
-	public Integer getDelNY() {
+	public String getDelNY() {
 		return delNY;
 	}
-	public void setDelNY(Integer delNY) {
+	public void setDelNY(String delNY) {
 		this.delNY = delNY;
 	}
 	
