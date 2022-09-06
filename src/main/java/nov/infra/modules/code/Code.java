@@ -8,12 +8,12 @@ public class Code {
 		private String ccg_seq;
 		private String name;
 		private Integer code;
-		private Integer code_rep;
 		private String codename_ko;
 		private String codename_en;
 		private Integer useNY;
 		private Integer delNY;
-		private Integer code_order;
+		private Date reg_date;
+		private Date mod_date;
 		public String getSeq() {
 			return seq;
 		}
@@ -37,12 +37,6 @@ public class Code {
 		}
 		public void setCode(Integer code) {
 			this.code = code;
-		}
-		public Integer getCode_rep() {
-			return code_rep;
-		}
-		public void setCode_rep(Integer code_rep) {
-			this.code_rep = code_rep;
 		}
 		public String getCodename_ko() {
 			return codename_ko;
@@ -68,11 +62,16 @@ public class Code {
 		public void setDelNY(Integer delNY) {
 			this.delNY = delNY;
 		}
-		public Integer getCode_order() {
-			return code_order;
+		public Date getReg_date() {
+			return reg_date;
 		}
-		public void setCode_order(Integer code_order) {
-			this.code_order = code_order;
+		public void setReg_date(Date reg_date) {
+			this.reg_date = reg_date;
 		}
-		
+		public Date getMod_date() {
+			return mod_date;
+		}
+		public void setMod_date(Date mod_date) {
+			this.mod_date = mod_date;
+		}
 }

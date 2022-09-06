@@ -20,6 +20,13 @@ public class CodeGroupDao {
 //	public List(CodeGroup> selectList(CodeGroupVo vo){return sqlSession.selectList(namespace + ".selectList", vo; }
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo){
-//  List<CodeGroup> list = sqlSession.selectList(namespace + ".selectList", vo);
-		return sqlSession.selectList(namespace + ".selectList", vo); }
+		List<CodeGroup> list = sqlSession.selectList(namespace + ".selectList", vo);
+		return list;
+	}
+	
+	public int insert(CodeGroup dto) {
+		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result: " + result);
+		return result;
+	}
 }

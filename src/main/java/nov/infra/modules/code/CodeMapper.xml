@@ -13,13 +13,12 @@
 		 SELECT
 			 b.seq
 			,b.ccg_seq
+			,b.name
 		    ,b.code
-		    ,b.code_rep
 		    ,b.codename_ko
 		    ,b.codename_en
 		    ,b.useNY
 		    ,b.delNY
-		    ,b.code_order
 		    ,b.reg_date
 		    ,b.mod_date
 		FROM NCT.CC b

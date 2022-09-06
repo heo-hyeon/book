@@ -177,7 +177,7 @@
 			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
 			<button type="button" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
 			<button class="btn btn-outline-warning" style="float:right; margin-right:7px;"><a href="./memberRegForm.html"<i class="fa-solid fa-user-plus"></i></a></button>
-			<button class="btn btn-success" style="float:right; margin-right:7px;"><i class="fa-solid fa-file-circle-plus"></i></button>
+			<button class="btn btn-success" type="button" style="float:right; margin-right:7px;"><a href="/codeGroup/codeGroupForm"><i class="fa-solid fa-file-circle-plus"></i></a></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -222,6 +222,6 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-
+  
 </body>
 </html>

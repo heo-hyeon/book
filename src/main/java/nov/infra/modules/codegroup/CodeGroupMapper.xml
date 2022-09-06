@@ -9,8 +9,12 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
+	
+	SELECT
+	 *
+	 FROM CCG
 		
-		SELECT
+<!-- 		SELECT
 			 a.seq
 			 ,a.name
 			 ,a.name_en
@@ -21,9 +25,9 @@
 			 ,a.delNY
 		FROM NCT.CCG a
 		WHERE 1=1
-			AND delNY = 0 
+			AND delNY = 0  -->
 
-			<if test="shdelNY != null and !shdelNY.equals('')"> AND delNY = #{shdelNY}</if> 
+			<!-- <if test="shdelNY != null and !shdelNY.equals('')"> AND delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND useNY = #{shuseNY}</if>
 			
 			<choose>
@@ -33,8 +37,21 @@
 				<when test="shdelNY == 1">AND a.delNY LIKE CONCAT('%',#{shdelNY}, '%')</when>
 				<when test="shuseNY == 1">AND a.useNY LIKE CONCAT('%', #{shuseNY}, '%')</when>
 				<otherwise></otherwise>
-			</choose>
-	
+			</choose> -->
 	</select>
 
+	<insert id="insert">
+		INSERT INTO CCG (
+			name
+			,name_en
+			
+		)
+		VALUES (
+			#{name}
+			,#{name_en}
+		)
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
 </mapper>		

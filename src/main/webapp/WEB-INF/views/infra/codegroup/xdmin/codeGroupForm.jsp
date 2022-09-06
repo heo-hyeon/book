@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Code</title>
+  <title>Code Management</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -75,112 +75,86 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/img/book.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
-        <h2>Code</h2>
+        <h2>Code Group Management</h2>
         <ol>
           <li><a href="main.html">Home</a></li>
-          <li>Code Management</li>
+          <li>Code Group Management</li>
         </ol>
       </div>
     </div><!-- End Breadcrumbs -->
     
-   
-      <section id="blog" class="blog">
-      <form method="post" action="/codeGroup/codeGroupList">
-    	<div class="post-item position-relative h-100">
-    		<h2 style="margin-left:90px;">코드 관리</h2>
-			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
-				<div class="form form-inline">
-					<select class="use-select" id="shcc_useNY" name="shcc_useNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option selected disable value="">사용여부
-						<option value="1">YES
-						<option value="0">NO
-					</select>
-					<select class="del-select" id="shcc_delNY" name="shcc_delNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option selected disable value="">삭제여부
-					  <option value="1">YES
-					  <option value="0">NO
-					</select>
-					<select class="search-select" id="shcc_name" name="shcc_name" style="height:30px; width:180px; margin-right:7px;">
-						<option selected disable value="">검색구분</option>
-						<option value="1">코드그룹 코드</option>
-						<option value="2">코드그룹 이름(한글)</option>
-						<option value="3">코드그룹 이름(영문)</option>
-					</select>	
-					 
-					<div class="form form-inline">
-					<input type="search" id="shcc_seq" name="shcc_seq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shcc_seq}"/>">
-					<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
-					</div>
-				</div>
-			</div>
-			</form>
-				<br><br>
-					<p style="margin-left:100px;">total : 40
-					<select style="width:80px; height:30px; float:right; margin-right:100px;">
-						<option>1
-						<option>2
-						<option>3
-					</select>
-				</div>
-				<table class="table table-striped" style="width:90%; margin:auto;">
-					<tr style="text-align:center; background-color:#D2D2FF">
-						<th width="60px;"><input type="checkbox"></th>
-						<th width="80px">#</th>
-						<th width="100px">코드그룹 코드</th>
-						<th width="150px">코드그룹 이름(한글)</th>
-						<th width="80px">코드
-						<th width="150px">코드 이름(한글)
-						<th width="150px">코드 이름(영문)</th>
-						<th width="70px">사용</th>
-						<th width="70px">삭제</th>
-						<th width="100px">등록일</th>
-						<th width="100px">수정일</th>
-					</tr>
-
-			<c:choose>
-				<c:when test="${fn:length(list) eq 0}">
-					<tr>
-						<td class="text-center" colspan="13">There is no data!</td>
-					</tr>
-				</c:when>
-				<c:otherwise>
-					<c:forEach items="${list}" var="list" varStatus="status"> 
-				    <tr>
-				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
-				     <td><c:out value="${list.seq }"/></td>
-				      <td><c:out value="${list.ccg_seq }"/></td>
-				      <td><c:out value="${list.name }"/></td>
-				      <td><c:out value="${list.code}"/></td>
-				      <td><c:out value="${list.codename_ko }"/></td>
-				      <td><c:out value="${list.codename_en }"/></td>
-				  	  <td><c:out value="${list.useNY }"/></td>
-				      <td><c:out value="${list.delNY }"/></td>
-				      <td><c:out value="${list.reg_date}"/></td>
-				      <td><c:out value="${list.mod_date}"/></td>
-				    </tr>
-				    </c:forEach>  
-				</c:otherwise>
-			</c:choose>
-			</table>
-			        <div class="blog-pagination">
-			          <ul class="justify-content-center">
-			            <li class="active"><a href="#">1</a></li>
-			            <li><a href="#">2</a></li>
-			            <li><a href="#">3</a></li>
-			            <li><a href="#">4</a></li>
-			            <li><a href="#">5</a></li>
-			          </ul>
-			        </div><!-- End blog pagination -->  
-					</div>		
-				</div>
-			</div>
-		</div>
-		<div style="width:90%; margin:auto;">
-			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
-			<button type="button" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
-			<button class="btn btn-outline-warning" style="float:right; margin-right:7px;"><i class="fa-solid fa-user-plus"></i></button>
-			<button class="btn btn-success" style="float:right; margin-right:7px;"><i class="fa-solid fa-file-circle-plus"></i></button>
+    <form method="post" action="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
+    <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
+	  <div class="col-md-6">
+	  	<label class="useNY-label">코드그룹 코드</label>
+	  	<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	   </div>
+	  <div class="col-md-6">
+	  	<label class="code-label">코드그룹 코드 (Another))</label>
+  		<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="code-label">코드그룹 이름 (한글)</label>
+	  	<input type="text" name="name" class="form-control" placeholder="한글,숫자">
+	  </div>
+ 	  <div class="col-md-6">
+	  	<label class="code-label">코드그룹 이름 (영문)</label>
+	  	<input type="text" name="name_en" class="form-control" placeholder="영문(대소문자),숫자">
+	  </div>
+	  <div class="col-md-6">
+	    <label class="codeName-label">사용여부</label>
+	    <select class="form-control">
+	    	<option>Y
+	    	<option>N
+	    </select>
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="useNY-label">순서</label>
+	 	<input type="text" class="form-control" placeholder="숫자">
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="info-label">설명</label>
+	  	<textarea class="form-control"></textarea>
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="delete-label">삭제여부</label>
+	  	<select class="form-control">
+	  		<option>Y
+	  		<option>N
+	  	</select>
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="reserve-label">예비1 (varchar type)</label>
+	  	<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	  </div>
+	  <div class="col-md-6">
+	  	<label class="reserve-label">예비2 (varchar type)</label>
+	  	<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	  </div>
+	  <div class="row">
+	  <div class="col-md-6">
+	  	<label class="reserve-label">예비3 (varchar type)</label>
+	  	<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	  </div>
+	  </div>
+	  <div class="col-md-6"> 
+	  	<lavel class="reserve-label">예비1 (int type)</lavel>
+	  	<input type="text" class="form-control" placeholder="숫자">
+	  </div>
+	  <div class="col-md-6"> 
+	  	<lavel class="reserve-label">예비2 (int type)</lavel>
+	  	<input type="text" class="form-control" placeholder="숫자">
+	  </div>
+	  <div class="col-md-6" style="margin-bottom:20px;"> 
+	  	<lavel class="reserve-label">예비3 (int type)</lavel>
+	  	<input type="text" class="form-control" placeholder="숫자">
+	  </div>
+	
+ 	<div style="width:90%; margin:20px 0 20px 30px;">
+			<button class="btn btn-warning" type="submit" style="float:left; color:white;"><a href="/codegroup/CodeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
+			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
+			<button class="btn btn-success" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
+			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -197,8 +171,11 @@
 		    </div>
 		  </div>
 		</div>
-    </section><!-- End Blog Section -->
-  </main><!-- End #main -->
+  	 </form>
+<%--   	 <c:forEach items="${list}" var="list" varStatus="status">
+  	 	<c:out value=${list.seq}/> / <c:out value=${list.name}"/>
+ 	 </c:forEach>
+ --%>  </main><!-- End #main -->
   
  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
