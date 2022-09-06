@@ -148,7 +148,7 @@
 					<c:forEach items="${list}" var="list" varStatus="status"> 
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
-				     <td><c:out value="${list.seq }"/></td>
+				      <td><c:out value="${list.seq }"/></td>
 				      <td><c:out value="${list.ccg_seq }"/></td>
 				      <td><c:out value="${list.name }"/></td>
 				      <td><c:out value="${list.code}"/></td>

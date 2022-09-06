@@ -20,17 +20,15 @@ public class CodeGroupController {
 		System.out.println("vo.getShseq(): " + vo.getShseq());
 		System.out.println("vo.getShname(): " + vo.getShname());
 
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());
+		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+		
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
-		return "infra/codegroup/xdmin/codeGroupList";
-	}
-	
-		vo.setshOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
-		vo.setshDateStart(vo.getShDateStart() == null ? 
-				UtilDateTime,calculateDayString(UrilDateTime.nowLocalDateTime(),Constants.DATE_INTERVAL):vo.getShDateStart());
-		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
-	
+		return "infra/codegroup/xdmin/codeGroupList"; 
 		
+	}
 		@RequestMapping(value = "codeGroupForm")
 		public String codeGroupForm(Model model, CodeGroupVo vo) throws Exception {
 		return "infra/codegroup/xdmin/codeGroupForm";
@@ -43,7 +41,7 @@ public class CodeGroupController {
 		 System.out.println("controller result: " + result); 
 		 System.out.println(dto.getName());
 		 
-		 return "redirect:/codeGroup/codeGroupList"; }
+		 return "redirect:/codeGroup/codeGroupList"; 
+	}
 	
-	 
 }

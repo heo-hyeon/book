@@ -10,7 +10,6 @@ public class CodeGroupVo {
 		private String shDateEnd;
 		private Integer shOptionDate;
 		
-		
 		public String getShseq() {
 			return shseq;
 		}
@@ -53,4 +52,7 @@ public class CodeGroupVo {
 		public void setShOptionDate(Integer shOptionDate) {
 			this.shOptionDate = shOptionDate;
 		}
+		
+		
+		
 }

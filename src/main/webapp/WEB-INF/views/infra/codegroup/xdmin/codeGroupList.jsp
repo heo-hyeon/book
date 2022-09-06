@@ -10,8 +10,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Code Group List</title>
+
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,25 +30,14 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-	$(document).ready(function(){
-		 $("input.shDate").datepicker();
-	}); 
 
-	$.datepicker.setDefaults({
-	    dateFormat: 'yy-mm-dd',
-	    prevText: '이전 달',
-	    nextText: '다음 달',
-	    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-	    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-	    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-	    showMonthAfterYear: true,
-	    yearSuffix: '년'
-	});
-</script>
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
@@ -109,26 +98,26 @@
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
 					<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option selected disabled value="">사용여부
-					  <option value="1">YES
-					  <option value="0">NO
+					  <option value="">사용여부</option>
+					  <option value="1">YES</option>
+					  <option value="0">NO</option>
 					</select>		
 					<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option selected disabled value="">삭제여부
-					  <option value="1">YES
-					  <option value="0">NO
+					  <option value="">삭제여부</option>
+					  <option value="1">YES</option>
+					  <option value="0">NO</option>
 					</select><br>
 					<select class="search-select" id="shname" name="shname" style="height:30px; width:180px; margin-right:7px;">
-						<option selected disabled value="">검색구분</option>
+						<option value="">검색구분</option>
 						<option value="1">코드그룹 코드</option>
 						<option value="2">코드그룹 이름(한글)</option>
 						<option value="3">코드그룹 이름(영문)</option>
 					</select>
 					<input type="search" id="shseq" name="shseq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shseq}"/>">
-					<br>
-					<input class="form-control shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off">
-					<input class="form-control shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off">
-					<select class="form-select" name="shOptionDate">
+					<br>                                         
+					<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<input class="shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<select name="shOptionDate" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 						<option value="">날짜</option>
 						<option value="1">등록일</option>
 						<option value="2">수정일</option>
@@ -162,7 +151,7 @@
 						<th width="100px">사용</th>
 						<th width="100px">삭제</th> 
 					</tr>
-					
+					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
 			<c:choose>
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
@@ -249,8 +238,25 @@
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   <!-- 날짜 찾기 (각자 ajax / 제이쿼리 )-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
-  
+ 
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			 $("input.shDate").datepicker();
+		}); 
+	
+		$.datepicker.setDefaults({
+		    dateFormat: 'yy-mm-dd',
+		    prevText: '이전 달',
+		    nextText: '다음 달',
+		    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		    showMonthAfterYear: true,
+		    yearSuffix: '년'
+		});
+		
+	</script>
 </body>
 </html>
