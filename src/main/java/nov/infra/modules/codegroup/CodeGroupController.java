@@ -24,13 +24,19 @@ public class CodeGroupController {
 		model.addAttribute("list", list);
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
-
-	@RequestMapping(value = "codeGroupForm")
-	public String codeGroupForm(Model model, CodeGroupVo vo) throws Exception {
+	
+		vo.setshOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+		vo.setshDateStart(vo.getShDateStart() == null ? 
+				UtilDateTime,calculateDayString(UrilDateTime.nowLocalDateTime(),Constants.DATE_INTERVAL):vo.getShDateStart());
+		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+	
+		
+		@RequestMapping(value = "codeGroupForm")
+		public String codeGroupForm(Model model, CodeGroupVo vo) throws Exception {
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 
-	 @RequestMapping(value="codeGroupInst") 
+	@RequestMapping(value="codeGroupInst") 
 	public String codeGroupInst(CodeGroup dto) throws Exception { 
 		 
 		 int result = service.insert(dto);
@@ -38,5 +44,6 @@ public class CodeGroupController {
 		 System.out.println(dto.getName());
 		 
 		 return "redirect:/codeGroup/codeGroupList"; }
+	
 	 
 }

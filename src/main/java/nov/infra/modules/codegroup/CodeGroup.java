@@ -13,6 +13,7 @@ public class CodeGroup {
 	private Date mod_date;
 	private String useNY;
 	private String delNY;
+	
 	public String getSeq() {
 		return seq;
 	}
