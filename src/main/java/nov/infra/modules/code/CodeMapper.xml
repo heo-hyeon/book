@@ -13,7 +13,7 @@
 		 SELECT
 			 b.seq
 			,b.ccg_seq
-			,b.name
+			,(select name from CCG a where a.seq = b.ccg_seq) as name
 		    ,b.code
 		    ,b.codename_ko
 		    ,b.codename_en
@@ -21,20 +21,44 @@
 		    ,b.delNY
 		    ,b.reg_date
 		    ,b.mod_date
-		FROM NCT.CC b
+		FROM NCT.CC b 
+		LEFT JOIN CCG a on b.ccg_seq = a.seq
 	 	WHERE 1=1
-			AND b.delNY = 0
+	 	
+	 	
+
+	
 			
-			<if test="shcc_delNY != null and !shcc_delNY.equals('')">AND delNY = #{shcc_delNY}</if>
-			<if test="shcc_useNY != null and !shcc_useNY.equals('')">AND useNY = #{shcc_useNY}</if>
+			<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
+			<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
+			<if test="shseq != null"></if>
 			
 			<choose>
-				<when test="shcc_name == 1">and b.seq = #{shcc_seq}</when>
-				<when test="shcc_name == 2">and b.codename_ko LIKE CONCAT('%',#{shcc_seq}, '%')</when>
-				<when test="shcc_name == 3">and b.codename_en LIKE CONCAT('%',#{shcc_seq}, '%')</when>
-				<when test="shcc_delNY == 1">and b.delNY LIKE CONCAT('%', #{shcc_delNY}, '%')</when>
-				<when test="shcc_useNY == 1">and b.useNY LIKE CONCAT('%', #{shcc_useNY}, '%')</when>
-				<otherwise></otherwise>
+				<when test="shname == 1">and b.seq = #{shseq}</when>
+				<when test="shname == 2">and a.name = #{shseq}</when>
+				<when test="shname == 3">and b.codename_ko LIKE CONCAT('%',#{shseq}, '%')</when>
+				<when test="shname == 4">and b.codename_en LIKE CONCAT('%',#{shseq}, '%')</when>
+			</choose>
+			
+			<choose>
+				<when test="shOptionDate == 4">AND b.reg_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 5">AND b.mod_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
 	</select>
+	
+	<insert id="insert">
+		INSERT INTO CC (
+			codename_ko
+			,codename_en
+			,reg_date
+		)
+		VALUES (
+			#{codename_ko}
+			,#{codename_en}
+			,now()
+		)
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
 </mapper>		

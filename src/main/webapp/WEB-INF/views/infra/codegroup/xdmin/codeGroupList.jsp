@@ -115,12 +115,12 @@
 					</select>
 					<input type="search" id="shseq" name="shseq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shseq}"/>">
 					<br>                                         
-					<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+				 	<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<input class="shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<select name="shOptionDate" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 						<option value="">날짜</option>
-						<option value="1">등록일</option>
-						<option value="2">수정일</option>
+						<option value="4">등록일</option>
+						<option value="5">수정일</option>
 						<option>끝날짜</option>
 					</select>
 					<button class="btn btn-success" style="height:35px; width:40px;" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>

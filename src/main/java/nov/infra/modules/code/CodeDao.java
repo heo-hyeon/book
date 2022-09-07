@@ -17,5 +17,16 @@ public class CodeDao {
 	
 	private static String namespace = "nov.infra.modules.code.CodeMapper";
 	
-	public List<Code> selectList() { return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<Code> selectList(CodeVo vo) { 
+		List<Code> list = sqlSession.selectList(namespace + ".selectList", vo);
+		return list;
+	}
+	
+	public int insert(Code dto) {
+		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result : " + result);
+		return result;
+	}
 }
+
+

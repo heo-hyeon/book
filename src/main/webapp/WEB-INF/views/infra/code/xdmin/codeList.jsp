@@ -31,6 +31,12 @@
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
   
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
@@ -85,31 +91,39 @@
     
    
       <section id="blog" class="blog">
-      <form method="post" action="/codeGroup/codeGroupList">
+      <form method="post" action="/code/codeList">
     	<div class="post-item position-relative h-100">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
-					<select class="use-select" id="shcc_useNY" name="shcc_useNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option selected disable value="">사용여부
+					<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+						<option value="">사용여부
 						<option value="1">YES
 						<option value="0">NO
 					</select>
-					<select class="del-select" id="shcc_delNY" name="shcc_delNY"aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option selected disable value="">삭제여부
+					<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
+					  <option value="">삭제여부
 					  <option value="1">YES
 					  <option value="0">NO
-					</select>
-					<select class="search-select" id="shcc_name" name="shcc_name" style="height:30px; width:180px; margin-right:7px;">
-						<option selected disable value="">검색구분</option>
+					</select><br>
+					<select class="search-select" id="shname" name="shname" style="height:30px; width:180px; margin-right:7px;">
+						<option value="">검색구분</option>
 						<option value="1">코드그룹 코드</option>
 						<option value="2">코드그룹 이름(한글)</option>
-						<option value="3">코드그룹 이름(영문)</option>
+						<option value="3">코드 이름(한글)</option>
+						<option value="4">코드 이름(영문)</option>
 					</select>	
-					 
-					<div class="form form-inline">
-					<input type="search" id="shcc_seq" name="shcc_seq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shcc_seq}"/>">
-					<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+					<input type="search" id="shseq" name="shseq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shseq}"/>">
+					<br>
+					<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<input class="shDate"type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+					<select name="shOptionDate" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+						<option value="">날짜</option>
+						<option value="4">등록일</option>
+						<option value="5">수정일</option>
+						<option>끝날짜</option>
+					</select>
+					<button class="btn btn-success" style="height:35px; width:40px;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
 					</div>
 				</div>
@@ -123,6 +137,7 @@
 						<option>3
 					</select>
 				</div>
+				<br><br>
 				<table class="table table-striped" style="width:90%; margin:auto;">
 					<tr style="text-align:center; background-color:#D2D2FF">
 						<th width="60px;"><input type="checkbox"></th>
@@ -137,7 +152,7 @@
 						<th width="100px">등록일</th>
 						<th width="100px">수정일</th>
 					</tr>
-
+					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />	
 			<c:choose>
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
@@ -146,19 +161,19 @@
 				</c:when>
 				<c:otherwise>
 					<c:forEach items="${list}" var="list" varStatus="status"> 
-				    <tr>
-				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
-				      <td><c:out value="${list.seq }"/></td>
-				      <td><c:out value="${list.ccg_seq }"/></td>
-				      <td><c:out value="${list.name }"/></td>
-				      <td><c:out value="${list.code}"/></td>
-				      <td><c:out value="${list.codename_ko }"/></td>
-				      <td><c:out value="${list.codename_en }"/></td>
-				  	  <td><c:out value="${list.useNY }"/></td>
-				      <td><c:out value="${list.delNY }"/></td>
-				      <td><c:out value="${list.reg_date}"/></td>
-				      <td><c:out value="${list.mod_date}"/></td>
-				    </tr>
+					    <tr>
+					      <th scope="row"><input class="form-check-input" type="checkbox"></th>
+					      <td><c:out value="${list.seq }"/></td>
+					      <td><c:out value="${list.ccg_seq }"/></td>
+					      <td><c:out value="${list.name }"/></td>
+					      <td><c:out value="${list.code}"/></td>
+					      <td><c:out value="${list.codename_ko }"/></td>
+					      <td><c:out value="${list.codename_en }"/></td>
+					  	  <td><c:out value="${list.useNY }"/></td>
+					      <td><c:out value="${list.delNY }"/></td>
+					      <td><c:out value="${list.reg_date}"/></td>
+					      <td><c:out value="${list.mod_date}"/></td>
+					    </tr>
 				    </c:forEach>  
 				</c:otherwise>
 			</c:choose>
@@ -180,7 +195,7 @@
 			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
 			<button type="button" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
 			<button class="btn btn-outline-warning" style="float:right; margin-right:7px;"><i class="fa-solid fa-user-plus"></i></button>
-			<button class="btn btn-success" style="float:right; margin-right:7px;"><i class="fa-solid fa-file-circle-plus"></i></button>
+			<button class="btn btn-success" type="button" style="float:right; margin-right:7px;"><a href="/code/codeForm"><i class="fa-solid fa-file-circle-plus"></i></a></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -225,5 +240,23 @@
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
 
+	<script type="text/javascript">
+			$(document).ready(function(){
+				 $("input.shDate").datepicker();
+			}); 
+		
+			$.datepicker.setDefaults({
+			    dateFormat: 'yy-mm-dd',
+			    prevText: '이전 달',
+			    nextText: '다음 달',
+			    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+			    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+			    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+			    showMonthAfterYear: true,
+			    yearSuffix: '년'
+			});
+	</script>
 </body>
 </html>
