@@ -60,4 +60,22 @@
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		 SELECT
+			 b.seq
+			,b.ccg_seq
+			,(select name from CCG a where a.seq = b.ccg_seq) as name
+		    ,b.code
+		    ,b.codename_ko
+		    ,b.codename_en
+		    ,b.useNY
+		    ,b.delNY
+		    ,b.reg_date
+		    ,b.mod_date
+		FROM NCT.CC b 
+		LEFT JOIN CCG a on b.ccg_seq = a.seq
+	 	WHERE 1=1
+	 		AND name = #{name}
+	</select>
 </mapper>		

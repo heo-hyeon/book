@@ -84,86 +84,46 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-    <h2 style="margin:20px 0 20px 50px;">코드 관리</h2>
-	<form class="row g-2" style="margin-left:30px; width:90%;">
-	<div class="row">	
+	<form method="post" id="myForm" onsubmit="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
+	<h2 style="margin:20px 0 20px 50px;">코드 관리</h2>
 	  <div class="col-md-6">
-	  	<label class="useNY-label">사용여부</label>
-	  	<select class="form-control">
-	  		<option>선택하세요
-	  		<option> 
-	  	</select>
+	  	<label class="useNY-label">코드그룹 코드</label>
+	  	<input type="text" name="seq" id="seq" value="<c:out value="${item.seq}"/>"class="form-control" placeholder="영문(대소문자),숫자">
 	   </div>
+	  <div class="col-md-6">
+	  	<label class="code-label"> 코드그룹 이름 (한글)</label>
+	  	<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
+	  </div>
+ 	  <div class="col-md-6">
+	  	<label class="code-label">코드그룹 이름 (영문)</label>
+	  	<input type="text" name="name_en" id="name_en" value="<c:out value="${item.name_en}"/>" class="form-control" placeholder="영문(대소문자),숫자">
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="code-label">코드</label>
-	  	<input type="text" class="form-control" placeholder="자동생성" disabled>
-	  </div>
-	  <div class="col-md-6">
-	  	<label class="code-label">코드(Another)</label>
-	  	<input type="text" class="form-control">
-	  </div>
-	  <div class="col-md-6">
-	    <label class="codeName-label">코드 이름 (한글)</label>
-	    <input type="text" class="form-control">
-	  </div>
-	  <div class="col-md-6">
-	    <label class="codeName-label">코드 이름 (영문)</label>
-	    <input type="password" class="form-control">
-	  </div>
-	  <div class="col-md-6">
-	  	<label class="useNY-label">사용여부</label>
-	  	<select class="form-control">
-	  		<option>Y
-	  		<option>N
-	  	</select>
-	  </div>
-	  <div class="col-md-6">
-	    <label class="num-label">순서</label>
-	    <input type="text" class="form-control">
-	  </div>
-	  <div class="col-md-6">
-	  	<label class="info-label">설명</label>
-	  	<textarea class="form-control"></textarea>
+	    <label class="codeName-label">사용여부</label>
+	    <select class="form-control" name="useNY"  id="useNY" value="<c:out value="${item.useNY}"/>" >
+	    	<option>Y
+	    	<option>N
+	    </select>
 	  </div>
 	  <div class="col-md-6">
 	  	<label class="delete-label">삭제여부</label>
-	  	<select class="form-control">
+	  	<select class="form-control" name="delNY"  id="delNY" value="<c:out value="${item.delNY}"/>" >
 	  		<option>Y
 	  		<option>N
 	  	</select>
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="reserve-label">예비1 (varchar type)</label>
-	  	<input type="text" class="form-control">
+	  	<label class="regDate-label">등록일</label>
+	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="reserve-label">예비2 (varchar type)</label>
-	  	<input type="text" class="form-control">
+	  	<label class="modDate-label">수정일</label>
+	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<c:out value="${item.mod_date}"/>">
 	  </div>
-	  <div class="row">
-	  <div class="col-md-6">
-	  	<label class="reserve-label">예비3 (varchar type)</label>
-	  	<input type="text" class="form-control">
-	  </div>
-	  </div>
-	  <div class="col-md-6"> 
-	  	<lavel class="reserve-label">예비1 (int type)</lavel>
-	  	<input type="text" class="form-control">
-	  </div>
-	  <div class="col-md-6"> 
-	  	<lavel class="reserve-label">예비2 (int type)</lavel>
-	  	<input type="text" class="form-control">
-	  </div>
-	  <div class="col-md-6"> 
-	  	<lavel class="reserve-label">예비3 (int type)</lavel>
-	  	<input type="text" class="form-control">
-	  </div>
-	</form>
-   	<div style="width:90%; margin:20px 0 20px 30px;">
-			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-chart-bar"></i></button>
+ 	<div style="width:90%; margin:20px 0 20px 30px;">
+			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/code/codeList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
-			<button class="btn btn-success" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
+			<button class="btn btn-success" type="submit" name="" id="btnSave" onClick="complete(); return false;" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
 			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -181,7 +141,8 @@
 		    </div>
 		  </div>
 		</div>
-  </main><!-- End #main -->
+  	 </form>
+ </main><!-- End #main -->
   
  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -207,6 +168,24 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-
+  
+	<script type="text/javascript">
+		function complete() {
+			
+			alert("코드가 등록되었습니다.");
+			
+			alert("코드이름: " + document.getElementById('name').value);
+			alert("코드이름(영문): " + document.getElementById('name_en').value);
+	
+	
+			
+			if(document.getElementById('name').value == '' || document.getElementById('name').value == null) {
+				alert("빈칸을 입력해주세요");
+				document.getElementById('name').value = "";   
+				document.getElementById('name').focus(); 	
+				return false ;
+		}
+	}	
+	</script>
 </body>
 </html>

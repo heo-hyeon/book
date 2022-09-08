@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import nov.infra.modules.codegroup.CodeGroup;
+import nov.infra.modules.codegroup.CodeGroupVo;
+
 @Repository
 public class CodeDao {
 
@@ -24,6 +27,12 @@ public class CodeDao {
 	
 	public int insert(Code dto) {
 		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result : " + result);
+		return result;
+	}
+	
+	public Code selectOne(CodeVo vo) {
+		Code result = sqlSession.selectOne(namespace + ".selectOne", vo);
 		System.out.println("dao result : " + result);
 		return result;
 	}

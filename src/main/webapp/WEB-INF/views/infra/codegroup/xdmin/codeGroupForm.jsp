@@ -117,7 +117,7 @@
 	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="modDate-label">등록일</label>
+	  	<label class="modDate-label">수정일</label>
 	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<c:out value="${item.mod_date}"/>">
 	  </div>
  	<div style="width:90%; margin:20px 0 20px 30px;">
