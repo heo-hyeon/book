@@ -53,7 +53,7 @@
 
       <a href="main.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="../resources/img/logo.png" alt=""> -->
+        <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
       </a>
 
@@ -78,7 +78,7 @@
 
   <main id="main">
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/img/book.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
         <h2>Code</h2>
