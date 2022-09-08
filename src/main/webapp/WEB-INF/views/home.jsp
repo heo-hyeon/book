@@ -90,12 +90,12 @@
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-      <div class="carousel-item" style="background-image: url(../resources/img/book.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/library.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/book2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/book3.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/book4.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/img/glasses.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book4.jpg)"></div>
+      <div class="carousel-item active" style="background-image: url(../resources/images/glasses.jpg)"></div>
 
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -126,7 +126,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/retrogression.jpg); width:230px; height:100px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -144,7 +144,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/convenience.jpg); width:210px; height:90px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/convenience.jpg); width:210px; height:90px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -162,7 +162,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/225.jpg); width:230px; height:100px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/225.jpg); width:230px; height:100px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -180,7 +180,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/last.jpg); width:210px; height:90px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/last.jpg); width:210px; height:90px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">

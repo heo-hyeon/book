@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import nov.infra.modules.code.Code;
+import nov.infra.modules.code.CodeVo;
+
 
 @Repository
 public class MemberDao {
@@ -19,6 +22,20 @@ public class MemberDao {
 	
 	private static String namespace = "nov.infra.modules.member.MemberMapper";
 	
-	public List<Member> selectList() { return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<Member> selectList(MemberVo vo) { 
+		List<Member> list = sqlSession.selectList(namespace + ".selectList", vo);
+		return list;
+	}
 	
+	public int insert(Member dto) {
+		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result : " + result);
+		return result;
+	}
+	
+	public Member selectOne(MemberVo vo) {
+		Member result = sqlSession.selectOne(namespace + ".selectOne", vo);
+		System.out.println("dao result : " + result);
+		return result;
+	}
 }

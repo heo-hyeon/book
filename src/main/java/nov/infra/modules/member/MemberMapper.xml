@@ -30,13 +30,13 @@
 		FROM member a
 		WHERE 1=1
 	
-		<if test="shcareer != null and !shcareer.equals('')">ANd a.career = #{a.career}</if>
+		<if test="shcareer != null and !shcareer.equals('')">ANd a.career = #{shcareer}</if>
 		<if test="shcertifiNY != null and !shcertifiNY.equals('')">AND a.certifiNY = #{shcertifiNY}</if>
-		<if test="shseq != null"></if>
+		<if test="shValue != null"></if>
 		
 		<choose>
-			<when test="shmember == 1">and a.seq = #{shseq}</when>
-			<when test="shmember == 2">and a.memberName = #{shmemberName}</when>			
+			<when test="shOption == 1">and a.seq = #{shValue}</when>
+			<when test="shOption == 2">and a.memberName = #{shValue}</when>			
 			<!-- select문(지원분야) 수정하기
 			<when test="shmember == 3">and a.job</when> -->
 		</choose>

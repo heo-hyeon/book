@@ -2,24 +2,24 @@ package nov.infra.modules.member;
 
 public class MemberVo {
 
-	private String shseq;
-	private String shname;
+	private String shValue;
+	private String shOption;
 	private String shjob;
 	private String shcareer;
 	private String shcertifiNY;
 	
 	
-	public String getShseq() {
-		return shseq;
+	public String getShValue() {
+		return shValue;
 	}
-	public void setShseq(String shseq) {
-		this.shseq = shseq;
+	public void setShValue(String shValue) {
+		this.shValue = shValue;
 	}
-	public String getShname() {
-		return shname;
+	public String getShOption() {
+		return shOption;
 	}
-	public void setShname(String shname) {
-		this.shname = shname;
+	public void setShOption(String shOption) {
+		this.shOption = shOption;
 	}
 	public String getShjob() {
 		return shjob;
@@ -39,6 +39,5 @@ public class MemberVo {
 	public void setShcertifiNY(String shcertifiNY) {
 		this.shcertifiNY = shcertifiNY;
 	}
-	
 	
 }
