@@ -25,19 +25,16 @@
 		LEFT JOIN CCG a on b.ccg_seq = a.seq
 	 	WHERE 1=1
 	 	
-	 	
-
-	
 			
 			<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
 			<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
-			<if test="shseq != null"></if>
+			<if test="shValue != null"></if>
 			
 			<choose>
-				<when test="shname == 1">and b.seq = #{shseq}</when>
-				<when test="shname == 2">and a.name = #{shseq}</when>
-				<when test="shname == 3">and b.codename_ko LIKE CONCAT('%',#{shseq}, '%')</when>
-				<when test="shname == 4">and b.codename_en LIKE CONCAT('%',#{shseq}, '%')</when>
+				<when test="shOption == 1">and b.seq = #{shValue}</when>
+				<when test="shOption == 2">and a.name = #{shValue}</when>
+				<when test="shOption == 3">and b.codename_ko LIKE CONCAT('%',#{shValue}, '%')</when>
+				<when test="shOption == 4">and b.codename_en LIKE CONCAT('%',#{shValue}, '%')</when>
 			</choose>
 			
 			<choose>
@@ -51,10 +48,12 @@
 			codename_ko
 			,codename_en
 			,reg_date
+			,mod_date
 		)
 		VALUES (
 			#{codename_ko}
 			,#{codename_en}
+			,now()
 			,now()
 		)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">

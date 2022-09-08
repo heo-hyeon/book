@@ -2,25 +2,26 @@ package nov.infra.modules.code;
 
 public class CodeVo {
 	
-	private String shseq;
-	private String shname;
+	private String shValue;
+	private String shOption;
 	private Integer shdelNY;
 	private Integer shuseNY;
 	private String shDateStart;
 	private String shDateEnd;
 	private Integer shOptionDate;
 	
-	public String getShseq() {
-		return shseq;
+	
+	public String getShValue() {
+		return shValue;
 	}
-	public void setShseq(String shseq) {
-		this.shseq = shseq;
+	public void setShValue(String shValue) {
+		this.shValue = shValue;
 	}
-	public String getShname() {
-		return shname;
+	public String getShOption() {
+		return shOption;
 	}
-	public void setShname(String shname) {
-		this.shname = shname;
+	public void setShOption(String shOption) {
+		this.shOption = shOption;
 	}
 	public Integer getShdelNY() {
 		return shdelNY;
@@ -52,5 +53,4 @@ public class CodeVo {
 	public void setShOptionDate(Integer shOptionDate) {
 		this.shOptionDate = shOptionDate;
 	}
-	
 }

@@ -21,8 +21,8 @@ public class CodeController {
 	@RequestMapping(value = "codeList")
 	public String code(Model model, CodeVo vo) throws Exception {
 		
-		System.out.println("vo.getShseq(): " + vo.getShseq());
-		System.out.println("vo.getShname(): " + vo.getShname());
+		System.out.println("vo.getshValue(): " + vo.getShValue());
+		System.out.println("vo.getshOption(): " + vo.getShOption());
 
 		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
 		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());

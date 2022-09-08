@@ -26,18 +26,18 @@
 
 			<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
-			<if test="shseq!= null"></if>
+			<if test="shValue!= null"></if>
 			
 			<!-- 안외우면 죽어/ 이름은 다르더라도 1부터 순서대로 / useNY.delNY는 if문만 쓰고 when문은 안쓴다.
 				<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
-			<if test="shseq!= null"></if>
+			<if test="shValue!= null"></if>
 			 -->
 			 
 			<choose>
-				<when test="shname == 1">AND a.seq = #{shseq}</when>
-				<when test="shname == 2">AND a.name LIKE CONCAT('%',#{shseq}, '%')</when>
-				<when test="shname == 3">AND a.name_en LIKE CONCAT('%',#{shseq}, '%')</when>
+				<when test="shOption == 1">AND a.seq = #{shValue}</when>
+				<when test="shOption == 2">AND a.name LIKE CONCAT('%',#{shValue}, '%')</when>
+				<when test="shOption == 3">AND a.name_en LIKE CONCAT('%',#{shValue}, '%')</when>
 			</choose>
 			
 			<choose>
@@ -69,8 +69,17 @@
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			a.*
+			a.seq
+			 ,a.name
+			 ,a.name_en
+			 , (SELECT COUNT(b.ccg_seq) FROM CC b WHERE a.seq = b.ccg_seq)as code_count
+			 ,a.reg_date
+			 ,a.mod_date
+			 ,a.useNY
+			 ,a.delNY
 		FROM CCG a
-	
+		WHERE 1=1
+			AND name = #{name}
+			
 	</select>
 </mapper>		

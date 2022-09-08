@@ -107,13 +107,13 @@
 					  <option value="1">YES</option>
 					  <option value="0">NO</option>
 					</select><br>
-					<select class="search-select" id="shname" name="shname" style="height:30px; width:180px; margin-right:7px;">
+					<select class="search-select" id="shOption" name="shOption" style="height:30px; width:180px; margin-right:7px;">
 						<option value="">검색구분</option>
 						<option value="1">코드그룹 코드</option>
 						<option value="2">코드그룹 이름(한글)</option>
 						<option value="3">코드그룹 이름(영문)</option>
 					</select>
-					<input type="search" id="shseq" name="shseq" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shseq}"/>">
+					<input type="text" id="shValue" name="shValue" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shValue}"/>">
 					<br>                                         
 				 	<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<input class="shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
@@ -164,7 +164,7 @@
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 				      <td><c:out value="${list.seq }"/></td>
 				      <td><c:out value="${list.seq }"/></td>
-				      <td><c:out value="${list.name }"/></td>
+				      <td><a href="/codeGroup/codeGroupView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}"/></a></td>
 				      <td><c:out value="${list.name_en}"/></td>
 				      <td><c:out value="${list.code_count }"/></td>
 			 	      <td><c:out value="${list.reg_date }"/></td>
@@ -176,7 +176,6 @@
 				    </c:otherwise>
 				    </c:choose>
 				</table>
-				
 			        <div class="blog-pagination">
 			          <ul class="justify-content-center">
 			            <li><a href="#">1</a></li>

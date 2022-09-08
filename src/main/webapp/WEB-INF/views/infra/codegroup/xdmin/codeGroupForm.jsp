@@ -88,44 +88,38 @@
     <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
 	  <div class="col-md-6">
 	  	<label class="useNY-label">코드그룹 코드</label>
-	  	<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
+	  	<input type="text" name="seq" id="seq" value="<c:out value="${item.seq}"/>"class="form-control" placeholder="영문(대소문자),숫자">
 	   </div>
 	  <div class="col-md-6">
-	  	<label class="code-label">코드그룹 코드 (Another))</label>
-  		<input type="text" class="form-control" placeholder="영문(대소문자),숫자">
-	  </div>
-	  <div class="col-md-6">
 	  	<label class="code-label"> 코드그룹 이름 (한글)</label>
-	  	<input type="text" name="name" id="name" class="form-control" placeholder="한글,숫자">
+	  	<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
 	  </div>
  	  <div class="col-md-6">
 	  	<label class="code-label">코드그룹 이름 (영문)</label>
-	  	<input type="text" name="name_en" id="name_en" class="form-control" placeholder="영문(대소문자),숫자">
+	  	<input type="text" name="name_en" id="name_en" value="<c:out value="${item.name_en}"/>" class="form-control" placeholder="영문(대소문자),숫자">
 	  </div>
 	  <div class="col-md-6">
 	    <label class="codeName-label">사용여부</label>
-	    <select class="form-control">
+	    <select class="form-control" name="useNY"  id="useNY" value="<c:out value="${item.useNY}"/>" >
 	    	<option>Y
 	    	<option>N
 	    </select>
 	  </div>
 	  <div class="col-md-6">
 	  	<label class="delete-label">삭제여부</label>
-	  	<select class="form-control">
+	  	<select class="form-control" name="delNY"  id="delNY" value="<c:out value="${item.delNY}"/>" >
 	  		<option>Y
 	  		<option>N
 	  	</select>
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="info-label">설명</label>
-	  	<textarea class="form-control"></textarea>
+	  	<label class="regDate-label">등록일</label>
+	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
 	  </div>
-	  
-	  <div class="col-md-3"> 
-	  	<input type="radio" id="gender1" name="gender" value="female">여성
-	  	<input type="radio" id="gender2" name="gender"  value="male">남성
+	  <div class="col-md-6">
+	  	<label class="modDate-label">등록일</label>
+	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<c:out value="${item.mod_date}"/>">
 	  </div>
-	  
  	<div style="width:90%; margin:20px 0 20px 30px;">
 			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
@@ -183,7 +177,7 @@
 		alert("코드이름: " + document.getElementById('name').value);
 		alert("코드이름(영문): " + document.getElementById('name_en').value);
 
- 		alert("성별: " + document.querySelector("input[name='gender']:checked").value);;  //radio같은 경우는 한개만 선택가능하기때문에 이름을 다 똑같이 설정해준다.
+
 		
 		if(document.getElementById('name').value == '' || document.getElementById('name').value == null) {
 			alert("빈칸을 입력해주세요");
@@ -191,8 +185,10 @@
 			document.getElementById('name').focus(); 	
 			return false ;
 		}
-	}		
+	}	
 	
+	
+//		alert("성별: " + document.querySelector("input[name='gender']:checked").value);;  //radio같은 경우는 한개만 선택가능하기때문에 이름을 다 똑같이 설정해준다.
 //		alert(document.querySelectorAll("input[name='hobby']:checked").value);   //checkbox경우 selectorAll을 써서 선택된 모든걸 표시해준다.
 
 //		document.getElementById("myForm").submit();

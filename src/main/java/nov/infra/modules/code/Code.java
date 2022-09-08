@@ -14,6 +14,7 @@ public class Code {
 		private Integer delNY;
 		private Date reg_date;
 		private Date mod_date;
+		
 		public String getSeq() {
 			return seq;
 		}
