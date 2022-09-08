@@ -109,7 +109,6 @@
 					</select>	 
 					<div class="form form-inline">
 						<input type="search" id="name-search" placeholder="이름" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-						<input type="search" id="major-search" placeholder="전공" style="height:30px; width:180px; margin-right:7px;">
 						<button class="btn btn-success" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
 						<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
 					</div>

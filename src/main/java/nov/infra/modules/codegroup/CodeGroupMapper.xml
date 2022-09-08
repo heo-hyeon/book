@@ -66,4 +66,11 @@
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM CCG a
+	
+	</select>
 </mapper>		

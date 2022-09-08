@@ -11,11 +11,37 @@
 	<select id="selectList" resultMap="resultMapObj">
 	
 		SELECT 
-			a.* 
+			a.seq
+			,a.memberID
+			,a.pwd
+			,a.job
+			,a.career
+			,a.memberName
+			,a.memberName_en
+			,a.dob
+			,a.telecom
+			,a.phone
+			,a.phone_emer
+			,a.email
+			,a.email_code
+			,a.hobby
+			,a.region
+			,a.certifiNY
 		FROM member a
 		WHERE 1=1
 	
+		<if test="shcareer != null and !shcareer.equals('')">ANd a.career = #{a.career}</if>
+		<if test="shcertifiNY != null and !shcertifiNY.equals('')">AND a.certifiNY = #{shcertifiNY}</if>
+		<if test="shseq != null"></if>
+		
+		<choose>
+			<when test="shmember == 1">and a.seq = #{shseq}</when>
+			<when test="shmember == 2">and a.memberName = #{shmemberName}</when>			
+			<!-- select문(지원분야) 수정하기
+			<when test="shmember == 3">and a.job</when> -->
+		</choose>
 	</select>
+
 
 </mapper>
     
