@@ -39,4 +39,19 @@ public class HomeController {
 				return "codegroup/infra/CodeGroupList";
 			}
 			
+			@RequestMapping(value = "/login")
+			public String login() {
+				return "login";
+			}
+			
+			@RequestMapping(value = "/bestList")
+			public String bestList() {
+				return "bestList";
+			}
+			
+			
+			@RequestMapping(value = "/find_id")
+			public String find_id() {
+				return "find_id";
+			}
 		}
