@@ -83,47 +83,49 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-   <!--  <form method="post" action="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;"> -->
-    <form method="post" id="myForm" onsubmit="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
+    <form name="form" method="post" action="/codeGroup/codeGroupInst" class="row g-2">
+	<input type="hidden" name="seq" value="<c:out value="${vo.seq }"/>">
+	
     <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
 	  <div class="col-md-6">
-	  	<label class="useNY-label">코드그룹 코드</label>
-	  	<input type="text" name="seq" id="seq" value="<c:out value="${item.seq}"/>"class="form-control" placeholder="영문(대소문자),숫자">
+	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
+	  	<input type="text" class="form-control" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
 	   </div>
 	  <div class="col-md-6">
-	  	<label class="code-label"> 코드그룹 이름 (한글)</label>
+	  	<label class="code-label" for="name"> 코드그룹 이름 (한글)</label>
 	  	<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
 	  </div>
  	  <div class="col-md-6">
-	  	<label class="code-label">코드그룹 이름 (영문)</label>
+	  	<label class="code-label" for="name_en">코드그룹 이름 (영문)</label>
 	  	<input type="text" name="name_en" id="name_en" value="<c:out value="${item.name_en}"/>" class="form-control" placeholder="영문(대소문자),숫자">
 	  </div>
 	  <div class="col-md-6">
-	    <label class="codeName-label">사용여부</label>
-	    <select class="form-control" name="useNY"  id="useNY" value="<c:out value="${item.useNY}"/>" >
-	    	<option>Y
-	    	<option>N
+	    <label class="codeName-label" for="useNY">사용여부</label>
+	    <select class="form-control" name="useNY">
+	    	<option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>Y</option>
+					  <option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
 	    </select>
 	  </div>
 	  <div class="col-md-6">
-	  	<label class="delete-label">삭제여부</label>
-	  	<select class="form-control" name="delNY"  id="delNY" value="<c:out value="${item.delNY}"/>" >
-	  		<option>Y
-	  		<option>N
+	  	<label class="delete-label" for="delNY">삭제여부</label>
+	  	<select class="form-control" name="delNY">
+	  		<option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>Y</option>
+					  <option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>N</option>
 	  	</select>
 	  </div>
-	  <div class="col-md-6">
-	  	<label class="regDate-label">등록일</label>
+	<%--   <div class="col-md-6">
+	  	<label class="regDate-label" for="reg_date">등록일</label>
 	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
-	  </div>
-	  <div class="col-md-6">
-	  	<label class="modDate-label">수정일</label>
-	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<c:out value="${item.mod_date}"/>">
-	  </div>
+	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<fmt:formatDate value="${item.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/>">
+	  </div> --%>
+<%-- 	  <div class="col-md-6">
+	  	<label class="modDate-label" for="mod_date">수정일</label>
+	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<fmt:formatDate value="${item.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/>">
+	  </div> --%>
  	<div style="width:90%; margin:20px 0 20px 30px;">
 			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
-			<button class="btn btn-success" type="submit" name="" id="btnSave" onClick="complete(); return false;" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
+			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
 			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -141,8 +143,9 @@
 		    </div>
 		  </div>
 		</div>
-  	 </form>
- </main><!-- End #main -->
+	</form>
+  	 </main>
+
   
  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -168,16 +171,45 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+ 
+  <script type="text/javascript">
+  	var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
+	var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
+	var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
+	var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
+	var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
+	
+	var seq = $("input:hidden[name=seq]");				/* #-> */
+	
+	var form = $("form[name=form]");
+	var formVo = $("form[name=formVo]");
+	
+	
+	$("#btnSave").on("click", function(){
 
-<script type="text/javascript">
+		if (seq.val() == "0" || seq.val() == ""){
+	   		// insert
+	   		// if (validationInst() == false) return false;
+	   		form.attr("action", goUrlInst).submit();
+	   	} else {
+	   		// update
+	   		/* keyName.val(atob(keyName.val())); */
+	   		// if (validationUpdt() == false) return false;
+	   		form.attr("action", goUrlUpdt).submit();
+	   	}
+	}); 
+  
+  </script>
+<!--   
+  <script type="text/javascript">
 	function complete() {
 		
 		alert("코드가 등록되었습니다.");
 		
 		alert("코드이름: " + document.getElementById('name').value);
 		alert("코드이름(영문): " + document.getElementById('name_en').value);
-
-
 		
 		if(document.getElementById('name').value == '' || document.getElementById('name').value == null) {
 			alert("빈칸을 입력해주세요");
@@ -185,14 +217,11 @@
 			document.getElementById('name').focus(); 	
 			return false ;
 		}
-	}	
-	
-	
-//		alert("성별: " + document.querySelector("input[name='gender']:checked").value);;  //radio같은 경우는 한개만 선택가능하기때문에 이름을 다 똑같이 설정해준다.
-//		alert(document.querySelectorAll("input[name='hobby']:checked").value);   //checkbox경우 selectorAll을 써서 선택된 모든걸 표시해준다.
-
-//		document.getElementById("myForm").submit();
-	
-</script>
+	}	 
+		alert("성별: " + document.querySelector("input[name='gender']:checked").value);;  //radio같은 경우는 한개만 선택가능하기때문에 이름을 다 똑같이 설정해준다.
+		alert(document.querySelectorAll("input[name='hobby']:checked").value);   //checkbox경우 selectorAll을 써서 선택된 모든걸 표시해준다.
+		document.getElementById("myForm").submit();   
+</script>  -->
+  
 </body>
 </html>

@@ -72,14 +72,33 @@
 			a.seq
 			 ,a.name
 			 ,a.name_en
-			 , (SELECT COUNT(b.ccg_seq) FROM CC b WHERE a.seq = b.ccg_seq)as code_count
-			 ,a.reg_date
-			 ,a.mod_date
 			 ,a.useNY
 			 ,a.delNY
+			 ,a.reg_date
+			 ,a.mod_date
 		FROM CCG a
 		WHERE 1=1
-			AND name = #{name}
-			
+			AND seq = #{seq}
 	</select>
+
+	<update id="update">
+		UPDATE CCG
+		SET
+			seq = #{seq}
+			,name = #{name}
+			,name_en = #{name_en}
+			,useNY = #{useNY}
+			,delNY = #{delNY}
+			,mod_date = now()
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE CCG
+		WHERE 1=1
+			AND seq = #{seq}
+	</delete>
+	
+
 </mapper>		

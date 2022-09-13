@@ -11,7 +11,8 @@ public class CodeGroupVo {
 		private Integer shOptionDate;
 		
 		private String name;
-
+		private String seq;
+		
 		public String getShValue() {
 			return shValue;
 		}
@@ -74,6 +75,14 @@ public class CodeGroupVo {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getSeq() {
+			return seq;
+		}
+
+		public void setSeq(String seq) {
+			this.seq = seq;
 		}
 }
 		

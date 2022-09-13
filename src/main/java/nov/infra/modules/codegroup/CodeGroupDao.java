@@ -24,15 +24,13 @@ public class CodeGroupDao {
 		return list;
 	}
 	
-	public int insert(CodeGroup dto) {
-		int result = sqlSession.insert(namespace + ".insert", dto);
-		System.out.println("dao result: " + result);
+	public CodeGroup selectOne(CodeGroupVo vo) {
+		CodeGroup result = sqlSession.selectOne(namespace + ".selectOne", vo);
 		return result;
 	}
 	
-	public CodeGroup selectOne(CodeGroupVo vo) {
-		CodeGroup result = sqlSession.selectOne(namespace + ".selectOne", vo);
-		System.out.println("dao result: " + result);
-		return result;
+	public int insert(CodeGroup dto) {return sqlSession.insert(namespace+".insert",dto);}
+	public int update(CodeGroup dto) {return sqlSession.insert(namespace+".update", dto);}
+	public int uelete(CodeGroup dto) {return sqlSession.update(namespace+".uelete", dto);}
+	public int delete(CodeGroupVo vo) {return sqlSession.delete(namespace+".delete", vo);}
 	}
-}

@@ -1,6 +1,7 @@
 package nov.infra.modules.codegroup;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,4 +34,28 @@ import org.springframework.stereotype.Service;
 		System.out.println("service result: " + result);
 		return result;
 	}
-}
+	
+	/* 업데이트 */
+	@Override
+	public int update(CodeGroup dto) throws Exception {
+		return dao.update(dto);
+	}
+
+	/* uelete */
+	@Override
+	public int uelete(CodeGroup dto) throws Exception {
+		return dao.uelete(dto);
+	}
+
+	/* 삭제 */
+	@Override
+	public int delete(CodeGroupVo vo) throws Exception {
+		return dao.delete(vo);
+	}
+	
+	/*
+	@Override
+	public List<CodeGroup> selectListWithoutPaging() throws Exception {
+		// TODO Auto-generated method stub
+		return null;*/
+	}

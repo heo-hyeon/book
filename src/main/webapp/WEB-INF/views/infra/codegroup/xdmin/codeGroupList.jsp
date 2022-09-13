@@ -164,7 +164,7 @@
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 				      <td><c:out value="${list.seq }"/></td>
 				      <td><c:out value="${list.seq }"/></td>
-				      <td><a href="/codeGroup/codeGroupView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}"/></a></td>
+				      <td><a href="/codeGroup/codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"/></a></td>
 				      <td><c:out value="${list.name_en}"/></td>
 				      <td><c:out value="${list.code_count }"/></td>
 			 	      <td><c:out value="${list.reg_date }"/></td>
