@@ -32,16 +32,20 @@ public class CodeGroupController {
 
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-
-		System.out.println("vo.getShValue(): " + vo.getShValue());
-		System.out.println("vo.getShOption(): " + vo.getShOption());
-		System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
+		//페이징 시작
+		int count = service.selectOneCount(vo);
+		vo.setParamsPaging(count);
+		if (count != 0) { List<CodeGroup> list = service.selectList(vo);
+		model.addAttribute("list", list);
+	} else {
 		
+	} //페이징 끝
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
+	
 	
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {
@@ -85,6 +89,7 @@ public class CodeGroupController {
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/codeGroup/codeGroupList";
 	}
+}
 	
 //	only for member
 //	@RequestMapping(value = "codeGroupView")
@@ -94,4 +99,4 @@ public class CodeGroupController {
 //		model.addAttribute("item", result);
 //		return "infra/codegroup/xdmin/codeGroupForm";
 //	}
-}
+

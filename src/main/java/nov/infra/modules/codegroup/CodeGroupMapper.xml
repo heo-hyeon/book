@@ -20,7 +20,8 @@
 			 ,a.delNY
 		FROM NCT.CCG a
 		WHERE 1=1
-			
+<!--페이징--> <include refid="selectCommon"/>
+<!--페이징--> limit #{startRnumMysql}, #{rowNum}
 
 			<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
@@ -43,7 +44,15 @@
 				<when test="shOptionDate == 5">AND a.mod_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose> 
 	</select>
-
+	
+	<!-- 페이징 -->
+	<select id="selectOneCount" resultType="Integer">
+		SELECT
+			count(*)
+			<include refid="selectList"/>
+	</select>
+	
+	
 	<insert id="insert">
 		INSERT INTO CCG (
 			name
@@ -96,7 +105,6 @@
 		DELETE CCG
 		WHERE 1=1
 			AND seq = #{seq}
-	</delete>
-	
+	</delete>		
 
 </mapper>		
