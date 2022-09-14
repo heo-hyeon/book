@@ -16,20 +16,33 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupServiceImpl service;
 
-	@RequestMapping(value = "codeGroupList")
-	public String codeGroupList(Model model, CodeGroupVo vo) throws Exception {
-		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
-		vo.setShDateStart(vo.getShDateStart() == null
-				? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL)
-				: vo.getShDateStart());
-		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+//	@RequestMapping(value = "codeGroupList")
+//	public String codeGroupList(Model model, CodeGroupVo vo) throws Exception {
+//		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+//		vo.setShDateStart(vo.getShDateStart() == null
+//				? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL)
+//				: vo.getShDateStart());
+//		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+//
+//		List<CodeGroup> list = service.selectList(vo);
+//		model.addAttribute("list", list);
+//		return "infra/codegroup/xdmin/codeGroupList";
+//
+//	}
 
+	@RequestMapping(value = "codeGroupList")
+	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
+
+		System.out.println("vo.getShValue(): " + vo.getShValue());
+		System.out.println("vo.getShOption(): " + vo.getShOption());
+		System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
+		
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		
 		return "infra/codegroup/xdmin/codeGroupList";
-
 	}
-
+	
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {
 

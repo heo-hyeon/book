@@ -9,13 +9,11 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
-	
 		
 		SELECT
 			 a.seq
 			 ,a.name
 			 ,a.name_en
-			 , (SELECT COUNT(b.ccg_seq) FROM CC b WHERE a.seq = b.ccg_seq)as code_count
 			 ,a.reg_date
 			 ,a.mod_date
 			 ,a.useNY

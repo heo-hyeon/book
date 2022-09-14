@@ -123,8 +123,8 @@
 						<option value="5">수정일</option>
 						<option>끝날짜</option>
 					</select>
-					<button class="btn btn-success" style="height:35px; width:40px;" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
-					<button class="btn btn-warning" style="height:35px; width:40px;" type="submit" ><i class="fa-solid fa-arrow-rotate-right"></i></button>
+					<button class="btn btn-success" style="height:35px; width:40px;" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+					<button type="button" class="btn btn-warning" style="height:35px; width:40px;" id="btnReset" name=""><i class="fa-solid fa-rotate-left"></i></button>
 					</div>
 				</div>
 			</div>
@@ -145,7 +145,6 @@
 						<th width="100px">코드그룹 코드</th>
 						<th width="150px">코드그룹 이름(한글)</th>
 						<th width="150px">코드그룹 이름(영문)</th>
-						<th width="70px">코드갯수</th>
 						<th width="100px">등록일</th>
 						<th width="100px">수정일</th>
 						<th width="100px">사용</th>
@@ -166,11 +165,16 @@
 				      <td><c:out value="${list.seq }"/></td>
 				      <td><a href="/codeGroup/codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"/></a></td>
 				      <td><c:out value="${list.name_en}"/></td>
-				      <td><c:out value="${list.code_count }"/></td>
 			 	      <td><c:out value="${list.reg_date }"/></td>
 					  <td><c:out value="${list.mod_date }"/></td>
 				  	  <td><c:out value="${list.useNY }"/></td>
-				   	  <td><c:out value="${list.delNY }"/></td> 
+				  	  <%-- <option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>Y</option>
+					  <option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
+				   	  </td> --%>
+				   	  <td><c:out value="${list.delNY }"/></td>
+				   	 <%--  <option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>Y</option>
+					  <option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>N</option>
+				   	  </td> --%>
 				    </tr>
 				    </c:forEach>
 				    </c:otherwise>
@@ -190,7 +194,6 @@
 		<div style="width:90%; margin:auto;">
 			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
 			<button type="button" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
-			<button class="btn btn-outline-warning" style="float:right; margin-right:7px;"><a href="./memberRegForm.html"<i class="fa-solid fa-user-plus"></i></a></button>
 			<button class="btn btn-success" type="button" style="float:right; margin-right:7px;"><a href="/codeGroup/codeGroupForm"><i class="fa-solid fa-file-circle-plus"></i></a></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -255,6 +258,23 @@
 		    showMonthAfterYear: true,
 		    yearSuffix: '년'
 		});
+		
+		var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
+		var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
+		var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
+		var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
+		var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
+
+		
+		$("#btnSearch").on("click", function(){
+			if(validationList() == false) return false;
+			form.attr("action", goUrlList).submit();
+		});
+	
+  		$("#btnReset").on("click", function(){
+			$(location).attr("href", goUrlList);
+		});
+		
 		
 	</script>
 </body>

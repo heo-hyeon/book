@@ -103,26 +103,17 @@
 	    <label class="codeName-label" for="useNY">사용여부</label>
 	    <select class="form-control" name="useNY">
 	    	<option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>Y</option>
-					  <option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
+			<option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
 	    </select>
 	  </div>
 	  <div class="col-md-6">
 	  	<label class="delete-label" for="delNY">삭제여부</label>
 	  	<select class="form-control" name="delNY">
 	  		<option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>Y</option>
-					  <option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>N</option>
+			<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>N</option>
 	  	</select>
 	  </div>
-	<%--   <div class="col-md-6">
-	  	<label class="regDate-label" for="reg_date">등록일</label>
-	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
-	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<fmt:formatDate value="${item.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/>">
-	  </div> --%>
-<%-- 	  <div class="col-md-6">
-	  	<label class="modDate-label" for="mod_date">수정일</label>
-	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<fmt:formatDate value="${item.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/>">
-	  </div> --%>
- 	<div style="width:90%; margin:20px 0 20px 30px;">
+ 		<div style="width:90%; margin:20px 0 20px 30px;">
 			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
 			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
@@ -175,7 +166,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  
   <script type="text/javascript">
-  	var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
+    var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
 	var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
 	var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 	var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
