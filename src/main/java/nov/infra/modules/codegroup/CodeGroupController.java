@@ -18,15 +18,6 @@ public class CodeGroupController extends BaseController{
 	@Autowired
 	CodeGroupServiceImpl service;
 
-//		public void setSearchAndPaging(CodeGroupVo vo) throws Exception {
-//
-//		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
-//		vo.setShDateStart(vo.getShDateStart() == null  || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
-//		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
-//		
-//		vo.setParamsPaging(service.selectOneCount(vo));
-//		}		
-//		
 //	@RequestMapping(value = "codeGroupList")
 //	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
 //
@@ -39,7 +30,7 @@ public class CodeGroupController extends BaseController{
 //		}
 //	
 //	return "infra/codegroup/xdmin/codeGroupList";
-//} 
+// } 
 	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {

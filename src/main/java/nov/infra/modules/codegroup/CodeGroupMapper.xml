@@ -12,17 +12,14 @@
 		FROM NCT.CCG a
 			WHERE 1=1
 		
-		
 			<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
 			<if test="shValue!= null"></if>
-			
 			<!-- 안외우면 죽어/ 이름은 다르더라도 1부터 순서대로 / useNY.delNY는 if문만 쓰고 when문은 안쓴다.
 				<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
 			<if test="shValue!= null"></if>
 			 -->
-			 
 			<choose>
 				<when test="shOption == 1">AND a.seq = #{shValue}</when>
 				<when test="shOption == 2">AND a.name LIKE CONCAT('%',#{shValue}, '%')</when>
@@ -107,6 +104,4 @@
 		WHERE 1=1
 			AND seq = #{seq}
 	</delete>		
-	
-
 </mapper>		
