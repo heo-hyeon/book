@@ -186,14 +186,7 @@
 				<!-- pagination s -->
 				<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
 				<!-- pagination e -->
-				
-                    <!-- <div class="blog-pagination">
-				          <ul class="justify-content-center">
-				            <li><a href="#">1</a></li>
-				            <li class="active"><a href="#">2</a></li>
-				            <li><a href="#">3</a></li>
-				          </ul>
-			       		 </div>End blog pagination   -->
+		
 					</div>		
 				</div>
 			</div>
@@ -208,11 +201,11 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <h5 class="modal-title" id="exampleModalLabel">삭제</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btndel"></button>
 		      </div>
 		      <div class="modal-body">정말 삭제하시겠습니까?</div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger">삭제</button>
+		        <button type="button" class="btn btn-danger" id="btndelModal">삭제</button>
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 		      </div>
 		    </div>
@@ -271,6 +264,7 @@
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 		var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
 		var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
+		
 		var form = $("form[name=formList]");
 		
 		$("#btnSearch").on("click", function(){
@@ -280,6 +274,10 @@
 	
   		$("#btnReset").on("click", function(){
 			$(location).attr("href", goUrlList);
+		});
+  	
+  		$("#btndelModal").on("click", function(){
+  			form.attr("action", goUrlDele).submit();
 		});
   		
   		goList = function(thisPage){

@@ -128,7 +128,7 @@
 		      </div>
 		      <div class="modal-body">정말 삭제하시겠습니까?</div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger">삭제</button>
+		        <button type="button" class="btn btn-danger" id="btndelModal">삭제</button>
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 		      </div>
 		    </div>
@@ -191,7 +191,11 @@
 	   		form.attr("action", goUrlUpdt).submit();
 	   	}
 	}); 
-  
+
+		$("#btndelModal").on("click", function(){
+		form.attr("action", goUrlDele).submit();
+	});
+		
   </script>
 <!--   
   <script type="text/javascript">

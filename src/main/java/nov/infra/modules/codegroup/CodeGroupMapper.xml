@@ -100,8 +100,10 @@
 	</update>
 	
 	<delete id="delete">
-		DELETE CCG
+		DELETE FROM CCG
 		WHERE 1=1
 			AND seq = #{seq}
 	</delete>		
+	
+	
 </mapper>		

@@ -83,21 +83,19 @@ public class CodeGroupController extends BaseController{
 	}
 	
 	@RequestMapping(value = "codeGroupUele")
-	public String codeGroupUele(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
-		
-		service.uelete(dto);
-		redirectAttributes.addFlashAttribute("vo", vo);
+	public String codeGroupUele(CodeGroup dto) throws Exception {
+		int result = service.uelete(dto);
+		System.out.println("uelete result: "+ result);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
 	@RequestMapping(value = "codeGroupDele")
-	public String codeGroupDele(CodeGroupVo vo, RedirectAttributes redirectAttributes) throws Exception {
-		
-		service.delete(vo);
-		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/codeGroup/codeGroupList";
+	public String codeGroupDele(CodeGroupVo vo) throws Exception {		
+			int result = service.delete(vo);
+			return "redirect:/codeGroup/codeGroupList";
+		}
 	}
-}
+
 	
 //	only for member
 //	@RequestMapping(value = "codeGroupView")
