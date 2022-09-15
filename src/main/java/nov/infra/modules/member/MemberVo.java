@@ -7,7 +7,7 @@ public class MemberVo {
 	private String shjob;
 	private String shcareer;
 	private String shcertifiNY;
-	
+	private String memberName;
 	
 	public String getShValue() {
 		return shValue;
@@ -39,5 +39,10 @@ public class MemberVo {
 	public void setShcertifiNY(String shcertifiNY) {
 		this.shcertifiNY = shcertifiNY;
 	}
-	
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
 }

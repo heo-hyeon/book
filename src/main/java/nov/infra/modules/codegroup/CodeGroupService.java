@@ -11,8 +11,9 @@ public interface CodeGroupService {
 	public int uelete(CodeGroup dto) throws Exception;
 	public int delete(CodeGroupVo vo) throws Exception;
 	
-	//페이징 
-	public int selectOneCount(CodeGroupVo vo) throws Exception;
+	/*
+	 * 페이징 public int selectOneCount(CodeGroupVo vo) throws Exception;
+	 */
 	
 	/* public List<CodeGroup> selectListWithoutPaging() throws Exception; */
 

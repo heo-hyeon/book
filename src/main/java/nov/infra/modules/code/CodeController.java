@@ -5,10 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import nov.infra.modules.codegroup.Constants;
-import nov.infra.modules.codegroup.UtilDateTime;
 
 @Controller
 @RequestMapping(value="/code/")
@@ -18,20 +16,34 @@ public class CodeController {
 	CodeServiceImpl service;
 	
 	
-	@RequestMapping(value = "codeList")
-	public String code(Model model, CodeVo vo) throws Exception {
-		
-		System.out.println("vo.getshValue(): " + vo.getShValue());
-		System.out.println("vo.getshOption(): " + vo.getShOption());
+//	@RequestMapping(value = "codeList")
+//	public String code(Model model, CodeVo vo) throws Exception {
+//		
+//		System.out.println("vo.getshValue(): " + vo.getShValue());
+//		System.out.println("vo.getshOption(): " + vo.getShOption());
+//
+//		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+//		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());
+//		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+//		
+//		List<Code> list = service.selectList(vo);
+//		model.addAttribute("list", list);
+//		return "infra/code/xdmin/codeList";
+//	}
 
-		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
-		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());
-		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+	@RequestMapping(value = "codeList")
+	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
+
+		System.out.println("vo.getShValue(): " + vo.getShValue());
+		System.out.println("vo.getShOption(): " + vo.getShOption());
+		System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
 		
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		
 		return "infra/code/xdmin/codeList";
 	}
+	
 	
 	@RequestMapping(value="codeForm")
 	public String codeForm(Model model, CodeVo vo) throws Exception {
@@ -53,9 +65,4 @@ public class CodeController {
 		model.addAttribute("item", result);
 		return "infra/code/xdmin/codeForm";
 	}
-
 }
-
-
-
-

@@ -46,13 +46,14 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="main.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -84,7 +85,7 @@
 
         <h2>Code Group</h2>
         <ol>
-          <li><a href="main.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li>Code Group Management</li>
         </ol>
       </div>
@@ -128,7 +129,7 @@
 					</div>
 				</div>
 			</div>
-			</form>
+			<!-- </form> -->
 				<div><br>
 					<p style="margin-left:100px;">total : 40
 					<select style="width:80px; height:30px; float:right; margin-right:100px;">
@@ -274,8 +275,7 @@
   		$("#btnReset").on("click", function(){
 			$(location).attr("href", goUrlList);
 		});
-		
-		
+  		
 	</script>
 </body>
 </html>

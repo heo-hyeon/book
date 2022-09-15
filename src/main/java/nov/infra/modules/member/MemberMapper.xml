@@ -36,12 +36,63 @@
 		
 		<choose>
 			<when test="shOption == 1">and a.seq = #{shValue}</when>
-			<when test="shOption == 2">and a.memberName = #{shValue}</when>			
+			<when test="shOption == 2">and a.memberName LIKE CONCAT('%',#{shValue},'%')</when>			
 			<!-- select문(지원분야) 수정하기
 			<when test="shmember == 3">and a.job</when> -->
 		</choose>
 	</select>
-
+	
+	<insert id="insert">
+		INSERT INTO member (
+			job
+			,career
+			,memberName
+			,memberName_en
+			,phone
+			,phone_emer
+			,email
+			,hobby
+			,region
+			,certifiNY
+		) VALUES (
+			#{job}
+			,#{career}
+			,#{memberName}
+			#{memberName_en}
+			#{phone}
+			#{phone_emer}
+			#{email}
+			#{hobby}
+			#{region}
+			#{certifiNY}
+		)
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT 
+			a.seq
+			,a.memberID
+			,a.pwd
+			,a.job
+			,a.career
+			,a.memberName
+			,a.memberName_en
+			,a.dob
+			,a.telecom
+			,a.phone
+			,a.phone_emer
+			,a.email
+			,a.email_code
+			,a.hobby
+			,a.region
+			,a.certifiNY
+		FROM member a
+		WHERE 1=1
+			AND memberName = #{memberName}
+	</select>
 
 </mapper>
     

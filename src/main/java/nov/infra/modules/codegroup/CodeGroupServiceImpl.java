@@ -53,11 +53,11 @@ import org.springframework.stereotype.Service;
 		return dao.delete(vo);
 	}
 
-	/* 페이징 */
+	/* 페이징
 	@Override
 	public int selectOneCount(CodeGroupVo vo) throws Exception {
 		return dao.selectOneCount(vo);
-	}
+	} */
 	
 	/*
 	@Override

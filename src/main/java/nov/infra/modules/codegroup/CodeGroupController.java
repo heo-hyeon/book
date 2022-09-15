@@ -29,23 +29,36 @@ public class CodeGroupController {
 //		return "infra/codegroup/xdmin/codeGroupList";
 //
 //	}
-
+	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-		//페이징 시작
-		int count = service.selectOneCount(vo);
-		vo.setParamsPaging(count);
-		if (count != 0) { List<CodeGroup> list = service.selectList(vo);
-		model.addAttribute("list", list);
-	} else {
-		
-	} //페이징 끝
-		List<CodeGroup> list = service.selectList(vo);
-		model.addAttribute("list", list);
-		
-		return "infra/codegroup/xdmin/codeGroupList";
-	}
+
+	System.out.println("vo.getShValue(): " + vo.getShValue());
+	System.out.println("vo.getShOption(): " + vo.getShOption());
+	System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
 	
+	List<CodeGroup> list = service.selectList(vo);
+	model.addAttribute("list", list);
+	
+	return "infra/codegroup/xdmin/codeGroupList";
+} 
+
+//	@RequestMapping(value = "codeGroupList")
+//	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
+//		//페이징 시작
+//		int count = service.selectOneCount(vo);
+//		vo.setParamsPaging(count);
+//		if (count != 0) { List<CodeGroup> list = service.selectList(vo);
+//		model.addAttribute("list", list);
+//	} else {
+//		
+//	} //페이징 끝
+//		List<CodeGroup> list = service.selectList(vo);
+//		model.addAttribute("list", list);
+//		
+//		return "infra/codegroup/xdmin/codeGroupList";
+//	}
+//	
 	
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {

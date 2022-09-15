@@ -5,12 +5,12 @@ import java.util.Date;
 public class Member {
 
 		private String seq;
-		private String id;
+		private String memberID;
 		private String pwd;
 		private Integer job;
 		private Integer career;
-		private String name;
-		private String name_e;
+		private String memberName;
+		private String memberName_en;
 		private Date dob;
 		private Integer telecom;
 		private Integer phone;
@@ -20,20 +20,17 @@ public class Member {
 		private Integer hobby;
 		private Integer region;
 		private Integer certifiNY;
-		
-//----------------------------------------------
-		
 		public String getSeq() {
 			return seq;
 		}
 		public void setSeq(String seq) {
 			this.seq = seq;
 		}
-		public String getId() {
-			return id;
+		public String getMemberID() {
+			return memberID;
 		}
-		public void setId(String id) {
-			this.id = id;
+		public void setMemberID(String memberID) {
+			this.memberID = memberID;
 		}
 		public String getPwd() {
 			return pwd;
@@ -53,17 +50,17 @@ public class Member {
 		public void setCareer(Integer career) {
 			this.career = career;
 		}
-		public String getName() {
-			return name;
+		public String getMemberName() {
+			return memberName;
 		}
-		public void setName(String name) {
-			this.name = name;
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
 		}
-		public String getName_e() {
-			return name_e;
+		public String getMemberName_en() {
+			return memberName_en;
 		}
-		public void setName_e(String name_e) {
-			this.name_e = name_e;
+		public void setMemberName_en(String memberName_en) {
+			this.memberName_en = memberName_en;
 		}
 		public Date getDob() {
 			return dob;
@@ -119,5 +116,4 @@ public class Member {
 		public void setCertifiNY(Integer certifiNY) {
 			this.certifiNY = certifiNY;
 		}
-	
 }

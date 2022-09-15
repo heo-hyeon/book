@@ -123,8 +123,8 @@
 						<option value="5">수정일</option>
 						<option>끝날짜</option>
 					</select>
-					<button class="btn btn-success" style="height:35px; width:40px;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-					<button class="btn btn-warning" style="height:35px; width:40px;" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+					<button class="btn btn-success" style="height:35px; width:40px;" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+					<button type="button" class="btn btn-warning" style="height:35px; width:40px;" id="btnReset" name=""><i class="fa-solid fa-rotate-left"></i></button>
 					</div>
 				</div>
 			</div>
@@ -256,6 +256,22 @@
 			    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 			    showMonthAfterYear: true,
 			    yearSuffix: '년'
+			});
+			
+			var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
+			var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
+			var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
+			var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
+			var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
+
+			
+			$("#btnSearch").on("click", function(){
+				if(validationList() == false) return false;
+				form.attr("action", goUrlList).submit();
+			});
+		
+	  		$("#btnReset").on("click", function(){
+				$(location).attr("href", goUrlList);
 			});
 	</script>
 </body>
