@@ -9,26 +9,37 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import nov.infra.common.base.BaseController;
+
 @Controller
 @RequestMapping(value = "/codeGroup/")
-public class CodeGroupController {
+public class CodeGroupController extends BaseController{
 
 	@Autowired
 	CodeGroupServiceImpl service;
 
+//		public void setSearchAndPaging(CodeGroupVo vo) throws Exception {
+//
+//		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
+//		vo.setShDateStart(vo.getShDateStart() == null  || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+//		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
+//		
+//		vo.setParamsPaging(service.selectOneCount(vo));
+//		}		
+//		
 //	@RequestMapping(value = "codeGroupList")
-//	public String codeGroupList(Model model, CodeGroupVo vo) throws Exception {
-//		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
-//		vo.setShDateStart(vo.getShDateStart() == null
-//				? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL)
-//				: vo.getShDateStart());
-//		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDateTime.nowString() : vo.getShDateEnd());
+//	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
 //
-//		List<CodeGroup> list = service.selectList(vo);
-//		model.addAttribute("list", list);
-//		return "infra/codegroup/xdmin/codeGroupList";
+//		setSearchAndPaging(vo);
+//		/* vo.setParamsPaging(service.selectOneCount(vo)); */
 //
-//	}
+//		if(vo.getTotalRows() > 0) {
+//			List<CodeGroup> list = service.selectList(vo);
+//			model.addAttribute("list", list);
+//		}
+//	
+//	return "infra/codegroup/xdmin/codeGroupList";
+//} 
 	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
@@ -37,29 +48,22 @@ public class CodeGroupController {
 	System.out.println("vo.getShOption(): " + vo.getShOption());
 	System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
 	
+	setSearchAndPaging(vo);
+	
+	/*if (vo.getTotalRows() > 0) {*/
 	List<CodeGroup> list = service.selectList(vo);
 	model.addAttribute("list", list);
 	
+	System.out.println("vo.getTotalRows():"+vo.getTotalRows());
 	return "infra/codegroup/xdmin/codeGroupList";
 } 
 
-//	@RequestMapping(value = "codeGroupList")
-//	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-//		//페이징 시작
-//		int count = service.selectOneCount(vo);
-//		vo.setParamsPaging(count);
-//		if (count != 0) { List<CodeGroup> list = service.selectList(vo);
-//		model.addAttribute("list", list);
-//	} else {
-//		
-//	} //페이징 끝
-//		List<CodeGroup> list = service.selectList(vo);
-//		model.addAttribute("list", list);
-//		
-//		return "infra/codegroup/xdmin/codeGroupList";
-//	}
-//	
 	
+	private void setSearchAndPaging(CodeGroupVo vo) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+	}
+
+
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {
 

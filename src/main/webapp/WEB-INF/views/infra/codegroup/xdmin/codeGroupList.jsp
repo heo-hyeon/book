@@ -93,7 +93,9 @@
     
    
      <section id="blog" class="blog">
-     <form method="post" action="/codeGroup/codeGroupList">
+     <form method="post" action="/codeGroup/codeGroupList"  name="formList">
+	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     	<div class="post-item position-relative h-100">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
@@ -181,13 +183,17 @@
 				    </c:otherwise>
 				    </c:choose>
 				</table>
-			        <div class="blog-pagination">
-			          <ul class="justify-content-center">
-			            <li><a href="#">1</a></li>
-			            <li class="active"><a href="#">2</a></li>
-			            <li><a href="#">3</a></li>
-			          </ul>
-			        </div><!-- End blog pagination -->  
+				<!-- pagination s -->
+				<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
+				<!-- pagination e -->
+				
+                    <!-- <div class="blog-pagination">
+				          <ul class="justify-content-center">
+				            <li><a href="#">1</a></li>
+				            <li class="active"><a href="#">2</a></li>
+				            <li><a href="#">3</a></li>
+				          </ul>
+			       		 </div>End blog pagination   -->
 					</div>		
 				</div>
 			</div>
@@ -265,7 +271,7 @@
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 		var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
 		var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
-
+		var form = $("form[name=formList]");
 		
 		$("#btnSearch").on("click", function(){
 			if(validationList() == false) return false;
@@ -276,6 +282,10 @@
 			$(location).attr("href", goUrlList);
 		});
   		
+  		goList = function(thisPage){
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		}
 	</script>
 </body>
 </html>

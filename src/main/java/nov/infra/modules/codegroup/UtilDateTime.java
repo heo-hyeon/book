@@ -50,4 +50,14 @@ public class UtilDateTime{
 	public static String addStringTime(String date) {
 		return date + "00:00:00";
 	}
+
+
+	public static String add00TimeString(String shDateStart) {
+		return shDateStart;
+	}
+
+
+	public static String add59TimeString(String shDateEnd) {
+		return shDateEnd;
+	}
 }

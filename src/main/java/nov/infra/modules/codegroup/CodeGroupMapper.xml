@@ -8,21 +8,11 @@
 
     <resultMap id="resultMapObj" type="nov.infra.modules.codegroup.CodeGroup"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-		
-		SELECT
-			 a.seq
-			 ,a.name
-			 ,a.name_en
-			 ,a.reg_date
-			 ,a.mod_date
-			 ,a.useNY
-			 ,a.delNY
+	<sql id ="selectCommon">
 		FROM NCT.CCG a
-		WHERE 1=1
-<!--페이징 <include refid="selectCommon"/>
-		 limit #{startRnumMysql}, #{rowNum}-->
-
+			WHERE 1=1
+		
+		
 			<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if> 
 			<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
 			<if test="shValue!= null"></if>
@@ -43,15 +33,26 @@
 				<when test="shOptionDate == 4">AND a.reg_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 5">AND a.mod_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose> 
-	</select>
-		
-	<!-- 페이징 
-	<select id="selectOneCount" resultType="Integer">
-		SELECT
-			count(*)
-			<include refid="selectList"/>
-	</select> -->
+	</sql>
 	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				 a.seq
+				 ,a.name
+				 ,a.name_en
+				 ,a.reg_date
+				 ,a.mod_date
+				 ,a.useNY
+				 ,a.delNY 
+		<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
 	
 	<insert id="insert">
 		INSERT INTO CCG (
