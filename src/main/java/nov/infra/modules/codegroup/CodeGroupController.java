@@ -49,20 +49,32 @@ public class CodeGroupController extends BaseController{
 	return "infra/codegroup/xdmin/codeGroupList";
 } 
 
-	
-	private void setSearchAndPaging(CodeGroupVo vo) throws Exception {
+	//페이지 고정
+	public void setSearchAndPaging(CodeGroupVo vo) throws Exception {
+		
+		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
+//		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+//		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+//		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(vo.getShDateEnd()));
+		
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}
 
-
+	//데이터 추가 
 	@RequestMapping(value = "codeGroupInst")
-	public String codeGroupInst(CodeGroup dto) throws Exception {
+	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto,RedirectAttributes redirectAttributes) throws Exception {
 
-		int result = service.insert(dto);
-		System.out.println("controller result: " + result);
-		System.out.println(dto.getName());
-
-		return "redirect:/codeGroup/codeGroupList";
+		service.insert(dto);
+		vo.setSeq(dto.getSeq());
+		
+		redirectAttributes.addFlashAttribute("vo",vo);
+		
+		return "redirect:/codeGroup/codeGroupForm";
+//		if (Constants.INSERT_AFTER_TYPE == 1) {
+//			return "redirect:/codeGroup/codeGroupForm";
+//		} else {
+//			return "redirect:/codeGroup/codeGroupList";
+//		}
 	}
 
 	@RequestMapping(value = "codeGroupForm")
@@ -76,10 +88,9 @@ public class CodeGroupController extends BaseController{
 	
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
-		
 		service.update(dto);
 		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/codeGroup/codeGroupList";
+		return "redirect:/codeGroup/codeGroupForm";
 	}
 	
 	@RequestMapping(value = "codeGroupUele")

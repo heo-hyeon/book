@@ -101,8 +101,7 @@
 	
 	<delete id="delete">
 		DELETE FROM CCG
-		WHERE 1=1
-			AND seq = #{seq}
+		WHERE seq = #{seq}; 
 	</delete>		
 	
 	

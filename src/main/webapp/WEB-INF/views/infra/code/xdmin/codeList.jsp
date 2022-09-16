@@ -130,27 +130,18 @@
 			</div>
 			</form>
 				<br><br>
-					<p style="margin-left:100px;">total : 40
-					<select style="width:80px; height:30px; float:right; margin-right:100px;">
-						<option>1
-						<option>2
-						<option>3
-					</select>
-				</div>
-				<br><br>
 				<table class="table table-striped" style="width:90%; margin:auto;">
 					<tr style="text-align:center; background-color:#D2D2FF">
 						<th width="60px;"><input type="checkbox"></th>
 						<th width="80px">#</th>
-						<th width="100px">코드그룹 코드</th>
-						<th width="150px">코드그룹 이름(한글)</th>
-						<th width="80px">코드
-						<th width="150px">코드 이름(한글)
-						<th width="150px">코드 이름(영문)</th>
-						<th width="70px">사용</th>
-						<th width="70px">삭제</th>
-						<th width="100px">등록일</th>
-						<th width="100px">수정일</th>
+						<th width="70px">코드그룹 코드</th>
+						<th width="100px">코드그룹 이름</th>
+						<th width="12px">코드 이름(한글)
+						<th width="120px">코드 이름(영문)</th>
+						<th width="70px">사용여부</th>
+						<th width="70px">삭제여부</th>
+						<th width="150px">등록일</th>
+						<th width="150px">수정일</th>
 					</tr>
 					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />	
 			<c:choose>
@@ -166,13 +157,22 @@
 					      <td><c:out value="${list.seq }"/></td>
 					      <td><c:out value="${list.ccg_seq }"/></td>
 					      <td><a href="/codeGroup/codeGroupView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}"/></a></td>
-					      <td><c:out value="${list.code}"/></td>
 					      <td><c:out value="${list.codename_ko }"/></td>
 					      <td><c:out value="${list.codename_en }"/></td>
-					  	  <td><c:out value="${list.useNY }"/></td>
-					      <td><c:out value="${list.delNY }"/></td>
-					      <td><c:out value="${list.reg_date}"/></td>
-					      <td><c:out value="${list.mod_date}"/></td>
+						  <td>
+							<c:choose>
+								<c:when test="${list.useNY eq 0}">N</c:when>
+								<c:otherwise>Y</c:otherwise>
+							</c:choose>
+						  </td>
+					  	  <td>
+							<c:choose>
+								<c:when test="${list.delNY eq 0}">N</c:when>
+								<c:otherwise>Y</c:otherwise>
+							</c:choose>
+						  </td>
+					      <td><fmt:formatDate value="${list.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+					 	  <td><fmt:formatDate value="${list.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 					    </tr>
 				    </c:forEach>  
 				</c:otherwise>

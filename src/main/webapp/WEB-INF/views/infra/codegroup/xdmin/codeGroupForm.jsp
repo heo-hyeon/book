@@ -102,15 +102,15 @@
 	  <div class="col-md-6">
 	    <label class="codeName-label" for="useNY">사용여부</label>
 	    <select class="form-control" name="useNY">
-	    	<option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>Y</option>
-			<option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
+	    	<option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>YES</option>
+			<option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>NO</option>
 	    </select>
 	  </div>
 	  <div class="col-md-6">
 	  	<label class="delete-label" for="delNY">삭제여부</label>
 	  	<select class="form-control" name="delNY">
-	  		<option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>Y</option>
-			<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>N</option>
+	  		<option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>YES</option>
+			<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>NO</option>
 	  	</select>
 	  </div>
  		<div style="width:90%; margin:20px 0 20px 30px;">
@@ -119,6 +119,7 @@
 			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
 			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
 		</div> 
+		<!-- 모달  -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
@@ -128,12 +129,29 @@
 		      </div>
 		      <div class="modal-body">정말 삭제하시겠습니까?</div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger" id="btndelModal">삭제</button>
+		        <button type="button" class="btn btn-danger" id="btnUelete">삭제</button>
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
+		
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">삭제</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">정말로 삭제하시겠습니까?</div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+		        <button type="button" class="btn btn-dark" id="btnDelete">삭제 </button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
 	</form>
   	 </main>
 
@@ -189,14 +207,21 @@
 	   		/* keyName.val(atob(keyName.val())); */
 	   		// if (validationUpdt() == false) return false;
 	   		form.attr("action", goUrlUpdt).submit();
-	   	}
-	}); 
-
-		$("#btndelModal").on("click", function(){
-		form.attr("action", goUrlDele).submit();
-	});
+	   		}
+		}); 
+	</script>
+	  
+	<script type="text/javascript">
 		
-  </script>
+		$("#btnUelete").on("click", function() {
+			form.attr("action", goUrlUele).submit();
+		});
+		
+		$("#btnDelete").on("click", function() {
+			form.attr("action", goUrlDele).submit();
+		});
+		
+	</script>
 <!--   
   <script type="text/javascript">
 	function complete() {
