@@ -171,7 +171,7 @@
 						<th width="100px">사용</th>
 						<th width="100px">삭제</th> 
 					</tr>
-					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
+					<!-- <link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" /> -->
 				<c:choose>
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
