@@ -39,7 +39,7 @@ public class CodeGroupController extends BaseController{
 	System.out.println("vo.getShOption(): " + vo.getShOption());
 	System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
 	
-//	setSearchAndPaging(vo);
+	setSearchAndPaging(vo);
 	
 //	if (vo.getTotalRows() > 0) {
 	List<CodeGroup> list = service.selectList(vo);
@@ -48,11 +48,11 @@ public class CodeGroupController extends BaseController{
 	return "infra/codegroup/xdmin/codeGroupList";
 } 
 
-	//페이지 고정
+//	페이지 고정
 	public void setSearchAndPaging(CodeGroupVo vo) throws Exception {
 		
-//		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
-		
+		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
+//		
 //		datepicker
 //		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
 //		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());  	
@@ -60,7 +60,7 @@ public class CodeGroupController extends BaseController{
 //
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}
-	
+//	
 
 	//데이터 추가 
 	@RequestMapping(value = "codeGroupInst")
