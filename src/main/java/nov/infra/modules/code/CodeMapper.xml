@@ -78,4 +78,22 @@
 	 	WHERE 1=1
 	 		AND name = #{name}
 	</select>
+	
+	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			seq
+			,ccg_seq
+			,name
+			,codename_ko
+			,codename_en
+			,useNY
+		    ,delNY
+		    ,reg_date
+		    ,mod_date
+		FROM
+			CC
+		WHERE 1=1
+			AND delNY = 0
+		    AND useNY = 1
+    </select>
 </mapper>		

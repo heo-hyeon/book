@@ -104,5 +104,5 @@
 		WHERE seq = #{seq}; 
 	</delete>		
 	
-	
+
 </mapper>		

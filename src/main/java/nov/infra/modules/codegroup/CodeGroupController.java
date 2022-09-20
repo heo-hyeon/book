@@ -104,9 +104,11 @@ public class CodeGroupController extends BaseController{
 	
 	@RequestMapping(value = "codeGroupDele")
 	public String codeGroupDele(CodeGroupVo vo) throws Exception {		
-			int result = service.delete(vo);
+			service.delete(vo);
 			return "redirect:/codeGroup/codeGroupList";
 		}
+	
+	
 	}
 
 	

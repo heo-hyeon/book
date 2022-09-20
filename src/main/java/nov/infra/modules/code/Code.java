@@ -1,6 +1,8 @@
 package nov.infra.modules.code;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Code {
 
@@ -75,4 +77,8 @@ public class Code {
 		public void setMod_date(Date mod_date) {
 			this.mod_date = mod_date;
 		}
+		
+//		for cache
+		public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
 }
+

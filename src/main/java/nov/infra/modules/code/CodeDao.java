@@ -8,9 +8,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import nov.infra.modules.codegroup.CodeGroup;
-import nov.infra.modules.codegroup.CodeGroupVo;
-
 @Repository
 public class CodeDao {
 
@@ -36,6 +33,9 @@ public class CodeDao {
 		System.out.println("dao result : " + result);
 		return result;
 	}
+	
+//	for cache
+	public List<Code> selectListCachedCodeArrayList(){ return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null); }
 }
 
 

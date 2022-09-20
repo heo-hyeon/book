@@ -58,13 +58,13 @@
 			#{job}
 			,#{career}
 			,#{memberName}
-			#{memberName_en}
-			#{phone}
-			#{phone_emer}
-			#{email}
-			#{hobby}
-			#{region}
-			#{certifiNY}
+			,#{memberName_en}
+			,#{phone}
+			,#{phone_emer}
+			,#{email}
+			,#{hobby}
+			,#{region}
+			,#{certifiNY}
 		)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()

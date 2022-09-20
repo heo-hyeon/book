@@ -1,6 +1,8 @@
 package nov.infra.modules.codegroup;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CodeGroup {
 	
@@ -62,5 +64,4 @@ public class CodeGroup {
 	public void setDelNY(String delNY) {
 		this.delNY = delNY;
 	}
-	
 }
