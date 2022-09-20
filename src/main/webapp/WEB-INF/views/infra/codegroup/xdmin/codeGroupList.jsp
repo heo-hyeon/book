@@ -144,8 +144,13 @@
 						<th width="100px">사용</th>
 						<th width="100px">삭제</th> 
 					</tr>
+<<<<<<< HEAD
 					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
 			<c:choose>
+=======
+					 <link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
+				<c:choose>
+>>>>>>> refs/remotes/origin/main
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
 						<td class="text-center" colspan="13">There is no data!</td>
@@ -270,9 +275,16 @@
 			$(location).attr("href", goUrlList);
 		});
   	
+<<<<<<< HEAD
   		$("#btndelModal").on("click", function(){
   			form.attr("action", goUrlDele).submit();
 		});
+=======
+ 		$('#btnForm').on("click", function() {
+  			goForm(seq.val());
+  		});
+  		
+>>>>>>> refs/remotes/origin/main
   		
   		goList = function(thisPage){
 			$("input:hidden[name=thisPage]").val(thisPage);

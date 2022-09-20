@@ -83,10 +83,17 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
+<<<<<<< HEAD
     <form name="form" method="post" action="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
 	<input type="hidden" name="seq" value="<c:out value="${vo.seq }"/>">
 	
     <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
+=======
+  
+   <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
+   <form name="form" id="form" method="post" CLASS="row g-2" style="margin-left:30px; width:90%;">
+  	 <%@include file="codeGroupVo.jsp"%>
+>>>>>>> refs/remotes/origin/main
 	  <div class="col-md-5">
 	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
 	  	<input type="text" class="form-control" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
@@ -113,9 +120,15 @@
 			<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>NO</option>
 	  	</select>
 	  </div>
+<<<<<<< HEAD
  		<div style="width:83%; margin:20px 0 20px 0px;">
 			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
+=======
+ 		<div style="width:83%; margin:20px 0px 20px 0px;">
+			<button class="btn btn-warning" type="button" id="btnList" style="float:left; color:white;"><i class="fa-solid fa-chart-bar"></i></a></button>
+			<button class="btn btn-danger"  type="button" style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
+>>>>>>> refs/remotes/origin/main
 			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
 			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
 		</div> 
@@ -181,9 +194,15 @@
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   
+<<<<<<< HEAD
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  
   <script type="text/javascript">
+=======
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+  
+  <script>
+>>>>>>> refs/remotes/origin/main
     var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
 	var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
 	var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
@@ -194,7 +213,15 @@
 	
 	var form = $("form[name=form]");
 	var formVo = $("form[name=formVo]");
+<<<<<<< HEAD
 	
+=======
+
+
+	$('#btnList'.on("click", function() {
+		formVo.attr("action", goUrlList).submit();
+	});
+>>>>>>> refs/remotes/origin/main
 	
 	$("#btnSave").on("click", function(){
 
@@ -207,18 +234,24 @@
 	   		/* keyName.val(atob(keyName.val())); */
 	   		// if (validationUpdt() == false) return false;
 	   		form.attr("action", goUrlUpdt).submit();
+<<<<<<< HEAD
 	   		}
 		}); 
+=======
+	   	}
+	}); 
+
+>>>>>>> refs/remotes/origin/main
 	</script>
 	  
 	<script type="text/javascript">
 		
 		$("#btnUelete").on("click", function() {
-			form.attr("action", goUrlUele).submit();
+			formVo.attr("action", goUrlUele).submit();
 		});
 		
 		$("#btnDelete").on("click", function() {
-			form.attr("action", goUrlDele).submit();
+			formVo.attr("action", goUrlDele).submit();
 		});
 		
 	</script>
