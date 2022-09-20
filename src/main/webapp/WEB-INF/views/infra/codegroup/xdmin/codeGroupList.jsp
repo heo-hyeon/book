@@ -31,11 +31,10 @@
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<!-- 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
 
 
@@ -45,6 +44,33 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+ -->
+ 
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ 
+<!-- datepicker -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $("input.shDate").datepicker();
+	}); 
+	
+	$.datepicker.setDefaults({
+	   dateFormat: 'yy-mm-dd',
+	   prevText: '이전 달',
+	   nextText: '다음 달',
+	   monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+	   dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+	   dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+	   showMonthAfterYear: true,
+	   yearSuffix: '년'
+	});
+	</script>
+<!-- datepicker -->
 </head>
 
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
@@ -91,12 +117,13 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-   
+	  
      <section id="blog" class="blog">
-     <form method="post" action="/codeGroup/codeGroupList"  name="formList">
-	 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
-	 <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     	<div class="post-item position-relative h-100">
+    	 <form name="formList" id="formList" method="post" >
+    	 <input type="hidden" name="seq">
+    	 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+		 <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
@@ -126,8 +153,8 @@
 						<option value="5"<c:if test="${vo.shOptionDate eq 5}">selected</c:if>>수정일</option>
 						<option value="">끝날짜</option>
 					</select>
-					<button class="btn btn-success" style="height:35px; width:40px;" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
-					<button type="button" class="btn btn-warning" style="height:35px; width:40px;" id="btnReset" name=""><i class="fa-solid fa-rotate-left"></i></button>
+					<button type="button" class="btn btn-success" style="height:35px; width:40px;" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+					<button type="button" class="btn btn-warning" style="height:35px; width:40px;" id="btnReset"><i class="fa-solid fa-rotate-left"></i></button>
 					</div>
 				</div>
 			</div>
@@ -145,7 +172,7 @@
 						<th width="100px">삭제</th> 
 					</tr>
 					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
-			<c:choose>
+				<c:choose>
 				<c:when test="${fn:length(list) eq 0}">
 					<tr>
 						<td class="text-center" colspan="13">There is no data!</td>
@@ -156,7 +183,7 @@
 				    <tr>
 				      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 				      <td><c:out value="${list.seq }"/></td>
-				      <td><a href="/codeGroup/codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"/></a></td>
+				      <td><a href="javascript:goForm(<c:out value="${list.seq }"/>)"><c:out value="${list.name}"/></a></td>
 				      <td><c:out value="${list.name_en}"/></td>
 			 	      <td><fmt:formatDate value="${list.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 					  <td><fmt:formatDate value="${list.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
@@ -180,15 +207,14 @@
 				<!-- pagination s -->
 				<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
 				<!-- pagination e -->
-		
 					</div>		
 				</div>
 			</div>
 		</div>
 		<div style="width:90%; margin:auto;">
-			<button class="btn btn-warning" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
-			<button type="button" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
-			<button class="btn btn-success" type="button" style="float:right; margin-right:7px;"><a href="/codeGroup/codeGroupForm"><i class="fa-solid fa-file-circle-plus"></i></a></button>
+			<button class="btn btn-warning" type="button" style="float:left; color:white;"><i class="fa-solid fa-square-check"></i></button>
+			<button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left:10px;"><i class="fa-solid fa-trash-can-arrow-up"></i> </button>
+			<button class="btn btn-success" type="button" id="btnForm" style="float:right; margin-right:7px;"><i class="fa-solid fa-file-circle-plus"></i></button>
 		</div> 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -204,8 +230,8 @@
 		      </div>
 		    </div>
 		  </div>
+		  </form>
 		</div>
-		</form>
     </section><!-- End Blog Section -->
   </main><!-- End #main -->
   
@@ -230,39 +256,32 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-
+ 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   <!-- 날짜 찾기 (각자 ajax / 제이쿼리 )-->
- 
-  	<script type="text/javascript">
-		$(document).ready(function(){
-			 $("input.shDate").datepicker();
-		}); 
-	
-		$.datepicker.setDefaults({
-		    dateFormat: 'yy-mm-dd',
-		    prevText: '이전 달',
-		    nextText: '다음 달',
-		    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-		    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-		    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-		    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-		    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-		    showMonthAfterYear: true,
-		    yearSuffix: '년'
-		});
-		
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+  
+  <script>
 		var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
 		var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 		var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
-		var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
+		var goUrlDele = "/codeGroup/codeGroupDele";	
+		var goUrlForm = "/codeGroup/codeGroupForm";
+		
+		var seq = $("input:hidden[name=seq]");
 		
 		var form = $("form[name=formList]");
 		
+  		goForm = function(keyValue) {
+				/* if(keyvalue != 0) seq.val(btoa(keyValue)); */
+				seq.val(keyValue);
+				form.attr("action", goUrlForm).submit();
+		}
+  		
 		$("#btnSearch").on("click", function(){
-			if(validationList() == false) return false;
+			/* if(validationList() == false) return false; */
 			form.attr("action", goUrlList).submit();
 		});
 	
@@ -270,14 +289,22 @@
 			$(location).attr("href", goUrlList);
 		});
   	
-  		$("#btndelModal").on("click", function(){
-  			form.attr("action", goUrlDele).submit();
-		});
+ 		$('#btnForm').on("click", function() {
+  			goForm(seq.val());
+  			alert("ㅇㅇㅇㅇㅇㅇ");
+  		});
+  		
   		
   		goList = function(thisPage){
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
 		}
+  		
+  		$("#btndelModal").on("click", function(){
+  			form.attr("action", goUrlDele).submit();
+		});
 	</script>
+	
+
 </body>
 </html>
