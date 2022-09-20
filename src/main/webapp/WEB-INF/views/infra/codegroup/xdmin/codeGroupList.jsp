@@ -291,7 +291,6 @@
   	
  		$('#btnForm').on("click", function() {
   			goForm(seq.val());
-  			alert("ㅇㅇㅇㅇㅇㅇ");
   		});
   		
   		
