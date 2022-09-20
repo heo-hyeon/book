@@ -83,37 +83,37 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-    <form name="form" method="post" action="/codeGroup/codeGroupInst" class="row g-2">
+    <form name="form" method="post" action="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
 	<input type="hidden" name="seq" value="<c:out value="${vo.seq }"/>">
 	
     <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
 	  	<input type="text" class="form-control" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
 	   </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="code-label" for="name"> 코드그룹 이름 (한글)</label>
 	  	<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
 	  </div>
- 	  <div class="col-md-6">
+ 	  <div class="col-md-5">
 	  	<label class="code-label" for="name_en">코드그룹 이름 (영문)</label>
 	  	<input type="text" name="name_en" id="name_en" value="<c:out value="${item.name_en}"/>" class="form-control" placeholder="영문(대소문자),숫자">
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	    <label class="codeName-label" for="useNY">사용여부</label>
 	    <select class="form-control" name="useNY">
 	    	<option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>YES</option>
 			<option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>NO</option>
 	    </select>
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="delete-label" for="delNY">삭제여부</label>
 	  	<select class="form-control" name="delNY">
 	  		<option value="1" <c:if test="${item.delNY eq 1 }"> selected</c:if>>YES</option>
 			<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>NO</option>
 	  	</select>
 	  </div>
- 		<div style="width:90%; margin:20px 0 20px 30px;">
+ 		<div style="width:83%; margin:20px 0 20px 0px;">
 			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
 			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
