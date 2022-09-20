@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!DOCTYPE mapper
+<!DOCTYPE mapper 
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -89,8 +89,7 @@
 	<update id="update">
 		UPDATE CCG
 		SET
-			seq = #{seq}
-			,name = #{name}
+			name = #{name}
 			,name_en = #{name_en}
 			,useNY = #{useNY}
 			,delNY = #{delNY}
@@ -101,8 +100,15 @@
 	
 	<delete id="delete">
 		DELETE FROM CCG
-		WHERE seq = #{seq}; 
+		WHERE seq = #{seq} 
 	</delete>		
+	
+	<update id="uelete">
+		UPDATE CCG
+		SET
+		 delNY = 1
+		WHERE seq = #{seq} 
+	</update>		
 	
 
 </mapper>		

@@ -279,6 +279,7 @@
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt"; /* #-> */
 		var goUrlUele = "/codeGroup/codeGroupUele"; /* #-> */
 		var goUrlDele = "/codeGroup/codeGroupDele"; /* #-> */
+		var goUrlForm = "/codeGroup/codeGroupForm";
 
 		var form = $("form[name=formList]");
 
@@ -302,6 +303,11 @@
 		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
+		}
+		
+		goForm = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlForm).submit();
 		}
 	</script>
 </body>

@@ -85,9 +85,8 @@
 			<h2 style="margin: 20px 0 20px 50px;">코드그룹 관리</h2>
 			<form name="form" id="form" method="post" CLASS="row g-2" style="margin-left: 30px; width: 90%;">
 			<!-- *Vo.jsp s -->
-			<%@include file="codeGroupVo.jsp"%>		<!-- #-> -->
+			<%@include file="codeGroupVo.jsp"%>	
 			<!-- *Vo.jsp e -->
-			<input type="hidden" name="seq" value="<c:out value="${vo.seq }"/>">
 				<div class="col-md-5">
 					<label class="useNY-label" for="seq">코드그룹 코드</label>
 					<input type="text" class="form-control" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
@@ -115,65 +114,69 @@
 					</select>
 				</div>
 				<div style="width: 83%; margin: 20px 0 20px 0px;">
-					<button class="btn btn-warning" type="button" style="float: left; color: white;">
-						<a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a>
-					</button>
-					<button class="btn btn-danger" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<i class="fa-solid fa-trash-can-arrow-up"></i>
-					</button>
 					<div style="width: 83%; margin: 20px 0px 20px 0px;">
 						<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
 							<i class="fa-solid fa-chart-bar"></i></a>
 						</button>
-						<button class="btn btn-danger" type="button" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<button type="button" class="btn btn-danger" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
+							<i class="fa-solid fa-x"></i>
+						</button>
+						<button class="btn btn-danger" type="button" style="margin-left: 10px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
 							<i class="fa-solid fa-trash-can-arrow-up"></i>
 						</button>
 						<button class="btn btn-success" type="button" id="btnSave" style="float: right; margin-right: 7px;">
 							<i class="fa-regular fa-bookmark"></i>
 						</button>
-						<button class="btn btn-danger" style="float: right; margin-right: 7px;">
-							<i class="fa-solid fa-x"></i>
-						</button>
 					</div>
+				
+					
 					<!-- 모달  -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">삭제</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">정말 삭제하시겠습니까?</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-danger" id="btnUelete">삭제</button>
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">삭제</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">정말로 삭제하시겠습니까?</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-									<button type="button" class="btn btn-dark" id="btnDelete">삭제</button>
-								</div>
-							</div>
-						</div>
-					</div>
-			<!-- *Vo.jsp s -->
-<%@include file="codeGroupVo.jsp"%>		<!-- #-> -->
-<!-- *Vo.jsp e -->
+				<!-- x버튼 Modal -->
+				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel2"><b>Class101</b></h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				        정말로 삭제하시겠습니까?
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+				        <button type="button" class="btn btn-dark" id="btnUelete">삭제 </button>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+					
+			    <!-- 휴지통 Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel"><b>Class101</b></h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				        정말로 삭제하시겠습니까?
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+				        <button type="button" class="btn btn-dark" id="btnDelete">삭제 </button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			
+			</div>
 			</form>
+		<form name="formVo" id="formVo" method="post">
+		<!-- *Vo.jsp s -->
+		<%@include file="codeGroupVo.jsp"%>	
+		<!-- *Vo.jsp e -->
+		</form>
 	</main>
-
-
 	<!-- ======= Footer ======= -->
 	<footer id="footer" class="footer">
 		<div class="footer-legal text-center position-relative">
@@ -199,8 +202,7 @@
 	<!-- Template Main JS File -->
 	<script src="../resources/js/main.js"></script>
 
-	<<<<<<< HEAD
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 
 	<script type="text/javascript">
     var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
@@ -213,46 +215,35 @@
 	
 	var form = $("form[name=form]");
 	var formVo = $("form[name=formVo]");
-	
-	
-
-	$('#btnList'.on("click", function() {
-		formVo.attr("action", goUrlList).submit();
-	});
->>>>>>> refs/remotes/origin/main
-	
+		
 	$("#btnSave").on("click", function(){
 
 		if (seq.val() == "0" || seq.val() == ""){
-	   		// insert
-	   		// if (validationInst() == false) return false;
 	   		form.attr("action", goUrlInst).submit();
 	   	} else {
-	   		// update
-	   		/* keyName.val(atob(keyName.val())); */
-	   		// if (validationUpdt() == false) return false;
 	   		form.attr("action", goUrlUpdt).submit();
-<<<<<<< HEAD
-	   		}
-		}); 
-=======
 	   	}
-	}); 
-
->>>>>>> refs/remotes/origin/main
+	});
+	
+	$("#btnList").on("click", function(){
+		formVo.attr("action", goUrlList).submit();
+	});
+	
 	</script>
 
 	<script type="text/javascript">
 		
 		$("#btnUelete").on("click", function() {
-			formVo.attr("action", goUrlUele).submit();
+			form.attr("action", goUrlUele).submit();
 		});
 		
 		$("#btnDelete").on("click", function() {
-			formVo.attr("action", goUrlDele).submit();
+			form.attr("action", goUrlDele).submit();
 		});
 		
 	</script>
+	
+	
 	<!--   
   <script type="text/javascript">
 	function complete() {
