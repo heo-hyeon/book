@@ -30,9 +30,6 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
   
   <!-- =======================================================
@@ -86,8 +83,9 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-   <form name="form" id="form" method="post">
-   <%@include file="codeGroupVo.jsp"%>
+    <form name="form" method="post" action="/codeGroup/codeGroupInst" class="row g-2">
+	<input type="hidden" name="seq" value="<c:out value="${vo.seq }"/>">
+	
     <h2 style="margin:20px 0 20px 50px;">코드그룹 관리</h2>
 	  <div class="col-md-6">
 	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
@@ -116,7 +114,7 @@
 	  	</select>
 	  </div>
  		<div style="width:90%; margin:20px 0 20px 30px;">
-			<button class="btn btn-warning" type="button" id="btnList" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
+			<button class="btn btn-warning" type="button" style="float:left; color:white;"><a href="/codeGroup/codeGroupList"><i class="fa-solid fa-chart-bar"></i></a></button>
 			<button class="btn btn-danger"  style="margin-left:10px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
 			<button class="btn btn-success" type="button"  id="btnSave" style="float:right; margin-right:7px;"><i class="fa-regular fa-bookmark"></i></button>
 			<button class="btn btn-danger" style="float:right; margin-right:7px;"><i class="fa-solid fa-x"></i></button>
@@ -153,14 +151,10 @@
 		    </div>
 		  </div>
 		</div>
+		
 	</form>
-	
-	<form name="formVo" id="formVo" method="post">
-	<!-- *Vo.jsp s -->
-	<%@include file="codeGroupVo.jsp"%>		<!-- #-> -->
-	<!-- *Vo.jsp e -->
-	</form>
-  </main>
+  	 </main>
+
   
  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -183,39 +177,38 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  
-  <script>
+ 
+  <script type="text/javascript">
     var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
 	var goUrlInst = "/codeGroup/codeGroupInst"; 			/* #-> */
 	var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 	var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
 	var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
 	
-	var seq = $("input:hidden[name=seq]"); 				/* #-> */
+	var seq = $("input:hidden[name=seq]");				/* #-> */
 	
 	var form = $("form[name=form]");
 	var formVo = $("form[name=formVo]");
-
+	
+	
 	$("#btnSave").on("click", function(){
+
 		if (seq.val() == "0" || seq.val() == ""){
 	   		// insert
-	   		if (validationInst() == false) return false;
+	   		// if (validationInst() == false) return false;
 	   		form.attr("action", goUrlInst).submit();
 	   	} else {
 	   		// update
 	   		/* keyName.val(atob(keyName.val())); */
-	   		if (validationUpdt() == false) return false;
+	   		// if (validationUpdt() == false) return false;
 	   		form.attr("action", goUrlUpdt).submit();
-	   	}
-	}); 
-
-	$('#btnList'.on("click", function() {
-		formVo.attr("action", goUrlList).submit();
-	});	
+	   		}
+		}); 
 	</script>
 	  
 	<script type="text/javascript">
