@@ -270,7 +270,7 @@
 						<i class="fa-solid fa-trash-can-arrow-up"></i>
 					</button>
 					<button class="btn btn-outline-warning" style="float: right; margin-right: 10px;">
-						<a href="./memberRegForm.html" <i class="fa-solid fa-user-plus"></i></a>
+						<a href="/member/memberView" <i class="fa-solid fa-user-plus"></i></a>
 					</button>
 				</div>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

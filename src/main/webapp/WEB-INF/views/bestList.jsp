@@ -101,7 +101,7 @@
                   <li><i class="bi bi-person"></i>자청</li>
                   <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
                   <li><i class="fa-solid fa-thumbs-up"></i><a href="blog-details.html">좋아요 </a></li>
-             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
+             	  <li><i class="fa-solid fa-heart"></i><a href="/">추천하기</a></li>
                 </ul>
               </div><!-- End meta top -->
               
@@ -209,7 +209,7 @@
 	           		</div><!-- End blog comments -->
 	         	 </div>
 	          </div><br>
-	          <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="main.html">돌아가기</a></button>
+	          <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/">돌아가기</a></button>
   	</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

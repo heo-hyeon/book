@@ -83,11 +83,11 @@
 		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
 		<input type="text" class="id" placeholder="ID" style="border:solid silver 0.5px; border-radius:3px;">
 		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
-		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="main.html" class="active">login</button>
+		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
 		<div class="find" style="margin-left:20px;">
 							<a href="/find_id">아이디 찾기</a>|
 							<a href="find-pwd.html">비밀번호 찾기</a>|
-							<a href="Reg.html">회원가입</a>
+							<a href="/member/memberView">회원가입</a>
 						</div>
 					</div>
 				</div>
@@ -127,5 +127,18 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
+	<script>
+	function openZipSearch() {
+	    new daum.Postcode({
+	          oncomplete: function(data) {
+	              $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+	              $('[name=addr1]').val(data.address);
+	              $('[name=addr2]').val(data.buildingName);
+	          }
+	    }).open();
+	} 
+	</script>
+
+
 </body>
 </html>

@@ -79,7 +79,7 @@
   <!-- ======= Reg Section ======= -->
 <section id="hero" class="hero">
 	<div class="info d-flex align-items-center">
-	   <div class="container" style="margin-top:100px;">
+	   <div class="container">
 	   	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
 			  <img src="../resources/images/user.png" class="card-img-top">
 			  <div class="card-body">
@@ -114,7 +114,7 @@
 			    <label class="nameEn-label">영문이름 </label>
 			    <input type="text" class="form-control">
 			  </div>
-			 <div class="col-md-5">
+			  <div class="col-md-5">
 			    <label class="region-label">지역</label>
 			    <input type="text" class="form-control">
 			  </div>
@@ -174,12 +174,27 @@
 			  	  	<option value="Ycerti">유</option>
 			  	  	<option value="Ncerti">무</option>
 			  	  </select>
-			  </div
-			  <div class="col-md-5">
-			  	<label class="address-label">주소</label>
-			  		<input type="text" class="form-control">
-			  	    <button type="button" class="btn btn-secondary" onclick="openZipSearch()"> 우편번호 검색 </button>
 			  </div>
+			<%--   <div class="col-md-3">
+			  	<label class="zipcode-label">우편번호</label>
+			  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
+		  	 </div>
+		  	 <div style="margin-top:20px;">
+			  	<button type="button" id="btnAddress"  onclick="sample6_execDaumPostcode()"  class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+			  	<button type="button" id="btnAddressClear" class="btn btn-outline-secondary"><i class="fa-solid fa-x"></i></button>
+			  </div>
+			  <div class="col-md-7">
+			  	<label class="address-label">주소</label>
+			  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.Address1}"/>" >
+			  </div>
+			  <div class="col-md-5">
+			  	<label class="address-label">상세주소</label>
+			  		<input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" value="<c:out value="${item.Address1}"/>" >
+			  </div>
+			<div class="col-md-4">
+			  	<label class="address-datail-label">참고항목</label>
+			  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.Address2}"/>" >
+			  </div> --%>
 			  <div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label><br>
 					<div class="form-check form-check-inline">
@@ -218,18 +233,15 @@
 					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
 					  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
 					</div>
-	
 				</div>
 			  	<div class="d-grid garp-2 col-4 mx-auto">
-			  		<br><a href="main.html"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>
+			  		<br><a href="/"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>
 				</div>
 			</form>
 		</div>
-	</div>
-	</select> 
-	
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" >
-
+	 </div>
+	 
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
@@ -237,19 +249,16 @@
       <div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
       
-
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
       </a>
 
       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>			  	<div class="d-grid garp-2 col-4 mx-auto">
-			  		<br><a href="main.html"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>
-				</div>
-      
+      </a>	
     </div>
-</section>
+    </section>
+
 
    <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -259,8 +268,67 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-
+  
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <!-- Template Main JS File -->
-   <script src="../resources/js/main.js"></script>
+ 
+  <script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
+<script type="text/javascript">
+ 		$("#btnAddressClear").on("click",function() {
+ 		$("#sample6_postcode").val(null);
+ 		$("#sample6_address").val(null);
+ 		$("#sample6_detailAddress").val(null);
+ 		$("#sample6_extraAddress").val(null);
+ 	});
+</script>
 </body>
 </html>
