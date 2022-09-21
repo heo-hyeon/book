@@ -108,7 +108,6 @@
 		SET
 		 delNY = 1
 		WHERE seq = #{seq} 
-	</update>		
-	
-
+	</update>	
+		
 </mapper>		

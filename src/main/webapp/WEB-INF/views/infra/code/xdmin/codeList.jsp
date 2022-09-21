@@ -91,20 +91,22 @@
     
    
       <section id="blog" class="blog">
-      <form method="post" action="/code/codeList">
+      <form method="post" action="/code/codeList" name="formList">
+      <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+	  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     	<div class="post-item position-relative h-100">
     		<h2 style="margin-left:90px;">코드 관리</h2>
 			<div class="d-grid gap-2 justify-content-md-end" style="width:90%; margin:auto;  border:0.7px solid silver; padding:10px;">
 				<div class="form form-inline">
 					<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-						<option value="">사용여부
-						<option value="1">YES
-						<option value="0">NO
+						<option value="">사용여부</option>
+						<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
+						<option value="0" <c:if test="${vo.shuseNY eq 0}">selected</c:if>>NO</option>
 					</select>
 					<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height:30px; width:180px; margin-right:7px;">
-					  <option value="">삭제여부
-					  <option value="1">YES
-					  <option value="0">NO
+						<option value="">삭제여부</option>
+						<option value="1" <c:if test="${vo.shdelNY eq 1}">selected</c:if>>YES</option>
+						<option value="0" <c:if test="${vo.shdelNY eq 0}">selected</c:if>>NO</option>
 					</select><br>
 					<select class="search-select" id="shOption" name="shOption" style="height:30px; width:180px; margin-right:7px;">
 						<option value="">검색구분</option>
@@ -113,23 +115,22 @@
 						<option value="3">코드 이름(한글)</option>
 						<option value="4">코드 이름(영문)</option>
 					</select>	
-					<input type="search" id="shValue" name="shValue" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shValue}"/>">
+					<input type="text" id="shValue" name="shValue" style="height:30px; width:180px; margin-right:7px; margin-top:10px;" value="<c:out value="${vo.shValue}"/>">
 					<br>
 					<input class="shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart}" placeholder="시작일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
 					<input class="shDate"type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd}" placeholder="종료일" autocomplete="off" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-					<select name="shOptionDate" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
-						<option value="">날짜</option>
-						<option value="4">등록일</option>
-						<option value="5">수정일</option>
-						<option>끝날짜</option>
+					<select name="shOptionDate" id="shOptionDate" style="height:30px; width:180px; margin-right:7px; margin-top:10px;">
+						<option value="" <c:if test="${empty vo.shOptionDate}">selected</c:if>>날짜</option>
+						<option value="4" <c:if test="${vo.shOptionDate eq 4}">selected</c:if>>등록일</option>
+						<option value="5" <c:if test="${vo.shOptionDate eq 5}">selected</c:if>>수정일</option>
+						<option value="">끝날짜</option>
 					</select>
 					<button class="btn btn-success" style="height:35px; width:40px;" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
 					<button type="button" class="btn btn-warning" style="height:35px; width:40px;" id="btnReset" name=""><i class="fa-solid fa-rotate-left"></i></button>
 					</div>
 				</div>
 			</div>
-			</form>
-				<br><br>
+			<br><br>
 				<table class="table table-striped" style="width:90%; margin:auto;">
 					<tr style="text-align:center; background-color:#D2D2FF">
 						<th width="60px;"><input type="checkbox"></th>
@@ -155,10 +156,12 @@
 					    <tr>
 					      <th scope="row"><input class="form-check-input" type="checkbox"></th>
 					      <td><c:out value="${list.seq }"/></td>
-					      <td><c:out value="${list.ccg_seq }"/></td>
-					      <td><a href="/codeGroup/codeGroupView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}"/></a></td>
+					      <td><c:out value="${list.ccg_seq}"/></td>
+					      <td><a href="/codeGroup/codeView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}"/></a></td>
 					      <td><c:out value="${list.codename_ko }"/></td>
 					      <td><c:out value="${list.codename_en }"/></td>
+						  <td><fmt:formatDate value="${list.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+					 	  <td><fmt:formatDate value="${list.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						  <td>
 							<c:choose>
 								<c:when test="${list.useNY eq 0}">N</c:when>
@@ -171,22 +174,14 @@
 								<c:otherwise>Y</c:otherwise>
 							</c:choose>
 						  </td>
-					      <td><fmt:formatDate value="${list.reg_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-					 	  <td><fmt:formatDate value="${list.mod_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 					    </tr>
 				    </c:forEach>  
 				</c:otherwise>
 			</c:choose>
 			</table>
-			        <div class="blog-pagination">
-			          <ul class="justify-content-center">
-			            <li class="active"><a href="#">1</a></li>
-			            <li><a href="#">2</a></li>
-			            <li><a href="#">3</a></li>
-			            <li><a href="#">4</a></li>
-			            <li><a href="#">5</a></li>
-			          </ul>
-			        </div><!-- End blog pagination -->  
+			<!-- pagination s -->
+			<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
+			<!-- pagination e -->
 					</div>		
 				</div>
 			</div>
@@ -206,12 +201,13 @@
 		      </div>
 		      <div class="modal-body">정말 삭제하시겠습니까?</div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger">삭제</button>
+		        <button type="button" class="btn btn-danger" id="btndelModal">삭제</button>
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
+		</form>
     </section><!-- End Blog Section -->
   </main><!-- End #main -->
   
@@ -263,7 +259,9 @@
 			var goUrlUpdt = "/codeGroup/codeGroupUpdt";				/* #-> */
 			var goUrlUele = "/codeGroup/codeGroupUele";				/* #-> */
 			var goUrlDele = "/codeGroup/codeGroupDele";				/* #-> */
-
+			var goUrlForm = "/codeGroup/codeGroupForm";
+			
+			var form = $("form[name=formList]");
 			
 			$("#btnSearch").on("click", function(){
 				if(validationList() == false) return false;
@@ -273,6 +271,23 @@
 	  		$("#btnReset").on("click", function(){
 				$(location).attr("href", goUrlList);
 			});
+	  		
+	  		$("#btndelModal").on("click", function() {
+				form.attr("action", goUrlDele).submit();
+			});
+			$('#btnForm').on("click", function() {
+				goForm(seq.val());
+			});
+		
+			goList = function(thisPage) {
+				$("input:hidden[name=thisPage]").val(thisPage);
+				form.attr("action", goUrlList).submit();
+			}
+			
+			goForm = function(thisPage) {
+				$("input:hidden-name=thisPage]").val(thisPage);
+				form.attr("action", goUrlForm).submit();	
+			}
 	</script>
 </body>
 </html>

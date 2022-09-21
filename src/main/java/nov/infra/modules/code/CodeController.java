@@ -7,10 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import nov.infra.common.base.BaseController;
 
 @Controller
 @RequestMapping(value="/code/")
-public class CodeController {
+public class CodeController extends BaseController {
 
 	@Autowired
 	CodeServiceImpl service;
@@ -38,24 +41,61 @@ public class CodeController {
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		System.out.println("vo.getShdelNY(): " + vo.getShdelNY());
 		
+		setSearchAndPaging(vo);
+		
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/code/xdmin/codeList";
 	}
+
+	// 페이지 고정
+	private void setSearchAndPaging(CodeVo vo) throws Exception {
+		
+		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
+
+		vo.setParamsPaging(service.selectOneCount(vo));
+	}
+
 	
+	@RequestMapping(value="codeInst")
+	public String codeInst(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.insert(dto);
+		vo.setSeq(dto.getSeq());
+		
+		redirectAttributes.addFlashAttribute("vo",vo);
+		return "redirect:/code/codeForm";
+	}
+
 	
 	@RequestMapping(value="codeForm")
-	public String codeForm(Model model, CodeVo vo) throws Exception {
+	public String codeForm(@ModelAttribute("vo") Model model, CodeVo vo) throws Exception {
+		
+		Code result = service.selectOne(vo);
+		model.addAttribute("item", result);
 		return "infra/code/xdmin/codeForm";
 	}
 	
-	@RequestMapping(value="codeInst")
-	public String codeInst(Code dto) throws Exception {
-		int result = service.insert(dto);
-		System.out.println("controller result : " + result);
-		System.out.println(dto.getName());
+	
+	@RequestMapping(value="codeUpdt")
+	public String codeUpdt(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 		
+		service.update(dto);
+		redirectAttributes.addFlashAttribute("vo",vo);
+		return "redirect:/code/codeForm";
+	}
+	
+
+	@RequestMapping(value="codeUele")
+	public String codeUele(Code dto) throws Exception {
+		int result = service.uelete(dto);
+		System.out.println("uelete result: " + result);
+		return "redirect:/code/codeList";
+	}
+	
+	@RequestMapping(value="codeDele")
+	public String codeDele(CodeVo vo) throws Exception {
+		service.delete(vo);
 		return "redirect:/code/codeList";
 	}
 	

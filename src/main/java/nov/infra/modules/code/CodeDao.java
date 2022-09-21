@@ -22,17 +22,19 @@ public class CodeDao {
 		return list;
 	}
 	
-	public int insert(Code dto) {
-		int result = sqlSession.insert(namespace + ".insert", dto);
-		System.out.println("dao result : " + result);
-		return result;
-	}
-	
 	public Code selectOne(CodeVo vo) {
 		Code result = sqlSession.selectOne(namespace + ".selectOne", vo);
 		System.out.println("dao result : " + result);
 		return result;
 	}
+	
+	public int insert(Code dto) {return sqlSession.insert(namespace+".insert",dto);}
+	public int update(Code dto) {return sqlSession.insert(namespace+".update",dto);}
+	public int uelete(Code dto) {return sqlSession.update(namespace+".uelete",dto);}
+	public int delete(CodeVo vo) {return sqlSession.delete(namespace+".delete",vo);}
+	
+//  페이징
+	public int selectOneCount(CodeVo vo) {return sqlSession.selectOne(namespace+".selectOneCount",vo);}
 	
 //	for cache
 	public List<Code> selectListCachedCodeArrayList(){ return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null); }

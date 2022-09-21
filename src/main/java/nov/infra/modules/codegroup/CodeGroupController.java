@@ -107,11 +107,7 @@ public class CodeGroupController extends BaseController{
 			service.delete(vo);
 			return "redirect:/codeGroup/codeGroupList";
 		}
-	
-	
 	}
-
-	
 //	only for member
 //	@RequestMapping(value = "codeGroupView")
 //	public String codeGroupView(CodeGroupVo vo, Model model) throws Exception {
@@ -120,4 +116,3 @@ public class CodeGroupController extends BaseController{
 //		model.addAttribute("item", result);
 //		return "infra/codegroup/xdmin/codeGroupForm";
 //	}
-

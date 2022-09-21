@@ -8,25 +8,11 @@
 
     <resultMap id="resultMapObj" type="nov.infra.modules.code.Code"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-
-		 SELECT
-			 b.seq
-			,b.ccg_seq
-			,(select name from CCG a where a.seq = b.ccg_seq) as name
-		    ,b.code
-		    ,b.codename_ko
-		    ,b.codename_en
-		    ,b.useNY
-		    ,b.delNY
-		    ,b.reg_date
-		    ,b.mod_date
-		FROM NCT.CC b 
-		LEFT JOIN CCG a on b.ccg_seq = a.seq
-	 	WHERE 1=1
-	 	
-			
-			<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
+	<sql id ="selectCommon">
+		FROM CC 
+		WHERE 1=1
+	
+	<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
 			<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
 			<if test="shValue != null"></if>
 			
@@ -41,6 +27,30 @@
 				<when test="shOptionDate == 4">AND b.reg_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 5">AND b.mod_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+	<include refid="Base.selectListUpperForMysql" />
+		 SELECT
+			 b.seq
+			,b.ccg_seq
+			,(select name from CCG a where a.seq = b.ccg_seq) as name
+		    ,b.code
+		    ,b.codename_ko
+		    ,b.codename_en
+		    ,b.useNY
+		    ,b.delNY
+		    ,b.reg_date
+		    ,b.mod_date
+		FROM NCT.CC b 
+		LEFT JOIN CCG a on b.ccg_seq = a.seq
+		<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
 	</select>
 	
 	<insert id="insert">
@@ -76,8 +86,35 @@
 		FROM NCT.CC b 
 		LEFT JOIN CCG a on b.ccg_seq = a.seq
 	 	WHERE 1=1
-	 		AND name = #{name}
+	 		AND seq = #{seq}
 	</select>
+	
+	<update id="update">
+		UPDATE CC
+		SET
+			ccg_seq = #{ccg_seq}
+			,name = #{name}
+			,codename_ko = #{codename_ko}
+			,codename_en = #{codename_en}
+			,useNY = #{useNY}
+			,delNY = #{delNY}
+			,reg_date = now()
+			,mod_date = now()
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM CCG
+		WHERE seq = #{seq} 
+	</delete>		
+		
+	<update id="uelete">
+		UPDATE CC
+		SET
+		 delNY = 1
+		WHERE seq = #{seq} 
+	</update>	
 	
 	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 

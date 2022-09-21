@@ -103,11 +103,13 @@
 								<option value="">사용여부</option>
 								<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
 								<option value="0" <c:if test="${vo.shuseNY eq 0}">selected</c:if>>NO</option>
-							</select> <select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+							</select> 
+							<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">삭제여부</option>
 								<option value="1" <c:if test="${vo.shdelNY eq 1}">selected</c:if>>YES</option>
 								<option value="0" <c:if test="${vo.shdelNY eq 0}">selected</c:if>>NO</option>
-							</select><br> <select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
+							</select><br> 
+							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">검색구분</option>
 								<option value="1">코드그룹 코드</option>
 								<option value="2">코드그룹 이름(한글)</option>

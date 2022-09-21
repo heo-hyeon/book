@@ -191,7 +191,7 @@ public class CodeGroupVo {
 		} else {
 			setStartRnumForMysql((getRowNumToShow() * (getThisPage()-1)));
 		}
-		
+	}		
 //		System.out.println("getThisPage():" + getThisPage());
 //		System.out.println("getTotalRows():" + getTotalRows());
 //		System.out.println("getRowNumToShow():" + getRowNumToShow());
@@ -202,4 +202,3 @@ public class CodeGroupVo {
 //		System.out.println("getEndRnumForOracle():" + getEndRnumForOracle());
 //		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 	}
-}

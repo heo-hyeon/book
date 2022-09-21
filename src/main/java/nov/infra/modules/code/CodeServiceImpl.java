@@ -34,6 +34,28 @@ import org.springframework.stereotype.Service;
 		return result;
 	}
 	
+	@Override
+	public int update(Code dto) throws Exception {
+		return dao.update(dto);
+	}
+	
+	@Override
+	public int uelete(Code dto) throws Exception {
+		return dao.uelete(dto);
+	}
+	
+	@Override
+	public int delete(CodeVo vo) throws Exception {
+		return dao.delete(vo);
+	}
+	
+// 페이징
+	@Override
+	public int selectOneCount(CodeVo vo) throws Exception {
+		return dao.selectOneCount(vo);
+	}
+	
+	
 	@PostConstruct
 	public void selectListCachedCodeArrayList() throws Exception {
 		List<Code> codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();

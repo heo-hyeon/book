@@ -113,6 +113,7 @@
 						<option value="0" <c:if test="${item.delNY eq 0 }"> selected</c:if>>NO</option>
 					</select>
 				</div>
+				
 				<div style="width: 83%; margin: 20px 0 20px 0px;">
 					<div style="width: 83%; margin: 20px 0px 20px 0px;">
 						<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
@@ -128,15 +129,13 @@
 							<i class="fa-regular fa-bookmark"></i>
 						</button>
 					</div>
-				
 					
-					<!-- 모달  -->
 				<!-- x버튼 Modal -->
 				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel2"><b>Class101</b></h5>
+				        <h5 class="modal-title" id="exampleModalLabel2"><b>삭제</b></h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
@@ -155,7 +154,7 @@
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel"><b>Class101</b></h5>
+				        <h5 class="modal-title" id="exampleModalLabel"><b>삭제</b></h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
