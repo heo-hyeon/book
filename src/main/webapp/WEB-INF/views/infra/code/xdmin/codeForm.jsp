@@ -84,39 +84,42 @@
       </div>
     </div><!-- End Breadcrumbs -->
     
-	<form method="post" id="myForm" onsubmit="/codeGroup/codeGroupInst" class="row g-2" style="margin-left:30px; width:90%;">
-	<h2 style="margin:20px 0 20px 50px;">코드 관리</h2>
-	  <div class="col-md-6">
-	  	<label class="useNY-label">코드그룹 코드</label>
+    <h2 style="margin:20px 0 20px 50px;">코드 관리</h2>
+    <form name="form" id="form" method="post" CLASS="row g-2" style="margin-left: 30px; width: 90%;">
+	<!-- *Vo.jsp s -->
+	<%@include file="codeGroupVo.jsp"%>	
+	<!-- *Vo.jsp e -->
+	  <div class="col-md-5">
+	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
 	  	<input type="text" name="seq" id="seq" value="<c:out value="${item.seq}"/>"class="form-control" placeholder="영문(대소문자),숫자">
 	   </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="code-label"> 코드그룹 이름 (한글)</label>
 	  	<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
 	  </div>
- 	  <div class="col-md-6">
+ 	  <div class="col-md-5">
 	  	<label class="code-label">코드그룹 이름 (영문)</label>
 	  	<input type="text" name="name_en" id="name_en" value="<c:out value="${item.name_en}"/>" class="form-control" placeholder="영문(대소문자),숫자">
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	    <label class="codeName-label">사용여부</label>
 	    <select class="form-control" name="useNY"  id="useNY" value="<c:out value="${item.useNY}"/>" >
 	    	<option>Y
 	    	<option>N
 	    </select>
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="delete-label">삭제여부</label>
 	  	<select class="form-control" name="delNY"  id="delNY" value="<c:out value="${item.delNY}"/>" >
 	  		<option>Y
 	  		<option>N
 	  	</select>
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="regDate-label">등록일</label>
 	  	<input type="text" name="reg_date" id="reg_date" class="form-control" value="<c:out value="${item.reg_date}"/>">
 	  </div>
-	  <div class="col-md-6">
+	  <div class="col-md-5">
 	  	<label class="modDate-label">수정일</label>
 	  	<input type="text" name="mod_date" id="mod_date" class="form-control" value="<c:out value="${item.mod_date}"/>">
 	  </div>
