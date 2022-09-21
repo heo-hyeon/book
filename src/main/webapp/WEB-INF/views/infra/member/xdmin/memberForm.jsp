@@ -51,7 +51,7 @@
 
       <a href="main.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="../resources/img/logo.png" alt=""> -->
+        <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
       </a>
 
@@ -79,10 +79,9 @@
   <!-- ======= Reg Section ======= -->
 <section id="hero" class="hero">
 	<div class="info d-flex align-items-center">
-	   <div class="container">
-	   
+	   <div class="container" style="margin-top:100px;">
 	   	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
-			  <img src="../resources/img/user.png" class="card-img-top">
+			  <img src="../resources/images/user.png" class="card-img-top">
 			  <div class="card-body">
 			    <class="card-title"><input type="file">
 			  </div>
@@ -175,20 +174,11 @@
 			  	  	<option value="Ycerti">유</option>
 			  	  	<option value="Ncerti">무</option>
 			  	  </select>
-			  </div>
-			  <div class="col-md-5">
-			  	<label class="certification-label">자격증</label>
-			  	  <select class="form-control">
-			  	  	<option value="Ycerti">유</option>
-			  	  	<option value="Ncerti">무</option>
-			  	  </select>
-			  </div>
+			  </div
 			  <div class="col-md-5">
 			  	<label class="address-label">주소</label>
-			  	  <select class="form-control">
-			  	  	<input type="text" class="form-control">
-			  	  </select>
-			  	  <button type="button" class="btn btn-secondary" onclick="openZipSearch()"> 우편번호 검색 </button>
+			  		<input type="text" class="form-control">
+			  	    <button type="button" class="btn btn-secondary" onclick="openZipSearch()"> 우편번호 검색 </button>
 			  </div>
 			  <div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label><br>
@@ -238,14 +228,14 @@
 	</div>
 	</select> 
 	
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" >
 
-      <div class="carousel-item" style="background-image: url(../resources/img/book.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/library.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/book2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/book3.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/img/book4.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/img/glasses.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
+      <div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
       
 
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
@@ -254,7 +244,9 @@
 
       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+      </a>			  	<div class="d-grid garp-2 col-4 mx-auto">
+			  		<br><a href="main.html"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>
+				</div>
       
     </div>
 </section>
@@ -269,6 +261,6 @@
   <script src="../resources/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../resources/js/main.js"></script>
+   <script src="../resources/js/main.js"></script>
 </body>
 </html>

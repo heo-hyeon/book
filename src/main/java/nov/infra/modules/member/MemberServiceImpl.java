@@ -30,5 +30,5 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("service result : " + result);
 		return result;
 	}
+} 
 
-}
