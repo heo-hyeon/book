@@ -132,5 +132,5 @@
 		WHERE 1=1
 			AND delNY = 0
 		    AND useNY = 1
-    </select>
+    </select> 
 </mapper>		
