@@ -108,7 +108,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">인플루엔셜</span>
                   </div>
                 </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->

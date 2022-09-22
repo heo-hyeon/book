@@ -64,4 +64,9 @@ public class HomeController {
 			public String likebook() {
 				return "likebook";
 			}
+			
+			@RequestMapping(value = "like1")
+			public String like1() {
+				return "like1";
+			}
 		}
