@@ -56,7 +56,7 @@
       <nav id="navbar" class="navbar">
        <ul>
           <li><a href="/" class="active">Home</a></li>
-          <li><a href="likebook.html">찜한 책 </a></li>
+          <li><a href="/likebook">찜한 책 </a></li>
           <li><a href="recommendList.html">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -118,7 +118,7 @@
 						<div class="col-lg-7 form-group">
 							<textarea  class="form-control" placeholder="책과 어울리는 해시태그를 자유롭게 남겨주세요." style="width:500px;"></textarea>
 						</div> 
-					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="recommendList.html">추천하기</a></button>  
+					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/">추천하기</a></button>  
 	              </div>
            	  </div>
            	   

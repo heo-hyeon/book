@@ -59,4 +59,9 @@ public class HomeController {
 			public String find_pwd() {
 				return "find_pwd";
 			}
+			
+			@RequestMapping(value = "likebook")
+			public String likebook() {
+				return "likebook";
 			}
+		}
