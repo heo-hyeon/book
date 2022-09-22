@@ -10,8 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>LOGIN</title>
-
+  <title>PASSWORD</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,26 +29,24 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
+ 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
   * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  
 </head>
-
-
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="main.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <images src="../resources/images/logo.png" alt=""> -->
+        <!-- <img src="../resources/img/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
       </a>
 
@@ -57,14 +54,14 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/" class="active">Home</a></li>
+          <li><a href="main.html" class="active">Home</a></li>
           <li><a href="likebook.html">찜한 책 </a></li>
           <li><a href="recommendList.html">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="mod.html">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
+              <li><a href="mypage.html">상세정보</a></li>              
+              <li><a href="login.html">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -73,50 +70,98 @@
     </div>
   </header><!-- End Header -->
 
+  <main id="main">
+
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/img/library.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
+        <h2>정보 찾기</h2>
+        <ol>
+          <li><a href="main.html">Home</a></li>
+          <li>비밀번호 찾기</li>
+        </ol>
+      </div>
+    </div>
+
   <!-- ======= Hero Section ======= -->
-	<section id="hero" class="hero">
+   <section id="blog" class="blog">
 		<div class="info d-flex align-items-center">
 		   <div class="container">
 		     <div class="row justify-content-center">
-		      <div class="col-lg-6 text-center">
-		<h1 style="color:white;">WITH BOOK</h1>
-		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" placeholder="ID" style="border:solid silver 0.5px; border-radius:3px;">
-		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
-		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
-		<div class="find" style="margin-left:20px;">
-							<a href="/withbook/find_id">아이디 찾기</a>|
-							<a href="/find_pwd">비밀번호 찾기</a>|
-							<a href="/member/memberView">회원가입</a>
-						</div>
+		     	<div class="col-lg-6 text-center">
+		     		 <div class="mb-3 row">
+						    <label for="cName" class="col-sm-2 col-form-label">이름</label>
+							    <div class="col-sm-4">
+							      <input type="text" class="form-control" id="fine-id-name">
+							    </div>
+						  </div>
+	  					  <div class="mb-3 row">
+					    <label for="cName" class="col-sm-2 col-form-label">아이디</label>
+							<div class="col-sm-4">
+						      <input type="text" class="form-control" id="fine-id-id">
+						    </div>
+						  </div>
+						  	<div class="mb-3 row">
+						    	<label for="inputPassword" class="col-sm-2 col-form-label">이메일</label>
+						    <div class="col-sm-4">
+						      <input type="text" class="form-control" id="inputEmail">
+						    </div>
+					        <div class="col-sm-1" style="font-size:20px;">@</div>
+					        <div class="col-sm-5">
+					        	<select class="form-control">
+					        		<option>선택하세요.
+					        		<option>naver.com
+					        		<option>hanmail.net
+					        		<option>gmail.com
+					        	</select>
+						    </div>
+			 	 		</div>
+ 	 		       		<div class="text-center">
+       						<button type="button" class="btn btn-outline-warning" style="float:right; width:100px;"><a href="find-id.html">찾기</a></button>
+       					</div>
+			 	 	<div class="card" style="width:19rem; opacity:0.75; margin-top:100px; margin-left:220px;">
+					  <div class="card-header">
+					    비밀번호 찾기 결과
+					  </div>
+					  <div class="card-body">
+					    <h5 class="card-title">인증번호 입력</h5>
+					    <input type="text">
+					    <br><a href="find-pwd.html" class="btn btn-outline-warning" style="margin-top:20px; height:35px;">인증</a>
+					  </div>
+					</div>
+			 	 	<div class="card" style="width:19rem; opacity:0.75; margin-top:50px; margin-left:220px;">
+					  <div class="card-header">
+					    비밀번호 찾기 결과
+					  </div>
+					  <div class="card-body">
+					    <h6 class="card-title">새로운 비밀번호를 입력해주세요.</h6>
+					    <input type="password">
+					    <h6 style="margin-top:20px;">비밀번호를 다시 한번 입력해주세요.</h6>
+					    <input type="password">
+					    <a href="login.html" class="btn btn-outline-warning" style="margin-top:20px;">로그인</a>
+					    <a href="find-pwd.html" class="btn btn-outline-warning" style="margin-top:20px;">확인</a>
+					  </div>
+					</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</select> 
-	
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+		</div>   
+	  </section>
 
-      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/images/book2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book4.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
-
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
-
-  </section><!-- End Hero Section -->
   
-   <!-- Vendor JS Files -->
+ <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          © Copyright <strong><span>With Book</span></strong>. All Rights Reserved
+        </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
   <script src="../resources/vendor/glightbox/js/glightbox.min.js"></script>
@@ -127,18 +172,6 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-	<script>
-	function openZipSearch() {
-	    new daum.Postcode({
-	          oncomplete: function(data) {
-	              $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
-	              $('[name=addr1]').val(data.address);
-	              $('[name=addr2]').val(data.buildingName);
-	          }
-	    }).open();
-	} 
-	</script>
-
 
 </body>
 </html>
