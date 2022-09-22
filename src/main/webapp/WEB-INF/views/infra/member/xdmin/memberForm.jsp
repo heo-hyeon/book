@@ -175,7 +175,7 @@
 			  	  	<option value="Ncerti">무</option>
 			  	  </select>
 			  </div>
-			<%--   <div class="col-md-3">
+			 <div class="col-md-3">
 			  	<label class="zipcode-label">우편번호</label>
 			  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
 		  	 </div>
@@ -185,16 +185,25 @@
 			  </div>
 			  <div class="col-md-7">
 			  	<label class="address-label">주소</label>
-			  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.Address1}"/>" >
+			  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.address1}"/>" >
 			  </div>
 			  <div class="col-md-5">
 			  	<label class="address-label">상세주소</label>
-			  		<input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" value="<c:out value="${item.Address1}"/>" >
+			  		<input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" value="<c:out value="${item.address2}"/>" >
 			  </div>
-			<div class="col-md-4">
+			  <div class="col-md-4">
 			  	<label class="address-datail-label">참고항목</label>
-			  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.Address2}"/>" >
-			  </div> --%>
+			  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.address3}"/>" >
+			  </div>
+			  <div class="col-md-4">
+			  	<label class="address-datail-label">위도</label>
+			  		<input type="text" class="form-control"  id="Lat" name="Lat" value="<c:out value="${item.Lat}"/>" >
+			  </div
+			  </div>
+			  <div class="col-md-4">
+			  	<label class="address-datail-label">경도</label>
+			  		<input type="text" class="form-control"  id="Lng" name="Lng" value="<c:out value="${item.Lng}"/>" >
+			  </div>
 			  <div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label><br>
 					<div class="form-check form-check-inline">
@@ -268,29 +277,26 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-  
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <!-- Template Main JS File -->
- 
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <!-- kakao API -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
   <script>
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                 var addr = ''; // 주소 변수
                 var extraAddr = ''; // 참고항목 변수
-
                 //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                     addr = data.roadAddress;
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
-
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                 if(data.userSelectedType === 'R'){
                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
@@ -312,12 +318,25 @@
                 } else {
                     document.getElementById("sample6_extraAddress").value = '';
                 }
-
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('sample6_postcode').value = data.zonecode;
                 document.getElementById("sample6_address").value = addr;
                 // 커서를 상세주소 필드로 이동한다.
                 document.getElementById("sample6_detailAddress").focus();
+                
+                // 위도 경도
+                //주소-좌표 변환 객체 생성
+                var geocoder = new daum.maps.services.Geocoder();
+                
+                //주소로 좌표 검색
+                geocoder.addressSearch(data.address, function(result, status) {
+                	//정상적으로 검색이 완료됐으면,	
+                	if (status == daum.maps.services.Status.OK) {
+                		console.log(result[0]);
+                		document.getElementById("Lat").value=result[0].y;
+                		document.getElementById("Lng").value=result[0].x;
+                	}
+                })
             }
         }).open();
     }
@@ -328,6 +347,8 @@
  		$("#sample6_address").val(null);
  		$("#sample6_detailAddress").val(null);
  		$("#sample6_extraAddress").val(null);
+ 		$("#Lat").val(null);
+ 		$("#Lng").val(null);
  	});
 </script>
 </body>
