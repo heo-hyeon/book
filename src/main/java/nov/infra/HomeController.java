@@ -50,8 +50,13 @@ public class HomeController {
 			}
 			
 			
-			@RequestMapping(value = "/find_id")
+			@RequestMapping(value = "find_id")
 			public String find_id() {
 				return "find_id";
 			}
-		}
+			
+			@RequestMapping(value = "find_pwd")
+			public String find_pwd() {
+				return "find_pwd";
+			}
+			}

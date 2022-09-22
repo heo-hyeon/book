@@ -85,8 +85,8 @@
 		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
 		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
 		<div class="find" style="margin-left:20px;">
-							<a href="/withbook/find_id">아이디 찾기</a>|
-							<a href="/find_pwd">비밀번호 찾기</a>|
+							<a href="find_id">아이디 찾기</a>|
+							<a href="find_pwd">비밀번호 찾기</a>|
 							<a href="/member/memberView">회원가입</a>
 						</div>
 					</div>
