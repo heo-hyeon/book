@@ -119,8 +119,11 @@
 			    <input type="text" class="form-control">
 			  </div>
 			  <div class="col-md-5">
-			    <label class="id-label">아이디 </label>
-			    <input type="password" class="form-control">
+			    <label class="id-label" for="memberID">아이디 </label>
+			    <input type="hidden" id="formIdAllowedNY" name="formIdAllowedNY" value="0">
+			    <input type="text" class="form-control" id="memberID" name="memberID"
+			    	value="<c:out value="${item.memberID}"/>">
+			    	<div class="invalid-feedback" id="ifIDFeedback"></div>
 			  </div>
 			  <div class="col-md-5">
 			    <label class="pwd-label">비밀번호 </label>
@@ -175,7 +178,7 @@
 			  	  	<option value="Ncerti">무</option>
 			  	  </select>
 			  </div>
-			 <div class="col-md-3">
+			<%--  <div class="col-md-3">
 			  	<label class="zipcode-label">우편번호</label>
 			  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
 		  	 </div>
@@ -203,7 +206,7 @@
 			  <div class="col-md-4">
 			  	<label class="address-datail-label">경도</label>
 			  		<input type="text" class="form-control"  id="Lng" name="Lng" value="<c:out value="${item.Lng}"/>" >
-			  </div>
+			  </div> --%>
 			  <div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label><br>
 					<div class="form-check form-check-inline">
@@ -350,6 +353,48 @@
  		$("#Lat").val(null);
  		$("#Lng").val(null);
  	});
+</script>
+
+<script>
+$("#memberID").on("focusout", function(){
+
+	$.ajax({
+		async: true 
+		,cache: false
+		,type: "post"
+		/* ,dataType:"json" */
+		,url: "/member/checkId"
+		/* ,data : $("#formLogin").serialize() */
+		,data : { "memberID" : $("#memberID").val() }
+		,success: function(response) {
+			if(response.rt == "success") {
+				document.getElementById("memberID").classList.remove('is-invalid');
+				document.getElementById("memberID").classList.add('is-valid');
+
+				document.getElementById("ifIDFeedback").classList.remove('invalid-feedback');
+				document.getElementById("ifIDFeedback").classList.add('valid-feedback');
+				document.getElementById("ifIDFeedback").innerText = "사용 가능 합니다.";
+				
+				document.getElementById("formIdAllowedNY").value = 1;
+				
+			} else {
+				document.getElementById("memberID").classList.add('is-invalid');
+				
+				document.getElementById("ifIDFeedback").classList.remove('valid-feedback');
+				document.getElementById("ifIDFeedback").classList.add('invalid-feedback');
+				document.getElementById("ifIDFeedback").innerText = "사용 불가능 합니다";
+				
+				document.getElementById("formIdAllowedNY").value = 0;
+			}
+		}
+		,error : function(jqXHR, textStatus, errorThrown){
+			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+		}
+	});
+	
+	
+	});
+
 </script>
 </body>
 </html>

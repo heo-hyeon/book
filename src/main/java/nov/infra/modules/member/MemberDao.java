@@ -35,4 +35,9 @@ public class MemberDao {
 		System.out.println("dao result : " + result);
 		return result;
 	}
+	
+	public int selectOneIdCheck(Member dto) {
+		int result = sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
+		return result;
+	}
 }

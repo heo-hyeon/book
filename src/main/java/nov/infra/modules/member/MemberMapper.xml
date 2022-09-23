@@ -124,6 +124,13 @@
 		WHERE 1=1
 			AND memberName = #{memberName}
 	</select>
+	
+	<select id="selectOneIdCheck" resultType="Integer">
+		SELECT 
+			COUNT(memberID)
+		FROM member
+		WHERE memberID = #{memberID}
+	</select>
 
 </mapper>
     
