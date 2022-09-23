@@ -60,7 +60,7 @@
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>              
+              <li><a href="/mypage">상세정보</a></li>              
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -110,7 +110,7 @@
 					   	 </div>
 		 	 			</div>
  	 		       		<div class="text-center">
-       						<button type="button" class="btn btn-outline-warning" style="float:right; width:100px;"><a href="find-id.html">찾기</a></button>
+       						<button type="button" class="btn btn-outline-warning" style="float:right; width:100px;"><a href="/find_id">찾기</a></button>
        					</div>
       					
   					 	<div class="card" style="width:17rem; opacity:0.75; margin-top:100px; margin-left:220px;">
@@ -119,8 +119,8 @@
 						  </div>
 						  <div class="card-body">
 						    <h5 class="card-title">yejin0113</h5><br>
-						    <a href="login.html" class="btn btn-outline-warning">로그인</a>
-						    <a href="find-pwd.html" class="btn btn-outline-warning">비밀번호 찾기</a>
+						    <a href="/login" class="btn btn-outline-warning">로그인</a>
+						    <a href="/find_pwd" class="btn btn-outline-warning">비밀번호 찾기</a>
 						  </div>
 						</div>
 					</div>

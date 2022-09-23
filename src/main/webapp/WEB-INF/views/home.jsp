@@ -62,7 +62,7 @@
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
+              <li><a href="/mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -148,7 +148,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="best1.html">불편한 편의점</a></h3>
+                    <h3 class="card-title"><a href="/best">불편한 편의점</a></h3>
                     <h6 style="color:silver">김호연</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"2022년 가장 사랑받는 소설"
@@ -166,7 +166,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="best1.html">작별인사</a></h3>
+                    <h3 class="card-title"><a href="/best">작별인사</a></h3>
                     <h6 style="color:silver;">김영하</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"3년만에 돌아온 김영하의 신작"</p>
@@ -184,7 +184,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="best1.html">세상의 마지막 기차역</a></h3>
+                    <h3 class="card-title"><a href="/best">세상의 마지막 기차역</a></h3>
                     <h6 style="color:silver;">무라케 다케시</h6>
                     <p style="color:red;">일본소설</p>
                     <p>"일본 SNS 화제의 책"</p>

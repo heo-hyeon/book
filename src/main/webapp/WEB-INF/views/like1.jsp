@@ -55,13 +55,13 @@
       <nav id="navbar" class="navbar">
        <ul>
           <li><a href="/" class="active">Home</a></li>
-          <li><a href="likebook.html">찜한 책 </a></li>
+          <li><a href="/likebook">찜한 책 </a></li>
           <li><a href="/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
-              <li><a href="login.html">로그아웃 </a></li>
+              <li><a href="/mypage">상세정보</a></li>
+              <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>

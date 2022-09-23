@@ -10,10 +10,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>LOGIN</title>
-
+  <title>User Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../resources/images/favicon.png" rel="icon">
+  <link href="../resources/images/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,16 +40,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  
 </head>
-
-
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
@@ -55,8 +54,8 @@
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
+          <nav id="navbar" class="navbar">
+       <ul>
           <li><a href="/" class="active">Home</a></li>
           <li><a href="/likebook">찜한 책 </a></li>
           <li><a href="/recommendList">추천목록</a></li>
@@ -73,50 +72,41 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-	<section id="hero" class="hero">
-		<div class="info d-flex align-items-center">
-		   <div class="container">
-		     <div class="row justify-content-center">
-		      <div class="col-lg-6 text-center">
-		<h1 style="color:white;">WITH BOOK</h1>
-		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" placeholder="ID" style="border:solid silver 0.5px; border-radius:3px;">
-		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
-		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
-		<div class="find" style="margin-left:20px;">
-							<a href="find_id">아이디 찾기</a>|
-							<a href="find_pwd">비밀번호 찾기</a>|
-							<a href="/member/memberView">회원가입</a>
-						</div>
-					</div>
-				</div>
-			</div>
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
+        <h2>개인정보</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Datails</li>
+        </ol>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Service Details Section ======= -->
+    <section id="service-details" class="service-details">
+	    <div class="card" style="width: 20rem; height: 19rem; float:left; margin-left:550px; margin-top:100px;">
+		  <img src="../resources/images/son.jpg" class="card-images-top" style="height:20rem;">
 		</div>
-	</select> 
-	
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+		<form class="row g-5" style="margin-left:30px; margin-top:50px;">
+   		   <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="margin-top:70px;">
+       		 <div class="row gy-4">
+         		 <div class="col-lg-4">
+         		   <div class="services-list">
+		              <a href="/mod" class="active">관심장르는 '소설' , '인문' 입니다.</a>
+		              <a href="#">관심 키워드는 'SF' , '감동' 입니다.</a>
+		              <a href="/likebook">좋아요 누른책은 '6'권 입니다.</a>
+		              <a href="/recommendList">추천하신 책은 총 '6'권 입니다.</a>
+		            </div>
+          			<p>*항목을 누르면 상세페이지가 나옵니다.</p>
+	         	 </div>
+			 </div>
+			</div>
+    </section><!-- End Service Details Section -->
+  </main><!-- End #main -->
 
-      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/images/book2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book4.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
-
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
-
-  </section><!-- End Hero Section -->
-  
-   <!-- Vendor JS Files -->
+  <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
   <script src="../resources/vendor/glightbox/js/glightbox.min.js"></script>
@@ -127,18 +117,5 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-	<script>
-	function openZipSearch() {
-	    new daum.Postcode({
-	          oncomplete: function(data) {
-	              $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
-	              $('[name=addr1]').val(data.address);
-	              $('[name=addr2]').val(data.buildingName);
-	          }
-	    }).open();
-	} 
-	</script>
-
-
 </body>
 </html>

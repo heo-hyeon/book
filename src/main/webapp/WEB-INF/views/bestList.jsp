@@ -61,13 +61,14 @@
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
+              <li><a href="/mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
         </ul>
       </nav><!-- .navbar -->
+   
     </div>
   </header><!-- End Header -->
 

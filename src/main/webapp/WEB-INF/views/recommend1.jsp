@@ -60,8 +60,8 @@
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
-              <li><a href="login.html">로그아웃 </a></li>
+              <li><a href="/mypage">상세정보</a></li>
+              <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -96,9 +96,9 @@
               <div class="meta-top">
                 <ul class="d-flex justify-content-center">
                   <li><i class="bi bi-person"></i>매트 헤이그</li>
-                  <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
-                  <li><i class="fa-solid fa-thumbs-up"></i><a href="blog-details.html">좋아요 </a></li>
-             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
+                  <li><i class="fa-regular fa-bookmark"></i><a href="">찜하기</a></li>
+                  <li><i class="fa-solid fa-thumbs-up"></i><a href="">좋아요 </a></li>
+             	  <li><i class="fa-solid fa-heart"></i><a href="">추천하기</a></li>
                 </ul>
               </div><!-- End meta top -->
               
@@ -115,7 +115,7 @@
 						<div class="col-lg-7 form-group">
 							<textarea  class="form-control" placeholder="책과 어울리는 해시태그를 자유롭게 남겨주세요." style="width:500px;"></textarea>
 						</div> 
-					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="recommendList.html">추천하기</a></button>  
+					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/recommendList">추천하기</a></button>  
 	              </div>
            	 </div>
 
