@@ -12,10 +12,10 @@
 		FROM CC 
 		WHERE 1=1
 	
-	<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
-			<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
-			<if test="shValue != null"></if>
-			
+		<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
+		<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
+		<if test="shValue != null"></if>
+				
 			<choose>
 				<when test="shOption == 1">and b.seq = #{shValue}</when>
 				<when test="shOption == 2">and a.name = #{shValue}</when>
@@ -115,7 +115,7 @@
 		 delNY = 1
 		WHERE seq = #{seq} 
 	</update>	
-	
+ 	
 	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 
 			seq
