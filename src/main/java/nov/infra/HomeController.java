@@ -89,4 +89,14 @@ public class HomeController {
 			public String reg() {
 				return "reg";
 			}
+			
+			@RequestMapping(value = "mypage")
+			public String mypage() {
+				return "mypage";
+			}
+			
+			@RequestMapping(value = "mypage2")
+			public String mypage2() {
+				return "mypage2";
+			}
 		}
