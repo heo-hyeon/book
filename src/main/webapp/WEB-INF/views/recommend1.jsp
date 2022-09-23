@@ -4,14 +4,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Best Seller-datail</title>
+  <title>Recommend Book-datail</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,7 +29,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
-  
+  <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
@@ -62,7 +61,7 @@
             <ul>
               <li><a href="/mod">기본정보</a></li>
               <li><a href="mypage.html">상세정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
+              <li><a href="login.html">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -76,16 +75,14 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
-
-        <h2>Best Seller </h2>
+        <h2>Recommend Book </h2>
         <ol>
-          <li><a href="../member//">Home</a></li>
-          <li>Best Seller Details</li>
+          <li><a href="/">Home</a></li>
+          <li>Recommend Book Details</li>
         </ol>
-
       </div>
     </div><!-- End Breadcrumbs -->
-
+    
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
       <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
@@ -93,19 +90,19 @@
           <div class="col-lg-8" style="margin:auto; text-align:center;">
             <article class="blog-details">
               <div class="post-images" style="text-align:center; margin-top:3px;">
-                <img src="../resources/images/retrogression.jpg" style="width:400px; height:500px;" class="images-fluid">
+                <img src="../resources/images/midnight.jpg" style="width:400px; height:500px;" class="images-fluid">
               </div>
-              <h2 class="title" style="text-align:center;">역행자 </h2>
+              <h2 class="title" style="text-align:center;">미드나잇 라이브러리 </h2>
               <div class="meta-top">
                 <ul class="d-flex justify-content-center">
-                  <li><i class="bi bi-person"></i>자청</li>
+                  <li><i class="bi bi-person"></i>매트 헤이그</li>
                   <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
                   <li><i class="fa-solid fa-thumbs-up"></i><a href="blog-details.html">좋아요 </a></li>
-             	  <li><i class="fa-solid fa-heart"></i><a href="/">추천하기</a></li>
+             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
                 </ul>
               </div><!-- End meta top -->
               
-       		  <div class="post-author d-flex align-items-center">
+              <div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
 						<div class="row gy-4">
 							<div class="col-lg-7 form-group">
@@ -118,99 +115,103 @@
 						<div class="col-lg-7 form-group">
 							<textarea  class="form-control" placeholder="책과 어울리는 해시태그를 자유롭게 남겨주세요." style="width:500px;"></textarea>
 						</div> 
-					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/">추천하기</a></button>  
+					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="recommendList.html">추천하기</a></button>  
 	              </div>
-           	  </div>
-           	   
+           	 </div>
+
               <div class="content">
                 <blockquote>
                   <p>
-                    오타쿠 흙수저에서 월 1억 자동 수익을 실현한 무자본 연쇄창업마, 라이프해커 자청의 인생 역주행 공식 대공개!
+                  밤 12시, 죽기 바로 전에만 열리는 마법의 도서관에서 인생의 두 번째 기회를 드립니다.
                   </p>
                 </blockquote>
 
                 <p>
-                 대부분의 사람들은 유전자와 본성의 명령을 그대로 따르기 때문에 평범함을 벗어날 수 없다. 하지만 정작 자신은 이를 모른 채 '나는 달라' 하는 자의식에 사로잡혀서 무한 합리화에 빠져 살아간다. 
-                 스스로가 얼마나 많은 정신적, 심리적 오류를 저지르는지 알지 못한 채 매일 똑같은 쳇바퀴를 돌 뿐이다. 
-                 왜 우리는 진짜 자유를 얻지 못하는가? 왜 늘 돈 이야기를 하면서도 평생 돈에 허덕이는가?
+				어머니의 죽음, 파혼, 해고, 반려 고양이 볼츠의 죽음… 더 이상 삶을 견딜 수 없던 주인공 노라는 자살을 결심한다. 
+				눈을 뜬 곳은 초록색 책들로 가득한 자정의 도서관. 
+				친절하고 다정한 사서의 안내로 서가의 책이 모두 노라가 살았을지도 모르는 삶들을 담고 있음을 알게 되고 노라는 《후회의 책》을 펼쳐서, 가장 후회되는 순간 다른 선택을 했던 삶을 살아본다. 
+				빙하학자, 뮤지션, 동네 펍 주인, 수영 선수가 되는 삶, 평범하지만 지루한 삶, 아이가 있는 삶 등등 가장 ‘완벽한 삶’을 찾을 때까지 수만 가지의 새로운 삶을 거친다. 
+				그러나 노라는 자꾸만 ‘자정의 도서관’으로 돌아오게 되고, 무엇이 완벽한 삶인지 의문을 품는다.
+				20대에 심한 우울증을 겪으며 정신적 붕괴를 경험했던 작가 매트 헤이그는 ‘살아야 할 이유’에 대해서 끊임없이 고민해왔고, 신작 장편소설 《미드나잇 라이브러리》에서 자신만의 해답을 구한다.
                 </p>
               </div>
 
               <div class="meta-bottom">
+     
                 <i class="bi bi-tags"></i>
                 <ul class="tags">
-                  <li><a href="#">자수성가 </a></li>
-                  <li><a href="#">라이프해커 </a></li>
+                  <li><a href="#">마법 </a></li>
+                  <li><a href="#">인생 </a></li>
+                  <li><a href="#">죽음 </a></li>
+                  <li><a href="#">삶 </a></li>
                 </ul>
               </div><!-- End meta bottom -->
             </article><!-- End blog post -->
 
             <div class="post-author d-flex align-items-center">
-              <div class="float:right";>
-              	<img src="../resources/images/ja.jpg">
+             <div class="float:right";>
+              	<img src="../resources/images/haig.jpg">
+             </div>
+              <div>
+                <h4>저자 '매트 헤이그 <Matt Haig>' </h4>
+                <p>
+                “강렬한 존재감과 위대한 재능을 가진 소설가”로 평가받는 영국의 소설가이자 동화작가. 
+				기발한 상상력에 유머와 위트가 더해진 그의 작품은 독자들에게 큰 공감과 위로를 주며 많은 사랑을 받고 있다.
+				2014년 《휴먼: 어느 외계인의 기록》으로 에드거상 최종 후보에 올랐고, 2015년 우울증을 극복한 과정을 담은 에세이 《살아야 할 이유》가 영국에서 베스트셀러가 되며, 
+				“마음 건강에 대하여 우리 시대에 가장 영향력 있는 작가”로 자리매김했다. 
+				그 외에도 20여 편 이상이 되는 그의 작품은 30여 개 이상의 언어로 번역 출판되었다.
+                </p>
               </div>
-	              <div>
-	                <h4>저자 '자청' </h4>
-	                <p>
-	                ‘무자본 창업가’로 유명해진 저자는 2019년, 20편의 영상으로 10만 구독자를 넘어서며 화제를 모은 후 미련 없이 유튜브 〈라이프해커 자청〉을 그만뒀다. 
-	                이후 본업인 온라인 마케팅 비즈니스를 비롯해 다방면으로 사업을 확장했다. 
-	                대표적으로 ‘이상한마케팅’, ‘프드프’, ‘아트라상’, ‘큐어릴’부터 지분 투자로 참여한 ‘라이프해킹스쿨’, ‘유튜디오’, 오프라인 사업으로 ‘욕망의북카페’, ‘인피니’ 등이 있다. 
-	                이미 30대 초반 무렵에 어떤 일을 하지 않아도 월 1억씩 버는 자동 수익을 완성했으며, 소유한 자산으로 매년 20퍼센트 이상의 투자 수익률을 올리며 경제적 자유를 실현했다.
-	                </p>
-	              </div>
             </div><!-- End post author -->
 
 			<div class="post-author align-items-center">
-            	<div class="comments">
+           		<div class="comments">
               		<h4 class="comments-count">리뷰 </h4>
-             		<div id="comment-1" class="comment">
-	                  <div>
-	                    <h5>DA88_9RYu </h5>
-	                    <time datetime="2022-06-29">29 Jun,2022</time>
+              		<div id="comment-1" class="comment">
+	                  	<div>
+	                    <h5>kksky</h5>
+	                    <time datetime="2022-08-12">12 Aug,2022</time>
 	                    <p>
-	                    그래서 무언가가 되고 싶으면, 나 스스로를 믿기보다 환경설정을 더 중요시했다. 
-	                    내 머리를 믿기보다는 인간의 심리와 본성을 이해하는 것에 투자했다.
+	      				우리의 인생은 무한한 갈래로 나뉘어 갈 수 있다는 교훈을 준 책이다.
+						현재 우리의 선택에 따라서 우린 팝스타가 될수도 있고 세계적 운동선수가 될수도 있다. 하지만 그 어떤것도 아닐수도 있다.
 	                    </p>
-	                  </div>
-                	</div>
-             	 </div><!-- End comment #1 -->
-             	 <div id="comment-2" class="comment">
-                  	<div>
-	                    <h5>galeuice</h5>
-	                    <time datetime="2022-05-12">12 May,2022</time>
-	                    <p>
-						남들보다 아주 조금이라도 의사 결정력이 높으면
-						인생에서 내려야 할 수백 번의 의사결정에서 좋은 선택을 할 확률이 높아진다...
-						단 5퍼센트만이라도 남들보다 좋은 결정을 할 수만 있다면 그 인생은 성공으로 향할 수밖에 없다.
-	                    </p>
-                  </div>
-                </div>
-              </div><!-- End comment #2-->
-
-				<div class="post-author align-items-center">
-	           	 <div class="comments">
-		              <h4 class="comments-count">문장수집 </h4>
-		             <div id="comment-1" class="comment">
-		                <div style="margin:auto; text-align:center;">
+	                  	</div>
+               		 </div>
+        		 </div>
+        		 <div class="comments"></div>
+             		 <div id="comment-2" class="comment">
 		                  <div>
-		                    <h5>happy_yeon </h5>
-		                    <time datetime="2022-03-08">08 Mar,2022</time>
-		                    <p>"당신이 생각하는 한계, 그것 별것 아닙니다."</p>
-		                    
-		                    <h5>haeeei </h5>
-		                    <time datetime="2022-08-13">13 Aug,2022</time>
-		                    <p>"신이 망가뜨리고 싶은 인간이 있으면, 신은 먼저 그가 잘 될 인간이라고 추켜세운다."</p>
-	
-	    					<h5>jjimin12 </h5>
-		                    <time datetime="2022-06-23">23 JUL,2022</time>
-		                    <p>"두뇌가 한번 최적화를 끝내면, 평생 자연스럽게 지능이 발달한다."</p>
+		                    <h5>junghi</h5>
+		                    <time datetime="2022-07-20">20 Jul,2022</time>
+		                    <p>
+							시간여행을 소재로 한 소설은 언제나 흥미롭다. 
+							특히 이 소설처럼 후회를 기반으로 다른 삶을 살아볼수 있다는 건 상상을 넘어 가슴 저릿한 희열을 느끼게 한다.
+							</p>
 		                  </div>
-		                </div>
-	           		</div><!-- End blog comments -->
-	         	 </div>
-	          </div><br>
-	          <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/">돌아가기</a></button>
-  	</main><!-- End #main -->
+             		 </div><!-- End comment #2-->
+				</div>
+            
+			 
+			<div class="post-author align-items-center">
+           		<div class="comments" >
+	             	<h4 class="comments-count">문장수집 </h4>
+	             	<div id="comment-1" class="comment">
+	                  <div>
+	                    <h5>hjmm </h5>
+	                    <time datetime="2022-04-08">08 Apr,2022</time>
+	                    <p>"마음속으로 생각할 때는 웃긴 말 같았는데 막상 입 밖에 내고 보니 별로였다."</p>
+	                    
+	                    <h5>hyojj </h5>
+	                    <time datetime="2022-08-13">13 Aug,2022</time>
+	                    <p>"또 다른 삶을 사는 우리가 지금의 나보다 더 나을지 나쁠지는 알 수 없다. 
+	                    	우리가 살지 못한 삶들이 진행되고 있은 건 사실이지만, 
+	                    	우리의 삶도 진행되고 있으며 우리는 거기에 초점을 맞춰야 한다."</p>
+	                  </div>
+               		</div>
+             	</div>
+            </div><br>
+            <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/recommendList">목록</a></button>
+ 	 </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

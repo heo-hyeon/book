@@ -69,4 +69,24 @@ public class HomeController {
 			public String like1() {
 				return "like1";
 			}
+			
+			@RequestMapping(value = "recommendList")
+			public String recommendList () {
+				return "recommendList";
+			}
+			
+			@RequestMapping(value = "recommend1")
+			public String recommend1 () {
+				return "recommend1";
+			}
+			
+			@RequestMapping(value = "mod")
+			public String mod() {
+				return "mod";
+			}
+			
+			@RequestMapping(value = "reg")
+			public String reg() {
+				return "reg";
+			}
 		}

@@ -10,8 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>LOGIN</title>
-
+  <title>User Info</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,6 +29,16 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
+  
+  <style>
+  	.choice {
+  		padding:20px;
+  		margin:20px;
+  	}
+  
+  	
+  </style>
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
@@ -37,17 +46,14 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  
 </head>
-
-
-<body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="main.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -56,7 +62,7 @@
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
-        <ul>
+	     <ul>
           <li><a href="/" class="active">Home</a></li>
           <li><a href="/likebook">찜한 책 </a></li>
           <li><a href="/recommendList">추천목록</a></li>
@@ -70,52 +76,120 @@
           </li>
         </ul>
       </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-	<section id="hero" class="hero">
-		<div class="info d-flex align-items-center">
-		   <div class="container">
-		     <div class="row justify-content-center">
-		      <div class="col-lg-6 text-center">
-		<h1 style="color:white;">WITH BOOK</h1>
-		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" placeholder="ID" style="border:solid silver 0.5px; border-radius:3px;">
-		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
-		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
-		<div class="find" style="margin-left:20px;">
-							<a href="find_id">아이디 찾기</a>|
-							<a href="find_pwd">비밀번호 찾기</a>|
-							<a href="/member/memberView">회원가입</a>
-						</div>
-					</div>
+  <!-- ======= Reg Section ======= -->
+<section id="hero" class="hero">
+	<div class="info d-flex align-items-center">
+	   <div class="container">
+	   
+	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
+		  <img src="../resources/images/son.jpg" class="card-images-top">
+		  <div class="card-body">
+		    <h5 class="card-title">예진님, 좋은 하루 보내세요</h5>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item"><a href="/mod">기본정보</a></li>
+		    <li class="list-group-item"><a href="mypage.html">상세정보</a></li>
+		  </ul>
+		</div>
+	   
+		<form class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
+		  <div class="col-md-5">
+		    <label class="name-label">이름 </label>
+		    <input type="text" class="form-control" placeholder="손예진">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="id-label">아이디 </label>
+		    <input type="password" class="form-control" placeholder="yejin0113">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="birth-label">생년월일 </label>
+		    <input type="date" class="form-control" value="1990-01-13">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="phone-label">휴대전화 </label>
+		    <input type="text" class="form-control" placeholder="010-1234-5678">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="pwd-label">비밀번호 </label>
+		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="pwd-check-label">비밀번호 확인 </label>
+		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		  </div>
+		  <div class="col-md-5">
+		    <label class="email-label">이메일 </label>
+		     <input type="text" class="form-control" placeholder="yejin0113@naver.com">
+		  </div>	
+		  <div class="form-check form-check-inline">
+			<label class="genre-label">관심 장르 </label><br>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <label class="form-check-label" for="inlineRadio1">소설</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2">
+				  <label class="form-check-label" for="inlineRadio2">시/에세이</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3">
+				  <label class="form-check-label" for="inlineRadio3">자기계발</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4">
+				  <label class="form-check-label" for="inlineRadio4">인문</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5">
+				  <label class="form-check-label" for="inlineRadio1">역사/문화</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6">
+				  <label class="form-check-label" for="inlineRadio2">경제/경영</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7">
+				  <label class="form-check-label" for="inlineRadio3">취미/여행</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
+				  <label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
+				  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
 				</div>
 			</div>
+		  	<div class="d-grid garp-2 col-4 mx-auto">
+		  		<br><a href="/reg"><button type="button" class="btn btn-outline-warning ma-auto">수정하기</a>
+			</div>
+		</form>
 		</div>
-	</select> 
+	</div>
+	
+	
+	
 	
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-
       <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/images/book2.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book4.jpg)"></div>
+      <div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
       <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
-
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
       </a>
-
       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
       </a>
-
     </div>
+</section>
 
-  </section><!-- End Hero Section -->
-  
    <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
@@ -127,18 +201,5 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-	<script>
-	function openZipSearch() {
-	    new daum.Postcode({
-	          oncomplete: function(data) {
-	              $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
-	              $('[name=addr1]').val(data.address);
-	              $('[name=addr2]').val(data.buildingName);
-	          }
-	    }).open();
-	} 
-	</script>
-
-
 </body>
 </html>

@@ -4,14 +4,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Favorite Book List</title>
+  <title>Recommend Book List</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,7 +30,7 @@
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
-
+  
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
   * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
@@ -55,13 +54,13 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="main.html" class="active">Home</a></li>
+          <li><a href="/" class="active">Home</a></li>
           <li><a href="/likebook">찜한 책 </a></li>
           <li><a href="/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/mod">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
+              <li><a href="mypage.html">상세정보</a></li>              
               <li><a href="login.html">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -77,12 +76,11 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
-        <h2>Favorite Book</h2>
+        <h2>Recommend Book</h2>
         <ol>
-          <li><a href="main.html">Home</a></li>
-          <li>Favorite Book List</li>
+          <li><a href="/">Home</a></li>
+          <li>Recommend Book List</li>
         </ol>
-
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -93,22 +91,25 @@
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/pachinko.jpg" style="width:350px; height:500px;">
-                   <span class="post-date">평점 4.9</span>
-
+                <img src="../resources/images/midnight.jpg" style="width:350px; height:500px;">
+                   <span class="post-date">평점 4</span>
               </div>
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">파친코</h3>
+                <h3 class="post-title">미드나잇 라이브러리</h3>
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">이민진</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">매트 헤이그</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
                     <i class="bi bi-folder2"></i> <span class="ps-2">인플루엔셜</span>
                   </div>
                 </div>
-                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+             	<div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                  마법, 인생, 죽음, 삶
+              </div><!-- End meta bottom -->
+                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -116,109 +117,129 @@
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/gentile.jpg" style="width:350px; height:500px;">
-                <span class="post-date">평점 4.6</span>
+                <img src="../resources/images/sf.jpg" style="width:350px; height:500px;">
+                <span class="post-date">평점 4.7</span>
               </div>
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">친밀한 이방인</h3>
+                <h3 class="post-title">지구 끝의 온실</h3>
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">정한아</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">김초엽</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">문학동네</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">자이언트북스</span>
                   </div>
                 </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                 식물, 생명력, 탐구심
+              </div><!-- End meta bottom -->
+                <br><a href="recommend1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End post list item -->
+          
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+              <div class="post-images position-relative overflow-hidden">
+                <img src="../resources/images/store.jpg" style="width:350px; height:500px;">
+                <span class="post-date">평점 4.7</span>
+              </div>
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">어서오세요, 휴남동 서점입니다</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">황보름</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">클라이하우스</span>
+                  </div>
+                </div>
+                <div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                  우정, 감동, 서점
+              </div><!-- End meta bottom -->
+                <br><a href="recommend1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
 
-         <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-              <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/fish.jpg" style="width:350px; height:500px;">
-                <span class="post-date">평점 4.3</span>
-              </div>
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title">물고기는 존재하지 않는다</h3>
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">룰루 밀러</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">곰출판</span>
-                  </div>
-                </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End post list item -->    
-          
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/europe.jpg" style="width:350px; height:500px;">
-                <span class="post-date">평점 4.8</span>
+                <img src="../resources/images/light.jpg" style="width:350px; height:500px;">
+                <span class="post-date">평점 4.4</span>
               </div>
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">유럽 도시 기행2</h3>
+                <h3 class="post-title">우리가 빛의 속도로 갈 수 없다면</h3>
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">유시민</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">김초엽</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">생각의길</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">허블</span>
                   </div>
                 </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                  우주, SF소설
+              </div><!-- End meta bottom -->
+                <br><a href="recommend1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
-         
+
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/ahn.jpg" style="width:350px; height:500px;">
-                <span class="post-date">평점 4.8</span>
+                <img src="../resources/images/lawer.jpg" style="width:350px; height:500px;">
+                <span class="post-date">평점 4.7</span>
               </div>
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">하얼빈</h3>
+                <h3 class="post-title">계속 가보겠습니다</h3>
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">김훈</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">임은정</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">문학동네</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">메디치미디어</span>
                   </div>
                 </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                 각오, 용기, 조직
+              </div><!-- End meta bottom -->
+                <br><a href="recommend1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
           
-		 <div class="col-xl-4 col-md-6">
+          <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
-                <img src="../resources/images/life.jpg" style="width:350px; height:500px;">
-                <span class="post-date">평점 4.3</span>
+                <img src="../resources/images/well.jpg" style="width:350px; height:500px;">
+                <span class="post-date">평점 4.5</span>
               </div>
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">기분을 관리하면 인생이 관리된다.</h3>
+                <h3 class="post-title">당신은 결국 무엇이든 해내는 사람</h3>
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">김다슬</span>
+                    <i class="bi bi-person"></i> <span class="ps-2">김상현</span>
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">클라우디아</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">필름</span>
                   </div>
                 </div>
-                <br><a href="like1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <div class="meta-bottom" style="list-style:none; display:inline; padding-top:10px; font-size:14px; color:#6c757d;">
+                <i class="bi bi-tags"></i>
+                  위로, 불안, 행복
+              </div><!-- End meta bottom -->
+                <br><a href="recommend1.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -230,8 +251,8 @@
             <li><a href="#">3</a></li>
           </ul>
         </div><!-- End blog pagination -->
-       	<div class="text-center">
-       		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="like1.html">책 추가</a></button>
+        <div class="text-center">
+      		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="recommend1.html">책 추가</a></button>
        	</div>
         </div>
       </div>
