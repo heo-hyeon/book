@@ -164,7 +164,7 @@
 										<c:out value="${list.ccg_seq}" />
 									</td>
 									<td>
-										<a href="/codeGroup/codeView?name=<c:out value="${list.name }"/>"><c:out value="${list.name}" /></a>
+										<a href="/codeGroup/codeForm?name=<c:out value="${list.name }"/>"><c:out value="${list.name}" /></a>
 									</td>
 									<td>
 										<c:out value="${list.codename_ko }" />

@@ -97,6 +97,7 @@
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">지원분야								
 								<option value="md">기획/MD
 								<option value="it">IT개발
 								<option value="strategy">기술/전략
@@ -104,6 +105,7 @@
 								<option value="accounting">회계/총무
 								<option value="sales">영업/판매
 							</select> <select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">경력사항
 								<option value="1">경력
 								<option value="0">신입
 							</select> <select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
@@ -185,9 +187,10 @@
 												</c:if>
 											</c:forEach>
 										</td>	
-										</td>
+										</td>           
 										<td>
-											<c:out value="${list.memberName }" />
+											<a href="/code/codeView?name=<c:out value="${list.memberName }"/>"><c:out value="${list.memberName}" /></a>
+											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
 											<c:out value="${list.memberName_en}" />

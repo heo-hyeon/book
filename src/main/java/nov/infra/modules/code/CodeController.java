@@ -99,7 +99,7 @@ public class CodeController extends BaseController {
 	}
 	
 	@RequestMapping(value="codeView")
-	public String codeGroupView(CodeVo vo, Model model) throws Exception {
+	public String codeView(CodeVo vo, Model model) throws Exception {
 		Code result = service.selectOne(vo);
 		model.addAttribute("item", result);
 		return "infra/code/xdmin/codeForm";

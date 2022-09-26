@@ -35,23 +35,22 @@
 			 b.seq
 			,b.ccg_seq
 			,(select name from CCG a where a.seq = b.ccg_seq) as name
-		    ,b.code
 		    ,b.codename_ko
 		    ,b.codename_en
 		    ,b.useNY
 		    ,b.delNY
 		    ,b.reg_date
 		    ,b.mod_date
-		FROM NCT.CC b 
-		LEFT JOIN CCG a on b.ccg_seq = a.seq
+		
+		<!-- LEFT JOIN CCG a on b.ccg_seq = a.seq -->
 		<include refid="selectCommon" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
-	<select id="selectOneCount" resultType="Integer">
+ 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon" />
-	</select>
+	</select> 
 	
 	<insert id="insert">
 		INSERT INTO CC (
@@ -76,15 +75,14 @@
 			 b.seq
 			,b.ccg_seq
 			,(select name from CCG a where a.seq = b.ccg_seq) as name
-		    ,b.code
 		    ,b.codename_ko
 		    ,b.codename_en
 		    ,b.useNY
 		    ,b.delNY
 		    ,b.reg_date
 		    ,b.mod_date
-		FROM NCT.CC b 
-		LEFT JOIN CCG a on b.ccg_seq = a.seq
+		FROM CC b 
+		<!-- LEFT JOIN CCG a on b.ccg_seq = a.seq -->
 	 	WHERE 1=1
 	 		AND seq = #{seq}
 	</select>
