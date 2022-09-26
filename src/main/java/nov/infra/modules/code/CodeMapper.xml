@@ -9,9 +9,10 @@
     <resultMap id="resultMapObj" type="nov.infra.modules.code.Code"></resultMap>
 	
 	<sql id ="selectCommon">
-		FROM CC 
+		FROM CC b 
+		LEFT JOIN CCG a on b.ccg_seq = a.seq
 		WHERE 1=1
-	
+		
 		<if test="shdelNY != null and !shdelNY.equals('')">AND b.delNY = #{shdelNY}</if>
 		<if test="shuseNY != null and !shuseNY.equals('')">AND b.useNY = #{shuseNY}</if>
 		<if test="shValue != null"></if>
@@ -34,15 +35,13 @@
 		 SELECT
 			 b.seq
 			,b.ccg_seq
-			,(select name from CCG a where a.seq = b.ccg_seq) as name
+			,a.name
 		    ,b.codename_ko
 		    ,b.codename_en
 		    ,b.useNY
 		    ,b.delNY
 		    ,b.reg_date
 		    ,b.mod_date
-		
-		<!-- LEFT JOIN CCG a on b.ccg_seq = a.seq -->
 		<include refid="selectCommon" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
@@ -54,38 +53,25 @@
 	
 	<insert id="insert">
 		INSERT INTO CC (
-			codename_ko
+			 ccg_seq
+			,codename_ko
 			,codename_en
+			,useNY
+			,delNY
 			,reg_date
-			,mod_date
 		)
 		VALUES (
-			#{codename_ko}
+			#{ccg_seq}
+			,#{codename_ko}
 			,#{codename_en}
-			,now()
+			,1
+			,0
 			,now()
 		)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>
-	
-	<select id="selectOne" resultMap="resultMapObj">
-		 SELECT
-			 b.seq
-			,b.ccg_seq
-			,(select name from CCG a where a.seq = b.ccg_seq) as name
-		    ,b.codename_ko
-		    ,b.codename_en
-		    ,b.useNY
-		    ,b.delNY
-		    ,b.reg_date
-		    ,b.mod_date
-		FROM CC b 
-		<!-- LEFT JOIN CCG a on b.ccg_seq = a.seq -->
-	 	WHERE 1=1
-	 		AND seq = #{seq}
-	</select>
 	
 	<update id="update">
 		UPDATE CC
@@ -96,39 +82,50 @@
 			,codename_en = #{codename_en}
 			,useNY = #{useNY}
 			,delNY = #{delNY}
-			,reg_date = now()
 			,mod_date = now()
 		WHERE 1=1
 			AND seq = #{seq}
 	</update>
 	
-	<delete id="delete">
-		DELETE FROM CC
-		WHERE seq = #{seq} 
-	</delete>		
-		
 	<update id="uelete">
-		UPDATE CC
+		UPDATE 
+			CC
 		SET
-		 delNY = 1
+			delNY = 1
 		WHERE seq = #{seq} 
 	</update>	
  	
+	<delete id="delete">
+		DELETE FROM CC WHERE seq = #{seq} 
+	</delete>		
+		
+
+	<select id="selectOne" resultMap="resultMapObj">
+		 SELECT
+		 	b.*
+		 FROM CC b
+	 	 WHERE 1=1
+	 		AND seq = #{seq}
+	</select>
+	
+ 	<!--  이상 없음-->
 	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 
-			seq
-			,ccg_seq
-			,name
-			,codename_ko
-			,codename_en
-			,useNY
-		    ,delNY
-		    ,reg_date
-		    ,mod_date
+			b.seq
+			,b.ccg_seq
+			,b.name
+			,b.codename_ko
+			,b.codename_en
+			,b.useNY
+		    ,b.delNY
+		    ,b.reg_date
+		    ,b.mod_date
 		FROM
-			CC
+			CC b
 		WHERE 1=1
-			AND delNY = 0
-		    AND useNY = 1
+			AND b.delNY = 0
+		    AND b.useNY = 1
     </select> 
+    
+    
 </mapper>		
