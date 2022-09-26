@@ -49,7 +49,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="main.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -59,14 +59,14 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
 	     <ul>
-          <li><a href="main.html" class="active">Home</a></li>
-          <li><a href="likebook.html">찜한 책 </a></li>
-          <li><a href="recommendList.html">추천목록 </a></li>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/likebook">찜한 책 </a></li>
+          <li><a href="/recommendList">추천목록 </a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="mod.html">기본정보</a></li>
-              <li><a href="mypage.html">상세정보</a></li>
-              <li><a href="login.html">로그아웃 </a></li>
+              <li><a href="/mod">기본정보</a></li>
+              <li><a href="/mypage">상세정보</a></li>
+              <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
