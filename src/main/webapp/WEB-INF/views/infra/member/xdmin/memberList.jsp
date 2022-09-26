@@ -59,13 +59,13 @@
 			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 			<nav id="navbar" class="navbar">
 				<ul>
-					<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
-					<li><a href="CodeManagement.html">코드관리</a></li>
+					<li><a href="/codeGroup/codeGroupList" class="active">코드그룹관리</a></li>
+					<li><a href="/code/codeList">코드관리</a></li>
 					<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 						<ul>
-							<li><a href="mod.html">기본정보</a></li>
-							<li><a href="mypage.html">상세정보</a></li>
-							<li><a href="login.html">로그아웃 </a></li>
+							<li><a href="/mod">기본정보</a></li>
+							<li><a href="/mypage">상세정보</a></li>
+							<li><a href="/login">로그아웃 </a></li>
 							<li><a href="#">기타 </a></li>
 						</ul></li>
 				</ul>
@@ -91,13 +91,15 @@
 
 
 		<section id="blog" class="blog">
-			<form method="post" action="/member/memberList">
+			<form method="post" action="/member/memberList" name="formList">
+			<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+			<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
 				<div class="post-item position-relative h-100">
 					<h2 style="margin-left: 90px;">회원 리스트</h2>
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">지원분야								
+								<option value="" >지원분야</option>
 								<option value="md">기획/MD
 								<option value="it">IT개발
 								<option value="strategy">기술/전략
@@ -106,13 +108,23 @@
 								<option value="sales">영업/판매
 							</select> <select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">경력사항
-								<option value="1">경력
-								<option value="0">신입
+								<option value="1" <c:if test="${vo.shcareer eq 1}">selected</c:if>>YES</option>
+								<option value="0" <c:if test="${vo.shcareer eq 0}">selected</c:if>>NO</option>
 							</select> <select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">자격증 유무
-								<option value="1">유
-								<option value="0">무
+								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>YES</option>
+								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>NO</option>
 							</select>
+							<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">사용여부</option>
+								<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
+								<option value="0" <c:if test="${vo.shuseNY eq 0}">selected</c:if>>NO</option>
+							</select> 
+							<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">삭제여부</option>
+								<option value="1" <c:if test="${vo.shdelNY eq 1}">selected</c:if>>YES</option>
+								<option value="0" <c:if test="${vo.shdelNY eq 0}">selected</c:if>>NO</option>
+							</select><br> 
 							<div class="form form-inline">
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<button class="btn btn-success" style="height: 35px; width: 40px;" id="btnSearch">
@@ -144,6 +156,8 @@
 							<th>취미</th>
 							<th>지역</th>
 							<th>자격증 유무</th>
+							<th>사용여부</th>
+							<th>삭제여부</th>
 						</tr>
 						<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
 
@@ -189,18 +203,17 @@
 										</td>	
 										</td>           
 										<td>
-											<a href="/code/codeView?name=<c:out value="${list.memberName }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberForm?name=<c:out value="${list.memberName }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
 											<c:out value="${list.memberName_en}" />
 										</td>
 										<td>
-											<fmt:formatDate value="${list.dob }" pattern="yyyy-MM-dd HH:mm:ss" />
+											<c:out value="${list.dob}" />
 										</td>
 										<td>
 											<c:forEach items="${listCodeTelecom}" var="listTelecom" varStatus="statusTelecom">
-
 												<c:if test="${list.telecom eq listTelecom.seq}">
 													<c:out value="${listTelecom.codename_ko }" />
 												</c:if>
@@ -217,7 +230,6 @@
 										</td>
 										<td>
 											<c:forEach items="${listCodeEmailCode}" var="listEmailCode" varStatus="statusEmailCode">
-
 												<c:if test="${list.email_code eq listEmailCode.seq}">
 													<c:out value="${listEmailCode.codename_ko }" />
 												</c:if>
@@ -225,7 +237,6 @@
 										</td>
 										<td>
 											<c:forEach items="${listCodeHobby}" var="listHobby" varStatus="statusHobby">
-
 												<c:if test="${list.hobby eq listHobby.seq}">
 													<c:out value="${listHobby.codename_ko }" />
 												</c:if>
@@ -245,35 +256,39 @@
 												</c:if>
 											</c:forEach>
 										</td>
-										<%-- <option value="1" <c:if test="${item.useNY eq 1 }"> selected</c:if>>Y</option>
-					  <option value="0" <c:if test="${item.useNY eq 0 }"> selected</c:if>>N</option>
-				   	  </td> --%>
+										<td>
+											<c:choose>
+												<c:when test="${list.useNY eq 1}">N</c:when>
+												<c:otherwise>Y</c:otherwise>
+											</c:choose>
+										</td>
+										<td>
+											<c:choose>
+												<c:when test="${list.delNY eq 0}">N</c:when>
+												<c:otherwise>Y</c:otherwise>
+											</c:choose>
+										</td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>
 						</c:choose>
 					</table>
-					<div class="blog-pagination">
-						<ul class="justify-content-center">
-							<li><a href="#">1</a></li>
-							<li class="active"><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-						</ul>
-					</div>
-					<!-- End blog pagination -->
+					<!-- pagination s -->
+					<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
+					<!-- pagination e -->
 				</div>
 				</div>
 				</div>
 				</div>
 				<div style="width: 90%; margin: auto;">
-					<button class="btn btn-warning" style="float: left; color: white;">
+					<button type="button" class="btn btn-warning" style="float: left; color: white;">
 						<i class="fa-solid fa-square-check"></i>
 					</button>
 					<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 10px;">
 						<i class="fa-solid fa-trash-can-arrow-up"></i>
 					</button>
-					<button class="btn btn-outline-warning" style="float: right; margin-right: 10px;">
-						<a href="/member/memberView" <i class="fa-solid fa-user-plus"></i></a>
+					<button type="button" class="btn btn-outline-warning" style="float: right; margin-right: 10px;">
+						<a href="/member/memberForm" <i class="fa-solid fa-user-plus"></i></a>
 					</button>
 				</div>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -328,6 +343,8 @@
 		var goUrlUpdt = "/member/memberUpdt";
 		var goUrlUele = "/member/memberUele";
 		var goUrlDele = "/member/memberDele";
+		
+		var form = $("form[name=formList]");
 
 		$("#btnSearch").on("click", function() {
 			if (validationList() == false)

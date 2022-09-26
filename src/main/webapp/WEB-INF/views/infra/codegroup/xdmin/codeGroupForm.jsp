@@ -115,20 +115,19 @@
 				</div>
 				
 				<div style="width: 83%; margin: 20px 0 20px 0px;">
-					<div style="width: 83%; margin: 20px 0px 20px 0px;">
-						<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
-							<i class="fa-solid fa-chart-bar"></i></a>
-						</button>
-						<button type="button" class="btn btn-danger" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
-							<i class="fa-solid fa-x"></i>
-						</button>
-						<button class="btn btn-danger" type="button" style="margin-left: 10px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							<i class="fa-solid fa-trash-can-arrow-up"></i>
-						</button>
-						<button class="btn btn-success" type="button" id="btnSave" style="float: right; margin-right: 7px;">
-							<i class="fa-regular fa-bookmark"></i>
-						</button>
-					</div>
+					<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
+						<i class="fa-solid fa-chart-bar"></i></a>
+					</button>
+					<button type="button" class="btn btn-danger" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
+						<i class="fa-solid fa-x"></i>
+					</button>
+					<button class="btn btn-danger" type="button" style="margin-left: 10px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<i class="fa-solid fa-trash-can-arrow-up"></i>
+					</button>
+					<button class="btn btn-success" type="button" id="btnSave" style="float: right; margin-right: 7px;">
+						<i class="fa-regular fa-bookmark"></i>
+					</button>
+				</div>
 					
 				<!-- x버튼 Modal -->
 				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -167,8 +166,6 @@
 				    </div>
 				  </div>
 				</div>
-			
-			</div>
 			</form>
 		<form name="formVo" id="formVo" method="post">
 		<!-- *Vo.jsp s -->

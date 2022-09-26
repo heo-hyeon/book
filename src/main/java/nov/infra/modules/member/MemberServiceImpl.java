@@ -36,4 +36,31 @@ public class MemberServiceImpl implements MemberService {
 		int result = dao.selectOneIdCheck(dto);
 		return result;
 	}
-} 
+	
+	@Override
+	public int update(Member dto) throws Exception {
+		return dao.update(dto);
+	}
+	
+	@Override
+	public int uelete(Member dto) throws Exception {
+		return dao.uelete(dto);
+	}
+	
+	@Override
+	public int delete(MemberVo vo) throws Exception {
+		return dao.delete(vo);
+	}
+	
+	// 페이징
+	@Override
+	public int selectOneCount(MemberVo vo) throws Exception {
+		return dao.selectOneCount(vo);
+	}
+	
+	//회원가입
+	@Override
+	public int memberJoin(Member dto) throws Exception {
+		return dao.update(dto);
+	}  
+}

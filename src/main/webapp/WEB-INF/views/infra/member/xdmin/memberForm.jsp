@@ -72,7 +72,6 @@
           </li>
         </ul>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
@@ -86,11 +85,13 @@
 			    <class="card-title"><input type="file">
 			  </div>
 			</div>
-			
-			<form class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
+			<form class="row g-4" action="/member/MemberJoin" style="margin-left:30px; margin-top:50px; color:white;">
+			<!-- *Vo.jsp s -->
+			<%@include file="memberVo.jsp"%>	
+			<!-- *Vo.jsp e -->
 			  <div class="col-md-5">
 			 	 <label class="job-label">지원분야 </label>
-				  <select class="form-control">
+				  <select class="form-control" name="job">
 				  	<option value="md">기획/MD</option>
 				  	<option value="it">IT개발</option>
 				  	<option value="technology">기술/전략</option>
@@ -101,22 +102,22 @@
 			  </div>
 			  <div class="col-md-5">
 			  	<label class="career-label">경력사항</label>
-			  	  <select class="form-control">
+			  	  <select class="form-control" name="career">
 			  	  	<option value="junior">신입</option>
 			  	  	<option value="senior">경력</option>
 			  	  </select>
 			  </div>
 			  <div class="col-md-5">
 			    <label class="name-label">이름 </label>
-			    <input type="text" class="form-control">
+			    <input type="text" class="form-control" name="memberName">
 			  </div>
 			  <div class="col-md-5">
-			    <label class="nameEn-label">영문이름 </label>
-			    <input type="text" class="form-control">
+			    <label class="nameEn-label" >영문이름 </label>
+			    <input type="text" class="form-control" name="memberName_en">
 			  </div>
 			  <div class="col-md-5">
 			    <label class="region-label">지역</label>
-			    <input type="text" class="form-control">
+			    <input type="text" class="form-control" name="region">
 			  </div>
 			  <div class="col-md-5">
 			    <label class="id-label" for="memberID">아이디 </label>
@@ -127,7 +128,7 @@
 			  </div>
 			  <div class="col-md-5">
 			    <label class="pwd-label">비밀번호 </label>
-			    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+			    <input type="text" class="form-control"  name="pwd" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 			  </div>
 			  <div class="col-md-5">
 			    <label class="pwd-check-label">비밀번호 확인 </label>
@@ -135,14 +136,14 @@
 			  </div>
 			   <div class="col-md-5">
 			    <label class="birth-label">생년월일 </label>
-			    <input type="date" class="form-control">
+			    <input type="date" class="form-control" name="dob">
 			  </div>
 		      <div class="col-md-5">
 			    <label class="hobby-label">취미</label>
-			    <input type="text" class="form-control">
+			    <input type="text" class="form-control" name="hobby">
 			  </div>
 			  <div class="row">
-			    <label class="phone-label">휴대전화 </label>
+			    <label class="phone-label"  name="phone">휴대전화 </label>
 			    <div class="col-1">
 			    	<select class="form-control">
 			    		<option>skt</option>
@@ -151,7 +152,7 @@
 			    	</select>
 			    </div>
 			     <div class="col-4">	
-			   		<input type="text" class="form-control">
+			   		<input type="text" class="form-control" name="phone_emer">
 			 	</div>
 		 	  </div>
 			  <div class="row inline">
@@ -169,11 +170,11 @@
 		 	  </div>
 			  <div class="col-md-5">
 			    <label class="email-label">이메일 </label>
-			     <input type="text" class="form-control">
+			     <input type="text" class="form-control" name="email">
 			  </div>	
 			  <div class="col-md-5">
 			  	<label class="certification-label">자격증</label>
-			  	  <select class="form-control">
+			  	  <select class="form-control" name="certifiNY">
 			  	  	<option value="Ycerti">유</option>
 			  	  	<option value="Ncerti">무</option>
 			  	  </select>
@@ -246,9 +247,66 @@
 					  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
 					</div>
 				</div>
-			  	<div class="d-grid garp-2 col-4 mx-auto">
-			  		<br><a href="/"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>
+	<!-- 		  	<div class="d-grid garp-2 col-4 mx-auto">
+			  		<br><button type="button" class="btn btn-outline-warning ma-auto">가입하기</button>
+				</div> -->
+				
+					<div style="width: 83%; margin: 20px 0px 20px 0px;">
+						<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
+							<i class="fa-solid fa-chart-bar"></i></a>
+						</button>
+						<button type="button" class="btn btn-danger" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
+							<i class="fa-solid fa-x"></i>
+						</button>
+						<button class="btn btn-danger" type="button" style="margin-left: 10px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<i class="fa-solid fa-trash-can-arrow-up"></i>
+						</button>
+						<button class="btn btn-success" type="button" id="btnSave" style="float: right; margin-right: 7px;">
+							<i class="fa-regular fa-bookmark"></i>
+						</button>
+					</div>
+				<!-- x버튼 Modal -->
+				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel2"><b>삭제</b></h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				        정말로 삭제하시겠습니까?
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+				        <button type="button" class="btn btn-dark" id="btnUelete">삭제 </button>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+					
+			    <!-- 휴지통 Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel"><b>삭제</b></h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				        정말로 삭제하시겠습니까?
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+				        <button type="button" class="btn btn-dark" id="btnDelete">삭제 </button>
+				      </div>
+				    </div>
+				  </div>
 				</div>
+			</form>
+			<form name="formVo" id="formVo" method="post">
+			<!-- *Vo.jsp s -->
+			<%@include file="memberVo.jsp"%>	
+			<!-- *Vo.jsp e -->
 			</form>
 		</div>
 	 </div>
@@ -284,7 +342,10 @@
   <!-- Template Main JS File -->
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <!-- kakao API -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+ 
+ 
   <script>
     function sample6_execDaumPostcode() {
         new daum.Postcode({
@@ -391,10 +452,49 @@ $("#memberID").on("focusout", function(){
 			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 		}
 	});
-	
-	
-	});
-
+});
 </script>
+
+<script type="text/javascript">
+    var goUrlList = "/member/memberList"; 			/* #-> */
+	var goUrlInst = "/member/memberInst"; 			/* #-> */
+	var goUrlUpdt = "/member/memberUpdt";				/* #-> */
+	var goUrlUele = "/member/memberUele";				/* #-> */
+	var goUrlDele = "/member/memberDele";				/* #-> */
+	
+	var seq = $("input:hidden[name=seq]");				/* #-> */
+	
+	var form = $("form[name=form]");
+	var formVo = $("form[name=formVo]");
+		
+	$("#btnSave").on("click", function(){
+
+		if (seq.val() == "0" || seq.val() == ""){
+	   		form.attr("action", goUrlInst).submit();
+	   	} else {
+	   		form.attr("action", goUrlUpdt).submit();
+	   	}
+	});
+	
+	$("#btnList").on("click", function(){
+		formVo.attr("action", goUrlList).submit();
+	});
+	
+</script>
+
+<script type="text/javascript">
+	
+	$("#btnUelete").on("click", function() {
+		form.attr("action", goUrlUele).submit();
+	});
+	
+	$("#btnDelete").on("click", function() {
+		form.attr("action", goUrlDele).submit();
+	});
+	
+</script>
+
+
+
 </body>
 </html>

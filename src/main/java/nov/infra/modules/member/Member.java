@@ -1,25 +1,25 @@
 package nov.infra.modules.member;
 
-import java.util.Date;
-
 public class Member {
 
 		private String seq;
 		private String memberID;
 		private String pwd;
-		private Integer job;
-		private Integer career;
+		private String job;
+		private String career;
 		private String memberName;
 		private String memberName_en;
-		private Date dob;
-		private Integer telecom;
-		private Integer phone;
-		private Integer phone_emer;
+		private String dob;
+		private String telecom;
+		private String phone;
+		private String phone_emer;
 		private String email;
-		private Integer email_code;
-		private Integer hobby;
-		private Integer region;
-		private Integer certifiNY;
+		private String email_code;
+		private String hobby;
+		private String region;
+		private String certifiNY;
+		private String useNY;
+		private String delNY;
 		public String getSeq() {
 			return seq;
 		}
@@ -38,16 +38,16 @@ public class Member {
 		public void setPwd(String pwd) {
 			this.pwd = pwd;
 		}
-		public Integer getJob() {
+		public String getJob() {
 			return job;
 		}
-		public void setJob(Integer job) {
+		public void setJob(String job) {
 			this.job = job;
 		}
-		public Integer getCareer() {
+		public String getCareer() {
 			return career;
 		}
-		public void setCareer(Integer career) {
+		public void setCareer(String career) {
 			this.career = career;
 		}
 		public String getMemberName() {
@@ -62,28 +62,28 @@ public class Member {
 		public void setMemberName_en(String memberName_en) {
 			this.memberName_en = memberName_en;
 		}
-		public Date getDob() {
+		public String getDob() {
 			return dob;
 		}
-		public void setDob(Date dob) {
+		public void setDob(String dob) {
 			this.dob = dob;
 		}
-		public Integer getTelecom() {
+		public String getTelecom() {
 			return telecom;
 		}
-		public void setTelecom(Integer telecom) {
+		public void setTelecom(String telecom) {
 			this.telecom = telecom;
 		}
-		public Integer getPhone() {
+		public String getPhone() {
 			return phone;
 		}
-		public void setPhone(Integer phone) {
+		public void setPhone(String phone) {
 			this.phone = phone;
 		}
-		public Integer getPhone_emer() {
+		public String getPhone_emer() {
 			return phone_emer;
 		}
-		public void setPhone_emer(Integer phone_emer) {
+		public void setPhone_emer(String phone_emer) {
 			this.phone_emer = phone_emer;
 		}
 		public String getEmail() {
@@ -92,28 +92,41 @@ public class Member {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		public Integer getEmail_code() {
+		public String getEmail_code() {
 			return email_code;
 		}
-		public void setEmail_code(Integer email_code) {
+		public void setEmail_code(String email_code) {
 			this.email_code = email_code;
 		}
-		public Integer getHobby() {
+		public String getHobby() {
 			return hobby;
 		}
-		public void setHobby(Integer hobby) {
+		public void setHobby(String hobby) {
 			this.hobby = hobby;
 		}
-		public Integer getRegion() {
+		public String getRegion() {
 			return region;
 		}
-		public void setRegion(Integer region) {
+		public void setRegion(String region) {
 			this.region = region;
 		}
-		public Integer getCertifiNY() {
+		public String getCertifiNY() {
 			return certifiNY;
 		}
-		public void setCertifiNY(Integer certifiNY) {
+		public void setCertifiNY(String certifiNY) {
 			this.certifiNY = certifiNY;
 		}
+		public String getUseNY() {
+			return useNY;
+		}
+		public void setUseNY(String useNY) {
+			this.useNY = useNY;
+		}
+		public String getDelNY() {
+			return delNY;
+		}
+		public void setDelNY(String delNY) {
+			this.delNY = delNY;
+		} 
+		
 }

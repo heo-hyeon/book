@@ -8,30 +8,14 @@
 
 	<resultMap id="resultMapObj" type="nov.infra.modules.member.Member"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-	
-		SELECT 
-			a.seq
-			,a.memberID
-			,a.pwd
-			,a.job
-			,a.career
-			,a.memberName
-			,a.memberName_en
-			,a.dob
-			,a.telecom
-			,a.phone
-			,a.phone_emer
-			,a.email
-			,a.email_code
-			,a.hobby
-			,a.region
-			,a.certifiNY
+	<sql id = "selectCommon">
 		FROM member a
 		WHERE 1=1
 	
 		<if test="shcareer != null and !shcareer.equals('')">ANd a.career = #{shcareer}</if>
 		<if test="shcertifiNY != null and !shcertifiNY.equals('')">AND a.certifiNY = #{shcertifiNY}</if>
+		<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
+		<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if>
 		<if test="shValue != null"></if>
 		
 		<choose>
@@ -40,31 +24,76 @@
 			<!-- select문(지원분야) 수정하기
 			<when test="shmember == 3">and a.job</when> -->
 		</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT 
+				a.seq
+				,a.memberID
+				,a.pwd
+				,a.job
+				,a.career
+				,a.memberName
+				,a.memberName_en
+				,a.dob
+				,a.telecom
+				,a.phone
+				,a.phone_emer
+				,a.email
+				,a.email_code
+				,a.hobby
+				,a.region
+				,a.certifiNY
+				,a.useNY
+				,a.delNY
+		<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
+	
+	<select id = "selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>
+	</select>
+	
 	
 	<insert id="insert">
 		INSERT INTO member (
-			job
+			memberID
+			,pwd
+			,job
 			,career
 			,memberName
 			,memberName_en
+			,dob
+			,telecom
 			,phone
 			,phone_emer
 			,email
+			,email_code
 			,hobby
 			,region
 			,certifiNY
+			,useNY
+			,delNY
 		) VALUES (
-			#{job}
-			,#{career}
+			#{memberID}
+			,#{pwd}
+			,6
+			,7
 			,#{memberName}
 			,#{memberName_en}
+			,#{dob}
+			,22
 			,#{phone}
-			,#{phone_emer}
+			,01012341234
 			,#{email}
-			,#{hobby}
-			,#{region}
-			,#{certifiNY}
+			,19
+			,10
+			,17
+			,26
+			,1
+			,0
 		)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()
@@ -120,10 +149,48 @@
 			,a.hobby
 			,a.region
 			,a.certifiNY
+			,a.useNY
+			,a.delNY
 		FROM member a
 		WHERE 1=1
-			AND memberName = #{memberName}
+			AND seq = #{seq}
 	</select>
+	
+	<update id = "update">
+		UPDATE member
+		SET
+			memberID = #{memberID}
+			,pwd = #{pwd}
+			,job = #{job}
+			,career = #{career}
+			,memberName= #{memberName}
+			,memberName_en = #{memberName_en}
+			,dob = #{dob}
+			,telecom = #{telecom}
+			,phone = #{phone}
+			,phone_emer = #{phone_emer}
+			,email = #{email}
+			,email_code = #{email_code}
+			,hobby = #{hobby}
+			,region = #{region}
+			,certifiNY = #{certifiNY}
+			,useNY = #{useNY}
+			,delNY = #{delNY}
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
+	
+	<delete id = "delete">
+		DELETE FROM member
+		WHERE seq = #{seq}
+	</delete>
+	
+	<update id = "uelete">
+		UPDATE member
+		SET 
+		 delNY = 1
+		WHERE seq = #{seq}
+	</update>
 	
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT 
@@ -133,4 +200,3 @@
 	</select>
 
 </mapper>
-    

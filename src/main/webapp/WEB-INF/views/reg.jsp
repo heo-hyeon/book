@@ -29,6 +29,13 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
+  
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous">
+  </script>
+  
   <style>
   	.choice {
   		padding:20px;
@@ -87,7 +94,7 @@
 			  </div>
 			</div>
 			
-			<form class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
+			<form method="post" action="join.jsp" class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
 			  <div class="col-md-5">
 			 	 <label class="job-label">지원분야 </label>
 				  <select class="form-control">

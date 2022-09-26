@@ -87,7 +87,7 @@
     <h2 style="margin:20px 0 20px 50px;">코드 관리</h2>
     <form name="form" id="form" method="post" CLASS="row g-2" style="margin-left: 30px; width: 90%;">
 	<!-- *Vo.jsp s -->
-	<%@include file="codeGroupVo.jsp"%>	
+	<%@include file="codeVo.jsp"%>	
 	<!-- *Vo.jsp e -->
 	  <div class="col-md-5">
 	  	<label class="useNY-label" for="seq">코드그룹 코드</label>
