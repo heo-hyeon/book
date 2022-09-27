@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <jsp:useBean id="CodeServiceImpl" class="nov.infra.modules.code.CodeServiceImpl" />
 <!DOCTYPE html>
 <html lang="ko">
@@ -56,6 +56,11 @@
 				<h1>
 					With Book<span>.</span>
 				</h1>
+				<div style="float:left;">
+				sessSeq: <c:out value="${sessSeq }"/><br>
+				sessName: <c:out value="${sessName }"/><br>
+				sessId: <c:out value="${sessId }"/><br>
+				</div>
 			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 			<nav id="navbar" class="navbar">
 				<ul>
@@ -91,7 +96,7 @@
 
 
 		<section id="blog" class="blog">
-			<form method="post" action="/member/memberList" name="formList">
+			<form method="get" action="" name="formList">
 			<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 			<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
 				<div class="post-item position-relative h-100">
@@ -100,31 +105,42 @@
 						<div class="form form-inline">
 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="" >지원분야</option>
-								<option value="md">기획/MD
-								<option value="it">IT개발
-								<option value="strategy">기술/전략
-								<option value="marketing">마케팅/홍보
-								<option value="accounting">회계/총무
-								<option value="sales">영업/판매
-							</select> <select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">경력사항
-								<option value="1" <c:if test="${vo.shcareer eq 1}">selected</c:if>>YES</option>
-								<option value="0" <c:if test="${vo.shcareer eq 0}">selected</c:if>>NO</option>
-							</select> <select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">자격증 유무
-								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>YES</option>
-								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>NO</option>
+								<option value="md">기획/MD</option>
+								<option value="it">IT개발</option>
+								<option value="strategy">기술/전략</option>
+								<option value="marketing">마케팅/홍보</option>
+								<option value="accounting">회계/총무</option>
+								<option value="sales">영업/판매</option>
+							</select> 
+							
+							<select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value=""  <c:if test="${vo.shcareer eq null}">selected</c:if>>경력사항</option>
+								<option value="1" <c:if test="${vo.shcareer eq 1}">selected</c:if>>경력</option>
+								<option value="0" <c:if test="${vo.shcareer eq 0}">selected</c:if>>신입</option>
+							</select> 
+							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value=""  <c:if test="${vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
+								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
+								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>
 							</select>
+							
 							<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">사용여부</option>
+								<option value=""  <c:if test="${empty vo.shuseNY eq null}">selected</c:if>>사용여부</option>
 								<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
 								<option value="0" <c:if test="${vo.shuseNY eq 0}">selected</c:if>>NO</option>
 							</select> 
 							<select class="del-select" id="shdelNY" name="shdelNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">삭제여부</option>
+								<option value=""  <c:if test="${empty vo.shdelNY eq null}">selected</c:if>>삭제여부</option>
 								<option value="1" <c:if test="${vo.shdelNY eq 1}">selected</c:if>>YES</option>
 								<option value="0" <c:if test="${vo.shdelNY eq 0}">selected</c:if>>NO</option>
-							</select><br> 
+							</select><br>
+							
+							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">검색구분</option>
+								<option value="1">코드</option>
+								<option value="2">회원 이름</option>
+								<option value="3">회원 아이디</option>
+							</select>
 							<div class="form form-inline">
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<button class="btn btn-success" style="height: 35px; width: 40px;" id="btnSearch">
@@ -160,7 +176,6 @@
 							<th>삭제여부</th>
 						</tr>
 						<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
-
 						<c:set var="listCodeTelecom" value="${CodeServiceImpl.selectListCachedCode('6')}" />
 						<c:set var="listCodeCareer" value="${CodeServiceImpl.selectListCachedCode('2')}" />
 						<c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('1')}" />
@@ -171,7 +186,7 @@
 						<c:choose>
 							<c:when test="${fn:length(list) eq 0}">
 								<tr>
-									<td class="text-center" colspan="17">There is no data!</td>
+									<td class="text-center" colspan="19">There is no data!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -203,7 +218,7 @@
 										</td>	
 										</td>           
 										<td>
-											<a href="/member/memberForm?name=<c:out value="${list.memberName }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
@@ -355,6 +370,12 @@
 		$("#btnReset").on("click", function() {
 			$(location).attr("href", goUrlList);
 		});
+		
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		}
+
 	</script>
 </body>
 </html>

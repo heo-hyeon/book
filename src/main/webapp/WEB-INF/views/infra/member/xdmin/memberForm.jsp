@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -85,7 +85,7 @@
 			    <class="card-title"><input type="file">
 			  </div>
 			</div>
-			<form class="row g-4" action="/member/MemberJoin" style="margin-left:30px; margin-top:50px; color:white;">
+			<form class="row g-4" action="/member/MemberJoin" name="form" style="margin-left:30px; margin-top:50px; color:white;">
 			<!-- *Vo.jsp s -->
 			<%@include file="memberVo.jsp"%>	
 			<!-- *Vo.jsp e -->
@@ -265,6 +265,7 @@
 							<i class="fa-regular fa-bookmark"></i>
 						</button>
 					</div>
+				</div>	
 				<!-- x버튼 Modal -->
 				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
 				  <div class="modal-dialog">
@@ -302,14 +303,14 @@
 				    </div>
 				  </div>
 				</div>
+			</div>
 			</form>
 			<form name="formVo" id="formVo" method="post">
 			<!-- *Vo.jsp s -->
 			<%@include file="memberVo.jsp"%>	
 			<!-- *Vo.jsp e -->
 			</form>
-		</div>
-	 </div>
+	 
 	 
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>

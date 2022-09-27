@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import nov.infra.common.util.UtilSecurity;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 	
@@ -19,11 +21,16 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int insert(Member dto) throws Exception {
-		int result = dao.insert(dto);
-		System.out.println("service result : " + result);
-		return result;
+		
+	//암호화
+	dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
+	dto.setMemberName(dto.getMemberName());
+
+	int result = dao.insert(dto);
+	System.out.println("service result : " + result);
+	return result;
 	}
-	
+
 	@Override
 	public Member selectOne(MemberVo vo) throws Exception {
 		Member result = dao.selectOne(vo);
@@ -39,6 +46,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public int update(Member dto) throws Exception {
+		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
 		return dao.update(dto);
 	}
 	
@@ -62,5 +70,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int memberJoin(Member dto) throws Exception {
 		return dao.update(dto);
-	}  
+	}
+
+	//로그인
+	@Override
+	public Member selectOneId(Member dto) throws Exception {
+		return dao.selectOneId(dto);
+	}
+	
+	@Override 
+	public Member selectOneLogin (Member dto) throws Exception {
+		return dao.selectOneLogin(dto);
+	}
 }

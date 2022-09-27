@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -81,9 +81,9 @@
 		      <div class="col-lg-6 text-center">
 		<h1 style="color:white;">WITH BOOK</h1>
 		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" placeholder="ID" style="border:solid silver 0.5px; border-radius:3px;">
-		<br><input type="password" class="pwd" placeholder="***" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
-		<br><button class="btn btn-secondary" type="button" style="width:80px; height:35px; margin:20px;"><a href="/" class="active">login</button>
+		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/><br>>
+		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
+		<br><button class="btn btn-secondary" type="button" id="btnLogin" name="btnLogin" style="width:80px; height:35px; margin:20px;">login</button>
 		<div class="find" style="margin-left:20px;">
 							<a href="find_id">아이디 찾기</a>|
 							<a href="find_pwd">비밀번호 찾기</a>|
@@ -124,10 +124,11 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+  
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
-	<script>
+<!--  	<script>
 	function openZipSearch() {
 	    new daum.Postcode({
 	          oncomplete: function(data) {
@@ -138,7 +139,33 @@
 	    }).open();
 	} 
 	</script>
-
-
+  -->
+  
+<script type="text/javascript">
+		
+		$("#btnLogin").on("click", function(){
+			
+			$.ajax({
+				async: true
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "memberID" : $("#memberID").val(), "pwd" : $("#pwd").val()}
+				,success: (res) => {
+					alert(res.rt)
+					if(res.rt == "success") {
+						location.href = "/member/memberList"
+					} else {
+						alert("회원없음");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+</script>
 </body>
 </html>

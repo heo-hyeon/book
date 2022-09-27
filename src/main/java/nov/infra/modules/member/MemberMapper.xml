@@ -12,15 +12,17 @@
 		FROM member a
 		WHERE 1=1
 	
-		<if test="shcareer != null and !shcareer.equals('')">ANd a.career = #{shcareer}</if>
+		<if test="shcareer != null and !shcareer.equals('')">AND a.career = #{shcareer}</if>
 		<if test="shcertifiNY != null and !shcertifiNY.equals('')">AND a.certifiNY = #{shcertifiNY}</if>
 		<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
 		<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if>
+		<if test="shjob != null and !shjob.equals('')"> AND a.job = #{shjob}</if>
 		<if test="shValue != null"></if>
 		
 		<choose>
 			<when test="shOption == 1">and a.seq = #{shValue}</when>
-			<when test="shOption == 2">and a.memberName LIKE CONCAT('%',#{shValue},'%')</when>			
+			<when test="shOption == 2">and a.memberName LIKE CONCAT('%',#{shValue},'%')</when>	
+			<when test="shOption == 3">and a.memberID LIKE CONCAT('%',#{shValue},'%')</when>		
 			<!-- select문(지원분야) 수정하기
 			<when test="shmember == 3">and a.job</when> -->
 		</choose>
@@ -44,7 +46,7 @@
 				,a.email_code
 				,a.hobby
 				,a.region
-				,a.certifiNY
+				,a.certifiNY 
 				,a.useNY
 				,a.delNY
 		<include refid="selectCommon" />
@@ -79,18 +81,18 @@
 		) VALUES (
 			#{memberID}
 			,#{pwd}
-			,6
-			,7
+			,2
+			,8
 			,#{memberName}
 			,#{memberName_en}
-			,#{dob}
+			,"2022-05-01"
 			,22
-			,#{phone}
-			,01012341234
+			,01012345678
+			,01012345678
 			,#{email}
 			,19
-			,10
-			,17
+			,12
+			,15
 			,26
 			,1
 			,0
@@ -199,4 +201,24 @@
 		WHERE memberID = #{memberID}
 	</select>
 
+	<select id="selectOneId" resultMap="resultMapObj">
+		SELECT 
+			seq
+			,memberID
+		FROM member
+		WHERE 1=1
+		AND memberID = #{memberID}
+	</select>
+	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		SELECT 
+			seq
+			,memberID
+			,memberName
+			,pwd
+		FROM member
+		WHERE 1=1
+		AND memberID = #{memberID}
+		AND pwd = #{pwd}
+	</select>
 </mapper>

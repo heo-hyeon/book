@@ -7,8 +7,8 @@ public class MemberVo {
 	private String shValue;
 	private String shOption;
 	private String shjob;
-	private String shcareer;
-	private String shcertifiNY;
+	private Integer shcareer;
+	private Integer shcertifiNY;
 	private String memberName;
 	private Integer shuseNY;
 	private Integer shdelNY;
@@ -61,21 +61,21 @@ public class MemberVo {
 	}
 
 
-	public String getShcareer() {
+	public Integer getShcareer() {
 		return shcareer;
 	}
 
 
-	public void setShcareer(String shcareer) {
+	public void setShcareer(Integer shcareer) {
 		this.shcareer = shcareer;
 	}
 
 
-	public String getShcertifiNY() {
-		return shcertifiNY;
+	public Integer getShcertifiNY() {
+		return shcertifiNY; 
 	}
 
-	public void setShcertifiNY(String shcertifiNY) {
+	public void setShcertifiNY(Integer shcertifiNY) {
 		this.shcertifiNY = shcertifiNY;
 	}
 

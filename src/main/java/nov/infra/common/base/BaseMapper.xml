@@ -7,12 +7,12 @@
 <mapper namespace="Base">
 
 	<sql id="selectListUpperForMysql">
-		select CCG.* from (
+		select aa.* from (
 	</sql>
 	
 	
 	<sql id="selectListLowerForMysql">	
-		) CCG
+		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</sql>
 	

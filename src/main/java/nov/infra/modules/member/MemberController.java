@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,9 +30,11 @@ public class MemberController extends BaseController {
 		System.out.println("vo.getShOption():" + vo.getShOption());
 		System.out.println("vo.getShcertifiNY():" + vo.getShcertifiNY());
 		
+		/* vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY()); */
 		setSearchAndPaging(vo);
 		
 		List<Member> list = service.selectList(vo);
+		//vo.setShcareer("1");
 		model.addAttribute("list", list);
 		return "infra/member/xdmin/memberList";
 	}
@@ -38,20 +42,19 @@ public class MemberController extends BaseController {
 //	페이지 고정
 	public void setSearchAndPaging(MemberVo vo) throws Exception {
 		
-		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
-
+		
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}	
 	
 	@RequestMapping(value="memberForm")
-	public String MemberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member result = service.selectOne(vo);
 		model.addAttribute("item", result);
 		return "infra/member/xdmin/memberForm";
 	}
 
-	@RequestMapping(value="MemberInst")
-	public String MemberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
+	@RequestMapping(value="memberInst")
+	public String memberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
 		service.insert(dto);
 		vo.setSeq (dto.getSeq());
 		
@@ -67,21 +70,21 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberList";
 	}
 	
-	@RequestMapping(value="MemberUpdt")
-	public String Member(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	@RequestMapping(value="memberUpdt")
+	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/memberForm";
 	}
 	
-	@RequestMapping(value="MemberUele")
-	public String Member(Member dto) throws Exception {
+	@RequestMapping(value="memberUele")
+	public String memberUele(Member dto) throws Exception {
 		int result = service.uelete(dto);
-		return "redirect:/3member/memberList";
+		return "redirect:/member/memberList";
 	}
 	
-	@RequestMapping(value="MemberDele")
-	public String Member(MemberVo vo) throws Exception {
+	@RequestMapping(value="memberDele")
+	public String memberDele(MemberVo vo) throws Exception {
 		service.delete(vo);
 		return "redirect:/member/memberList";
 	}
@@ -102,4 +105,25 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 
+	//로그인
+	@ResponseBody
+	@RequestMapping(value="loginProc")
+	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		Member rtMember = service.selectOneId(dto);
+			
+		if (rtMember != null) {
+			
+			Member rtMember2 = service.selectOneLogin(dto);
+			
+				httpSession.setAttribute("sessSeq", rtMember2.getSeq());
+				httpSession.setAttribute("sessId", rtMember2.getMemberID());
+				httpSession.setAttribute("sessName", rtMember2.getMemberName());
+				returnMap.put("rt", "success");
+
+		} else {
+				returnMap.put("rt", "fail");
+		} 
+		return returnMap;
+	}	
 }

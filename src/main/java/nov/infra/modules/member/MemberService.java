@@ -16,4 +16,8 @@ public interface MemberService {
 
 	// 회원가입
 	public int memberJoin(Member dto) throws Exception;
+	
+	//로그인
+	public Member selectOneLogin(Member dto) throws Exception;
+	public Member selectOneId(Member dto) throws Exception;
 }

@@ -194,11 +194,11 @@
 	<script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
 	<script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
 	<script src="../resources/vendor/php-email-form/validate.js"></script>
-
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<!-- Template Main JS File -->
 	<script src="../resources/js/main.js"></script>
-
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 
 	<script type="text/javascript">
     var goUrlList = "/codeGroup/codeGroupList"; 			/* #-> */
