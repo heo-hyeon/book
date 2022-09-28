@@ -96,7 +96,7 @@
 
 
 		<section id="blog" class="blog">
-			<form method="get" action="" name="formList">
+			<form method="get" action="/member/memberList" name="formList">
 			<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 			<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
 				<div class="post-item position-relative h-100">
@@ -112,18 +112,24 @@
 								<option value="accounting">회계/총무</option>
 								<option value="sales">영업/판매</option>
 							</select> 
-							
 							<select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value=""  <c:if test="${vo.shcareer eq null}">selected</c:if>>경력사항</option>
 								<option value="1" <c:if test="${vo.shcareer eq 1}">selected</c:if>>경력</option>
 								<option value="0" <c:if test="${vo.shcareer eq 0}">selected</c:if>>신입</option>
 							</select> 
+							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
+								<option value="">검색구분</option>
+								<option value="1">코드</option>
+								<option value="2">회원 이름</option>
+								<option value="3">회원 아이디</option>
+							</select>
+								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
+								<br>
 							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value=""  <c:if test="${vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
 								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
 								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>
 							</select>
-							
 							<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value=""  <c:if test="${empty vo.shuseNY eq null}">selected</c:if>>사용여부</option>
 								<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
@@ -133,23 +139,13 @@
 								<option value=""  <c:if test="${empty vo.shdelNY eq null}">selected</c:if>>삭제여부</option>
 								<option value="1" <c:if test="${vo.shdelNY eq 1}">selected</c:if>>YES</option>
 								<option value="0" <c:if test="${vo.shdelNY eq 0}">selected</c:if>>NO</option>
-							</select><br>
-							
-							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">검색구분</option>
-								<option value="1">코드</option>
-								<option value="2">회원 이름</option>
-								<option value="3">회원 아이디</option>
 							</select>
-							<div class="form form-inline">
-								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<button class="btn btn-success" style="height: 35px; width: 40px;" id="btnSearch">
 									<i class="fa-solid fa-magnifying-glass"></i>
 								</button>
 								<button type="button" class="btn btn-warning" style="height: 35px; width: 40px;" id="btnReset" name="">
 									<i class="fa-solid fa-rotate-left"></i>
 								</button>
-							</div>
 						</div>
 					</div>
 					<br>
@@ -158,7 +154,7 @@
 							<th>선택</th>
 							<th>번호</th>
 							<th>아이디</th>
-							<th>패스워드</th>
+							<!-- <th>패스워드</th> -->
 							<th>지원분야</th>
 							<th>경력사항</th>
 							<th>이름</th>
@@ -199,9 +195,9 @@
 										<td>
 											<c:out value="${list.memberID }" />
 										</td>
-										<td>
+									<%-- 	<td>
 											<c:out value="${list.pwd }" />
-										</td>
+										</td> --%>
 										<td>
 											<c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
 												<c:if test="${list.job eq listJob.seq}">
@@ -216,9 +212,9 @@
 												</c:if>
 											</c:forEach>
 										</td>	
-										</td>           
+										</td>         
 										<td>
-											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberMod?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
@@ -358,6 +354,7 @@
 		var goUrlUpdt = "/member/memberUpdt";
 		var goUrlUele = "/member/memberUele";
 		var goUrlDele = "/member/memberDele";
+		var goUrlForm = "/member/memberForm";
 		
 		var form = $("form[name=formList]");
 
@@ -375,7 +372,11 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
 		}
-
+	
+		goform = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlForm).submit();
+		}
 	</script>
 </body>
 </html>

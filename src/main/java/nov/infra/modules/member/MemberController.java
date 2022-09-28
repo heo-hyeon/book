@@ -46,13 +46,6 @@ public class MemberController extends BaseController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}	
 	
-	@RequestMapping(value="memberForm")
-	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		Member result = service.selectOne(vo);
-		model.addAttribute("item", result);
-		return "infra/member/xdmin/memberForm";
-	}
-
 	@RequestMapping(value="memberInst")
 	public String memberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
 		service.insert(dto);
@@ -60,9 +53,16 @@ public class MemberController extends BaseController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/member/memberList";
+		return "redirect:/member/memberForm";
 	}
 	
+	@RequestMapping(value="memberForm")
+	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member result = service.selectOne(vo);
+		model.addAttribute("item", result);
+		return "infra/member/xdmin/memberForm";
+	}
+
 	// 회원가입
 	@RequestMapping(value="MemberJoin")
 	public String MemberJoin(Member dto) throws Exception {

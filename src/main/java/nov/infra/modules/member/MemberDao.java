@@ -39,7 +39,7 @@ public class MemberDao {
 	// 페이징
 	public int selectOneCount(MemberVo vo) {return sqlSession.selectOne(namespace + ".selectOneCount",vo);}
 	
-	
+	//로그인
 	public int selectOneIdCheck(Member dto) {
 		int result = sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
 		return result;
