@@ -6,10 +6,11 @@ public class MemberVo {
 
 	private String shValue;
 	private String shOption;
-	private String shjob;
+	private Integer shjob;
 	private Integer shcareer;
 	private Integer shcertifiNY;
 	private String memberName;
+	private Integer shtelecom;
 	private Integer shuseNY;
 	private Integer shdelNY;
 	private String shDateStart;
@@ -52,11 +53,11 @@ public class MemberVo {
 		this.shOption = shOption;
 	}
 
-	public String getShjob() {
+	public Integer getShjob() {
 		return shjob;
 	}
 
-	public void setShjob(String shjob) {
+	public void setShjob(Integer shjob) {
 		this.shjob = shjob;
 	}
 
@@ -229,6 +230,15 @@ public class MemberVo {
 
 	public void setShOptionDate(Integer shOptionDate) {
 		this.shOptionDate = shOptionDate;
+	}
+
+	
+	public Integer getShtelecom() {
+		return shtelecom;
+	}
+
+	public void setShtelecom(Integer shtelecom) {
+		this.shtelecom = shtelecom;
 	}
 
 	//페이징 

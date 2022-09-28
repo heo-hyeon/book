@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -60,10 +60,10 @@
 							<li><a href="mypage.html">상세정보</a></li>
 							<li><a href="login.html">로그아웃 </a></li>
 							<li><a href="#">기타 </a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
-			<!-- .navbar -->
 		</div>
 	</header>
 	<!-- End Header -->
@@ -89,11 +89,11 @@
 			<!-- *Vo.jsp e -->
 				<div class="col-md-5">
 					<label class="useNY-label" for="seq">코드그룹 코드</label>
-					<input type="text" class="form-control" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
+					<input type="text" class="form-control" id="seq" value="<c:out value="${item.seq}"/>" placeholder="영문(대소문자),숫자" id="seq">
 				</div>
 				<div class="col-md-5">
 					<label class="code-label" for="name"> 코드그룹 이름 (한글)</label>
-					<input type="text" name="name" id="name" value="<c:out value="${item.name}"/>" class="form-control" placeholder="한글,숫자">
+					<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>"  placeholder="한글,숫자">
 				</div>
 				<div class="col-md-5">
 					<label class="code-label" for="name_en">코드그룹 이름 (영문)</label>

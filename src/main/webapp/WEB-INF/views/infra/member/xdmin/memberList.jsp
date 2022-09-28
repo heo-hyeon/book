@@ -68,7 +68,7 @@
 					<li><a href="/code/codeList">코드관리</a></li>
 					<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 						<ul>
-							<li><a href="/mod">기본정보</a></li>
+							<li><a href="/mod"><c:out value="${sessName }"/>님 기본정보</a></li>
 							<li><a href="/mypage">상세정보</a></li>
 							<li><a href="/login">로그아웃 </a></li>
 							<li><a href="#">기타 </a></li>
@@ -104,13 +104,13 @@
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="" >지원분야</option>
-								<option value="md">기획/MD</option>
-								<option value="it">IT개발</option>
-								<option value="strategy">기술/전략</option>
-								<option value="marketing">마케팅/홍보</option>
-								<option value="accounting">회계/총무</option>
-								<option value="sales">영업/판매</option>
+								<option value="" <c:if test="${vo.shjob eq null}">selected</c:if>>지원분야</option>
+								<option value="1" <c:if test="${vo.shjob eq 1}">selected</c:if>>기획/MD</option>
+								<option value="2" <c:if test="${vo.shjob eq 2}">selected</c:if>>IT개발</option>
+								<option value="3" <c:if test="${vo.shjob eq 3}">selected</c:if>>기술/전략</option>
+								<option value="4" <c:if test="${vo.shjob eq 4}">selected</c:if>>마케팅/홍보</option>
+								<option value="5" <c:if test="${vo.shjob eq 5}">selected</c:if>>회계/총무</option>
+								<option value="6" <c:if test="${vo.shjob eq 6}">selected</c:if>>영업/판매</option>
 							</select> 
 							<select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value=""  <c:if test="${vo.shcareer eq null}">selected</c:if>>경력사항</option>
@@ -126,7 +126,7 @@
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<br>
 							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value=""  <c:if test="${vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
+								<option value="">자격증 유무</option>
 								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
 								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>
 							</select>
@@ -214,7 +214,7 @@
 										</td>	
 										</td>         
 										<td>
-											<a href="/member/memberMod?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
@@ -373,7 +373,7 @@
 			form.attr("action", goUrlList).submit();
 		}
 	
-		goform = function(thisPage) {
+		goForm = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlForm).submit();
 		}

@@ -79,45 +79,49 @@
 <section id="hero" class="hero">
 	<div class="info d-flex align-items-center">
 	   <div class="container">
+	   	  
 	   	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
 			  <img src="../resources/images/user.png" class="card-img-top">
 			  <div class="card-body">
 			    <class="card-title"><input type="file">
 			  </div>
 			</div>
+			
 			<form class="row g-4" action="/member/MemberJoin" name="form" style="margin-left:30px; margin-top:50px; color:white;">
 			<!-- *Vo.jsp s -->
 			<%@include file="memberVo.jsp"%>	
 			<!-- *Vo.jsp e -->
 			  <div class="col-md-5">
-			 	 <label class="job-label">지원분야 </label>
-				  <select class="form-control" name="job">
-				  	<option value="md">기획/MD</option>
-				  	<option value="it">IT개발</option>
-				  	<option value="technology">기술/전략</option>
-				  	<option value="marketing">마케팅/홍보</option>
-				  	<option value="accounting">회계/총무</option>
-				  	<option value="sales">영업/판매</option>
+			 	 <label class="job-label" for="job">지원분야 </label>
+				  <select class="form-control" name="job" id="job" value="<c:out value="${item.job}"/>" >
+				  	<option value="" <c:if test="${item.job eq null}">selected</c:if>>지원분야</option>
+					<option value="1" <c:if test="${item.job eq 1}">selected</c:if>>기획/MD</option>
+					<option value="2" <c:if test="${item.job eq 2}">selected</c:if>>IT개발</option>
+					<option value="3" <c:if test="${item.job eq 3}">selected</c:if>>기술/전략</option>
+					<option value="4" <c:if test="${item.job eq 4}">selected</c:if>>마케팅/홍보</option>
+					<option value="5" <c:if test="${item.job eq 5}">selected</c:if>>회계/총무</option>
+					<option value="6" <c:if test="${item.job eq 6}">selected</c:if>>영업/판매</option>
 				  </select>
 			  </div>
 			  <div class="col-md-5">
-			  	<label class="career-label">경력사항</label>
-			  	  <select class="form-control" name="career">
-			  	  	<option value="junior">신입</option>
-			  	  	<option value="senior">경력</option>
+			  	<label class="career-label" for="career">경력사항</label>
+			  	  <select class="form-control" name="career" id="career" value="<c:out value="${item.career}"/>" >
+			  	    <option value=""  <c:if test="${item.career eq null}">selected</c:if>>경력사항</option>
+					<option value="1" <c:if test="${item.career eq 1}">selected</c:if>>경력</option>
+					<option value="0" <c:if test="${item.career eq 0}">selected</c:if>>신입</option>
 			  	  </select>
 			  </div>
 			  <div class="col-md-5">
-			    <label class="name-label">이름 </label>
-			    <input type="text" class="form-control" name="memberName">
+			    <label class="name-label" for="memberName">이름 </label>
+			    <input type="text" class="form-control" id="memberName" value="<c:out value="${item.memberName}"/>" >
 			  </div>
 			  <div class="col-md-5">
-			    <label class="nameEn-label" >영문이름 </label>
-			    <input type="text" class="form-control" name="memberName_en">
+			    <label class="nameEn-label" for="memberName_en" >영문이름 </label>
+			    <input type="text" class="form-control" id="memberName_en" value="<c:out value="${item.memberName_en}"/>" >
 			  </div>
 			  <div class="col-md-5">
-			    <label class="region-label">지역</label>
-			    <input type="text" class="form-control" name="region">
+			    <label class="region-label" for="region">지역</label>
+			    <input type="text" class="form-control" id="region" value="<c:out value="${item.region}"/>" >
 			  </div>
 			  <div class="col-md-5">
 			    <label class="id-label" for="memberID">아이디 </label>
@@ -127,56 +131,68 @@
 			    	<div class="invalid-feedback" id="ifIDFeedback"></div>
 			  </div>
 			  <div class="col-md-5">
-			    <label class="pwd-label">비밀번호 </label>
-			    <input type="text" class="form-control"  name="pwd" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+			    <label class="pwd-label" for="pwd">비밀번호 </label>
+			    <input type="text" class="form-control" id="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 			  </div>
-			  <div class="col-md-5">
+		<!-- 	  <div class="col-md-5">
 			    <label class="pwd-check-label">비밀번호 확인 </label>
-			    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
-			  </div>
+			    <input type="text" class="form-control" value placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+			  </div> -->
 			   <div class="col-md-5">
-			    <label class="birth-label">생년월일 </label>
-			    <input type="date" class="form-control" name="dob">
+			    <label class="birth-label" for="dob">생년월일 </label>
+			    <input type="date" class="form-control" id="dob" value="<c:out value="${item.dob}"/>" >
 			  </div>
 		      <div class="col-md-5">
-			    <label class="hobby-label">취미</label>
-			    <input type="text" class="form-control" name="hobby">
+			    <label class="hobby-label" for="hobby">취미</label>
+			    <input type="text" class="form-control" id="hobby" value="<c:out value="${item.hobby}"/>" >
 			  </div>
 			  <div class="row">
-			    <label class="phone-label"  name="phone">휴대전화 </label>
-			    <div class="col-1">
-			    	<select class="form-control">
-			    		<option>skt</option>
-			    		<option>kt</option>
-			    		<option>lgt</option>
+			    <label class="phone-label" for="phone">휴대전화 </label>
+			    <div class="col-2">
+			    	<select class="form-control" name="telecom" id="telecom" value="<c:out value="${item.telecom}"/>">
+			    		<option value="">통신사</option>
+			    		<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
+			    		<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
+			    		<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
 			    	</select>
 			    </div>
 			     <div class="col-4">	
-			   		<input type="text" class="form-control" name="phone_emer">
+ 				   	<input type="text" class="form-control" id="phone" value="<c:out value="${item.phone}"/>">
 			 	</div>
 		 	  </div>
 			  <div class="row inline">
-			    <label class="phone-label">비상연락망 </label>
-			    <div class="col-1">
+			    <label class="emer-label" for="phone_emer">비상연락처</label>
+			    <div class="col-2">
 			    	<select class="form-control">
-			    		<option>skt</option>
-			    		<option>kt</option>
-			    		<option>lgt</option>
+			    		<option value="">통신사</option>
+			    		<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
+			    		<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
+			    		<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
 			    	</select>
 			    </div>
 			     <div class="col-4">	
-			   		<input type="text" class="form-control">
+			   		<input type="text" class="form-control" id="phone_emer" value="<c:out value="${item.phone_emer}"/>">
 			 	</div>
 		 	  </div>
-			  <div class="col-md-5">
-			    <label class="email-label">이메일 </label>
-			     <input type="text" class="form-control" name="email">
+		 	  <div class="row">
+		 	   <label class="email-label" for="email">이메일 </label> 
+		 	 	 <div class="col-4">
+				     <input type="text" class="form-control" id="emai" value="<c:out value="${item.email}"/>">
+				  </div> @
+				  <div class="col-5">
+				    <select class="form-control" id="email_code" value="<c:out value="${item.email_code}"/>">
+			    		<option value="">도메인</option>
+			    		<option value="1" <c:if test="${item.email_code eq 1}">selected</c:if>>naver.com</option>
+			    		<option value="2" <c:if test="${item.email_code eq 2}">selected</c:if>>hanmail.net</option>
+			    		<option value="3" <c:if test="${item.email_code eq 3}">selected</c:if>>gmail.com</option>
+			    	</select>
+				  </div>
 			  </div>	
 			  <div class="col-md-5">
-			  	<label class="certification-label">자격증</label>
+			  	<label class="certification-label" for="certifiNY">자격증</label>
 			  	  <select class="form-control" name="certifiNY">
-			  	  	<option value="Ycerti">유</option>
-			  	  	<option value="Ncerti">무</option>
+			  	  	<option value="1" <c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
+			  	  	<option value="0" <c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
 			  	  </select>
 			  </div>
 			<%--  <div class="col-md-3">
@@ -247,6 +263,7 @@
 					  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
 					</div>
 				</div>
+				
 	<!-- 		  	<div class="d-grid garp-2 col-4 mx-auto">
 			  		<br><button type="button" class="btn btn-outline-warning ma-auto">가입하기</button>
 				</div> -->
@@ -265,7 +282,7 @@
 							<i class="fa-regular fa-bookmark"></i>
 						</button>
 					</div>
-				</div>	
+				
 				<!-- x버튼 Modal -->
 				<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
 				  <div class="modal-dialog">
@@ -303,22 +320,23 @@
 				    </div>
 				  </div>
 				</div>
+				
 			</div>
-			</form>
-			<form name="formVo" id="formVo" method="post">
-			<!-- *Vo.jsp s -->
-			<%@include file="memberVo.jsp"%>	
-			<!-- *Vo.jsp e -->
-			</form>
-	 
+		</form>
+		<form name="formVo" id="formVo" method="post">
+		<!-- *Vo.jsp s -->
+		<%@include file="memberVo.jsp"%>	
+		<!-- *Vo.jsp e -->
+		</div>
+	 </div>
 	 
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
-      <div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
+	      <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
+	      <div class="carousel-item" style="background-image: url(../resources/images/library.jpg)"></div>
+	      <div class="carousel-item" style="background-image: url(../resources/images/book2.jpg)"></div>
+	      <div class="carousel-item" style="background-image: url(../resources/images/book3.jpg)"></div>
+	      <div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
+	      <div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
       
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>

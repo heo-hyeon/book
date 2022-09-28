@@ -98,7 +98,6 @@ public class CodeGroupController extends BaseController{
 	@RequestMapping(value = "codeGroupUele")
 	public String codeGroupUele(CodeGroup dto) throws Exception {
 		int result = service.uelete(dto);
-		System.out.println("uelete result: "+ result);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	

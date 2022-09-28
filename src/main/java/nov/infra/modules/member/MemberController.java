@@ -88,7 +88,7 @@ public class MemberController extends BaseController {
 		service.delete(vo);
 		return "redirect:/member/memberList";
 	}
-	
+
 	@ResponseBody
 	@RequestMapping(value = "checkId")
 	public Map<String, Object> checkId(Member dto) throws Exception {
