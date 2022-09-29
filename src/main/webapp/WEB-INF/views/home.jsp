@@ -82,6 +82,7 @@
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
             <p data-aos="fade-up" class="aos-init aos-animate">내 취향과 맞는 책을 추천받아보세요!</p>
+            <button class="btn btn-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px;">로그아웃</button>
           <!--   <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-gexabayt-started aos-init aos-animate">START</a> -->
           </div>
         </div>
@@ -211,7 +212,30 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-
+	
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+	<script>
+	$("#btnLogout").on("click", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+	</script>
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
 </body>

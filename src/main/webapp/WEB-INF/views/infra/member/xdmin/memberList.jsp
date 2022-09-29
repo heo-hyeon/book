@@ -104,7 +104,7 @@
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="" <c:if test="${vo.shjob eq null}">selected</c:if>>지원분야</option>
+								<option value="" <c:if test="${empty vo.shjob eq null}">selected</c:if>>지원분야</option>
 								<option value="1" <c:if test="${vo.shjob eq 1}">selected</c:if>>기획/MD</option>
 								<option value="2" <c:if test="${vo.shjob eq 2}">selected</c:if>>IT개발</option>
 								<option value="3" <c:if test="${vo.shjob eq 3}">selected</c:if>>기술/전략</option>
@@ -113,9 +113,9 @@
 								<option value="6" <c:if test="${vo.shjob eq 6}">selected</c:if>>영업/판매</option>
 							</select> 
 							<select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value=""  <c:if test="${vo.shcareer eq null}">selected</c:if>>경력사항</option>
-								<option value="1" <c:if test="${vo.shcareer eq 1}">selected</c:if>>경력</option>
-								<option value="0" <c:if test="${vo.shcareer eq 0}">selected</c:if>>신입</option>
+								<option value=""  <c:if test="${empty vo.shcareer eq null}">selected</c:if>>경력사항</option>
+								<option value="8" <c:if test="${vo.shcareer eq 8}">selected</c:if>>경력</option>
+								<option value="7" <c:if test="${vo.shcareer eq 7}">selected</c:if>>신입</option>
 							</select> 
 							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">검색구분</option>
@@ -126,7 +126,7 @@
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<br>
 							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="">자격증 유무</option>
+								<option value="" <c:if test="${empty vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
 								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
 								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>
 							</select>
@@ -260,17 +260,16 @@
 												</c:if>
 											</c:forEach>
 										</td>
-										<td>
-											<c:forEach items="${listCodeCertifiNY }" var="listCertifiNY" varStatus="statusCertifiNY">
-												<c:if test="${list.certifiNY eq listCertifiNY.seq}">
-													<c:out value="${listCertifiNY.codename_ko }" />
-												</c:if>
-											</c:forEach>
+										<td> 
+											<c:choose>
+												<c:when test="${list.useNY eq 1}">유</c:when>
+												<c:otherwise>무</c:otherwise>
+											</c:choose>
 										</td>
 										<td>
 											<c:choose>
-												<c:when test="${list.useNY eq 1}">N</c:when>
-												<c:otherwise>Y</c:otherwise>
+												<c:when test="${list.useNY eq 1}">Y</c:when>
+												<c:otherwise>N</c:otherwise>
 											</c:choose>
 										</td>
 										<td>
@@ -378,5 +377,6 @@
 			form.attr("action", goUrlForm).submit();
 		}
 	</script>
+	
 </body>
 </html>

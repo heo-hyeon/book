@@ -65,6 +65,7 @@
               <li><a href="/mod">기본정보</a></li>
               <li><a href="/mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
+            
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -156,7 +157,7 @@
 				,success: (res) => {
 					alert(res.rt)
 					if(res.rt == "success") {
-						location.href = "/member/memberList"
+						location.href = "/"
 					} else {
 						alert("회원없음");
 					}
@@ -166,29 +167,6 @@
 				}
 			});
 		});
-</script>
-
-
-<script>
-	$("#btnLogout").on("click", function(){
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			,url: "/member/logoutProc"
-			,data: {}
-			,success: function(response) {
-				if(response.rt == "success") {
-					location.href = URL_LOGIN_FORM;
-				} else {
-					// by pass
-				}
-			}
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
-	});
 </script>
 
 </body>

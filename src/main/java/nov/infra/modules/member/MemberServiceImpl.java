@@ -23,6 +23,7 @@ public class MemberServiceImpl implements MemberService {
 	public int insert(Member dto) throws Exception {
 		
 	//암호화
+	System.out.println("pwd : " + dto.getPwd());
 	dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
 	dto.setMemberName(dto.getMemberName());
 

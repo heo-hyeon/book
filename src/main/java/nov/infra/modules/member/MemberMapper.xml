@@ -81,19 +81,20 @@
 		) VALUES (
 			#{memberID}
 			,#{pwd}
-			,2
-			,8
+			,#{job}
+			,#{career}
 			,#{memberName}
 			,#{memberName_en}
-			,"2022-05-01"
-			,22
-			,01012345678
-			,01012345678
-			,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code}))
-			,19
-			,12
-			,15
-			,26
+			,#{dob}
+			,#{telecom}
+			,#{phone}
+			,#{phone_emer}
+			,#{email}
+			,#{email_code}
+			<!-- ,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code})) -->
+			,#{hobby}
+			,#{region}
+			#{certifiNY}
 			,1
 			,0
 		)

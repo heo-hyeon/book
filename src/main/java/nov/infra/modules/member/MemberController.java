@@ -48,6 +48,7 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value="memberInst")
 	public String memberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
+		System.out.println("vo : " + vo);
 		service.insert(dto);
 		vo.setSeq (dto.getSeq());
 		
