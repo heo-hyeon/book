@@ -82,7 +82,7 @@
 		      <div class="col-lg-6 text-center">
 		<h1 style="color:white;">WITH BOOK</h1>
 		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/><br>>
+		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/><br>
 		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
 		<br><button class="btn btn-secondary" type="button" id="btnLogin" name="btnLogin" style="width:80px; height:35px; margin:20px;">login</button>
 		<div class="find" style="margin-left:20px;">

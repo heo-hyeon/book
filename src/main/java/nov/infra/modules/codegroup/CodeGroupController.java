@@ -17,6 +17,7 @@ public class CodeGroupController extends BaseController{
 
 	@Autowired
 	CodeGroupServiceImpl service;
+	private int result;
 
 //	@RequestMapping(value = "codeGroupList")
 //	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
@@ -97,7 +98,7 @@ public class CodeGroupController extends BaseController{
 	
 	@RequestMapping(value = "codeGroupUele")
 	public String codeGroupUele(CodeGroup dto) throws Exception {
-		int result = service.uelete(dto);
+		result = service.uelete(dto);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	

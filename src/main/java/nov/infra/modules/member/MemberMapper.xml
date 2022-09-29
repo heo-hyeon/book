@@ -134,32 +134,8 @@
 			</selectKey>
 	</insert>
 	 -->
-	<select id="selectOne" resultMap="resultMapObj">
-		SELECT 
-			a.seq
-			,a.memberID
-			,a.pwd
-			,a.job
-			,a.career
-			,a.memberName
-			,a.memberName_en
-			,a.dob
-			,a.telecom
-			,a.phone
-			,a.phone_emer
-			,a.email
-			,a.email_code
-			,a.hobby
-			,a.region
-			,a.certifiNY
-			,a.useNY
-			,a.delNY
-		FROM member a
-		WHERE 1=1
-			AND seq = #{seq}
-	</select>
-	
-	<update id = "update">
+	 
+	 <update id = "update">
 		UPDATE member
 		SET
 			memberID = #{memberID}
@@ -194,6 +170,32 @@
 		 delNY = 1
 		WHERE seq = #{seq}
 	</update>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT 
+			a.seq
+			,a.memberID
+			,a.pwd
+			,a.job
+			,a.career
+			,a.memberName
+			,a.memberName_en
+			,a.dob
+			,a.telecom
+			,a.phone
+			,a.phone_emer
+			,a.email
+			,a.email_code
+			,a.hobby
+			,a.region
+			,a.certifiNY
+			,a.useNY
+			,a.delNY
+		FROM member a
+		WHERE 1=1
+			AND seq = #{seq}
+	</select>
+	
 	
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT 

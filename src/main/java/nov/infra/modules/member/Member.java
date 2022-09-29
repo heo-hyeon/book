@@ -5,21 +5,21 @@ public class Member {
 		private String seq;
 		private String memberID;
 		private String pwd;
-		private String job;
-		private String career;
+		private Integer job;
+		private Integer career;
 		private String memberName;
 		private String memberName_en;
 		private String dob;
-		private String telecom;
+		private Integer telecom;
 		private String phone;
 		private String phone_emer;
 		private String email;
-		private String email_code;
-		private String hobby;
-		private String region;
-		private String certifiNY;
-		private String useNY;
-		private String delNY;
+		private Integer email_code;
+		private Integer hobby;
+		private Integer region;
+		private Integer certifiNY;
+		private Integer useNY;
+		private Integer delNY;
 		public String getSeq() {
 			return seq;
 		}
@@ -38,16 +38,16 @@ public class Member {
 		public void setPwd(String pwd) {
 			this.pwd = pwd;
 		}
-		public String getJob() {
+		public Integer getJob() {
 			return job;
 		}
-		public void setJob(String job) {
+		public void setJob(Integer job) {
 			this.job = job;
 		}
-		public String getCareer() {
+		public Integer getCareer() {
 			return career;
 		}
-		public void setCareer(String career) {
+		public void setCareer(Integer career) {
 			this.career = career;
 		}
 		public String getMemberName() {
@@ -68,10 +68,10 @@ public class Member {
 		public void setDob(String dob) {
 			this.dob = dob;
 		}
-		public String getTelecom() {
+		public Integer getTelecom() {
 			return telecom;
 		}
-		public void setTelecom(String telecom) {
+		public void setTelecom(Integer telecom) {
 			this.telecom = telecom;
 		}
 		public String getPhone() {
@@ -92,40 +92,40 @@ public class Member {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		public String getEmail_code() {
+		public Integer getEmail_code() {
 			return email_code;
 		}
-		public void setEmail_code(String email_code) {
+		public void setEmail_code(Integer email_code) {
 			this.email_code = email_code;
 		}
-		public String getHobby() {
+		public Integer getHobby() {
 			return hobby;
 		}
-		public void setHobby(String hobby) {
+		public void setHobby(Integer hobby) {
 			this.hobby = hobby;
 		}
-		public String getRegion() {
+		public Integer getRegion() {
 			return region;
 		}
-		public void setRegion(String region) {
+		public void setRegion(Integer region) {
 			this.region = region;
 		}
-		public String getCertifiNY() {
+		public Integer getCertifiNY() {
 			return certifiNY;
 		}
-		public void setCertifiNY(String certifiNY) {
+		public void setCertifiNY(Integer certifiNY) {
 			this.certifiNY = certifiNY;
 		}
-		public String getUseNY() {
+		public Integer getUseNY() {
 			return useNY;
 		}
-		public void setUseNY(String useNY) {
+		public void setUseNY(Integer useNY) {
 			this.useNY = useNY;
 		}
-		public String getDelNY() {
+		public Integer getDelNY() {
 			return delNY;
 		}
-		public void setDelNY(String delNY) {
+		public void setDelNY(Integer delNY) {
 			this.delNY = delNY;
 		}
 }

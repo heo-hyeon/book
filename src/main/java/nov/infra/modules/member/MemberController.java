@@ -23,6 +23,7 @@ public class MemberController extends BaseController {
 	@Autowired
 	MemberServiceImpl service;
 	
+	
 	@RequestMapping(value = "memberList")
 	public String memberList (@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		
@@ -79,13 +80,13 @@ public class MemberController extends BaseController {
 	}
 	
 	@RequestMapping(value="memberUele")
-	public String memberUele(Member dto) throws Exception {
+	public String memberUele(Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		int result = service.uelete(dto);
 		return "redirect:/member/memberList";
 	}
 	
 	@RequestMapping(value="memberDele")
-	public String memberDele(MemberVo vo) throws Exception {
+	public String memberDele(MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
 		service.delete(vo);
 		return "redirect:/member/memberList";
 	}

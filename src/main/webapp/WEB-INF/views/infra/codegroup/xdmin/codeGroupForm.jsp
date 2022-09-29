@@ -41,35 +41,34 @@
 </head>
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
-	<!-- ======= Header ======= -->
-	<header id="header" class="header d-flex align-items-center">
-		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-			<a href="main.html" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <images src="../resources/images/logo.png" alt=""> -->
-				<h1>
-					With Book<span>.</span>
-				</h1>
-			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-			<nav id="navbar" class="navbar">
-				<ul>
-					<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
-					<li><a href="CodeManagement.html">코드관리</a></li>
-					<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-						<ul>
-							<li><a href="mod.html">기본정보</a></li>
-							<li><a href="mypage.html">상세정보</a></li>
-							<li><a href="login.html">로그아웃 </a></li>
-							<li><a href="#">기타 </a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<!-- End Header -->
+		<a href="main.html" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <images src="../resources/images/logo.png" alt=""> -->
+			<h1>
+				With Book<span>.</span>
+			</h1>
+		</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+		<nav id="navbar" class="navbar">
+			<ul>
+				<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
+				<li><a href="CodeManagement.html">코드관리</a></li>
+				<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+					<ul>
+						<li><a href="mod.html">기본정보</a></li>
+						<li><a href="mypage.html">상세정보</a></li>
+						<li><a href="login.html">로그아웃 </a></li>
+						<li><a href="#">기타 </a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- End Header -->
 
 	<main id="main">
-		<!-- ======= Breadcrumbs ======= -->
 		<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
 			<div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
@@ -152,13 +151,16 @@
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
+				    
 				      <div class="modal-header">
 				        <h5 class="modal-title" id="exampleModalLabel"><b>삭제</b></h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
+				      
 				      <div class="modal-body">
 				        정말로 삭제하시겠습니까?
 				      </div>
+				      
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 				        <button type="button" class="btn btn-dark" id="btnDelete">삭제 </button>
@@ -167,11 +169,13 @@
 				  </div>
 				</div>
 			</form>
+			
 		<form name="formVo" id="formVo" method="post">
 		<!-- *Vo.jsp s -->
 		<%@include file="codeGroupVo.jsp"%>	
 		<!-- *Vo.jsp e -->
 		</form>
+		
 	</main>
 	<!-- ======= Footer ======= -->
 	<footer id="footer" class="footer">
