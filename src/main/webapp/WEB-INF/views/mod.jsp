@@ -115,11 +115,11 @@
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-label">비밀번호 </label>
-		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-check-label">비밀번호 확인 </label>
-		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="email-label">이메일 </label>
@@ -128,11 +128,11 @@
 		  <div class="form-check form-check-inline">
 			<label class="genre-label">관심 장르 </label><br>
 				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1">
 				  <label class="form-check-label" for="inlineRadio1">소설</label>
 				</div>
 				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" checked>
 				  <label class="form-check-label" for="inlineRadio2">시/에세이</label>
 				</div>
 				<div class="form-check form-check-inline">
@@ -159,13 +159,9 @@
 				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
 				  <label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 				</div>
-				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
-				  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
-				</div>
 			</div>
 		  	<div class="d-grid garp-2 col-4 mx-auto">
-		  		<br><a href="/reg"><button type="button" class="btn btn-outline-warning ma-auto">수정하기</a>
+		  		<br><a href="/"><button type="button" class="btn btn-outline-warning ma-auto">수정하기</a>
 			</div>
 		</form>
 		</div>

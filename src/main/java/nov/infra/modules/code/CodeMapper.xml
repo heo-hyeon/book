@@ -108,7 +108,6 @@
 	 		AND seq = #{seq}
 	</select>
 	
- 	<!--  이상 없음-->
 	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 
 			b.seq

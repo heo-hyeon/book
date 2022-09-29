@@ -50,12 +50,12 @@
 <header id="header" class="header d-flex align-items-center">
 	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-		<a href="main.html" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <images src="../resources/images/logo.png" alt=""> -->
+		<a href="/" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <images src="../resources/images/logo.png" alt=""> -->
 			<h1>
 				With Book<span>.</span>
 			</h1>
 		</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-		<nav id="navbar" class="navbar">
+	<!-- 	<nav id="navbar" class="navbar">
 			<ul>
 				<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
 				<li><a href="CodeManagement.html">코드관리</a></li>
@@ -68,7 +68,7 @@
 					</ul>
 				</li>
 			</ul>
-		</nav>
+		</nav> -->
 	</div>
 </header>
 <!-- End Header -->
@@ -86,14 +86,14 @@
 					</div>
 				</div>
 
-				<form class="row g-4" action="/member/MemberJoin" name="form" style="margin-left: 30px; margin-top: 50px; color: white;">
+				<form class="row g-4" action="" name="form" style="margin-left: 30px; margin-top: 50px; color: white;">
 					<!-- *Vo.jsp s -->
 					<%@include file="memberVo.jsp"%>
 					<!-- *Vo.jsp e -->
 					<div class="col-md-5">
 						<label class="job-label" for="job">지원분야 </label>
 						<select class="form-control" name="job" id="job" value="<c:out value="${item.job}"/>">
-							<option value="" <c:if test="${item.job eq null}">selected</c:if>>지원분야</option>
+							<option value="" <c:if test="${empty item.job}">selected</c:if>>지원분야</option>
 							<option value="1" <c:if test="${item.job eq 1}">selected</c:if>>기획/MD</option>
 							<option value="2" <c:if test="${item.job eq 2}">selected</c:if>>IT개발</option>
 							<option value="3" <c:if test="${item.job eq 3}">selected</c:if>>기술/전략</option>
@@ -105,23 +105,23 @@
 					<div class="col-md-5">
 						<label class="career-label" for="career">경력사항</label>
 						<select class="form-control" name="career" id="career" value="<c:out value="${item.career}"/>">
-							<option value="" <c:if test="${item.career eq null}">selected</c:if>>경력사항</option>
+							<option value="" <c:if test="${empty item.career}">selected</c:if>>경력사항</option>
 							<option value="1" <c:if test="${item.career eq 1}">selected</c:if>>경력</option>
 							<option value="0" <c:if test="${item.career eq 0}">selected</c:if>>신입</option>
 						</select>
 					</div>
 					<div class="col-md-5">
 						<label class="name-label" for="memberName">이름 </label>
-						<input type="text" class="form-control" id="memberName" value="<c:out value="${item.memberName}"/>">
+						<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
 					</div>
 					<div class="col-md-5">
 						<label class="nameEn-label" for="memberName_en">영문이름 </label>
-						<input type="text" class="form-control" id="memberName_en" value="<c:out value="${item.memberName_en}"/>">
+						<input type="text" class="form-control" id="memberName_en" name="memberName_en" value="<c:out value="${item.memberName_en}"/>">
 					</div>
 					<div class="col-md-5">
 						<label class="region-label" for="region">지역</label>
 						<select class="form-control" name="region" id="region" value="<c:out value="${item.region}"/>">
-							<option value="" <c:if test="${item.region eq null}">selected</c:if>>지역</option>
+							<option value="" <c:if test="${empty item.region}">selected</c:if>>지역</option>
 							<option value="1" <c:if test="${item.region eq 1}">selected</c:if>>서울</option>
 							<option value="2" <c:if test="${item.region eq 2}">selected</c:if>>경기</option>
 							<option value="3" <c:if test="${item.region eq 3}">selected</c:if>>대전</option>
@@ -138,56 +138,62 @@
 					</div>
 					<div class="col-md-5">
 						<label class="pwd-label" for="pwd">비밀번호 </label>
-						<input type="text" class="form-control" id="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+						<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
+						<input type="password" class="form-control" id="pwd" name="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 					</div>
-					<!-- 	  <div class="col-md-5">
-			    <label class="pwd-check-label">비밀번호 확인 </label>
-			    <input type="text" class="form-control" value placeholder="영어,숫자,특수문자 포함 8자 이상 ">
-			  </div> -->
+					<div class="row">
+						<div class="col-md-5">
+				   			<label class="pwd-check-label" for="pwdCheck">비밀번호 확인 </label>
+				   			<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
+				   			<input type="password" class="form-control" id="pwdCheck" name="pwdCheck" value="<c:out value="${item.pwdCheck}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+				 		</div> 
+				 		<div class="col-md-5">
+				 			<span id="alert-success" style="display: none; text-align: left; font-size:15px; font-weight:bold;"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치합니다.</span>
+				 			<span id="alert-danger" style="dispaly: none; text-align: left; font-size:15px; font-weight:bold; color:#c53e3e"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치하지 않습니다.</span>
+				 		</div>
+			 		</div>
 					<div class="col-md-5">
 						<label class="birth-label" for="dob">생년월일 </label>
-						<input type="date" class="form-control" id="dob" value="<c:out value="${item.dob}"/>">
+						<input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
 					</div>
 					<div class="col-md-5">
 						<label class="hobby-label" for="hobby">취미</label>
-						<input type="text" class="form-control" id="hobby" value="<c:out value="${item.hobby}"/>">
+						<input type="text" class="form-control" id="hobby" name="dob" value="<c:out value="${item.hobby}"/>">
 					</div>
 					<div class="row">
 						<label class="phone-label" for="phone">휴대전화 </label>
-						<div class="col-2">
+						<div class="col-1">
 							<select class="form-control" name="telecom" id="telecom" value="<c:out value="${item.telecom}"/>">
-								<option value="">통신사</option>
 								<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
 								<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
 								<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
 							</select>
 						</div>
 						<div class="col-4">
-							<input type="text" class="form-control" id="phone" value="<c:out value="${item.phone}"/>">
+							<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>">
 						</div>
 					</div>
 					<div class="row inline">
 						<label class="emer-label" for="phone_emer">비상연락처</label>
-						<div class="col-2">
-							<select class="form-control">
-								<option value="">통신사</option>
+						<div class="col-1">
+							<select class="form-control" name="phone_emer" id="phone_emer" value="<c:out value="${item.phone_emer}"/>">
 								<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
 								<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
 								<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
 							</select>
 						</div>
 						<div class="col-4">
-							<input type="text" class="form-control" id="phone_emer" value="<c:out value="${item.phone_emer}"/>">
+							<input type="text" class="form-control" id="phone_emer" name="phone_emer" value="<c:out value="${item.phone_emer}"/>">
 						</div>
 					</div>
 					<div class="row">
 						<label class="email-label" for="email">이메일 </label>
-						<div class="col-4">
-							<input type="text" class="form-control" id="emai" value="<c:out value="${item.email}"/>">
+						<div class="col-5">
+							<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>">
 						</div>
 						@
 						<div class="col-5">
-							<select class="form-control" id="email_code" value="<c:out value="${item.email_code}"/>">
+							<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 								<option value="">도메인</option>
 								<option value="1" <c:if test="${item.email_code eq 1}">selected</c:if>>naver.com</option>
 								<option value="2" <c:if test="${item.email_code eq 2}">selected</c:if>>hanmail.net</option>
@@ -197,7 +203,7 @@
 					</div>
 					<div class="col-md-5">
 						<label class="certification-label" for="certifiNY">자격증</label>
-						<select class="form-control" name="certifiNY">
+						<select class="form-control" name="certifiNY" id="certifiNY">
 							<option value="1" <c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
 							<option value="0" <c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
 						</select>
@@ -235,7 +241,7 @@
 						<label class="genre-label">관심 장르 </label>
 						<br>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1">
 							<label class="form-check-label" for="inlineRadio1">소설</label>
 						</div>
 						<div class="form-check form-check-inline">
@@ -266,25 +272,22 @@
 							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
 							<label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 						</div>
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
-							<label class="form-check-label" for="inlineRadio4">정치/사회</label>
-						</div>
 					</div>
 
 					<div style="width: 83%; margin: 20px 0 20px 0px;">
 						<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
 							<i class="fa-solid fa-chart-bar"></i></a>
 						</button>
-						<button type="button" class="btn btn-danger" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
+						<button type="button" class="btn btn-danger" style="margin-left: 6px;" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
 							<i class="fa-solid fa-x"></i> 
 						</button>
-						<button class="btn btn-danger" type="button" style="margin-left: 10px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							<i class="fa-solid fa-trash-can-arrow-up"></i>
-						</button>
-						<button class="btn btn-success" type="button" id="btnSave" style="float: right; margin-right: 7px;">
+						<button class="btn btn-success" type="button" id="btnSave" style="float:right;">
 							<i class="fa-regular fa-bookmark"></i>
 						</button>
+						<button class="btn btn-danger" type="button" style="float:right; margin-right: 4px;" id="delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<i class="fa-solid fa-trash-can-arrow-up"></i>
+						</button>
+
 					</div>
 							
 				</div>
@@ -321,7 +324,7 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
-		        정말로 삭제하시겠습니까?
+		        사용 안 하시겠습니까?
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
@@ -369,8 +372,8 @@
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-
-	<script>
+	<!--주소 관련 -->
+	<!-- <script>
 		function sample6_execDaumPostcode() {
 			new daum.Postcode(
 					{
@@ -447,11 +450,10 @@
 			$("#Lng").val(null);
 		});
 	</script>
-
+ -->
 	<script>
-		$("#memberID")
-			.on("focusout", function() {
-
+		$("#memberID").on("focusout", function() {
+				
 			$.ajax({
 				async : true,
 				cache : false,
@@ -489,6 +491,24 @@
 						}
 					});
 				});
+		
+		//비밀번호 일치 확인
+		$("#pwdCheck").on("focusout", function () {
+			var pwd1 = $("#pwd").val();
+			var pwd2 = $("#pwdCheck").val();
+			
+			if (pwd1 != '' && pwd2 == '') {
+				null;
+			} else if (pwd1 != '' || pwd2 != '') {
+				if (pwd1 == pwd2) {
+					$("#alert-success").css('display','inline-block');
+					$("#alert-danger").css('display','none');
+				} else {
+					$("#alert-success").css('display','none');
+					$("#alert-danger").css('display','inline-block');
+				}
+			}
+		});
 	</script>
 
 	<script type="text/javascript">
@@ -505,11 +525,13 @@
 
 		$("#btnSave").on("click", function() {
 
-			if (seq.val() == "0" || seq.val() == "") {
+		/* 	if (seq.val() == "0" || seq.val() == "") {
 				form.attr("action", goUrlInst).submit();
 			} else {
 				form.attr("action", goUrlUpdt).submit();
 			}
+		 */	
+			form.attr("action", goUrlInst).submit();
 		});
 
 		$("#btnList").on("click", function() {
@@ -526,5 +548,6 @@
 			form.attr("action", goUrlDele).submit();
 		});
 	</script>
+	
 </body>
 </html>

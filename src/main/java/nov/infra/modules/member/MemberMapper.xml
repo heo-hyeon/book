@@ -38,7 +38,7 @@
 				,a.career
 				,a.memberName
 				,a.memberName_en
-				,a.dob
+				<!-- ,a.dob -->
 				,a.telecom
 				,a.phone
 				,a.phone_emer
@@ -67,7 +67,7 @@
 			,career
 			,memberName
 			,memberName_en
-			,dob
+			<!-- ,dob -->
 			,telecom
 			,phone
 			,phone_emer
@@ -85,7 +85,7 @@
 			,#{career}
 			,#{memberName}
 			,#{memberName_en}
-			,#{dob}
+			<!-- ,#{dob} -->
 			,#{telecom}
 			,#{phone}
 			,#{phone_emer}
@@ -94,7 +94,7 @@
 			<!-- ,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code})) -->
 			,#{hobby}
 			,#{region}
-			#{certifiNY}
+			,#{certifiNY}
 			,1
 			,0
 		)
@@ -144,7 +144,7 @@
 			,career = #{career}
 			,memberName= #{memberName}
 			,memberName_en = #{memberName_en}
-			,dob = #{dob}
+			<!-- ,dob = #{dob} -->
 			,telecom = #{telecom}
 			,phone = #{phone}
 			,phone_emer = #{phone_emer}
@@ -180,7 +180,7 @@
 			,a.career
 			,a.memberName
 			,a.memberName_en
-			,a.dob
+		<!-- 	,a.dob -->
 			,a.telecom
 			,a.phone
 			,a.phone_emer

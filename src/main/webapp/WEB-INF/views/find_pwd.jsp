@@ -72,7 +72,7 @@
 
   <main id="main">
 
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/img/library.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/library.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
         <h2>정보 찾기</h2>
         <ol>

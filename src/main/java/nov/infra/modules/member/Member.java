@@ -5,6 +5,7 @@ public class Member {
 		private String seq;
 		private String memberID;
 		private String pwd;
+		private String pwdCheck;
 		private Integer job;
 		private Integer career;
 		private String memberName;
@@ -37,6 +38,13 @@ public class Member {
 		}
 		public void setPwd(String pwd) {
 			this.pwd = pwd;
+		}
+		
+		public String getPwdCheck() {
+			return pwdCheck;
+		}
+		public void setPwdCheck(String pwdCheck) {
+			this.pwdCheck = pwdCheck;
 		}
 		public Integer getJob() {
 			return job;

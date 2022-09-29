@@ -216,10 +216,6 @@
 					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
 					  <label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 					</div>
-					<div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
-					  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
-					</div>
 				</div>
 			  	<div class="d-grid garp-2 col-4 mx-auto">
 			  		<br><a href="/login"><button type="button" class="btn btn-outline-warning ma-auto">가입하기</a>

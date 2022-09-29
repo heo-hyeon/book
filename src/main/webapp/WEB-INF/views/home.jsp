@@ -82,7 +82,7 @@
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
             <p data-aos="fade-up" class="aos-init aos-animate">내 취향과 맞는 책을 추천받아보세요!</p>
-            <button class="btn btn-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px;">로그아웃</button>
+            <button class="btn btn-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:gray;">로그아웃</button>
           <!--   <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-gexabayt-started aos-init aos-animate">START</a> -->
           </div>
         </div>
