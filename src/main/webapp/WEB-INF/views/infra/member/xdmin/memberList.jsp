@@ -56,11 +56,12 @@
 				<h1>
 					With Book<span>.</span>
 				</h1>
-				<div style="float:left;">
+			<%-- 로그인 확인 세션
+			 	<div style="float:left;">
 				sessSeq: <c:out value="${sessSeq }"/><br>
 				sessName: <c:out value="${sessName }"/><br>
 				sessId: <c:out value="${sessId }"/><br>
-				</div>
+				</div> --%>
 			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 			<nav id="navbar" class="navbar">
 				<ul>
@@ -162,7 +163,6 @@
 							<th>생년월일</th>
 							<th>통신사</th>
 							<th width=120px;>핸드폰 번호</th>
-							<th width=120px;>비상연락망</th>
 							<th width=180px;>이메일</th>
 							<th>이메일 코드</th>
 							<th>취미</th>
@@ -232,9 +232,6 @@
 										</td>
 										<td>
 											<c:out value="${list.phone}" />
-										</td>
-										<td>
-											<c:out value="${list.phone_emer}" />
 										</td>
 										<td>
 											<c:out value="${list.email}" />

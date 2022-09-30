@@ -106,8 +106,8 @@
 						<label class="career-label" for="career">경력사항</label>
 						<select class="form-control" name="career" id="career" value="<c:out value="${item.career}"/>">
 							<option value="" <c:if test="${empty item.career}">selected</c:if>>경력사항</option>
-							<option value="1" <c:if test="${item.career eq 1}">selected</c:if>>경력</option>
-							<option value="0" <c:if test="${item.career eq 0}">selected</c:if>>신입</option>
+							<option value="7" <c:if test="${item.career eq 7}">selected</c:if>>경력</option>
+							<option value="8" <c:if test="${item.career eq 8}">selected</c:if>>신입</option>
 						</select>
 					</div>
 					<div class="col-md-5">
@@ -122,12 +122,12 @@
 						<label class="region-label" for="region">지역</label>
 						<select class="form-control" name="region" id="region" value="<c:out value="${item.region}"/>">
 							<option value="" <c:if test="${empty item.region}">selected</c:if>>지역</option>
-							<option value="1" <c:if test="${item.region eq 1}">selected</c:if>>서울</option>
-							<option value="2" <c:if test="${item.region eq 2}">selected</c:if>>경기</option>
-							<option value="3" <c:if test="${item.region eq 3}">selected</c:if>>대전</option>
-							<option value="4" <c:if test="${item.region eq 4}">selected</c:if>>대구</option>
-							<option value="5" <c:if test="${item.region eq 5}">selected</c:if>>부산</option>
-							<option value="6" <c:if test="${item.region eq 6}">selected</c:if>>광주</option>
+							<option value="13" <c:if test="${item.region eq 13}">selected</c:if>>서울</option>
+							<option value="14" <c:if test="${item.region eq 14}">selected</c:if>>경기</option>
+							<option value="15" <c:if test="${item.region eq 15}">selected</c:if>>대전</option>
+							<option value="16" <c:if test="${item.region eq 16}">selected</c:if>>대구</option>
+							<option value="17" <c:if test="${item.region eq 17}">selected</c:if>>부산</option>
+							<option value="18" <c:if test="${item.region eq 18}">selected</c:if>>광주</option>
 						</select>
 					</div>
 					<div class="col-md-5">
@@ -158,32 +158,25 @@
 					</div>
 					<div class="col-md-5">
 						<label class="hobby-label" for="hobby">취미</label>
-						<input type="text" class="form-control" id="hobby" name="dob" value="<c:out value="${item.hobby}"/>">
+						<select class="form-control" name="hobby" id="hobby" value="<c:out value="${item.hobby}"/>">
+							<option value="" <c:if test="${empty item.hobby}">selected</c:if>>취미</option>
+							<option value="9" <c:if test="${item.hobby eq 9}">selected</c:if>>낚시</option>
+							<option value="10" <c:if test="${item.hobby eq 10}">selected</c:if>>독서</option>
+							<option value="11" <c:if test="${item.hobby eq 11}">selected</c:if>>노래</option>
+							<option value="12" <c:if test="${item.hobby eq 12}">selected</c:if>>운동</option>
+						</select>
 					</div>
 					<div class="row">
 						<label class="phone-label" for="phone">휴대전화 </label>
 						<div class="col-1">
 							<select class="form-control" name="telecom" id="telecom" value="<c:out value="${item.telecom}"/>">
-								<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
-								<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
-								<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
+								<option value="22" <c:if test="${item.telecom eq 22}">selected</c:if>>SKT</option>
+								<option value="23" <c:if test="${item.telecom eq 23}">selected</c:if>>KT</option>
+								<option value="24" <c:if test="${item.telecom eq 24}">selected</c:if>>LGT</option>
 							</select>
 						</div>
 						<div class="col-4">
 							<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>">
-						</div>
-					</div>
-					<div class="row inline">
-						<label class="emer-label" for="phone_emer">비상연락처</label>
-						<div class="col-1">
-							<select class="form-control" name="phone_emer" id="phone_emer" value="<c:out value="${item.phone_emer}"/>">
-								<option value="1" <c:if test="${item.telecom eq 1}">selected</c:if>>SKT</option>
-								<option value="2" <c:if test="${item.telecom eq 2}">selected</c:if>>KT</option>
-								<option value="3" <c:if test="${item.telecom eq 3}">selected</c:if>>LGT</option>
-							</select>
-						</div>
-						<div class="col-4">
-							<input type="text" class="form-control" id="phone_emer" name="phone_emer" value="<c:out value="${item.phone_emer}"/>">
 						</div>
 					</div>
 					<div class="row">
@@ -195,9 +188,9 @@
 						<div class="col-5">
 							<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 								<option value="">도메인</option>
-								<option value="1" <c:if test="${item.email_code eq 1}">selected</c:if>>naver.com</option>
-								<option value="2" <c:if test="${item.email_code eq 2}">selected</c:if>>hanmail.net</option>
-								<option value="3" <c:if test="${item.email_code eq 3}">selected</c:if>>gmail.com</option>
+								<option value="19" <c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>
+								<option value="20" <c:if test="${item.email_code eq 20}">selected</c:if>>hanmail.net</option>
+								<option value="21" <c:if test="${item.email_code eq 21}">selected</c:if>>gmail.com</option>
 							</select>
 						</div>
 					</div>

@@ -41,7 +41,6 @@
 				<!-- ,a.dob -->
 				,a.telecom
 				,a.phone
-				,a.phone_emer
 				,a.email
 				,a.email_code
 				,a.hobby
@@ -70,7 +69,6 @@
 			<!-- ,dob -->
 			,telecom
 			,phone
-			,phone_emer
 			,email
 			,email_code
 			,hobby
@@ -88,7 +86,6 @@
 			<!-- ,#{dob} -->
 			,#{telecom}
 			,#{phone}
-			,#{phone_emer}
 			,#{email}
 			,#{email_code}
 			<!-- ,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code})) -->
@@ -147,7 +144,6 @@
 			<!-- ,dob = #{dob} -->
 			,telecom = #{telecom}
 			,phone = #{phone}
-			,phone_emer = #{phone_emer}
 			,email = #{email}
 			,email_code = #{email_code}
 			,hobby = #{hobby}
@@ -183,7 +179,6 @@
 		<!-- 	,a.dob -->
 			,a.telecom
 			,a.phone
-			,a.phone_emer
 			,a.email
 			,a.email_code
 			,a.hobby
