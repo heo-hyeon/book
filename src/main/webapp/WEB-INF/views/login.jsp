@@ -65,7 +65,6 @@
               <li><a href="/mod">기본정보</a></li>
               <li><a href="/mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
-            
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -74,7 +73,7 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+   <!-- ======= Hero Section ======= -->
 	<section id="hero" class="hero">
 		<div class="info d-flex align-items-center">
 		   <div class="container">
@@ -86,8 +85,8 @@
 		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
 		<br><button class="btn btn-secondary" type="button" id="btnLogin" name="btnLogin" style="width:80px; height:35px; margin:20px;">login</button>
 		<div class="find" style="margin-left:20px;">
-							<a href="find_id">아이디 찾기</a>|
-							<a href="find_pwd">비밀번호 찾기</a>|
+							<a href="/find_id">아이디 찾기</a>|
+							<a href="/find_pwd">비밀번호 찾기</a>|
 							<a href="/member/memberForm">회원가입</a>
 						</div>
 					</div>

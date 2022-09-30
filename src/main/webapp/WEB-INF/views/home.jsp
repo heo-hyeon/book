@@ -61,7 +61,7 @@
           <li><a href="/recommendList">추천목록</a></li>>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/mod">기본정보</a></li>
+              <li><a href="/mod"><c:out value="${sessSeq }"/>기본정보</a></li>
               <li><a href="/mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>

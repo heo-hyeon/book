@@ -90,7 +90,15 @@ public class MemberController extends BaseController {
 		service.delete(vo);
 		return "redirect:/member/memberList";
 	}
-
+	
+	//멤버 수정 경로 설정
+	@RequestMapping(value="memberMod")
+	public String memberMod (MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.update(dto);
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/member/memberMod";
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "checkId")
 	public Map<String, Object> checkId(Member dto) throws Exception {

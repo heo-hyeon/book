@@ -214,6 +214,7 @@
 			,memberID
 			,memberName
 			,pwd
+			,manage
 		FROM member
 		WHERE 1=1
 		AND memberID = #{memberID}

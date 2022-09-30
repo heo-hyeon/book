@@ -52,13 +52,13 @@
 		</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
-				<li><a href="CodeManagement.html">코드관리</a></li>
+				<li><a href="/code/codeGroupList" class="active">코드그룹관리</a></li>
+				<li><a href="/code/codeList">코드관리</a></li>
 				<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 					<ul>
-						<li><a href="mod.html">기본정보</a></li>
-						<li><a href="mypage.html">상세정보</a></li>
-						<li><a href="login.html">로그아웃 </a></li>
+						<li><a href="/mod">기본정보</a></li>
+						<li><a href="/mypage">상세정보</a></li>
+						<li><a href="/login">로그아웃 </a></li>
 						<li><a href="#">기타 </a></li>
 					</ul>
 				</li>
@@ -74,7 +74,7 @@
 
 				<h2>Code Group Management</h2>
 				<ol>
-					<li><a href="main.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li>Code Group Management</li>
 				</ol>
 			</div>
