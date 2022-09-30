@@ -126,5 +126,4 @@
 		    AND b.useNY = 1
     </select> 
     
-    
 </mapper>		
