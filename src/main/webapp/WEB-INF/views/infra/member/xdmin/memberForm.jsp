@@ -489,6 +489,7 @@
 		$("#pwdCheck").on("focusout", function () {
 			var pwd1 = $("#pwd").val();
 			var pwd2 = $("#pwdCheck").val();
+	
 			
 			if (pwd1 != '' && pwd2 == '') {
 				null;
@@ -496,9 +497,11 @@
 				if (pwd1 == pwd2) {
 					$("#alert-success").css('display','inline-block');
 					$("#alert-danger").css('display','none');
+					document.getElementById("formPwdAllowedNY").value = 1;
 				} else {
 					$("#alert-success").css('display','none');
 					$("#alert-danger").css('display','inline-block');
+					document.getElementById("formPwdAllowedNY").value = 0;
 				}
 			}
 		});
