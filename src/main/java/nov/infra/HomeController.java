@@ -99,4 +99,6 @@ public class HomeController {
 			public String mypage2() {
 				return "mypage2";
 			}
+			
+			
 		}
