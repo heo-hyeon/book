@@ -68,6 +68,7 @@ public class MemberController extends BaseController {
 	// 회원가입
 	@RequestMapping(value="MemberJoin")
 	public String MemberJoin(Member dto) throws Exception {
+		
 		service.insert(dto);
 		return "redirect:/member/memberList";
 	}

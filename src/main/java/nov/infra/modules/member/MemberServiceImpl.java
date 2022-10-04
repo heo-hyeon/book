@@ -76,6 +76,9 @@ public class MemberServiceImpl implements MemberService {
 	//로그인
 	@Override
 	public Member selectOneId(Member dto) throws Exception {
+		System.out.println("pwd : " + dto.getPwd());
+		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
+		dto.setMemberName(dto.getMemberName());
 		return dao.selectOneId(dto);
 	}
 	
