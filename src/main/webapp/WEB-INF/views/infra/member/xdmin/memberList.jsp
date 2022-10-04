@@ -126,7 +126,7 @@
 							</select>
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<br>
-							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px; margin-top:7px;">
 								<option value="" <c:if test="${empty vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
 								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
 								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>

@@ -64,12 +64,12 @@
       <nav id="navbar" class="navbar">
        <ul>
           <li><a href="/" class="active">Home</a></li>
-          <li><a href="/likebook">찜한 책 </a></li>
-          <li><a href="/recommendList">추천목록</a></li>
+          <li><a href="/book/likebook">찜한 책 </a></li>
+          <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/mod">기본정보</a></li>
-              <li><a href=/"mypage2">상세정보</a></li>
+              <li><a href="mod">기본정보</a></li>
+              <li><a href="mypage2">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -90,10 +90,10 @@
        		 <div class="row gy-5">
          		 <div class="col-lg-8">
          		    <ul style="list-style:none; color:orange; font-size:18px;">
-		              <li><i class="bi bi-check-circle"></i><a href="/mod" class="active">관심장르는 '소설' , '인문' 입니다.</a></li>
+		              <li><i class="bi bi-check-circle"></i><a href="mod" class="active">관심장르는 '소설' , '인문' 입니다.</a></li>
 		              <li><i class="bi bi-check-circle"></i><a href="#">관심 키워드는 'SF' , '감동' 입니다.</a>
-		              <li><i class="bi bi-check-circle"></i><a href="/recommendList">추천하신 책은 총 '6'권 입니다.</a>
-		              <li><i class="bi bi-check-circle"></i><a href="/likebook">좋아요 누른책은 총 '6'권 입니다.</a>
+		              <li><i class="bi bi-check-circle"></i><a href="/book/recommendList">추천하신 책은 총 '6'권 입니다.</a>
+		              <li><i class="bi bi-check-circle"></i><a href="/book/likebook">좋아요 누른책은 총 '6'권 입니다.</a>
 		             </ui>
 		            </div>
           			<p>*항목을 누르면 상세페이지가 나옵니다.</p>

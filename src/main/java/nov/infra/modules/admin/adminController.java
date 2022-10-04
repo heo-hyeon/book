@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class adminController {
 
 	
-@RequestMapping(value="/index")
-public void getIndex() throws Exception {
-	
+@RequestMapping(value="/adminChoice")
+public String adminChoice() {
+	 return "infra/admin/adminChoice";
 	}
 }

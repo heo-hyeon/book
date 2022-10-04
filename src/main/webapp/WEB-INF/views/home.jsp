@@ -58,7 +58,7 @@
         <ul>
           <li><a href="/" class="active">Home</a></li>
           <li><a href="book/likebook">찜한 책 </a></li>
-          <li><a href="book/recommendList">추천목록</a></li>>
+          <li><a href="book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="user/mod">기본정보</a></li>
