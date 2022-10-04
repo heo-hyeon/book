@@ -55,12 +55,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="active">Home</a></li>
-          <li><a href="/likebook">찜한 책 </a></li>
-          <li><a href="/recommendList">추천목록</a></li>
+          <li><a href="book/likebook">찜한 책 </a></li>
+          <li><a href="book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/mod">기본정보</a></li>
-              <li><a href="/mypage">상세정보</a></li>              
+              <li><a href="user/mod">기본정보</a></li>
+              <li><a href="user/mypage">상세정보</a></li>              
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -109,7 +109,7 @@
                 <i class="bi bi-tags"></i>
                   마법, 인생, 죽음, 삶
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -135,7 +135,7 @@
                 <i class="bi bi-tags"></i>
                  식물, 생명력, 탐구심
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -161,7 +161,7 @@
                 <i class="bi bi-tags"></i>
                   우정, 감동, 서점
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -187,7 +187,7 @@
                 <i class="bi bi-tags"></i>
                   우주, SF소설
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -213,7 +213,7 @@
                 <i class="bi bi-tags"></i>
                  각오, 용기, 조직
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -239,7 +239,7 @@
                 <i class="bi bi-tags"></i>
                   위로, 불안, 행복
               </div><!-- End meta bottom -->
-                <br><a href="/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="book/recommend1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -252,7 +252,7 @@
           </ul>
         </div><!-- End blog pagination -->
         <div class="text-center">
-      		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/recommend1">책 추가</a></button>
+      		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="book/recommend1">책 추가</a></button>
        	</div>
         </div>
       </div>
