@@ -62,7 +62,7 @@
             <ul>
               <li><a href="/user/mod">기본정보</a></li>
               <li><a href="/user/mypage">상세정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
+              <li><button class="btn btn-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; color:none;">로그아웃</button></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -239,6 +239,29 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
+  
+  	<script>
+	$("#btnLogout").on("click", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+	</script>
 
 </body>
 </html>
