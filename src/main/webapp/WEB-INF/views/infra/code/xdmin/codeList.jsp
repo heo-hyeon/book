@@ -136,15 +136,15 @@
 				<table class="table table-striped" style="width: 90%; margin: auto;">
 					<tr style="text-align: center; background-color: #D2D2FF">
 						<th width="60px;"><input type="checkbox"></th>
-						<th width="80px">#</th>
-						<th width="70px">코드그룹 코드</th>
+						<th width="60px">#</th>
+						<th width="60px">코드그룹 코드</th>
 						<th width="100px">코드그룹 이름</th>
-						<th width="12px">코드 이름(한글)
+						<th width="120px">코드 이름(한글)
 						<th width="120px">코드 이름(영문)</th>
-						<th width="70px">사용여부</th>
-						<th width="70px">삭제여부</th>
 						<th width="150px">등록일</th>
 						<th width="150px">수정일</th>
+						<th width="60px">사용여부</th>
+						<th width="60px">삭제여부</th>
 					</tr>
 					<link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet" />
 					<c:choose>

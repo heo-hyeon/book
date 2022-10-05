@@ -1,8 +1,12 @@
-package nov.infra;
+package nov.infra.modules.home;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import nov.infra.modules.member.Member;
 
 @Controller
 public class HomeController {
@@ -44,12 +51,6 @@ public class HomeController {
 				return "login";
 			}
 			
-			@RequestMapping(value = "/bestList")
-			public String bestList() {
-				return "bestList";
-			}
-			
-			
 			@RequestMapping(value = "find_id")
 			public String find_id() {
 				return "find_id";
@@ -59,46 +60,5 @@ public class HomeController {
 			public String find_pwd() {
 				return "find_pwd";
 			}
-			
-			@RequestMapping(value = "likebook")
-			public String likebook() {
-				return "likebook";
-			}
-			
-			@RequestMapping(value = "like1")
-			public String like1() {
-				return "like1";
-			}
-			
-			@RequestMapping(value = "recommendList")
-			public String recommendList () {
-				return "recommendList";
-			}
-			
-			@RequestMapping(value = "recommend1")
-			public String recommend1 () {
-				return "recommend1";
-			}
-			
-			@RequestMapping(value = "mod")
-			public String mod() {
-				return "mod";
-			}
-			
-			@RequestMapping(value = "reg")
-			public String reg() {
-				return "reg";
-			}
-			
-			@RequestMapping(value = "mypage")
-			public String mypage() {
-				return "mypage";
-			}
-			
-			@RequestMapping(value = "mypage2")
-			public String mypage2() {
-				return "mypage2";
-			}
-			
-			
 		}
+			

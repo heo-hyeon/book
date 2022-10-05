@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Member List</title>
+<title>Index</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -53,7 +53,7 @@
 		<div class="col text-center my-3" style="height: 80px;">
 			<c:if test="${not empty sessSeq}">
 				<span style="float: right;">
-					<span class="fw-bold"><c:out value="${sessName}"/></span>님 <button id="btnLogOut" name="btnLogOut" class="btn btn-sm btn-outline-danger">로그아웃</button>
+					<span class="fw-bold"><c:out value="${sessName}"/></span>님 <button id="btnLogout" name="btnLogout" class="btn btn-sm btn-outline-warning">로그아웃</button>
 				</span>
 			</c:if>
 			<h1 class="fw-bold" style="clear: both;">Index</h1>
@@ -61,6 +61,7 @@
 		</div>
 	</div>
 	 
+	 <!-- 매니저 페이지 -->
 	 <div class="row">
             <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up" style="height:400px;">
                 <article class="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
@@ -83,9 +84,11 @@
                     </div>
 
                     <!--Article link-->
-                    <a href="/infra/member/memberList" class="stretched-link"></a>
+                    <a href="/login" class="stretched-link"></a>
                 </article>
             </div>
+            
+            <!-- 회원 페이지 -->
             <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up" style="height:400px;">
                 <article class="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
                     <div class="overflow-hidden position-relative">
@@ -107,9 +110,31 @@
                     </div>
 
                     <!--Article link-->
-                    <a href="/infra/home" class="stretched-link"></a>
+                    <a href="/" class="stretched-link"></a>
                 </article>
             </div>
         </div>
-	 
 </div>
+</body>
+	<script>
+	$("#btnLogout").on("click", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+	</script>

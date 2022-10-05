@@ -239,31 +239,31 @@
 							<!-- value="<c:out value="${item.genre}"/>"> -->
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="26" <c:if test="${item.genre eq 26}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio2">시/에세이</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="27" <c:if test="${item.genre eq 27}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio3">자기계발</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="28" <c:if test="${item.genre eq 28}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio4">인문</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="29" <c:if test="${item.genre eq 29}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio1">역사/문화</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="30" <c:if test="${item.genre eq 30}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio2">경제/경영</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="31" <c:if test="${item.genre eq 31}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio3">취미/여행</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="<c:out value="${item.genre}"/>">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="32" <c:if test="${item.genre eq 32}">selected</c:if>>
 							<label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 						</div>
 					</div>
@@ -542,7 +542,7 @@
 		$("#btnUelete").on("click", function() {
 			form.attr("action", goUrlUele).submit();
 		});
-
+ 
 		$("#btnDelete").on("click", function() {
 			form.attr("action", goUrlDele).submit();
 		});
