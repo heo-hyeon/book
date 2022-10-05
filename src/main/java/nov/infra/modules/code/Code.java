@@ -1,7 +1,7 @@
 package nov.infra.modules.code;
 
 import java.util.ArrayList;
-import java.util.Date;
+/*import java.util.Date;*/
 import java.util.List;
 
 public class Code {
@@ -14,8 +14,8 @@ public class Code {
 		private String codename_en;
 		private Integer useNY;
 		private Integer delNY;
-		private Date reg_date;
-		private Date mod_date;
+		private String reg_date;
+		private String mod_date;
 		
 		public String getSeq() {
 			return seq;
@@ -65,16 +65,16 @@ public class Code {
 		public void setDelNY(Integer delNY) {
 			this.delNY = delNY;
 		}
-		public Date getReg_date() {
+		public String getReg_date() {
 			return reg_date;
 		}
-		public void setReg_date(Date reg_date) {
+		public void setReg_date(String reg_date) {
 			this.reg_date = reg_date;
 		}
-		public Date getMod_date() {
+		public String getMod_date() {
 			return mod_date;
 		}
-		public void setMod_date(Date mod_date) {
+		public void setMod_date(String mod_date) {
 			this.mod_date = mod_date;
 		}
 		

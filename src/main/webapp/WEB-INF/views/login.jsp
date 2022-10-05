@@ -156,7 +156,7 @@
 				,success: (res) => {
 					alert(res.rt)
 					if(res.rt == "success") {
-						location.href = "/"
+						location.href = "/member/home"
 					} else {
 						alert("회원없음");
 					}

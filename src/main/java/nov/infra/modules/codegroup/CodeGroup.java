@@ -9,8 +9,8 @@ public class CodeGroup {
 	private String name;
 	private String name_en;
 	private Integer code_count;
-	private Date reg_date;
-	private Date mod_date;
+	private String reg_date;
+	private String mod_date;
 	private String useNY;
 	private String delNY;
 	
@@ -38,16 +38,16 @@ public class CodeGroup {
 	public void setCode_count(Integer code_count) {
 		this.code_count = code_count;
 	}
-	public Date getReg_date() {
+	public String getReg_date() {
 		return reg_date;
 	}
-	public void setReg_date(Date reg_date) {
+	public void setReg_date(String reg_date) {
 		this.reg_date = reg_date;
 	}
-	public Date getMod_date() {
+	public String getMod_date() {
 		return mod_date;
 	}
-	public void setMod_date(Date mod_date) {
+	public void setMod_date(String mod_date) {
 		this.mod_date = mod_date;
 	}
 	public String getUseNY() {

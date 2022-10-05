@@ -173,10 +173,10 @@
 										<c:out value="${list.codename_en }" />
 									</td>
 									<td>
-										<fmt:formatDate value="${list.reg_date }" pattern="yyyy-MM-dd HH:mm:ss" />
+										<c:out value="${list.reg_date }" />
 									</td>
 									<td>
-										<fmt:formatDate value="${list.mod_date }" pattern="yyyy-MM-dd HH:mm:ss" />
+										<c:out value="${list.mod_date }"/>
 									</td>
 									<td>
 										<c:choose>

@@ -17,12 +17,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import nov.infra.common.base.BaseController;
 
 @Controller
+
+
 @RequestMapping(value="/member/")
 public class MemberController extends BaseController {
 
 	@Autowired
 	MemberServiceImpl service;
 	
+	@RequestMapping(value = "home")
+	public String home () {
+		return "infra/member/xdmin/home";
+	}
 	
 	@RequestMapping(value = "memberList")
 	public String memberList (@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
@@ -137,7 +143,6 @@ public class MemberController extends BaseController {
 		} 
 		return returnMap;
 	}	
-	
 	
 	//로그아웃
 	@ResponseBody
