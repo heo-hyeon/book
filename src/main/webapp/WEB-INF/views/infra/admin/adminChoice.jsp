@@ -110,7 +110,7 @@
                     </div>
 
                     <!--Article link-->
-                    <a href="/" class="stretched-link"></a>
+                    <a href="/member/home" class="stretched-link"></a>
                 </article>
             </div>
         </div>

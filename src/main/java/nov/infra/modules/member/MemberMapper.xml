@@ -218,7 +218,6 @@
 			seq
 			,memberID
 			,memberName
-			,pwd
 		FROM member
 		WHERE 1=1
 		AND memberID = #{memberID}

@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -46,7 +46,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="/member/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="../resources/img/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -56,13 +56,13 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="book/likebook">찜한 책 </a></li>
-          <li><a href="book/recommendList">추천목록</a></li>
+          <li><a href="/member/home" class="active">Home</a></li>
+          <li><a href="/book/likebook">찜한 책 </a></li>
+          <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="user/mod">기본정보</a></li>
-              <li><a href="user/mypage">상세정보</a></li>
+              <li><a href="mod">기본정보</a></li>
+              <li><a href="mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -80,11 +80,9 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-          
-   
-          
+           
             <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
-          	 <p data-aos="fade-up" class="aos-init aos-animate">님! <br>취향과 맞는 책을 추천받아보세요!</p>
+          	 <p data-aos="fade-up" class="aos-init aos-animate"><c:out value="${sessName }"/>님! <br>취향과 맞는 책을 추천받아보세요!</p>
             <button class="btn btn-outline-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:white;">로그아웃</button>
           <!--   <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-gexabayt-started aos-init aos-animate">START</a> -->
           </div>
@@ -134,7 +132,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="book/bestList">역행자</a></h3>
+                    <h3 class="card-title"><a href="/book/bestList">역행자</a></h3>
                     <h6 style="color:silver">자청</h6>
                     <p style="color:red;">성공/처세</p>
                     <p>"출판 즉시 베스트셀러 종합1위"</p>
@@ -152,7 +150,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="book/bestList">불편한 편의점</a></h3>
+                    <h3 class="card-title"><a href="/book/bestList">불편한 편의점</a></h3>
                     <h6 style="color:silver">김호연</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"2022년 가장 사랑받는 소설"
@@ -170,7 +168,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="book/bestList">작별인사</a></h3>
+                    <h3 class="card-title"><a href="/book/bestList">작별인사</a></h3>
                     <h6 style="color:silver;">김영하</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"3년만에 돌아온 김영하의 신작"</p>
@@ -188,7 +186,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="book/bestList">세상의 마지막 기차역</a></h3>
+                    <h3 class="card-title"><a href="/book/bestList">세상의 마지막 기차역</a></h3>
                     <h6 style="color:silver;">무라케 다케시</h6>
                     <p style="color:red;">일본소설</p>
                     <p>"일본 SNS 화제의 책"</p>

@@ -26,8 +26,48 @@ public class MemberController extends BaseController {
 	MemberServiceImpl service;
 	
 	@RequestMapping(value = "home")
-	public String home () {
+	public String home (MemberVo vo, HttpSession httpSession, Model model) throws Exception {
+		
+		String seq = (String) httpSession.getAttribute("sessSeq");
+		Member item = service.selectOne(vo);
+		
+		model.addAttribute("item", item);
+	
 		return "infra/member/xdmin/home";
+	}
+	
+	@RequestMapping(value = "mod")
+	public String mod (MemberVo vo, HttpSession httpSession, Model model) throws Exception {
+		
+		String seq = (String) httpSession.getAttribute("sessSeq");
+		Member item = service.selectOne(vo);
+		
+		model.addAttribute("item", item);
+	
+		return "infra/member/xdmin/mod";
+	}
+	
+	
+	@RequestMapping(value = "mypage")
+	public String mypage (MemberVo vo, HttpSession httpSession, Model model) throws Exception {
+		
+		String seq = (String) httpSession.getAttribute("sessSeq");
+		Member item = service.selectOne(vo);
+		
+		model.addAttribute("item", item);
+	
+		return "infra/member/xdmin/mypage";
+	}
+	
+	@RequestMapping(value = "mypage2")
+	public String mypage2 (MemberVo vo, HttpSession httpSession, Model model) throws Exception {
+		
+		String seq = (String) httpSession.getAttribute("sessSeq");
+		Member item = service.selectOne(vo);
+		
+		model.addAttribute("item", item);
+	
+		return "infra/member/xdmin/mypage2";
 	}
 	
 	@RequestMapping(value = "memberList")
@@ -48,7 +88,6 @@ public class MemberController extends BaseController {
 	
 //	페이지 고정
 	public void setSearchAndPaging(MemberVo vo) throws Exception {
-		
 		
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}	
@@ -103,7 +142,7 @@ public class MemberController extends BaseController {
 	public String memberMod (MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);
 		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/member/memberMod";
+		return "redirect:/member/mod";
 	}
 	
 	@ResponseBody

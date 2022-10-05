@@ -13,7 +13,6 @@ public class Member {
 		private String dob;
 		private Integer telecom;
 		private String phone;
-		private String phone_emer;
 		private String email;
 		private Integer email_code;
 		private Integer hobby;
@@ -88,12 +87,6 @@ public class Member {
 		}
 		public void setPhone(String phone) {
 			this.phone = phone;
-		}
-		public String getPhone_emer() {
-			return phone_emer;
-		}
-		public void setPhone_emer(String phone_emer) {
-			this.phone_emer = phone_emer;
 		}
 		public String getEmail() {
 			return email;

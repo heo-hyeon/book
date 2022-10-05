@@ -53,7 +53,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="/member/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -63,7 +63,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
 	     <ul>
-          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/member/home" class="active">Home</a></li>
           <li><a href="/book/likebook">찜한 책 </a></li>
           <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -88,7 +88,7 @@
 	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
 		  <img src="../resources/images/son.jpg" class="card-images-top">
 		  <div class="card-body">
-		    <h5 class="card-title">예진님, 좋은 하루 보내세요</h5>
+		    <h5 class="card-title"><c:out value="${sessName }"/>님, 좋은 하루 보내세요</h5>
 		  </div>
 		  <ul class="list-group list-group-flush">
 		    <li class="list-group-item"><a href="mod">기본정보</a></li>
@@ -98,32 +98,32 @@
 	   
 		<form class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
 		  <div class="col-md-5">
-		    <label class="name-label">이름 </label>
-		    <input type="text" class="form-control" placeholder="손예진">
+		    <label class="name-label">이름 </label>       
+		    <input type="text" class="form-control" value="<c:out value="${sessName }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="id-label">아이디 </label>
-		    <input type="password" class="form-control" placeholder="yejin0113">
+		    <input type="text" class="form-control" value="<c:out value="${sessId}"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="birth-label">생년월일 </label>
-		    <input type="date" class="form-control" value="1990-01-13">
+		    <input type="date" class="form-control" value="<c:out value="${item.dob }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="phone-label">휴대전화 </label>
-		    <input type="text" class="form-control" placeholder="010-1234-5678">
+		    <input type="text" class="form-control" value="<c:out value="${item.phone }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-label">비밀번호 </label>
-		    <input type="password" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" value="<c:out value="${item.pwd}"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-check-label">비밀번호 확인 </label>
-		    <input type="password" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" value="<c:out value="${item.pwdCheck }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="email-label">이메일 </label>
-		     <input type="text" class="form-control" placeholder="yejin0113@naver.com">
+		     <input type="text" class="form-control" value="<c:out value="${item.email }"/>">
 		  </div>	
 		  <div class="form-check form-check-inline">
 			<label class="genre-label">관심 장르 </label><br>

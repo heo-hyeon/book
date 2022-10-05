@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/book")
+@RequestMapping(value = "/book/")
 public class BookController {
 	/*
 	 * @Autowired BookServiceImpl service;
