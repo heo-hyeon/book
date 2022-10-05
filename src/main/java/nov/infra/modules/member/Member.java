@@ -19,6 +19,7 @@ public class Member {
 		private Integer hobby;
 		private Integer region;
 		private Integer certifiNY;
+		private Integer genre;
 		private Integer useNY;
 		private Integer delNY;
 		public String getSeq() {
@@ -123,6 +124,13 @@ public class Member {
 		}
 		public void setCertifiNY(Integer certifiNY) {
 			this.certifiNY = certifiNY;
+		}
+		
+		public Integer getGenre() {
+			return genre;
+		}
+		public void setGenre(Integer genre) {
+			this.genre = genre;
 		}
 		public Integer getUseNY() {
 			return useNY;

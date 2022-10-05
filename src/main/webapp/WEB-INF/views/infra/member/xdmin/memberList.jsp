@@ -168,6 +168,7 @@
 							<th>취미</th>
 							<th>지역</th>
 							<th>자격증 유무</th>
+							<th>관심장르</th>
 							<th>사용여부</th>
 							<th>삭제여부</th>
 						</tr>
@@ -182,7 +183,7 @@
 						<c:choose>
 							<c:when test="${fn:length(list) eq 0}">
 								<tr>
-									<td class="text-center" colspan="19">There is no data!</td>
+									<td class="text-center" colspan="20">There is no data!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -206,11 +207,10 @@
 											</c:forEach>
 										</td>	
 										<td>
-											<c:forEach items="${listCodeCareer}" var="listCareer" varStatus="statusCareer">
-												<c:if test="${list.career eq listCareer.seq}">
-													<c:out value="${listCareer.codename_ko }" />
-												</c:if>
-											</c:forEach>
+											<c:choose>
+												<c:when test="${list.career eq 7}">신입</c:when>
+												<c:otherwise>경력</c:otherwise>
+											</c:choose>
 										</td>	
 										</td>         
 										<td>
@@ -259,9 +259,16 @@
 										</td>
 										<td> 
 											<c:choose>
-												<c:when test="${list.useNY eq 1}">유</c:when>
+												<c:when test="${list.certifiNY eq 1}">유</c:when>
 												<c:otherwise>무</c:otherwise>
 											</c:choose>
+										</td>
+										<td> 
+											<c:forEach items="${listCodeGenre}" var="listGenreCode" varStatus="statusGenreCode">
+												<c:if test="${list.genre eq listGenre.seq}">
+													<c:out value="${listGenre.codename_ko }" />
+												</c:if>
+											</c:forEach>
 										</td>
 										<td>
 											<c:choose>

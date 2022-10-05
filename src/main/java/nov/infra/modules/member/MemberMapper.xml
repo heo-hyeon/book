@@ -46,6 +46,7 @@
 				,a.hobby
 				,a.region
 				,a.certifiNY 
+				,a.genre
 				,a.useNY
 				,a.delNY
 		<include refid="selectCommon" />
@@ -74,6 +75,7 @@
 			,hobby
 			,region
 			,certifiNY
+			,genre
 			,useNY
 			,delNY
 		) VALUES (
@@ -92,6 +94,7 @@
 			,#{hobby}
 			,#{region}
 			,#{certifiNY}
+			,#{genre}
 			,1
 			,0
 		)
@@ -149,6 +152,7 @@
 			,hobby = #{hobby}
 			,region = #{region}
 			,certifiNY = #{certifiNY}
+			,genre = #{genre}
 			,useNY = #{useNY}
 			,delNY = #{delNY}
 		WHERE 1=1
@@ -184,6 +188,7 @@
 			,a.hobby
 			,a.region
 			,a.certifiNY
+			,a.genre
 			,a.useNY
 			,a.delNY
 		FROM member a
@@ -214,7 +219,6 @@
 			,memberID
 			,memberName
 			,pwd
-			,manage
 		FROM member
 		WHERE 1=1
 		AND memberID = #{memberID}

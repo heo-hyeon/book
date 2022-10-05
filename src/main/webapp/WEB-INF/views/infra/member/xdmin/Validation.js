@@ -1,6 +1,4 @@
-/**
- * @ 유효성 검사 및 기타 유틸
- */
+const form = document.form;
 
 // 정규표현식
 const nameRegex = /^[a-zA-Z0-9가-힣]{2,12}$/;
@@ -10,7 +8,7 @@ const pwdRegex = /^[A-Za-z0-9]{4,12}$/;
 const memberName = document.getElementById('memberName');
 const memberID = document.getElementById('memberID');
 const pwd = document.getElementById('pwd');
-const pwdCheck = document.getEletmentById('pwdCheck');
+const pwdCheck = document.getEletmentById('pwdCheck'); 
 
 let isName = false;
 let isId = false;

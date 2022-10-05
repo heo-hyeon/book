@@ -86,7 +86,7 @@
 					</div>
 				</div>
 
-				<form class="row g-4" action="" name="form" style="margin-left: 30px; margin-top: 50px; color: white;">
+				<form class="row g-4" name="form" style="margin-left: 30px; margin-top: 50px; color: white;">
 					<!-- *Vo.jsp s -->
 					<%@include file="memberVo.jsp"%>
 					<!-- *Vo.jsp e -->
@@ -232,37 +232,38 @@
 			  </div> --%>
 					<div class="form-check form-check-inline">
 						<label class="genre-label">관심 장르 </label>
-						<br>
+						<br>                                 
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1">
-							<label class="form-check-label" for="inlineRadio1">소설</label>
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="25" <c:if test="${item.genre eq 25}">selected</c:if>>
+							<label class="form-check-label" for="inlineRadio1">소설</label> 
+							<!-- value="<c:out value="${item.genre}"/>"> -->
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio2">시/에세이</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio3">자기계발</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio4">인문</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio1">역사/문화</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio2">경제/경영</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio3">취미/여행</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="<c:out value="${item.genre}"/>">
 							<label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 						</div>
 					</div>
@@ -364,7 +365,9 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+	
+	<!-- 유효성 검사 -->
+	<script src="validation.js"></script>
 	<!--주소 관련 -->
 	<!-- <script>
 		function sample6_execDaumPostcode() {
