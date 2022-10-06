@@ -1,15 +1,13 @@
-package nov.infra.modules.admin;
+package nov.infra.modules;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin/")
 public class adminController {
-
 	
-@RequestMapping(value="/adminChoice")
+@RequestMapping(value="/")
 public String adminChoice() {
-	 return "infra/admin/adminChoice";
+	 return "admin";
 	}
 }

@@ -164,7 +164,7 @@
 										<c:out value="${list.ccg_seq}" />
 									</td>
 									<td>
-										<a href="/codeGroup/codeForm?name=<c:out value="${list.name }"/>"><c:out value="${list.name}" /></a>
+										<a href="/code/codeForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.name}" /></a>
 									</td>
 									<td>
 										<c:out value="${list.codename_ko }" />
@@ -282,12 +282,12 @@
 			yearSuffix : '년'
 		});
 
-		var goUrlList = "/codeGroup/codeGroupList"; /* #-> */
-		var goUrlInst = "/codeGroup/codeGroupInst"; /* #-> */
-		var goUrlUpdt = "/codeGroup/codeGroupUpdt"; /* #-> */
-		var goUrlUele = "/codeGroup/codeGroupUele"; /* #-> */
-		var goUrlDele = "/codeGroup/codeGroupDele"; /* #-> */
-		var goUrlForm = "/codeGroup/codeGroupForm";
+		var goUrlList = "/code/codeList"; /* #-> */
+		var goUrlInst = "/code/codeInst"; /* #-> */
+		var goUrlUpdt = "/code/codeUpdt"; /* #-> */
+		var goUrlUele = "/code/codeUele"; /* #-> */
+		var goUrlDele = "/code/codeDele"; /* #-> */
+		var goUrlForm = "/code/codeForm";
 
 		var form = $("form[name=formList]");
 

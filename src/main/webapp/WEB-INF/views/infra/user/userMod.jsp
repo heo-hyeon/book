@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>수정 페이지</title>
+  <title>마이페이지</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -68,8 +68,9 @@
           <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/member/memberMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
+              <li><a href="/member/memberMod?seq=<c:out value="${sessSeq}"/>">기본정보</a></li>
               <li><a href="mypage">상세정보</a></li>
+              <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -83,6 +84,18 @@
 <section id="hero" class="hero">
 	<div class="info d-flex align-items-center">
 	   <div class="container">
+	   
+	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
+		  <img src="../resources/images/user.png" class="card-images-top">
+		  <div class="card-body">
+		    <h5 class="card-title">
+		    <c:out value="${sessName}"/>님, 좋은 하루 보내세요</h5>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		     <li><a href="/member/memberMod?seq=<c:out value="${sessSeq}"/>">기본정보</a></li>
+		    <li class="list-group-item"><a href="mypage">상세정보</a></li>
+		  </ul>
+		</div>
 	   
 		<form class="row g-4" name="form" style="margin-left:30px; margin-top:50px; color:white;">
 
@@ -376,11 +389,11 @@
 	</script>
 	
 	<script type="text/javascript">
-		var goUrlList = "/member/memberList"; /* #-> */
-		var goUrlInst = "/member/memberInst"; /* #-> */
-		var goUrlUpdt = "/member/memberUpdt"; /* #-> */
-		var goUrlUele = "/member/memberUele"; /* #-> */
-		var goUrlDele = "/member/memberDele"; /* #-> */
+		var goUrlList = "/user/userList"; /* #-> */
+		var goUrlInst = "/user/userInst"; /* #-> */
+		var goUrlUpdt = "/user/userrUpdt"; /* #-> */
+		var goUrlUele = "/user/userUele"; /* #-> */
+		var goUrlDele = "/user/userDele"; /* #-> */
 
 		var seq = $("input:hidden[name=seq]"); /* #-> */
 
@@ -396,11 +409,6 @@
 		 */	
 			form.attr("action", goUrlUpdt).submit();
 		});
-		
-		$("#btnList").on("click", function(){
-			formVo.attr("action", goUrlList).submit();
-		});
-		
 	</script>
 	
 		<script type="text/javascript">
