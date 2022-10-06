@@ -175,11 +175,12 @@ public class MemberController extends BaseController {
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		Member rtMember = service.selectOneId(dto);
+		System.out.println("rtMember" + rtMember);
 
 		if (rtMember != null) {
 
 			Member rtMember2 = service.selectOneLogin(dto);
-
+			System.out.println("rtMember2 : " + rtMember2);
 			httpSession.setAttribute("sessSeq", rtMember2.getSeq());
 			httpSession.setAttribute("sessId", rtMember2.getMemberID());
 			httpSession.setAttribute("sessName", rtMember2.getMemberName());

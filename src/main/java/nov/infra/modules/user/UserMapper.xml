@@ -29,6 +29,7 @@
 				,a.genre
 				,a.useNY
 				,a.delNY
+			FROM member a
 	</select>
 	
 	<select id = "selectOneCount" resultType="Integer">
