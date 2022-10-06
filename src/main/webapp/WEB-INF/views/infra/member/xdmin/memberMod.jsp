@@ -85,7 +85,7 @@
 	   <div class="container">
 	   
 		<form class="row g-4" name="form" style="margin-left:30px; margin-top:50px; color:white;">
-
+			<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>">
 			<div class="col-md-5">
 				<label class="name-label" for="memberName">이름 </label>
 				<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
@@ -382,23 +382,14 @@
 		var goUrlUele = "/member/memberUele"; /* #-> */
 		var goUrlDele = "/member/memberDele"; /* #-> */
 
-		var seq = $("input:hidden[name=seq]"); /* #-> */
-
 		var form = $("form[name=form]");
 		
 		$("#btnSave").on("click", function() {
-
-		/* 	if (seq.val() == "0" || seq.val() == "") {
-				form.attr("action", goUrlInst).submit();
-			} else {
-				form.attr("action", goUrlUpdt).submit();
-			}
-		 */	
 			form.attr("action", goUrlUpdt).submit();
 		});
 		
 		$("#btnList").on("click", function(){
-			formVo.attr("action", goUrlList).submit();
+			form.attr("action", goUrlList).submit();
 		});
 		
 	</script>

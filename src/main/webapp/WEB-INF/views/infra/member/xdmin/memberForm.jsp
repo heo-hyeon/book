@@ -55,20 +55,6 @@
 				With Book<span>.</span>
 			</h1>
 		</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-	<!-- 	<nav id="navbar" class="navbar">
-			<ul>
-				<li><a href="CodeGroupList.html" class="active">코드그룹관리</a></li>
-				<li><a href="CodeManagement.html">코드관리</a></li>
-				<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-					<ul>
-						<li><a href="mod.html">기본정보</a></li>
-						<li><a href="mypage.html">상세정보</a></li>
-						<li><a href="login.html">로그아웃 </a></li>
-						<li><a href="#">기타 </a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav> -->
 	</div>
 </header>
 <!-- End Header -->
@@ -87,10 +73,8 @@
 				</div>
 
 				<form class="row g-4" name="form" style="margin-left: 30px; margin-top: 50px; color: white;">
-					<!-- *Vo.jsp s -->
-					<%@include file="memberVo.jsp"%>
-					<!-- *Vo.jsp e -->
-					<div class="col-md-5">
+				<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>">
+				<%-- <div class="col-md-5">
 						<label class="job-label" for="job">지원분야 </label>
 						<select class="form-control" name="job" id="job" value="<c:out value="${item.job}"/>">
 							<option value="" <c:if test="${empty item.job}">selected</c:if>>지원분야</option>
@@ -109,7 +93,8 @@
 							<option value="7" <c:if test="${item.career eq 7}">selected</c:if>>경력</option>
 							<option value="8" <c:if test="${item.career eq 8}">selected</c:if>>신입</option>
 						</select>
-					</div>
+					</div>  --%>
+					
 					<div class="col-md-5">
 						<label class="name-label" for="memberName">이름 </label>
 						<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
@@ -290,12 +275,7 @@
 				
 				
 		</form>
-			
-		<form name="formVo" id="formVo" method="post">
-			<!-- *Vo.jsp s -->
-			<%@include file="memberVo.jsp"%>
-			<!-- *Vo.jsp e -->
-		</form>
+	
 	
 		<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 			<div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
@@ -521,7 +501,6 @@
 		var seq = $("input:hidden[name=seq]"); /* #-> */
 
 		var form = $("form[name=form]");
-		var formVo = $("form[name=formVo]");
 
 		$("#btnSave").on("click", function() {
 
@@ -535,7 +514,7 @@
 		});
 
 		$("#btnList").on("click", function() {
-			formVo.attr("action", goUrlList).submit();
+			form.attr("action", goUrlList).submit();
 		});
 	</script>
 

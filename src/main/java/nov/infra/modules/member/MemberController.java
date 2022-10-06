@@ -101,18 +101,30 @@ public class MemberController extends BaseController {
 //		return "redirect:/member/memberList";
 //	}
 	
+//	@RequestMapping(value = "memberUpdt")
+//	public String memberUpdt(MemberVo vo, Member dto,Model model, RedirectAttributes redirectAttributes) throws Exception {
+//		
+//		
+////		dto.setSeq(seq);
+//		model.addAttribute("item", result);
+//		service.update(dto);
+//		vo.setSeq(dto.getSeq());
+//		redirectAttributes.addFlashAttribute("vo", vo);
+//		return "redirect:/member/memberList";
+//	}
+	
 	@RequestMapping(value = "memberUpdt")
-	public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes, HttpSession httpSession) throws Exception {
+	public String memberUpdt(MemberVo vo, Member dto, Model model, RedirectAttributes redirectAttributes) throws Exception {
 		
-		String seq = (String) httpSession.getAttribute("sessSeq");
+		int result = service.update(dto);
+		System.out.println("Controller update Result : " + result);
+		redirectAttributes.addFlashAttribute("vo",vo);
+		model.addAttribute("item", model);
 		
-		dto.setSeq(seq);
-		
-		service.update(dto);
-		vo.setSeq(dto.getSeq());
-		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/member/memberList";
+		System.out.println("업데이트 !");
+		 return "redirect:/member/memberList"; 
 	}
+	
 	
 	@RequestMapping(value = "memberUele")
 	public String memberUele(Member dto, RedirectAttributes redirectAttributes) throws Exception {
@@ -140,13 +152,11 @@ public class MemberController extends BaseController {
 	
 	  //멤버 수정 경로 설정
 	  @RequestMapping(value="memberMod") 
-	  public String memberMod (Model model, MemberVo vo, Member dto,  HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+	  public String memberMod (Model model, MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 	
 		  Member item = service.selectOne(vo);
 		  model.addAttribute("item", item); 
 
-		  System.out.println(item.getMemberName());
-		  
 			/* service.update(dto); */
 		  redirectAttributes.addFlashAttribute("vo", vo); 
 		  return "infra/member/xdmin/memberMod"; 

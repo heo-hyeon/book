@@ -92,13 +92,13 @@
 		    <c:out value="${sessName}"/>님, 좋은 하루 보내세요</h5>
 		  </div>
 		  <ul class="list-group list-group-flush">
-		     <li><a href="/member/memberMod?seq=<c:out value="${sessSeq}"/>">기본정보</a></li>
+		     <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
 		    <li class="list-group-item"><a href="mypage">상세정보</a></li>
 		  </ul>
 		</div>
 	   
 		<form class="row g-4" name="form" style="margin-left:30px; margin-top:50px; color:white;">
-
+			<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>">
 			<div class="col-md-5">
 				<label class="name-label" for="memberName">이름 </label>
 				<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
@@ -395,7 +395,7 @@
 		var goUrlUele = "/user/userUele"; /* #-> */
 		var goUrlDele = "/user/userDele"; /* #-> */
 
-		var seq = $("input:hidden[name=seq]"); /* #-> */
+		/* var seq = $("input:hidden[name=seq]"); /* #-> */ */
 
 		var form = $("form[name=form]");
 		
