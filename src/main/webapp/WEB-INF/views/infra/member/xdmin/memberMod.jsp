@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>User Info</title>
+  <title>마이페이지</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -68,8 +68,8 @@
           <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/mod">기본정보</a></li>
-              <li><a href="/mypage">상세정보</a></li>
+              <li><a href="memberMod">기본정보</a></li>
+              <li><a href="mypage">상세정보</a></li>
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -88,54 +88,51 @@
 	   <div class="card" style="width: 19rem; float:left; margin-left:30px; margin-top:100px;">
 		  <img src="../resources/images/son.jpg" class="card-images-top">
 		  <div class="card-body">
-		    <h5 class="card-title">예진님, 좋은 하루 보내세요</h5>
+		    <h5 class="card-title"><c:out value="${sessName }"/>님, 좋은 하루 보내세요</h5>
 		  </div>
 		  <ul class="list-group list-group-flush">
-		    <li class="list-group-item"><a href="/mod">기본정보</a></li>
-		    <li class="list-group-item"><a href="/mypage">상세정보</a></li>
+		    <li class="list-group-item"><a href="memberMod">기본정보</a></li>
+		    <li class="list-group-item"><a href="mypage">상세정보</a></li>
 		  </ul>
 		</div>
 	   
-		<form class="row g-4" name="form" id="form" style="margin-left:30px; margin-top:50px; color:white;">
-		<!-- *Vo.jsp s -->
-		<%@include file="memberVo.jsp"%>	
-		<!-- *Vo.jsp e -->
+		<form class="row g-4" style="margin-left:30px; margin-top:50px; color:white;">
 		  <div class="col-md-5">
-		    <label class="name-label">이름 </label>
-		    <input type="text" class="form-control" placeholder="손예진">
+		    <label class="name-label">이름 </label>       
+		    <input type="text" class="form-control" value="<c:out value="${sessName }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="id-label">아이디 </label>
-		    <input type="password" class="form-control" placeholder="yejin0113">
+		    <input type="text" class="form-control" value="<c:out value="${sessId}"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="birth-label">생년월일 </label>
-		    <input type="date" class="form-control" value="1990-01-13">
+		    <input type="date" class="form-control" value="<c:out value="${item.dob }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="phone-label">휴대전화 </label>
-		    <input type="text" class="form-control" placeholder="010-1234-5678">
+		    <input type="text" class="form-control" value="<c:out value="${item.phone }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-label">비밀번호 </label>
-		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" value="<c:out value="${item.pwd}"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="pwd-check-label">비밀번호 확인 </label>
-		    <input type="text" class="form-control" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+		    <input type="password" class="form-control" value="<c:out value="${item.pwdCheck }"/>">
 		  </div>
 		  <div class="col-md-5">
 		    <label class="email-label">이메일 </label>
-		     <input type="text" class="form-control" placeholder="yejin0113@naver.com">
+		     <input type="text" class="form-control" value="<c:out value="${item.email }"/>">
 		  </div>	
 		  <div class="form-check form-check-inline">
 			<label class="genre-label">관심 장르 </label><br>
 				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1">
 				  <label class="form-check-label" for="inlineRadio1">소설</label>
 				</div>
 				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2">
+				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" checked>
 				  <label class="form-check-label" for="inlineRadio2">시/에세이</label>
 				</div>
 				<div class="form-check form-check-inline">
@@ -162,13 +159,9 @@
 				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8">
 				  <label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 				</div>
-				<div class="form-check form-check-inline">
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9">
-				  <label class="form-check-label" for="inlineRadio4">정치/사회</label>
-				</div>
 			</div>
 		  	<div class="d-grid garp-2 col-4 mx-auto">
-		  		<br><a href="/reg"><button type="button" class="btn btn-outline-warning ma-auto">수정하기</a>
+		  		<br><a href="/"><button type="button" class="btn btn-outline-warning ma-auto">수정하기</a>
 			</div>
 		</form>
 		</div>
