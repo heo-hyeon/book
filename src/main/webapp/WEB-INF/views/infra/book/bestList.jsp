@@ -60,8 +60,8 @@
           <li><a href="recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/user/mod">기본정보</a></li>
-              <li><a href="/user/mypage">상세정보</a></li>
+              <li><a href="/memeber/memberMod">기본정보</a></li>
+              <li><a href="/member/mypage">상세정보</a></li>
               <li><button class="btn btn-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; color:none;">로그아웃</button></li>
               <li><a href="#">기타 </a></li>
             </ul>

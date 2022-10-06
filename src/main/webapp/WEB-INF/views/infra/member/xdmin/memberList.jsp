@@ -69,8 +69,8 @@
 					<li><a href="/code/codeList">코드관리</a></li>
 					<li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 						<ul>
-							<li><a href="/member/mod"><c:out value="${sessName }"/>님 기본정보</a></li>
-							<li><a href="/user/mypage">상세정보</a></li>
+							<li><a href="/member/memberMod"><c:out value="${sessName }"/>님 기본정보</a></li>
+							<li><a href="/member/mypage">상세정보</a></li>
 							<li><a href="/login">로그아웃 </a></li>
 							<li><a href="#">기타 </a></li>
 						</ul></li>
@@ -214,7 +214,7 @@
 										</td>	
 										</td>         
 										<td>
-											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberMod?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>

@@ -305,8 +305,11 @@
 			<div class="carousel-item active" style="background-image: url(../resources/images/book4.jpg)"></div>
 			<div class="carousel-item" style="background-image: url(../resources/images/glasses.jpg)"></div>
 
-			<a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev"> <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-			</a> <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next"> <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+			<a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev"> 
+				<span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+			</a> 
+			<a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next"> 
+				<span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
 			</a>
 		</div>
 		
@@ -365,9 +368,7 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=22387596e35f0559f6bc0a3c5bf81050&libraries=services"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	
-	<!-- 유효성 검사 -->
-	<script src="validation.js"></script>
+
 	<!--주소 관련 -->
 	<!-- <script>
 		function sample6_execDaumPostcode() {
@@ -453,7 +454,7 @@
 			$.ajax({
 				async : true,
 				cache : false,
-				type : "post"
+				type : "post       "
 				/* ,dataType:"json" */
 				,
 				url : "/member/checkId"
