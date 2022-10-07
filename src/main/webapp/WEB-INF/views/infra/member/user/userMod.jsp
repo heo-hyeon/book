@@ -31,10 +31,27 @@
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
   
-  <style>
+ 
+<style type="text/css">
+	.addScroll{
+		overflow-y:auto;
+		height: 200px;
+		background-color:#E9ECEF;
+		padding-top:5px; 
+		padding-left:5px;
+	}
+ 	
   	.choice {
   		padding:20px;
   		margin:20px;
+  	}
+  	 	
+	.input-file-button{
+		padding: 4px 25px;
+		background-color:#FF6600;
+		border-radius: 4px;
+		color: white;
+		cursor: pointer;
   	}
   
   	
@@ -194,36 +211,36 @@
 				<label class="genre-label">관심 장르 </label>
 				<br>                                 
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="25" <c:if test="${item.genre eq 25}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="25" <c:if test="${item.genre eq 25}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio1">소설</label> 
 					<!-- value="<c:out value="${item.genre}"/>"> -->
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="26" <c:if test="${item.genre eq 26}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="26" <c:if test="${item.genre eq 26}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio2">시/에세이</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="27" <c:if test="${item.genre eq 27}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="27" <c:if test="${item.genre eq 27}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio3">자기계발</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="28" <c:if test="${item.genre eq 28}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="28" <c:if test="${item.genre eq 28}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio4">인문</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="29" <c:if test="${item.genre eq 29}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="29" <c:if test="${item.genre eq 29}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio1">역사/문화</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="30" <c:if test="${item.genre eq 30}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="30" <c:if test="${item.genre eq 30}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio2">경제/경영</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="31" <c:if test="${item.genre eq 31}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="31" <c:if test="${item.genre eq 31}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio3">취미/여행</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="32" <c:if test="${item.genre eq 32}">selected</c:if>>
+					<input class="form-check-input" type="radio" name="genre" id="genre" value="32" <c:if test="${item.genre eq 32}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 				</div>
 			</div>	
@@ -247,9 +264,52 @@
 <!-- 		  	<div class="d-grid garp-2 col-4 mx-auto">
 		  		<br><button type="button" id="btnSave" class="btn btn-outline-warning ma-auto">수정하기</button>
 			</div> -->
+			</form>
 		
-		</form>
+	
+		<!--  실습  -->
+		<div class="row mt-sm-4">
 		
+        <div class="col-sm-6 mt-3 mt-sm-0">
+            <label for="ifmmUploadedImage" class="form-label input-file-button">이미지첨부</label>
+ 			<input class="form-control form-control-sm" id="ifmmUploadedImage" name="ifmmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedImage', 1, 0, 1, 0, 0, 1);">
+			<div class="addScroll">
+				<ul id="ulFile1" class="list-group"></ul>
+			</div>
+        </div>
+        <div class="col-sm-6 mt-3 mt-sm-0">
+			<label for="ifmmUploadedFile" class="form-label input-file-button">파일첨부</label>
+			<input class="form-control form-control-sm" id="ifmmUploadedFile" name="ifmmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedFile', 2, 0, 2, 0, 0, 2);" >
+			<div class="addScroll">
+				<ul id="ulFile2" class="list-group"></ul>
+			</div>
+        </div>
+        
+    </div>
+
+    <div class="row mt-sm-4">
+        <div class="col-sm-6 mt-3 mt-sm-0">
+            <label for="ifmmUploadedImage" class="form-label input-file-button">이미지첨부</label>
+ 			<input class="form-control form-control-sm" id="ifmmUploadedImage" name="ifmmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedImage', 1, 0, 1, 0, 0, 1);">
+ 			<div class="addScroll">
+				<div style="display: inline-block; height: 95px;">
+					<img src="/resources/common/image/default_111.jpg" class="rounded" width= "85px" height="85px">
+					<div style="position: relative; top:-85px; left:5px"><span style="color: red;">X</span></div>
+				</div>
+ 			</div>
+        </div>
+        <div class="col-sm-6 mt-3 mt-sm-0">
+			<label for="ifmmUploadedFile" class="form-label input-file-button">파일첨부</label>
+			<input class="form-control form-control-sm" id="ifmmUploadedFile" name="ifmmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedFile', 2, 0, 2, 0, 0, 2);" >
+			<div class="addScroll">
+				<ul id="ulFile2" class="list-group">
+				</ul>
+			</div>
+        </div>
+    </div> 
+    <!--실습  -->
+    
+       
 			</div>
 		</div>
 

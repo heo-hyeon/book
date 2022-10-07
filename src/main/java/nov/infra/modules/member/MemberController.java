@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,13 +96,6 @@ public class MemberController extends BaseController {
 	}
 
 //	@RequestMapping(value = "memberUpdt")
-//	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-//		service.update(dto);
-//		redirectAttributes.addFlashAttribute("vo", vo);
-//		return "redirect:/member/memberList";
-//	}
-	
-//	@RequestMapping(value = "memberUpdt")
 //	public String memberUpdt(MemberVo vo, Member dto,Model model, RedirectAttributes redirectAttributes) throws Exception {
 //		
 //		
@@ -112,20 +106,19 @@ public class MemberController extends BaseController {
 //		redirectAttributes.addFlashAttribute("vo", vo);
 //		return "redirect:/member/memberList";
 //	}
-	
+
 	@RequestMapping(value = "memberUpdt")
-	public String memberUpdt(MemberVo vo, Member dto, Model model, RedirectAttributes redirectAttributes) throws Exception {
-		
+	public String memberUpdt(MemberVo vo, Member dto, Model model, RedirectAttributes redirectAttributes)
+			throws Exception {
+
 		int result = service.update(dto);
 		System.out.println("Controller update Result : " + result);
-		redirectAttributes.addFlashAttribute("vo",vo);
+		redirectAttributes.addFlashAttribute("vo", vo);
 		model.addAttribute("item", model);
-		
-		System.out.println("업데이트 !");
-		 return "redirect:/member/memberList"; 
+
+		return "redirect:/member/memberList";
 	}
-	
-	
+
 	@RequestMapping(value = "memberUele")
 	public String memberUele(Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		int result = service.uelete(dto);
@@ -137,7 +130,7 @@ public class MemberController extends BaseController {
 		service.delete(vo);
 		return "redirect:/member/memberList";
 	}
-	
+
 	/*
 	 * @RequestMapping(value = "memberMod") public String memberMod(MemberVo vo,
 	 * HttpSession httpSession, Model model) throws Exception {
@@ -145,30 +138,34 @@ public class MemberController extends BaseController {
 	 * String seq = (String) httpSession.getAttribute("sessSeq"); Member item =
 	 * service.selectOne(vo);
 	 * 
-	 * model.addAttribute("item", item);
-	 * return "infra/member/xdmin/memberMod"; }
+	 * model.addAttribute("item", item); return "infra/member/xdmin/memberMod"; }
 	 */
-	 
-	
-	  //멤버 수정 경로 설정
-	  @RequestMapping(value="memberMod") 
-	  public String memberMod (Model model, MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-	
-		  Member item = service.selectOne(vo);
-		  model.addAttribute("item", item); 
 
-			/* service.update(dto); */
-		  redirectAttributes.addFlashAttribute("vo", vo); 
-		  return "infra/member/xdmin/memberMod"; 
-	  }
-	 
+	// 멤버 수정 경로 설정
+	@RequestMapping(value = "memberMod")
+	public String memberMod(Model model, MemberVo vo, Member dto, HttpServletRequest httpServletRequest, RedirectAttributes redirectAttributes)
+			throws Exception {
 
-	  @ResponseBody
-	  @RequestMapping(value = "checkId")
-	  public Map<String, Object> checkId(Member dto) throws Exception {
-	
+		HttpSession httpSession =  httpServletRequest.getSession();
+		String sessSeq = (String) httpSession.getAttribute("sessSeq");
+		
+		vo.setSeq(sessSeq);
+		
+		Member item = service.selectOne(vo);
+		model.addAttribute("item", item);
+
+		
+		/* service.update(dto); */
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "infra/member/xdmin/memberMod";
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "checkId")
+	public Map<String, Object> checkId(Member dto) throws Exception {
+
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-	
+
 		int result = service.selectOneIdCheck(dto);
 		System.out.println(result);
 		if (result > 0) {
@@ -177,26 +174,31 @@ public class MemberController extends BaseController {
 			returnMap.put("rt", "success");
 		}
 		return returnMap;
-	  }
+	}
 
 	// 로그인
 	@ResponseBody
 	@RequestMapping(value = "loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		Member rtMember = service.selectOneId(dto);
-		System.out.println("rtMember" + rtMember);
+		/*
+		 * Member rtMember = service.selectOneId(dto); System.out.println("rtMember" +
+		 * rtMember);
+		 * 
+		 * if (rtMember != null) {
+		 */
 
-		if (rtMember != null) {
+		Member rtMember2 = service.selectOneLogin(dto);
 
-			Member rtMember2 = service.selectOneLogin(dto);
+		if (rtMember2 != null) {
+
 			System.out.println("rtMember2 : " + rtMember2);
 			httpSession.setAttribute("sessSeq", rtMember2.getSeq());
 			httpSession.setAttribute("sessId", rtMember2.getMemberID());
 			httpSession.setAttribute("sessName", rtMember2.getMemberName());
 			returnMap.put("rt", "success");
-
-		} else {
+		}
+		/* } */ else {
 			returnMap.put("rt", "fail");
 		}
 		return returnMap;
@@ -211,5 +213,12 @@ public class MemberController extends BaseController {
 		httpSession.invalidate();
 		returnMap.put("rt", "success");
 		return returnMap;
+	}
+	
+//	------------------------
+	
+	@RequestMapping(value = "userMod")
+	public String userMod(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		return "infra/member/user/UserMod";
 	}
 }
