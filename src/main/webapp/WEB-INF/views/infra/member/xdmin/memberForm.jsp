@@ -123,7 +123,6 @@
 					</div>
 					<div class="col-md-5">
 						<label class="pwd-label" for="pwd">비밀번호 </label>
-						<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
 						<input type="password" class="form-control" id="pwd" name="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 					</div>
 					<div class="row">
@@ -434,7 +433,7 @@
 			$.ajax({
 				async : true,
 				cache : false,
-				type : "post       "
+				type : "post"
 				/* ,dataType:"json" */
 				,
 				url : "/member/checkId"
@@ -504,13 +503,13 @@
 
 		$("#btnSave").on("click", function() {
 
-		/* 	if (seq.val() == "0" || seq.val() == "") {
+		if (seq.val() == "0" || seq.val() == "") {
 				form.attr("action", goUrlInst).submit();
 			} else {
 				form.attr("action", goUrlUpdt).submit();
 			}
-		 */	
-			form.attr("action", goUrlInst).submit();
+		 
+			/* form.attr("action", goUrlInst).submit(); */
 		});
 
 		$("#btnList").on("click", function() {

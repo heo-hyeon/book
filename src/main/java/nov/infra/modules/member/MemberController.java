@@ -108,8 +108,7 @@ public class MemberController extends BaseController {
 //	}
 
 	@RequestMapping(value = "memberUpdt")
-	public String memberUpdt(MemberVo vo, Member dto, Model model, RedirectAttributes redirectAttributes)
-			throws Exception {
+	public String memberUpdt(MemberVo vo, Member dto, Model model, RedirectAttributes redirectAttributes) throws Exception {
 
 		int result = service.update(dto);
 		System.out.println("Controller update Result : " + result);
@@ -157,6 +156,8 @@ public class MemberController extends BaseController {
 		
 		/* service.update(dto); */
 		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		
 		return "infra/member/xdmin/memberMod";
 	}
 
@@ -215,10 +216,13 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
-//	------------------------
+	/*
+	 * // ------------------------
+	 * 
+	 * @RequestMapping(value = "userMod") public String
+	 * userMod(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+	 * return "infra/member/user/UserMod"; }
+	 */
 	
-	@RequestMapping(value = "userMod")
-	public String userMod(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		return "infra/member/user/UserMod";
-	}
+	
 }
