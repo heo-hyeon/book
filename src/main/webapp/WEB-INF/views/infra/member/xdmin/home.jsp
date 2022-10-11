@@ -225,7 +225,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rt);
-						location.href = "/login"
+						location.href = "/member/login"
 					} else {
 						// by pass
 					}

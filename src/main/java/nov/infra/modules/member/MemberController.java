@@ -205,6 +205,11 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
+	@RequestMapping(value = "login")
+	public String login() {
+		return "infra/member/xdmin/login";
+	}
+	
 	/*
 	 * // ------------------------
 	 * 

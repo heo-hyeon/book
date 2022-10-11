@@ -30,7 +30,7 @@
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/member/loginProc" />
 			<exclude-mapping path="/member/logoutProc" />
-			<exclude-mapping path="/login" />
+			<exclude-mapping path="/member/login" />
 			<exclude-mapping path="/" />
 			<exclude-mapping path="/member/MemberJoin" />
 			

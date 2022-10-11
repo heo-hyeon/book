@@ -165,7 +165,7 @@
 				<div class="col-5">
 					<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 						<option value="">도메인</option>
-						<option value="19" <c:if test="${                                                                               .email_code eq 19}">selected</c:if>>naver.com</option>
+						<option value="19" <c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>                                                                             .email_code eq 19}">selected</c:if>>naver.com</option>
 						<option value="20" <c:if test="${item.email_code eq 20}">selected</c:if>>hanmail.net</option>
 						<option value="21" <c:if test="${item.email_code eq 21}">selected</c:if>>gmail.com</option>
 					</select>
