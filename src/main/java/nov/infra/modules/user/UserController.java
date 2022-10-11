@@ -51,7 +51,7 @@ public class UserController {
 
 		  System.out.println(item.getMemberName());
 		  
-			/* service.update(dto); */
+			/* service.updedee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9ate(dto); */
 		  redirectAttributes.addFlashAttribute("vo", vo); 
 		  return "infra/user/userMod"; 
 	  }
