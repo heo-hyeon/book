@@ -63,7 +63,7 @@
 				sessId: <c:out value="${sessId }"/><br>
 				</div> --%>
 			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-		      <nav id="navbar" class="navbar">
+		       <nav id="navbar" class="navbar">
 		        <ul>
 		          <li><a href="/member/home" class="active">Home</a></li>
 		          <li><a href="/book/likebook">찜한 책 </a></li>
@@ -72,11 +72,12 @@
 		            <ul>
 		              <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
 		              <li><a href="/user/mypage">상세정보</a></li>
-		              <li><a href="/login">로그아웃 </a></li>
+		              <li><a onclick="logout()">로그아웃</a></li>
 		            </ul>
 		          </li>
-		        </ul>
-		      </nav><!-- .navbar -->
+	      	  </ul>
+      		</nav><!-- .navbar -->
+
 		</div>
 	</header>
 	<!-- End Header -->
@@ -350,7 +351,8 @@
 
 	<!-- Template Main JS File -->
 	<script src="../resources/js/main.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+	
 	<script type="text/javascript">
 		var goUrlList = "/member/memberList";
 		var goUrlInst = "/member/memberInst";
@@ -389,6 +391,27 @@
 			form.attr("action", goUrlForm).submit();
 		}
 	</script>
-	
+	<script>
+		function logout(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+	</script>
 </body>
 </html>

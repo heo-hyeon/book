@@ -87,12 +87,11 @@
             <ul>
               <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
               <li><a href="/user/mypage">상세정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
+              <li><a onclick="logout()">로그아웃</a></li>
             </ul>
           </li>
         </ul>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
@@ -185,7 +184,7 @@
 			</div>
 			<div class="col-md-5">
 				<label class="certification-label" for="certifiNY">자격증</label>
-				<select class="form-control" name="certifiNY" id="certifiNY">
+				<select class="form-control" name="certifiNY" id="certifiNY" value="<c:out value="${item.certifiNY}"/>">
 					<option value="1" <c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
 					<option value="0" <c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
 				</select>
@@ -408,7 +407,6 @@
 		var goUrlUpdt = "/user/userUpdt"; /* #-> */
 		var goUrlUele = "/user/userUele"; /* #-> */
 		var goUrlDele = "/user/userDele"; /* #-> */
-
 		/* var seq = $("input:hidden[name=seq]"); /* #-> */ 
 
 		var form = $("form[name=form]");
@@ -611,5 +609,27 @@
 
 	</script>
 	 -->
+	 <script>
+	 	function logout(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+	 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -67,7 +67,7 @@
 	            <ul>
 	              <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
 	              <li><a href="/user/mypage">상세정보</a></li>
-	              <li><a href="/login">로그아웃 </a></li>
+	         	  <li><a onclick="logout()">로그아웃</a></li>
 	            </ul>
 	          </li>
 	        </ul>
@@ -310,6 +310,28 @@
 		goForm = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlForm).submit();
+		}
+	</script>
+	<script>
+		function logout(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
 		}
 	</script>
 </body>

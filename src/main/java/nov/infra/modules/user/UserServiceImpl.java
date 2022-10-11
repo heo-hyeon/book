@@ -40,7 +40,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int update(User dto) throws Exception {
-		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
 		return dao.update(dto);
 	}
 
