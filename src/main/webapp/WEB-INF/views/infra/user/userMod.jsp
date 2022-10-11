@@ -143,22 +143,6 @@
 				<div class="invalid-feedback" id="ifIDFeedback"></div>
 			</div>
 			<div class="col-md-5">
-				<label class="pwd-label" for="pwd">비밀번호 </label>
-				<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
-				<input type="password" class="form-control" id="pwd" name="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
-			</div>
-			<div class="row">
-				<div class="col-md-5">
-		   			<label class="pwd-check-label" for="pwdCheck">비밀번호 확인 </label>
-		   			<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
-		   			<input type="password" class="form-control" id="pwdCheck" name="pwdCheck" value="<c:out value="${item.pwdCheck}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
-	 			</div> 
-	 			<div class="col-md-5">
-		 			<span id="alert-success" style="display: none; text-align: left; font-size:15px; font-weight:bold;"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치합니다.</span>
-		 			<span id="alert-danger" style="dispaly: none; text-align: left; font-size:15px; font-weight:bold; color:#c53e3e"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치하지 않습니다.</span>
-	 			</div>
-	 		</div>
-			<div class="col-md-5">
 				<label class="birth-label" for="dob">생년월일 </label>
 				<input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
 			</div>
@@ -247,12 +231,6 @@
 			
 	
 			<div style="width: 83%; margin: 20px 0 20px 0px;">
-				<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
-					<i class="fa-solid fa-chart-bar"></i></a>
-				</button>
-				<button type="button" class="btn btn-danger" style="margin-left: 6px;" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
-					<i class="fa-solid fa-x"></i> 
-				</button>
 				<button class="btn btn-success" type="button" id="btnSave" style="float:right;">
 					<i class="fa-regular fa-bookmark"></i>
 				</button>
