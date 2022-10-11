@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import nov.infra.modules.member.Member;
+import nov.infra.modules.member.MemberVo;
+
 @Controller
 @RequestMapping(value="/user/")
 public class UserController {
@@ -55,6 +58,11 @@ public class UserController {
 		  redirectAttributes.addFlashAttribute("vo", vo); 
 		  return "infra/user/userMod"; 
 	  }
-	 
-}
+	  
 
+		@RequestMapping(value = "mypage")
+		public String mypage( ) throws Exception {
+			return "infra/user/mypage";
+	  }
+	
+}

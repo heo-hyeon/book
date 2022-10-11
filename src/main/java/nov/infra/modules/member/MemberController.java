@@ -36,17 +36,6 @@ public class MemberController extends BaseController {
 		return "infra/member/xdmin/home";
 	}
 
-	@RequestMapping(value = "mypage")
-	public String mypage(MemberVo vo, HttpSession httpSession, Model model) throws Exception {
-
-		String seq = (String) httpSession.getAttribute("sessSeq");
-		Member item = service.selectOne(vo);
-
-		model.addAttribute("item", item);
-
-		return "infra/member/xdmin/mypage";
-	}
-
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 
