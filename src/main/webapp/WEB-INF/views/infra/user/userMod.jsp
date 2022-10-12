@@ -31,6 +31,9 @@
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
   
+  <!-- 달력 제이쿼리 -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
  
 <style type="text/css">
 	.addScroll{
@@ -142,7 +145,7 @@
 			</div>
 			<div class="col-md-5">
 				<label class="birth-label" for="dob">생년월일 </label>
-				<input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
+				<input type="text" class="shDate" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
 			</div>
 			<div class="col-md-5">
 				<label class="hobby-label" for="hobby">취미</label>
@@ -331,6 +334,8 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
+  
+  <!--달력 제이쿼리-->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	
   <!-- Template Main JS File -->
@@ -338,7 +343,28 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   
-  <script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("input.shDate").datepicker();
+		});
+		
+		$.datepicker.setDefaults({
+			dateFormat : 'yy-mm-dd',
+			prevText : '이전 달',
+			nextText : '다음 달',
+			monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
+					'9월', '10월', '11월', '12월' ],
+			monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
+					'9월', '10월', '11월', '12월' ],
+			dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
+			dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
+			dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
+			showMonthAfterYear : true,
+			yearSuffix : '년'
+		});
+	</script>
+	
+	<script>
 		$("#memberID").on("focusout", function() {
 				
 			$.ajax({
@@ -402,7 +428,6 @@
 	</script>
 	
 	<script type="text/javascript">
-		var goUrlList = "/user/userList"; /* #-> */
 		var goUrlInst = "/user/userInst"; /* #-> */
 		var goUrlUpdt = "/user/userUpdt"; /* #-> */
 		var goUrlUele = "/user/userUele"; /* #-> */
@@ -422,12 +447,7 @@
 			form.attr("action", goUrlUpdt).submit();
 		});
 		
-		$("#btnList").on("click", function() {
-			form.attr("action", goUrlList).submit();
-		});
-	</script>
-	
-		<script type="text/javascript">
+
 		$("#btnUelete").on("click", function() {
 			form.attr("action", goUrlUele).submit();
 		});
@@ -631,5 +651,6 @@
 			});
 		}
 	 </script>
+	 
 </body>
 </html>

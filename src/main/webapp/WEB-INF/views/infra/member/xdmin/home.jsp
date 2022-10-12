@@ -63,7 +63,6 @@
             <ul>
               <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
               <li><a href="/user/mypage">상세정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
             </ul>
           </li>
         </ul>

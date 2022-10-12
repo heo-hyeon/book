@@ -105,7 +105,7 @@
 					<h2 style="margin-left: 90px;">회원 리스트</h2>
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
-							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
+<%-- 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="" <c:if test="${empty vo.shjob eq null}">selected</c:if>>지원분야</option>
 								<option value="1" <c:if test="${vo.shjob eq 1}">selected</c:if>>기획/MD</option>
 								<option value="2" <c:if test="${vo.shjob eq 2}">selected</c:if>>IT개발</option>
@@ -118,7 +118,7 @@
 								<option value=""  <c:if test="${empty vo.shcareer eq null}">selected</c:if>>경력사항</option>
 								<option value="8" <c:if test="${vo.shcareer eq 8}">selected</c:if>>경력</option>
 								<option value="7" <c:if test="${vo.shcareer eq 7}">selected</c:if>>신입</option>
-							</select> 
+							</select>  --%>
 							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">검색구분</option>
 								<option value="1">코드</option>
@@ -156,9 +156,9 @@
 							<th>선택</th>
 							<th>번호</th>
 							<th>아이디</th>
-							<!-- <th>패스워드</th> -->
+							<!-- <th>패스워드</th> 
 							<th>지원분야</th>
-							<th>경력사항</th>
+							<th>경력사항</th> -->
 							<th>이름</th>
 							<th>영문 이름</th>
 							<th>생년월일</th>
@@ -184,7 +184,7 @@
 						<c:choose>
 							<c:when test="${fn:length(list) eq 0}">
 								<tr>
-									<td class="text-center" colspan="20">There is no data!</td>
+									<td class="text-center" colspan="18">There is no data!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -199,7 +199,7 @@
 										</td>
 									<%-- 	<td>
 											<c:out value="${list.pwd }" />
-										</td> --%>
+										</td> 
 										<td>
 											<c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
 												<c:if test="${list.job eq listJob.seq}">
@@ -213,7 +213,7 @@
 												<c:otherwise>경력</c:otherwise>
 											</c:choose>
 										</td>	
-										</td>         
+										</td>  --%>       
 										<td>
 											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
