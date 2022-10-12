@@ -25,6 +25,28 @@
 <link href="../resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="../resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="../resources/vendor/aos/aos.css" rel="stylesheet">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script type="text/javascript">
+	   $(document).ready(function () {
+	       $.datepicker.setDefaults($.datepicker.regional['ko']); 
+	       $( "#datepicker" ).datepicker({
+	            changeMonth: true, 
+	            changeYear: true,
+	            nextText: '다음 달',
+	            prevText: '이전 달', 
+	            dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+	            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
+	            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	            dateFormat: "yy-mm-dd",
+	            maxDate: 0,
+	       	// 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
+	        
+	       });
+	   });
 <link href="../resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="../resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
@@ -138,7 +160,7 @@
 			 		</div>
 					<div class="col-md-5">
 						<label class="birth-label" for="dob">생년월일 </label>
-						<input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
+						<input type="date" class="form-control" id="datepicker" name="dob" value="<c:out value="${item.dob}"/>">
 					</div>
 					<div class="col-md-5">
 						<label class="hobby-label" for="hobby">취미</label>

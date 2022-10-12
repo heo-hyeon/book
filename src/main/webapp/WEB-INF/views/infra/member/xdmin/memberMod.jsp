@@ -30,7 +30,31 @@
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e48a00faf1.js" crossorigin="anonymous"></script>
-  
+  <!-- 달력 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script type="text/javascript">
+	   $(document).ready(function () {
+	       $.datepicker.setDefaults($.datepicker.regional['ko']); 
+	       $( "#datepicker" ).datepicker({
+	            changeMonth: true, 
+	            changeYear: true,
+	            nextText: '다음 달',
+	            prevText: '이전 달', 
+	            dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+	            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
+	            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	            dateFormat: "yy-mm-dd",
+	            maxDate: 0,
+	       	// 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
+	        
+	       });
+	   });
+  </script>
+ 
   <style>
   	.choice {
   		padding:20px;
@@ -131,7 +155,7 @@
 	 		</div>
 			<div class="col-md-5">
 				<label class="birth-label" for="dob">생년월일 </label>
-				<input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${item.dob}"/>">
+				<input type="date" class="form-control" id="datepicker" name="dob" value="<c:out value="${item.dob}"/>">
 			</div>
 			<div class="col-md-5">
 				<label class="hobby-label" for="hobby">취미</label>
@@ -165,7 +189,7 @@
 				<div class="col-5">
 					<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 						<option value="">도메인</option>
-						<option value="19" <c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>                                                                             .email_code eq 19}">selected</c:if>>naver.com</option>
+						<option value="19" <c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>   
 						<option value="20" <c:if test="${item.email_code eq 20}">selected</c:if>>hanmail.net</option>
 						<option value="21" <c:if test="${item.email_code eq 21}">selected</c:if>>gmail.com</option>
 					</select>
@@ -415,7 +439,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rt);
-						location.href = "/login"
+						location.href = "member/login"
 					} else {
 						// by pass
 					}
