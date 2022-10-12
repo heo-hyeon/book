@@ -59,12 +59,10 @@
           <li><a href="/book/recommendList">추천목록</a></li>
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="/member/memberMod">기본정보</a></li>
-              <li><a href="/login">로그아웃 </a></li>
-              <li><a href="#">기타 </a></li>
+              <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
+              <li><a onclick="logout()">로그아웃</a></li>
             </ul>
           </li>
-        </ul>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->

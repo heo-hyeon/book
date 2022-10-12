@@ -54,19 +54,20 @@
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="/member/home" class="active">Home</a></li>
-          <li><a href="/book/likebook">찜한 책 </a></li>
-          <li><a href="/book/recommendList">추천목록</a></li>
-          <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
-              <li><a href="/user/mypage">상세정보</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav><!-- .navbar -->
+        <nav id="navbar" class="navbar">
+	        <ul>
+	          <li><a href="/member/home" class="active">Home</a></li>
+	          <li><a href="/book/likebook">찜한 책 </a></li>
+	          <li><a href="/book/recommendList">추천목록</a></li>
+	          <c:if test="${not empty sessSeq}">
+         	  <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          		  <ul>
+              		<li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
+              		<li><a onclick="logout()">로그아웃</a></li>
+              	</ul>
+          	 </li>
+          	 </c:if>
+      </nav><!-- .navbar -->->
 
     </div>
   </header><!-- End Header -->
@@ -78,11 +79,15 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-           
             <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
-          	 <p data-aos="fade-up" class="aos-init aos-animate"><c:out value="${sessName }"/>님! <br>취향과 맞는 책을 추천받아보세요!</p>
-            <button class="btn btn-outline-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:white;">로그아웃</button>
-          <!--   <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-gexabayt-started aos-init aos-animate">START</a> -->
+             <c:if test="${empty sessSeq }">
+             <p data-aos="fade-up" class="aos-init aos-animate">베스트셀러를 바로 확인해보세요!</p>
+             <button class="btn btn-outline-warning" type="button" style="width:100px; height:35px; margin:20px; color:white;"><a href="/member/login">로그인</a></button>
+           	 </c:if>
+           	 <c:if test="${not empty sessSeq}">
+	          	<p data-aos="fade-up" class="aos-init aos-animate"><c:out value="${sessName }"/>님! <br>취향과 맞는 책을 추천받아보세요!</p>
+	            <button class="btn btn-outline-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:white;">로그아웃</button>
+          	 </c:if>
           </div>
         </div>
       </div>

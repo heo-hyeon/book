@@ -61,14 +61,12 @@
 	          <li><a href="/member/home" class="active">Home</a></li>
 	          <li><a href="/book/likebook">찜한 책 </a></li>
 	          <li><a href="/book/recommendList">추천목록</a></li>
-	          <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+      		  <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 	            <ul>
 	              <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
-	              <li><a href="/user/mypage">상세정보</a></li>
 	              <li><a onclick="logout()">로그아웃</a></li>
 	            </ul>
-	          </li>
-	        </ul>
+       
    		  </nav><!-- .navbar -->
 
 			<!-- .navbar -->
