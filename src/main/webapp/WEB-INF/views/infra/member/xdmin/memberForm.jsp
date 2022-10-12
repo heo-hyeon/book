@@ -47,6 +47,7 @@
 	        
 	       });
 	   });
+</script>
 <link href="../resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="../resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 

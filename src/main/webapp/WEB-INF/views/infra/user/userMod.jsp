@@ -131,8 +131,9 @@
 		    <c:out value="${sessName}"/>님, 좋은 하루 보내세요</h5>
 		  </div>
 		  <ul class="list-group list-group-flush">
-		     <li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
-		    <li class="list-group-item"><a href="mypage">상세정보</a></li>
+		    <li class="list-group-item"><a href="/user/userMod" class="active">관심장르는 '소설' , '인문' 입니다.</a></li>
+		    <li class="list-group-item"><a href="/book/likebook">좋아요 누른책은 '6'권 입니다.</a></li>
+		    <li class="list-group-item"><a href="/book/recommendList">추천하신 책은 총 '6'권 입니다.</a></li>
 		  </ul>
 		</div>
 	   
@@ -641,7 +642,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rt);
-						location.href = "/login"
+						location.href = "/member/login"
 					} else {
 						// by pass
 					}

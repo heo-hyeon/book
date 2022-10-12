@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -44,7 +44,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="/member/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <images src="../resources/images/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>
@@ -60,7 +60,6 @@
           <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="/member/memberMod">기본정보</a></li>
-              <li><a href="/member/mypage">상세정보</a></li>              
               <li><a href="/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
@@ -76,7 +75,7 @@
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
         <h2>정보 찾기</h2>
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/member/home">Home</a></li>
           <li>아이디 찾기</li>
         </ol>
       </div>
@@ -119,7 +118,7 @@
 						  </div>
 						  <div class="card-body">
 						    <h5 class="card-title">yejin0113</h5><br>
-						    <a href="/login" class="btn btn-outline-warning">로그인</a>
+						    <a href="/home/login" class="btn btn-outline-warning">로그인</a>
 						    <a href="/find_pwd" class="btn btn-outline-warning">비밀번호 찾기</a>
 						  </div>
 						</div>

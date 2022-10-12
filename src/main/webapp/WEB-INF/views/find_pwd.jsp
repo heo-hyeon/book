@@ -61,7 +61,7 @@
             <ul>
               <li><a href="/member/memberMod">기본정보</a></li>
               <li><a href="/member/mypage">상세정보</a></li>              
-              <li><a href="/login">로그아웃 </a></li>
+              <li><a href="/member/login">로그아웃 </a></li>
               <li><a href="#">기타 </a></li>
             </ul>
           </li>
@@ -76,7 +76,7 @@
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
         <h2>정보 찾기</h2>
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/member/home">Home</a></li>
           <li>비밀번호 찾기</li>
         </ol>
       </div>
@@ -137,7 +137,7 @@
 					    <input type="password">
 					    <h6 style="margin-top:20px;">비밀번호를 다시 한번 입력해주세요.</h6>
 					    <input type="password">
-					    <a href="/login" class="btn btn-outline-warning" style="margin-top:20px;">로그인</a>
+					    <a href="/member/login" class="btn btn-outline-warning" style="margin-top:20px;">로그인</a>
 					    <a href="/find_pwd" class="btn btn-outline-warning" style="margin-top:20px;">확인</a>
 					  </div>
 					</div>

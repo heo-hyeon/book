@@ -63,12 +63,12 @@
 	 
 	 <!-- 매니저 페이지 -->
 	 <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up" style="height:400px;">
+            <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
                 <article class="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
                     <div class="overflow-hidden position-relative">
 
                         <!--Article image-->
-                        <img src="../resources/images/memberlist.jpg" alt="" class="img-fluid">
+                        <img src="../resources/images/memberlist.png" alt="" class="img-fluid" style="height:600px;">
 						 
                         <!--Article image divider-->
                         <svg class="position-absolute start-0 bottom-0 mb-n1 text-white" preserveAspectRatio="none" width="100%" height="48" viewBox="0 0 1460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,12 +89,12 @@
             </div>
             
             <!-- 회원 페이지 -->
-            <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up" style="height:400px;">
+            <div class="col-lg-6 mb-4 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
                 <article class="card card-hover text-center hover-shadow-lg overflow-hidden border-0 rounded-3">
                     <div class="overflow-hidden position-relative">
 
                         <!--Article image-->
-                        <img src="../resources/images/booklist.jpg" alt="" class="img-fluid" style="width:700px; height:700;">
+                        <img src="../resources/images/booklist.png" alt="" class="img-fluid" style="height:600px;">
 
                         <!--Article image divider-->
                         <svg class="position-absolute start-0 bottom-0 mb-n1 text-white" preserveAspectRatio="none" width="100%" height="48" viewBox="0 0 1460 120" fill="none" xmlns="http://www.w3.org/2000/svg">

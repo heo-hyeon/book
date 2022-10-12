@@ -33,6 +33,10 @@
 			<exclude-mapping path="/member/login" />
 			<exclude-mapping path="/" />
 			<exclude-mapping path="/member/MemberJoin" />
+			<exclude-mapping path="/member/memberForm" />
+			<exclude-mapping path="/member/checkId" />
+			<exclude-mapping path="/member/memberInst" />
+			<exclude-mapping path="/member/home" />
 			
 			
 			<beans:bean id="checkLoginSessionInterception" class="nov.infra.common.interceptor.CheckLoginSessionInterception"/>
