@@ -38,7 +38,7 @@
 				,a.career
 				,a.memberName
 				,a.memberName_en
-				<!-- ,a.dob -->
+				,a.dob
 				,a.telecom
 				,a.phone
 				,a.email
@@ -67,7 +67,7 @@
 			,career
 			,memberName
 			,memberName_en
-			<!-- ,dob -->
+			,dob
 			,telecom
 			,phone
 			,email
@@ -85,7 +85,7 @@
 			,#{career}
 			,#{memberName}
 			,#{memberName_en}
-			<!-- ,#{dob} -->
+			,#{dob}
 			,#{telecom}
 			,#{phone}
 			,#{email}
@@ -144,7 +144,7 @@
 			,career = #{career}
 			,memberName= #{memberName}
 			,memberName_en = #{memberName_en}
-			<!-- ,dob = #{dob} -->
+			,dob = #{dob}
 			,telecom = #{telecom}
 			,phone = #{phone}
 			,email = #{email}
@@ -180,7 +180,7 @@
 			,a.career
 			,a.memberName
 			,a.memberName_en
-		<!-- 	,a.dob -->
+			,a.dob
 			,a.telecom
 			,a.phone
 			,a.email

@@ -286,10 +286,8 @@
         </div> 
     </div> -->
     
-       		
 			</div>
 		</div>
-
 	
      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
@@ -306,7 +304,8 @@
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
       </a>
      </div> 
-		      
+     
+		<!-- 엑스 Modal --> 
 		<div class="modal fade" id="exampleModal2" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
@@ -344,7 +343,6 @@
 		    </div>
 		  </div>
 		</div>
-		
 </section>
 
    <!-- Vendor JS Files -->
@@ -355,16 +353,12 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-  
-
-<!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	 -->
-  <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
-  
 
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+  
 	<script>
 		$("#memberID").on("focusout", function() {
 				
@@ -459,8 +453,30 @@
 		
 		</script>
 		
+		<script>
+	 	function logout(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert(response.rt);
+						location.href = "/member/login"
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+	 </script>
 		
-		<!-- 파일첨부  -->
+	<!-- 파일첨부  -->
 	<!-- <script type="text/javascript">
 	upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
 //		objName 과 seq 는 jsp 내에서 유일 하여야 함.
@@ -531,7 +547,6 @@
 			}
 		}
 
-
 		checkUploadedEachFileSize = function(obj, seq, allowedEachFileSize) {
 
 			if(obj.size > allowedEachFileSize){
@@ -540,7 +555,6 @@
 				return false;
 			}
 		}
-
 
 		checkUploadedTotalFileSize = function(seq, totalSize, allowedTotalFileSize) {
 			if(totalSize > allowedTotalFileSize){
@@ -630,28 +644,6 @@
 
 	</script>
 	 -->
-	 <script>
-	 	function logout(){
-			$.ajax({
-				async: true 
-				,cache: false
-				,type: "post"
-				,url: "/member/logoutProc"
-				,data: {}
-				,success: function(response) {
-					if(response.rt == "success") {
-						alert(response.rt);
-						location.href = "/member/login"
-					} else {
-						// by pass
-					}
-				}
-				,error : function(jqXHR, textStatus, errorThrown){
-					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-				}
-			});
-		}
-	 </script>
 	 
 </body>
 </html>

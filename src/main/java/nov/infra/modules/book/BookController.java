@@ -1,18 +1,28 @@
 package nov.infra.modules.book;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "/book/")
 public class BookController {
-	/*
-	 * @Autowired BookServiceImpl service;
-	 */
+
+	 @Autowired 
+	 BookServiceImpl service; 
 	
+
 	@RequestMapping(value = "bestList")
-	public String bestList () {
+	public String bestList (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
+		
+		System.out.println("책 시퀀스 : " + vo.getSeq());
+		
+		Book item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		
 		return "infra/book/bestList";
 	}
 	

@@ -14,14 +14,17 @@
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
-		SELECT
+		select 
 			d.seq
-			,d.name
-			,d.sub_title
-			,d.title
-			,d.explanation
-			,d.publisher
-			,d.category
+		    ,d.name
+		    ,c.writer_name
+		    ,d.title
+		    ,d.sub_title
+		    ,d.explanation
+		    ,d.publisher
+		    ,d.category   
+		from book d
+		left join writer c on d.seq = c.seq;
 		<include refid="selectCommon" />
 	</select>
 	
@@ -34,6 +37,7 @@
 		INSERT INTO book (
 			seq
 			,name
+			,writer_name
 			,sub_title
 			,title
 			,explanation
@@ -43,6 +47,7 @@
 		VALUES (
 			#{seq}
 			,#{name}
+			,#{writer_name}
 			,#{sub_title}
 			,#{title}
 			,#{explanation}
@@ -59,6 +64,7 @@
     	SET 	
     		seq = #{seq}
     		,name = #{name}
+    		,writer_name = #{writer_name}
 			,sub_title = #{sub_title}
 			,title = #{title}
 			,explanation = #{explanation}
@@ -70,15 +76,9 @@
     
     <select id="selectOne" resultMap="resultMapObj">
     	SELECT 
-    		d.seq
-			,d.name
-			,d.sub_title
-			,d.title
-			,d.explanation
-			,d.publisher
-			,d.category
-		FROM book d
-		WHERE 1=1
+    		*
+		FROM book
+		WHERE seq = #{seq} 
     </select>
     
 </mapper>		

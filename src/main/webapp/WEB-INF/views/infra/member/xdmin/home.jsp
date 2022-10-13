@@ -118,6 +118,8 @@
 
     <!-- ======= BestSeller Section ======= -->
     <section id="constructions" class="constructions">
+    <form id="mainForm" method = "POST">
+    <input type ="hidden" id="bookSeq" name = "seq" >
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-header">
@@ -135,7 +137,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="/book/bestList">역행자</a></h3>
+                    <h3 class="card-title"><a href="javascript:goBook(1)">역행자</a></h3>
                     <h6 style="color:silver">자청</h6>
                     <p style="color:red;">성공/처세</p>
                     <p>"출판 즉시 베스트셀러 종합1위"</p>
@@ -202,6 +204,7 @@
         </div>
 
       </div>
+      </form>
     </section><!-- End BestSeller Section -->
 
 
@@ -219,6 +222,18 @@
 	
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	<script>
+	
+	goBook = function(bookSeq) {
+		
+		var form = $("#mainForm");
+		
+		var seq = $("#bookSeq");
+		
+		seq.val(bookSeq);		
+		
+		form.attr("action","/book/bestList").submit();
+	}; 
+	
 	$("#btnLogout").on("click", function(){
 			$.ajax({
 				async: true 
