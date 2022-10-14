@@ -14,7 +14,7 @@
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
-		select 
+		SELECT
 			d.seq
 		    ,d.name
 		    ,c.writer_name
@@ -23,8 +23,8 @@
 		    ,d.explanation
 		    ,d.publisher
 		    ,d.category   
-		from book d
-		left join writer c on d.seq = c.seq;
+		FROM book d
+		left join writer c on c.seq = d.bookWriter;
 		<include refid="selectCommon" />
 	</select>
 	
@@ -75,10 +75,27 @@
     </update>
     
     <select id="selectOne" resultMap="resultMapObj">
-    	SELECT 
-    		*
-		FROM book
-		WHERE seq = #{seq} 
+		SELECT
+			d.seq
+		    ,d.name
+		    ,c.writer_name
+		    ,d.title
+		    ,d.sub_title
+		    ,c.writer_exp
+		    ,d.publisher
+		FROM book d
+		left join writer c on c.seq = d.bookWriter
+		where 1=1
+        and d.seq = #{seq}	
     </select>
     
+    <select id="selectlistTag" resultMap="resultMapObj">
+	    SELECT
+			d.seq
+	        ,e.keyword
+	    FROM book d
+	    left join tag e on e.book_seq = d.seq
+	    where 1=1
+	    and d.seq = #{seq}
+   </select>
 </mapper>		

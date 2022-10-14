@@ -1,5 +1,7 @@
 package nov.infra.modules.book;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
@@ -23,4 +25,8 @@ public class BookDao {
 		return result;
 	}
 	
+	public List<Book> selectlistTag(BookVo vo) { 
+		List<Book> list = sqlSession.selectList(namespace + ".selectlistTag", vo);
+		return list;
+	}
 }
