@@ -10,9 +10,19 @@ public class Book {
 	private String publisher;
 	private String category;
 	private String writer_name;
+	private String bookWriter;
+	private String writer_exp;
+	private String keyword;
+	
 	
 	public String getWriter_name() {
 		return writer_name;
+	}
+	public String getBookWriter() {
+		return bookWriter;
+	}
+	public void setBookWriter(String bookWriter) {
+		this.bookWriter = bookWriter;
 	}
 	public void setWriter_name(String writer_name) {
 		this.writer_name = writer_name;
@@ -29,6 +39,7 @@ public class Book {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getSub_title() {
 		return sub_title;
 	}
@@ -59,4 +70,17 @@ public class Book {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	public String getWriter_exp() {
+		return writer_exp;
+	}
+	public void setWriter_exp(String writer_exp) {
+		this.writer_exp = writer_exp;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	
 }

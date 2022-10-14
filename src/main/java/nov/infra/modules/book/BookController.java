@@ -1,6 +1,8 @@
 package nov.infra.modules.book;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,9 @@ public class BookController {
 		
 		Book item = service.selectOne(vo);
 		model.addAttribute("item", item);
+		
+		List<Book> list = service.selectlistTag(vo);
+		model.addAttribute("list", list);
 		
 		return "infra/book/bestList";
 	}
