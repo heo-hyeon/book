@@ -80,7 +80,7 @@
 
         <h2>Best Seller </h2>
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/member/home">Home</a></li>
           <li>Best Seller Details</li>
         </ol>
 
@@ -103,7 +103,7 @@
                 <ul class="d-flex justify-content-center">
                   <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
                   <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
-                  <li><i class="bi bi-heart"></i><a href="blog-details.html">찜하기</a></li>
+                  <li><i class="bi bi-heart"></i><a href=" ">찜하기</a></li>
                 </ul>
               </div><!-- End meta top -->
 

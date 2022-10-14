@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home</title>
+  <title>Best Sellers</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -75,24 +75,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
-    <div class="info d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
-             <c:if test="${empty sessSeq }">
-             <p data-aos="fade-up" class="aos-init aos-animate">베스트셀러를 바로 확인해보세요!</p>
-             <button class="btn btn-outline-warning" type="button" style="width:100px; height:35px; margin:20px; color:white;"><a href="/member/login">로그인</a></button>
-           	 </c:if>
-           	 <c:if test="${not empty sessSeq}">
-	          	<p data-aos="fade-up" class="aos-init aos-animate"><c:out value="${sessName }"/>님! <br>취향과 맞는 책을 추천받아보세요!</p>
-	            <button class="btn btn-outline-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:white;">로그아웃</button>
-	            <button class="btn btn-outline-warning" type="button" style="width:170px; height:35px; margin:20px; color:white;"><a href="/book/bestSeller">베스트셀러</a></button>
-          	 </c:if>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
@@ -117,7 +99,97 @@
 
  
 
-  
+    <!-- ======= BestSeller Section ======= -->
+    <section id="constructions" class="constructions">
+    <form id="mainForm" method = "POST">
+    <input type ="hidden" id="bookSeq" name = "seq" >
+      <div class="container aos-init" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Best seller</h2>
+          <p>이번달 베스트셀러를 만나보세요.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="javascript:goBook(1)">역행자</a></h3>
+                    <h6 style="color:silver">자청</h6>
+                    <p style="color:red;">성공/처세</p>
+                    <p>"출판 즉시 베스트셀러 종합1위"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/images/convenience.jpg); width:210px; height:90px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="/book/bestList">불편한 편의점</a></h3>
+                    <h6 style="color:silver">김호연</h6>
+                    <p style="color:red;">한국소설</p>
+                    <p>"2022년 가장 사랑받는 소설"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/images/225.jpg); width:230px; height:100px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="/book/bestList">작별인사</a></h3>
+                    <h6 style="color:silver;">김영하</h6>
+                    <p style="color:red;">한국소설</p>
+                    <p>"3년만에 돌아온 김영하의 신작"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/images/last.jpg); width:210px; height:90px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="/book/bestList">세상의 마지막 기차역</a></h3>
+                    <h6 style="color:silver;">무라케 다케시</h6>
+                    <p style="color:red;">일본소설</p>
+                    <p>"일본 SNS 화제의 책"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      </form>
+    </section><!-- End BestSeller Section -->
+
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -132,8 +204,8 @@
   <script src="../resources/vendor/php-email-form/validate.js"></script>
 	
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
-	
 	<script>
+	
 	goBook = function(bookSeq) {
 		
 		var form = $("#mainForm");
