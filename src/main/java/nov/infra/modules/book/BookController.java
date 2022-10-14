@@ -22,9 +22,6 @@ public class BookController {
 		
 		System.out.println("책 시퀀스 : " + vo.getSeq());
 		
-		Book item = service.selectOne(vo);
-		model.addAttribute("item", item);
-		
 		List<Book> list = service.selectlistTag(vo);
 		model.addAttribute("list", list);
 		
@@ -49,5 +46,10 @@ public class BookController {
 	@RequestMapping(value = "recommendList")
 	public String recommendList () {
 		return "infra/book/recommendList";
+	}
+	
+	@RequestMapping(value = "bestSeller")
+	public String bestSeller () {
+		return "infra/book/bestSeller";
 	}
 }

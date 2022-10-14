@@ -8,10 +8,10 @@
 
     <resultMap id="resultMapObj" type="nov.infra.modules.book.Book"></resultMap>
 	
-	<sql id="selectCommon">
+<!-- 	<sql id="selectCommon">
 		FROM book d
 		WHERE 1=1
-	</sql>
+	</sql> -->
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
@@ -20,20 +20,20 @@
 		    ,c.writer_name
 		    ,d.title
 		    ,d.sub_title
-		    ,d.explanation
+		    ,c.writer_exp
 		    ,d.publisher
-		    ,d.category   
 		FROM book d
-		left join writer c on c.seq = d.bookWriter;
-		<include refid="selectCommon" />
+		left join writer c on c.seq = d.bookWriter
+		where 1=1
+        and d.seq = #{seq}	
 	</select>
-	
+<!-- 	
 	<select id="celectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon"/>
 	</select>
-	
-	<insert id="insert">
+	 -->
+<!-- 	<insert id="insert">
 		INSERT INTO book (
 			seq
 			,name
@@ -73,7 +73,7 @@
 		WHERE 1=1
 			AND seq = #{seq}
     </update>
-    
+     -->
     <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			d.seq
@@ -90,12 +90,11 @@
     </select>
     
     <select id="selectlistTag" resultMap="resultMapObj">
-	    SELECT
-			d.seq
-	        ,e.keyword
-	    FROM book d
-	    left join tag e on e.book_seq = d.seq
-	    where 1=1
-	    and d.seq = #{seq}
+	   SELECT
+			d.name
+			,tg.keyword
+		FROM tag tg
+	JOIN bookNtag bt ON bt.tagSeq = tg.seq
+	JOIN book d ON d.seq = bt.bookSeq
    </select>
 </mapper>		

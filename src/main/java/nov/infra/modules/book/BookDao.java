@@ -29,4 +29,5 @@ public class BookDao {
 		List<Book> list = sqlSession.selectList(namespace + ".selectlistTag", vo);
 		return list;
 	}
+
 }
