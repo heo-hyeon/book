@@ -67,7 +67,7 @@
               	</ul>
           	 </li>
           	 </c:if>
-      </nav><!-- .navbar -->->
+      </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
@@ -120,10 +120,10 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)">역행자</a></h3>
-                    <h6 style="color:silver">자청</h6>
-                    <p style="color:red;">성공/처세</p>
-                    <p>"출판 즉시 베스트셀러 종합1위"</p>
+                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name}"/></a></h3>
+                    <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
+                    <p style="color:red;"><c:out value="${item.keyword}"/></p>
+                    <p>"<c:out value="${item.sub_title}"/>"</p>
                   </div>
                 </div>
               </div>

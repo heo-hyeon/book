@@ -8,10 +8,10 @@
 
     <resultMap id="resultMapObj" type="nov.infra.modules.book.Book"></resultMap>
 	
-<!-- 	<sql id="selectCommon">
+	<sql id="selectCommon">
 		FROM book d
 		WHERE 1=1
-	</sql> -->
+	</sql> 
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
@@ -27,12 +27,12 @@
 		where 1=1
         and d.seq = #{seq}	
 	</select>
-<!-- 	
+ 	
 	<select id="celectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon"/>
 	</select>
-	 -->
+	
 <!-- 	<insert id="insert">
 		INSERT INTO book (
 			seq
