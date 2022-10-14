@@ -102,7 +102,8 @@
               <div class="meta-top">
                 <ul class="d-flex justify-content-center">
                   <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
-                  <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
+                  <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
+                  <li><i class="bi bi-heart"></i><a href="blog-details.html">찜하기</a></li>
                 </ul>
               </div><!-- End meta top -->
 
@@ -137,10 +138,10 @@
 
               <div class="meta-bottom">
                 <i class="bi bi-tags"></i>
-                <ul class="tags">
-                  <li><c:out value="${list[0].keyword }"/></li>
-                  <li><c:out value="${list[1].keyword }"/></li>
-                </ul>
+	                <ul class="tags">
+	                  <li><c:out value="${list[0].keyword }"/></li>
+	                  <li><c:out value="${list[1].keyword }"/></li>
+	                </ul>
               </div><!-- End meta bottom -->
             </article><!-- End blog post -->
 
@@ -204,14 +205,15 @@
 		                </div>
 	           		</div><!-- End blog comments -->
 	         	 </div>
-	          </div><br>
-	          
-	          <form name="formVo" id="formVo" method="post">
+	          </div>
+         	 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:10px;"><a href="/member/home">돌아가기</a></button>
+          </div>
+	    <%--  <form name="formVo" id="formVo" method="post">
 				<input type="hidden" name="seq" value="<c:out value="${vo.seq}"/>"/>
-			  </form>
-	          </section>
-	          <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/">돌아가기</a></button>
-  	</main><!-- End #main -->
+			  </form> --%>
+          </form>
+     </section>
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -227,7 +229,6 @@
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   
-
   <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
@@ -236,6 +237,7 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script
@@ -244,7 +246,6 @@
 	 var form = $("form[name=form]");
 	 var formVo = $("formVo[name=formVo]");
 	</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
   
   	<script>
 		function logout(){
