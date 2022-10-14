@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class BookServiceImpl implements BookService{
 
@@ -13,15 +14,15 @@ public class BookServiceImpl implements BookService{
 	BookDao dao;
 	
 	@Override
-	public Book selectOne(BookVo vo) throws Exception {
-		Book result = dao.selectOne(vo);
-		System.out.println("service result : " + result);
-		return result;
-	}
-	
-	@Override
 	public List <Book> selectlistTag(BookVo vo) throws Exception {
 		List<Book> result = dao.selectlistTag(vo);
 		return result;
 	}
+
+	@Override
+	public Book selectOne(BookVo vo) throws Exception {
+		Book result = dao.selectOne(vo);
+		return result;
+	}
+
 }

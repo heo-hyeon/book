@@ -260,11 +260,7 @@
 					<i class="fa-solid fa-trash-can-arrow-up"></i>
 				</button>
 			</div>
-			
-<!-- 		  	<div class="d-grid garp-2 col-4 mx-auto">
-		  		<br><button type="button" id="btnSave" class="btn btn-outline-warning ma-auto">수정하기</button>
-			</div> -->
-			</form>
+		</form>
 		
 <!-- 	
 		<div class="row mt-sm-4">
