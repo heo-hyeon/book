@@ -80,15 +80,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <span>WITH BOOK</span></h2>
-             <c:if test="${empty sessSeq }">
              <p data-aos="fade-up" class="aos-init aos-animate">베스트셀러를 바로 확인해보세요!</p>
              <button class="btn btn-outline-warning" type="button" style="width:100px; height:35px; margin:20px; color:white;"><a href="/member/login">로그인</a></button>
-           	 </c:if>
-           	 <c:if test="${not empty sessSeq}">
-	          	<p data-aos="fade-up" class="aos-init aos-animate"><c:out value="${sessName }"/>님! <br>취향과 맞는 책을 추천받아보세요!</p>
-	            <button class="btn btn-outline-warning" type="button" id="btnLogout" name="btnLogout" style="width:100px; height:35px; margin:20px; color:white;">로그아웃</button>
-	            <button class="btn btn-outline-warning" type="button" style="width:170px; height:35px; margin:20px; color:white;"><a href="/book/bestSeller">베스트셀러</a></button>
-          	 </c:if>
           </div>
         </div>
       </div>
