@@ -115,9 +115,6 @@
 
   </section>
 
- 
-
-    <!-- ======= BestSeller Section ======= -->
     <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
     <input type ="hidden" id="bookSeq" name = "seq" >
