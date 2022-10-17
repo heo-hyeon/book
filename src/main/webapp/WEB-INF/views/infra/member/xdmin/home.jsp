@@ -120,10 +120,10 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)">역행자</a></h3>
-                    <h6 style="color:silver">자청</h6>
+                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name}"/></a></h3>
+                    <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
                     <p style="color:red;">한국소설</p>
-                    <p>"2022년 가장 사랑받는 소설"</p>
+                    <p><c:out value="${list.sub_title }"/></p>
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="/book/bestList">작별인사</a></h3>
+                    <h3 class="card-title"><a href="javascript:goBook(3)">작별인사</a></h3>
                     <h6 style="color:silver;">김영하</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"3년만에 돌아온 김영하의 신작"</p>
@@ -174,7 +174,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="/book/bestList">세상의 마지막 기차역</a></h3>
+                    <h3 class="card-title"><a href="javascript:goBook(4)">세상의 마지막 기차역</a></h3>
                     <h6 style="color:silver;">무라케 다케시</h6>
                     <p style="color:red;">일본소설</p>
                     <p>"일본 SNS 화제의 책"</p>
