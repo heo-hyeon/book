@@ -25,11 +25,15 @@
 <link href="../resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="../resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="../resources/vendor/aos/aos.css" rel="stylesheet">
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <script type="text/javascript">
+<!-- Validation  -->
+<script type="text/javascript" src="/Validator.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript">
 	   $(document).ready(function () {
 	       $.datepicker.setDefaults($.datepicker.regional['ko']); 
 	       $( "#datepicker" ).datepicker({
@@ -549,6 +553,75 @@
 			form.attr("action", goUrlDele).submit();
 		});
 	</script>
+	
+	<script>
+		const nameRegex = /^[a-zA-Z0-9가-힣]{2,12}$/;
+		const idRegex = /^[A-Za-z0-9]{4,12}$/;
+		const pwdRegex = /^[A-Za-z0-9]{4,12}$/;
+	
+		const memberName = document.getElementById('memberName');
+		const memberID = document.getElementById('memberID');
+		const pwd = document.getElementById('pwd');
+		const pwdCheck = document.getElementById('pwdCheck'); 
+	
+		let isName = false;
+		let isId = false;
+		let isPwd = false;
+		let isPwdCheck = false;
+	
+		memberName.addEventListener('keyup', () => {
+		    if (memberName.value == '' || !nameRegex.test(memberName.value)) {
+		        document.getElementById('nameFeedback').style.display = 'block';
+		        isName = false;
+		    } else {
+		        document.getElementById('nameFeedback').style.display = 'none';
+		        memberName.removeEventListener;
+		        isName = true;
+		    }
+		});
+	
+		memberID.addEventListener('keyup', () => {
+		    if (memberID.value == '' || !idRegex.test(memberID.value)) {
+		        document.getElementById('ifIDFeedback').style.display = 'block';
+		        isId = false;
+		    } else {
+		        document.getElementById('ifIDFeedback').style.display = 'none';
+		        memberID.removeEventListener;
+		        isId = true;
+		    }
+		});
+	
+		pwd.addEventListener('keyup', () => {
+		    if (pwd.value == '' || !pwdRegex.test(pwd.value)) {
+		        document.getElementById('pwdFeedback').style.display = 'block';
+		        isPwd = false;
+		    } else {
+		        document.getElementById('pwdFeedback').style.display = 'none';
+		        pwd.removeEventListener;
+		        isPwd = true;
+		    }
+		});
+	
+		pwdCheck.addEventListener('keyup', () => {
+		    if (pwdCheck.value !== pwdCheck.value) {
+		        document.getElementById('pwdCheckFeedback').style.display = 'block';
+		        isPwdCheck = false;
+		    } else {
+		        document.getElementById('pwdCheckFeedback').style.display = 'none';
+		        pwdCheck.removeEventListener;
+		        isPwdCheck = true;
+		    }
+		});
+	
+	
+		function onSubmit() {
+		    if (isName && isId && isPwd && isPwdCheck) {
+		        alert('제출');
+		        document.getElementById('loginForm').submit();
+		    } else alert('빈칸을 채우세요');
+		}
+	</script>
+	
 	
 </body>
 </html>

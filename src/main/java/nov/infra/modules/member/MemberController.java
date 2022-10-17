@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import nov.infra.common.base.BaseController;
+import nov.infra.modules.book.Book;
+import nov.infra.modules.book.BookServiceImpl;
+import nov.infra.modules.book.BookVo;
 
 @Controller
 
@@ -24,14 +27,20 @@ public class MemberController extends BaseController {
 
 	@Autowired
 	MemberServiceImpl service;
+	
+	@Autowired
+	BookServiceImpl serviceBook;
 
 	@RequestMapping(value = "home")
-	public String home(MemberVo vo, HttpSession httpSession, Model model) throws Exception {
+	public String home(MemberVo vo, BookVo voBook, HttpSession httpSession, Model model) throws Exception {
 
 		String seq = (String) httpSession.getAttribute("sessSeq");
 		Member item = service.selectOne(vo);
 
+		List<Book> list = serviceBook.selectList(voBook);
+		
 		model.addAttribute("item", item);
+		model.addAttribute("listBook", list);
 
 		return "infra/member/xdmin/home";
 	}
