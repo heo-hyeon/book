@@ -120,7 +120,7 @@
 						<div class="col-lg-7 form-group">
 							<textarea  class="form-control" placeholder="책과 어울리는 해시태그를 자유롭게 남겨주세요." style="width:500px;"></textarea>
 						</div> 
-					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/">추천하기</a></button>  
+					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/member/home">추천하기</a></button>  
 	              </div>
            	  </div>
 
@@ -132,7 +132,7 @@
                 </blockquote>
 
                 <p>
-               		<c:out value="${item.sub_title}" />
+               		<c:out value="${item.explanation}" />
                 </p>
               </div>
 
@@ -141,6 +141,7 @@
 	                <ul class="tags">
 	                  <li><c:out value="${list[0].keyword }"/></li>
 	                  <li><c:out value="${list[1].keyword }"/></li>
+	                  <li><c:out value="${list[2].keyword }"/></li>
 	                </ul>
               </div><!-- End meta bottom -->
             </article><!-- End blog post -->
@@ -241,11 +242,11 @@
 
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script
-
+<!-- 
 	<script>
 	 var form = $("form[name=form]");
 	 var formVo = $("formVo[name=formVo]");
-	</script>
+	</script> -->
   
   	<script>
 		function logout(){
@@ -258,7 +259,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rt);
-						location.href = "/login"
+						location.href = "/"
 					} else {
 						// by pass
 					}

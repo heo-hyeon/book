@@ -110,6 +110,7 @@
 			<div class="col-md-5">
 				<label class="name-label" for="memberName">이름 </label>
 				<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
+				<div class="incalid-feedback" id="nameFeedback"></div>
 			</div>
 			<div class="col-md-5">
 				<label class="nameEn-label" for="memberName_en">영문이름 </label>
@@ -137,19 +138,21 @@
 				<label class="pwd-label" for="pwd">비밀번호 </label>
 				<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
 				<input type="password" class="form-control" id="pwd" name="pwd" value="<c:out value="${item.pwd}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+				<div class="invalid-feedback" id="pwdFeedback></div>
 			</div>
 			<div class="row">
 				<div class="col-md-5">
 		   			<label class="pwd-check-label" for="pwdCheck">비밀번호 확인 </label>
 		   			<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
 		   			<input type="password" class="form-control" id="pwdCheck" name="pwdCheck" value="<c:out value="${item.pwdCheck}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
+	 				<div class="invliad-feedback" id="pwdCheckFeedback></div>
 	 			</div> 
 	 			<div class="col-md-5">
 		 			<span id="alert-success" style="display: none; text-align: left; font-size:15px; font-weight:bold;"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치합니다.</span>
 		 			<span id="alert-danger" style="dispaly: none; text-align: left; font-size:15px; font-weight:bold; color:#c53e3e"><i class="fa-solid fa-circle-info"></i>비밀번호가 일치하지 않습니다.</span>
 	 			</div>
 	 		</div>
-			<div class="col-md-5">
+			<div class="col-md-5"> 
 				<label class="birth-label" for="dob">생년월일 </label>
 				<input type="date" class="form-control" id="datepicker" name="dob" value="<c:out value="${item.dob}"/>">
 			</div>
@@ -446,7 +449,74 @@
 			});
 		}
 	</script>
-
+	
+	<script>
+		const nameRegex = /^[a-zA-Z0-9가-힣]{2,12}$/;
+		const idRegex = /^[A-Za-z0-9]{4,12}$/;
+		const pwdRegex = /^[A-Za-z0-9]{4,12}$/;
+	
+		const memberName = document.getElementById('memberName');
+		const memberID = document.getElementById('memberID');
+		const pwd = document.getElementById('pwd');
+		const pwdCheck = document.getEletmentById('pwdCheck'); 
+	
+		let isName = false;
+		let isId = false;
+		let isPwd = false;
+		let isPwdCheck = false;
+	
+		memberName.addEventListener('keyup', () => {
+		    if (memberName.value == '' || !nameRegex.test(memberName.value)) {
+		        document.getElementById('nameFeedback').style.display = 'block';
+		        isName = false;
+		    } else {
+		        document.getElementById('nameFeedback').style.display = 'none';
+		        memberName.removeEventListener;
+		        isName = true;
+		    }
+		});
+	
+		memberID.addEventListener('keyup', () => {
+		    if (memberID.value == '' || !idRegex.test(memberID.value)) {
+		        document.getElementById('ifIDFeedback').style.display = 'block';
+		        isId = false;
+		    } else {
+		        document.getElementById('ifIDFeedback').style.display = 'none';
+		        memberID.removeEventListener;
+		        isId = true;
+		    }
+		});
+	
+		pwd.addEventListener('keyup', () => {
+		    if (pwd.value == '' || !pwdRegex.test(pwd.value)) {
+		        document.getElementById('pwdFeedback').style.display = 'block';
+		        isPwd = false;
+		    } else {
+		        document.getElementById('pwdFeedback').style.display = 'none';
+		        pwd.removeEventListener;
+		        isPwd = true;
+		    }
+		});
+	
+		pwdCheck.addEventListener('keyup', () => {
+		    if (pwdCheck.value !== pwdCheck.value) {
+		        document.getElementById('pwdCheckFeedback').style.display = 'block';
+		        isPwdCheck = false;
+		    } else {
+		        document.getElementById('pwdCheckFeedback').style.display = 'none';
+		        pwdCheck.removeEventListener;
+		        isPwdCheck = true;
+		    }
+		});
+	
+	
+		function onSubmit() {
+		    if (isName && isId && isPwd && isPwdCheck) {
+		        alert('제출');
+		        document.getElementById('loginForm').submit();
+		    } else alert('빈칸을 채우세요');
+		}
+	</script>
 	
 </body>
 </html>

@@ -120,10 +120,10 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name}"/></a></h3>
-                    <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
-                    <p style="color:red;"><c:out value="${item.keyword}"/></p>
-                    <p>"<c:out value="${item.sub_title}"/>"</p>
+                    <h3 class="card-title"><a href="javascript:goBook(1)">역행자</a></h3>
+                    <h6 style="color:silver">자청</h6>
+                    <p style="color:red;">한국소설</p>
+                    <p>"2022년 가장 사랑받는 소설"</p>
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="/book/bestList">불편한 편의점</a></h3>
+                    <h3 class="card-title"><a href="javascript:goBook(2)">불편한 편의점</a></h3>
                     <h6 style="color:silver">김호연</h6>
                     <p style="color:red;">한국소설</p>
                     <p>"2022년 가장 사랑받는 소설"

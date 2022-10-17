@@ -24,8 +24,8 @@
 		    ,d.publisher
 		FROM book d
 		left join writer c on c.seq = d.bookWriter
-		where 1=1
-        and d.seq = #{seq}	
+	<!-- 	where 1=1
+        and d.seq = #{seq}	 -->
 	</select>
  	
 	<select id="celectOneCount" resultType="Integer">
@@ -83,6 +83,7 @@
 		    ,d.sub_title
 		    ,c.writer_exp
 		    ,d.publisher
+		    ,d.explanation
 		FROM book d
 		left join writer c on c.seq = d.bookWriter
 		where 1=1

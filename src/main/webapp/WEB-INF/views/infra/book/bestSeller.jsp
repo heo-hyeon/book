@@ -46,7 +46,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="home" class="logo d-flex align-items-center">
+      <a href="/member/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="../resources/img/logo.png" alt=""> -->
         <h1>With Book<span>.</span></h1>

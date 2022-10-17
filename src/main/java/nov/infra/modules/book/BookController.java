@@ -19,8 +19,9 @@ public class BookController {
 
 	@RequestMapping(value = "bestList")
 	public String bestList (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
+		Book item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		
-		System.out.println("책 시퀀스 : " + vo.getSeq());
 		
 		List<Book> list = service.selectlistTag(vo);
 		model.addAttribute("list", list);

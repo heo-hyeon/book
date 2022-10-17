@@ -76,7 +76,7 @@
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
         <h2>Favorite Book </h2>
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/member/home">Home</a></li>
           <li>Favorite Book Details</li>
         </ol>
       </div>
@@ -208,7 +208,7 @@
              		  	</div>
            			</div>
                </div><br>
-               <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="likebook">목록</a></button>
+               <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/likebook">목록</a></button>
 	  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -249,7 +249,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rt);
-						location.href = "/login"
+						location.href = "/member/login"
 					} else {
 						// by pass
 					}

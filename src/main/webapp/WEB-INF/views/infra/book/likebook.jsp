@@ -77,7 +77,7 @@
 
         <h2>Favorite Book</h2>
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/member/home">Home</a></li>
           <li>Favorite Book List</li>
         </ol>
 
@@ -128,7 +128,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">문학동네</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -150,7 +150,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">곰출판</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href=".like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->    
@@ -172,7 +172,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">생각의길</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -194,7 +194,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">문학동네</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -216,7 +216,7 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">클라우디아</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
@@ -229,7 +229,7 @@
           </ul>
         </div><!-- End blog pagination -->
        	<div class="text-center">
-       		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="like1">책 추가</a></button>
+       		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/like1">책 추가</a></button>
        	</div>
         </div>
       </div>
