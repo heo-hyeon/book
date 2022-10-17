@@ -52,7 +52,7 @@
 	<header id="header" class="header d-flex align-items-center">
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-			<a href="/member/home" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <img src="../resources/img/logo.png" alt=""> -->
+			<a href="/" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo --> <!-- <img src="../resources/img/logo.png" alt=""> -->
 				<h1>
 					With Book<span>.</span>
 				</h1>
@@ -69,7 +69,7 @@
 			          <li><a href="/book/likebook">찜한 책 </a></li>
 			          <li><a href="/book/recommendList">추천목록</a></li>
 			          <li><a href="/member/memberMod">기본정보</a></li>
-			          <li><a href="/login">로그아웃 </a></li>
+			          <li><a href="/member/login">로그아웃 </a></li>
 			        </ul>
      			</nav><!-- .navbar -->
 
@@ -84,7 +84,7 @@
 
 				<h2>Member List</h2>
 				<ol>
-					<li><a href="/">Home</a></li>
+					<li><a href="/member/home">Home</a></li>
 					<li>Member List</li>
 				</ol>
 			</div>
