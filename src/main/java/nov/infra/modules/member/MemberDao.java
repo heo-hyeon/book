@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import nov.infra.modules.book.Book;
+import nov.infra.modules.book.BookVo;
+
 
 @Repository
 public class MemberDao {
@@ -23,7 +26,12 @@ public class MemberDao {
 		List<Member> list = sqlSession.selectList(namespace + ".selectList", vo);
 		return list;
 	}
-	
+
+		// 북관련 test
+	public List<Book> selectList(BookVo vo) { 
+		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
+		return list;
+	}
 	public Member selectOne(MemberVo vo) {
 		Member result = sqlSession.selectOne(namespace + ".selectOne", vo);
 		System.out.println("dao result : " + result);

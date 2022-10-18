@@ -102,7 +102,7 @@
   
    <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
-    <input type ="hidden" id="bookSeq" name = "seq" >
+    <input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-header">
@@ -120,10 +120,10 @@
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name}"/></a></h3>
+                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name }"/></a></h3>
                     <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
                     <p style="color:red;">한국소설</p>
-                    <p><c:out value="${list.sub_title }"/></p>
+                    <p><c:out value="${item.sub_title }"/></p>
                   </div>
                 </div>
               </div>

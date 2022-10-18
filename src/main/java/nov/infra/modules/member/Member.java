@@ -21,7 +21,9 @@ public class Member {
 		private Integer genre;
 		private Integer useNY;
 		private Integer delNY;
-		private String name;
+
+		//		book 관련
+ 		private String name;
 		private String writer_name;
 		private String sub_title;
 		private String category;

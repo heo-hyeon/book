@@ -29,16 +29,6 @@ public class BookController {
 		return "infra/book/bestList";
 	}
 	
-	@RequestMapping(value = "like1")
-	public String like1 () {
-		return "infra/book/like1";
-	}
-	
-	@RequestMapping(value = "likebook" )
-	public String likebook () {
-		return "infra/book/likebook";
-	}
-	
 	@RequestMapping(value = "recommend1")
 	public String recommend1 () {
 		return "infra/book/recommend1";
