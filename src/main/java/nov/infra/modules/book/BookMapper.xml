@@ -97,5 +97,7 @@
 		FROM tag tg
 	JOIN bookNtag bt ON bt.tagSeq = tg.seq
 	JOIN book d ON d.seq = bt.bookSeq
+			where 1=1
+        and d.seq = #{seq}	
    </select>
 </mapper>		

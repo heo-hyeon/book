@@ -136,15 +136,15 @@
                 </p>
               </div>
 
-              <div class="meta-bottom">
-                <i class="bi bi-tags"></i>
-	                <ul class="tags">
-	                  <li><c:out value="${list[0].keyword }"/></li>
-	                  <li><c:out value="${list[1].keyword }"/></li>
-	                  <li><c:out value="${list[2].keyword }"/></li>
-	                </ul>
-              </div><!-- End meta bottom -->
-            </article><!-- End blog post -->
+	              <div class="meta-bottom">
+	                <i class="bi bi-tags"></i>
+		                <ul class="tags">
+			              <c:forEach items="${list}" var="list" varStatus="status">
+		                  <li><c:out value="${list.keyword }"/></li>
+				          </c:forEach>
+		                </ul>
+	              </div>
+            </article>
 
             <div class="post-author d-flex align-items-center">
               <div class="float:right";>

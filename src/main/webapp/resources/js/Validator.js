@@ -1,5 +1,4 @@
-const form = document.form;
-
+console.log("rwefwefwe")
 // 정규표현식
 	const nameRegex = /^[a-zA-Z0-9가-힣]{2,12}$/;
 	const idRegex = /^[A-Za-z0-9]{4,12}$/;
@@ -8,7 +7,8 @@ const form = document.form;
 	const memberName = document.getElementById('memberName');
 	const memberID = document.getElementById('memberID');
 	const pwd = document.getElementById('pwd');
-	const pwdCheck = document.getEletmentById('pwdCheck'); 
+	const pwdCheck = document.getElementById('pwdCheck');
+	
 
 	let isName = false;
 	let isId = false;
@@ -17,11 +17,11 @@ const form = document.form;
 
 	memberName.addEventListener('keyup', () => {
 	    if (memberName.value == '' || !nameRegex.test(memberName.value)) {
-	        document.getElementById('nameFeedback').style.display = 'block';
+			console.log("testst")
 	        isName = false;
 	    } else {
-	        document.getElementById('nameFeedback').style.display = 'none';
 	        memberName.removeEventListener;
+	        console.log("good")
 	        isName = true;
 	    }
 	});

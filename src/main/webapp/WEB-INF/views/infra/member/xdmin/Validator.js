@@ -1,5 +1,3 @@
-const form = document.form;
-
 // 정규표현식
 	const nameRegex = /^[a-zA-Z0-9가-힣]{2,12}$/;
 	const idRegex = /^[A-Za-z0-9]{4,12}$/;
@@ -17,7 +15,7 @@ const form = document.form;
 
 	memberName.addEventListener('keyup', () => {
 	    if (memberName.value == '' || !nameRegex.test(memberName.value)) {
-	        document.getElementById('nameFeedback').style.display = 'block';
+		alert("ddd");
 	        isName = false;
 	    } else {
 	        document.getElementById('nameFeedback').style.display = 'none';
