@@ -21,6 +21,12 @@ public class Member {
 		private Integer genre;
 		private Integer useNY;
 		private Integer delNY;
+		private String name;
+		private String writer_name;
+		private String sub_title;
+		private String category;
+		private String keyword;
+		
 		public String getSeq() {
 			return seq;
 		}
@@ -137,4 +143,35 @@ public class Member {
 		public void setDelNY(Integer delNY) {
 			this.delNY = delNY;
 		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getWriter_name() {
+			return writer_name;
+		}
+		public void setWriter_name(String writer_name) {
+			this.writer_name = writer_name;
+		}
+		public String getSub_title() {
+			return sub_title;
+		}
+		public void setSub_title(String sub_title) {
+			this.sub_title = sub_title;
+		}
+		public String getCategory() {
+			return category;
+		}
+		public void setCategory(String category) {
+			this.category = category;
+		}
+		public String getKeyword() {
+			return keyword;
+		}
+		public void setKeyword(String keyword) {
+			this.keyword = keyword;
+		}
+		
 }
