@@ -81,25 +81,25 @@
         </ol>
       </div>
     </div><!-- End Breadcrumbs -->
-    
+    <input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
-      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-5">
-          <div class="col-lg-8" style="margin:auto; text-align:center;">
-            <article class="blog-details">
-              <div class="post-images" style="text-align:center; margin-top:3px;">
-                <img src="../resources/images/pachinko.jpg" class="images-fluid" style="width:400px; height:500px;">
-              </div>
-              <h2 class="title" style="text-align:center;">파친코 </h2>
-              <div class="meta-top">
-             	 <ul class="d-flex justify-content-center">
-                  <li><i class="bi bi-person"></i>이민진</li>
-                  <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
-                  <li><i class="fa-solid fa-thumbs-up"></i><a href="blog-details.html">좋아요 </a></li>
-             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
-                </ul>
-              </div><!-- End meta top -->
+    	<form method="post" name="form">
+	      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+	        <div class="row g-5">
+	          <div class="col-lg-8" style="margin:auto; text-align:center;">
+	            <article class="blog-details">
+	              <div class="post-images" style="text-align:center; margin-top:3px;">
+	                <img src="../resources/images/pachinko.jpg" class="images-fluid" style="width:400px; height:500px;">
+	              </div>
+	              <h2 class="title" style="text-align:center;"><c:out value="${item.seq}"/></h2>
+	              <div class="meta-top">
+	             	 <ul class="d-flex justify-content-center">
+	                  <li><i class="bi bi-person"></i>이민진</li>
+	                  <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
+	             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
+	                </ul>
+	              </div><!-- End meta top -->
 
        		<div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
@@ -208,9 +208,10 @@
              		  	</div>
            			</div>
                </div><br>
-               <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/likebook">목록</a></button>
-	  </main><!-- End #main -->
-
+              <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/likebook">목록</a></button>
+	  		</main><!-- End #main -->
+		</form>
+	</section>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="footer-legal text-center position-relative">

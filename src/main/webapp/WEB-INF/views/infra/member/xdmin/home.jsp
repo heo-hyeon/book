@@ -123,7 +123,7 @@
            
 
 			<c:forEach items="${listBook}" var="list" varStatus="status" begin="0" end="1">
-			    <div class="card-item">
+			    <div class="card-item" style="margin-top:20px;">
 			        <div class="row">
 			            <div class="col">
 			                <div class="card-bg">
@@ -132,7 +132,7 @@
 			                </div>
 			            </div>
 			            <div class="col d-flex align-items-center">
-			                <div class="card-body">
+			                <div class="card-body" >
 			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
 			                            <c:out value="${list.name }" />
 			                        </a></h3>
@@ -150,16 +150,12 @@
 			        </div>
 			    </div>
 			</c:forEach>
-            
-            
           </div>
           
           
-          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-           
-
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100"">
 			<c:forEach items="${listBook}" var="list" varStatus="status" begin="2" end="3">
-			    <div class="card-item">
+			    <div class="card-item" style="margin-top:20px;">
 			        <div class="row">
 			            <div class="col">
 			                <div class="card-bg">
