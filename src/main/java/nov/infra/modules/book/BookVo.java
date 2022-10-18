@@ -16,7 +16,4 @@ public class BookVo {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	
-	
-
 }

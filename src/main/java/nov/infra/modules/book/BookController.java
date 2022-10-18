@@ -19,6 +19,7 @@ public class BookController {
 
 	@RequestMapping(value = "bestList")
 	public String bestList (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
+		
 		Book item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
@@ -27,6 +28,16 @@ public class BookController {
 		model.addAttribute("list", list);
 		
 		return "infra/book/bestList";
+	}
+	
+	@RequestMapping(value = "like1")
+	public String like1 () {
+		return "infra/book/like1";
+	}
+
+	@RequestMapping(value = "likebook" )
+	public String likebook () {
+		return "infra/book/likebook";
 	}
 	
 	@RequestMapping(value = "recommend1")

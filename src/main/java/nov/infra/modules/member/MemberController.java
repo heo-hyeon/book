@@ -34,12 +34,9 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "home")
 	public String home(MemberVo vo, BookVo voBook, HttpSession httpSession, Model model) throws Exception {
 
-		String seq = (String) httpSession.getAttribute("sessSeq");
-		Member item = service.selectOne(vo);
 
 		List<Book> list = serviceBook.selectList(voBook);
 		
-		model.addAttribute("item", item);
 		model.addAttribute("listBook", list);
 
 		return "infra/member/xdmin/home";

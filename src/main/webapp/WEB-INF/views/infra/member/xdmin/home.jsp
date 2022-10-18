@@ -27,6 +27,12 @@
 
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
+  
+  <style type="text/css">
+  	div{
+  		/* border: orange 1px solid; */
+  	}
+  </style>
 </head>
 
 
@@ -102,7 +108,8 @@
   
    <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
-    <input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
+    <%-- <input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/> --%>
+     <input type="hidden" name="seq" id="bookSeq"/>
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-header">
@@ -113,23 +120,75 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name }"/></a></h3>
-                    <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
-                    <p style="color:red;">한국소설</p>
-                    <p><c:out value="${item.sub_title }"/></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+           
 
+			<c:forEach items="${listBook}" var="list" varStatus="status" begin="0" end="1">
+			    <div class="card-item">
+			        <div class="row">
+			            <div class="col">
+			                <div class="card-bg">
+			                     <img alt="" src="../resources/images/retrogression.jpg"  width=230px; height=100%;>
+			                     <!-- style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"> -->
+			                </div>
+			            </div>
+			            <div class="col d-flex align-items-center">
+			                <div class="card-body">
+			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
+			                            <c:out value="${list.name }" />
+			                        </a></h3>
+			                    <h6 style="color:silver">
+			                        <c:out value="${list.writer_name}" />
+			                    </h6>
+			                    <p style="color:red;">
+			                        <c:out value="${list.category}" />
+			                    </p>
+			                    <p>
+			                        <c:out value="${list.sub_title }" />
+			                    </p>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</c:forEach>
+            
+            
+          </div>
+          
+          
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
+           
+
+			<c:forEach items="${listBook}" var="list" varStatus="status" begin="2" end="3">
+			    <div class="card-item">
+			        <div class="row">
+			            <div class="col">
+			                <div class="card-bg">
+			                    <img alt="" src="../resources/images/retrogression.jpg"  width=230px; height=100%;>
+			                </div>
+			            </div>
+			            <div class="col d-flex align-items-center">
+			                <div class="card-body">
+			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
+			                            <c:out value="${list.name }" />
+			                        </a></h3>
+			                    <h6 style="color:silver">
+			                        <c:out value="${list.writer_name}" />
+			                    </h6>
+			                    <p style="color:red;">
+			                        <c:out value="${list.category}" />
+			                    </p>
+			                    <p>
+			                        <c:out value="${list.sub_title }" />
+			                    </p>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</c:forEach>
+            
+            
+          </div>
+<!-- 
           <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="200">
             <div class="card-item">
               <div class="row">
@@ -183,7 +242,7 @@
               </div>
             </div>
           </div>
-          
+           -->
         </div>
       </div>
       </form>
