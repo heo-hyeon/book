@@ -1,5 +1,6 @@
 package nov.infra.modules.member;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -27,7 +28,7 @@ public class MemberDao {
 		return list;
 	}
 
-		// 북관련 test
+	// 북관련 test
 	public List<Book> selectList(BookVo vo) { 
 		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
 		return list;
@@ -56,4 +57,8 @@ public class MemberDao {
 	public Member selectOneLogin(Member dto) {return sqlSession.selectOne(namespace + ".selectOneLogin",dto);}
 	
 	public Member selectOneId(Member dto) {return sqlSession.selectOne(namespace + ".selectOneId",dto);}
+
+	// 이미지 업로드
+	public int itemImgUpload(Member dto) {return sqlSession.insert(namespace + "itemImgUpload", dto);}
+		
 	}

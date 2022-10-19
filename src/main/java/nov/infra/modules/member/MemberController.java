@@ -68,9 +68,9 @@ public class MemberController extends BaseController {
 	public String memberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
 		System.out.println("vo : " + vo);
 		service.insert(dto);
-		vo.setSeq(dto.getSeq());
-
-		redirectAttributes.addFlashAttribute("vo", vo);
+//		vo.setSeq(dto.getSeq());
+//
+//		redirectAttributes.addFlashAttribute("vo", vo);
 
 		return "redirect:/member/memberList";
 	}
@@ -79,7 +79,7 @@ public class MemberController extends BaseController {
 	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member result = service.selectOne(vo);
 		model.addAttribute("item", result);
-		return "infra/member/xdmin/memberForm";
+		return "infra/member/xdmin/test";
 	}
 
 	// 회원가입

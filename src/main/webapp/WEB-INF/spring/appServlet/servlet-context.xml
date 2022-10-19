@@ -40,9 +40,17 @@
 			
 			
 			<beans:bean id="checkLoginSessionInterception" class="nov.infra.common.interceptor.CheckLoginSessionInterception"/>
+			
 		</interceptor>
 	</interceptors>	
 	<!-- session interceptor e 2022.03.13 for logincheck -->
 
+	<!-- File Upload -->	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+      <beans:property name="maxUploadSize" value="10485760" />
+      <beans:property name="defaultEncoding" value="utf-8" />
+    </beans:bean>
+
+	
 	
 	</beans:beans>

@@ -223,4 +223,23 @@
 		AND memberID = #{memberID}
 		AND pwd = #{pwd}
 	</select>
+	
+	<insert id="itemImgUploaded">
+		INSERT INTO itemImgUploaded (
+			pseq
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+		) values (
+			#{pseq}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+		)
+	</insert>
+	
 </mapper>

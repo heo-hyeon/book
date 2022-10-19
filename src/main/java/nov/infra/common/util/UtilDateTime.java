@@ -1,4 +1,4 @@
-package nov.infra.modules.member;
+package nov.infra.common.util;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;

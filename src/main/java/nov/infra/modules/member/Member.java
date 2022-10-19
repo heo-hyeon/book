@@ -1,5 +1,7 @@
 package nov.infra.modules.member;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Member {
 
 		private String seq;
@@ -21,6 +23,15 @@ public class Member {
 		private Integer genre;
 		private Integer useNY;
 		private Integer delNY;
+		
+		// 이미지 업로드
+		private String pseq;
+		private Integer sort;
+		private String path;
+		private String originalName;
+		private String uuidName;
+		private String ext;
+		private MultipartFile[] uploadedImage;
 
 		//		book 관련
  		private String name;
@@ -174,6 +185,48 @@ public class Member {
 		}
 		public void setKeyword(String keyword) {
 			this.keyword = keyword;
+		}
+		public String getPseq() {
+			return pseq;
+		}
+		public void setPseq(String pseq) {
+			this.pseq = pseq;
+		}
+		public Integer getSort() {
+			return sort;
+		}
+		public void setSort(Integer sort) {
+			this.sort = sort;
+		}
+		public String getPath() {
+			return path;
+		}
+		public void setPath(String path) {
+			this.path = path;
+		}
+		public String getOriginalName() {
+			return originalName;
+		}
+		public void setOriginalName(String originalName) {
+			this.originalName = originalName;
+		}
+		public String getUuidName() {
+			return uuidName;
+		}
+		public void setUuidName(String uuidName) {
+			this.uuidName = uuidName;
+		}
+		public String getExt() {
+			return ext;
+		}
+		public void setExt(String ext) {
+			this.ext = ext;
+		}
+		public MultipartFile[] getUploadedImage() {
+			return uploadedImage;
+		}
+		public void setUploadedImage(MultipartFile[] uploadedImage) {
+			this.uploadedImage = uploadedImage;
 		}
 		
 }
