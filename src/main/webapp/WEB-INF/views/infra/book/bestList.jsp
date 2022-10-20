@@ -96,7 +96,7 @@
           <div class="col-lg-8" style="margin:auto; text-align:center;">
             <article class="blog-details">
               <div class="post-images" style="text-align:center; margin-top:3px;">
-                <img src="../resources/images/retrogression.jpg" style="width:400px; height:500px;" class="images-fluid">
+                <img src="<c:out value="${item.path}"/><c:out value="${item.uuidName}"/>" style="width:400px; height:500px;" class="images-fluid">
               </div>
               <h2 class="title" style="text-align:center;"><c:out value="${item.name}"/> </h2>
               <div class="meta-top">

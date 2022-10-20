@@ -72,14 +72,15 @@ public class MemberController extends BaseController {
 //
 //		redirectAttributes.addFlashAttribute("vo", vo);
 
-		return "redirect:/member/memberList";
+		return "redirect:memberForm";
 	}
+	
 
 	@RequestMapping(value = "memberForm")
 	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member result = service.selectOne(vo);
 		model.addAttribute("item", result);
-		return "infra/member/xdmin/memberForm";
+		return "infra/member/xdmin/test";
 	}
 
 	// 회원가입
@@ -223,6 +224,8 @@ public class MemberController extends BaseController {
 	 * userMod(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 	 * return "infra/member/user/UserMod"; }
 	 */
+	
+	// public 자료형(data type) 함수 이름 ( 파라미터 ) 
 	
 	
 }

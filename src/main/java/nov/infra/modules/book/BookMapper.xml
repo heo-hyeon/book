@@ -28,7 +28,7 @@
         and d.seq = #{seq}	 -->
 	</select>
  	
-	<select id="celectOneCount" resultType="Integer">
+	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon"/>
 	</select>
@@ -74,7 +74,7 @@
 			AND seq = #{seq}
     </update>
      -->
-    <select id="selectOne" resultMap="resultMapObj">
+<!--     <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			d.seq
 		    ,d.name
@@ -88,6 +88,24 @@
 		left join writer c on c.seq = d.bookWriter
 		where 1=1
         and d.seq = #{seq}	
+    </select> -->
+    
+    <select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			mup.seq
+	        ,mup.pseq
+			,mup.path
+			,mup.uuidName
+	        ,b.name
+	        ,b.sub_title
+	        ,b.title
+	        ,b.explanation
+	        ,b.publisher
+	        ,b.category
+		FROM memberUploaded mup 
+		join book b on b.seq = mup.pseq
+		WHERE 1=1
+		AND b.seq = 10
     </select>
     
     <select id="selectlistTag" resultMap="resultMapObj">

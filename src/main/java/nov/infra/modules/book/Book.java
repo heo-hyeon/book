@@ -15,6 +15,10 @@ public class Book {
 	private String keyword;
 	
 	
+	//이미지 업로드
+	private String path;
+	private String uuidName;
+	
 	public String getWriter_name() {
 		return writer_name;
 	}
@@ -81,6 +85,18 @@ public class Book {
 	}
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getUuidName() {
+		return uuidName;
+	}
+	public void setUuidName(String uuidName) {
+		this.uuidName = uuidName;
 	}
 	
 }

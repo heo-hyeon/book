@@ -88,7 +88,7 @@
 		<div class="find" style="margin-left:20px;">
 							<a href="/find_id">아이디 찾기</a>|
 							<a href="/find_pwd">비밀번호 찾기</a>|
-							<a href="/member/memberForm">회원가입</a>
+							<a href="/member/test">회원가입</a>
 						</div>
 					</div>
 				</div>
