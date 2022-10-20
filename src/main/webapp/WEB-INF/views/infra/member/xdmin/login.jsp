@@ -17,7 +17,7 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -67,7 +67,8 @@
               <li><a onclick="logout()">로그아웃</a></li>
             </ul>
           </li>
-            </c:if>
+          </ul>
+          </c:if>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
@@ -80,7 +81,8 @@
 		      <div class="col-lg-6 text-center">
 		<h1 style="color:white;">WITH BOOK</h1>
 		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
-		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/><br>
+		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/>>
+		<br>
 		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
 		<br><button class="btn btn-secondary" type="button" id="btnLogin" name="btnLogin" style="width:80px; height:35px; margin:20px;">login</button>
 		<div class="find" style="margin-left:20px;">
@@ -92,7 +94,6 @@
 				</div>
 			</div>
 		</div>
-	</select> 
 	
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
