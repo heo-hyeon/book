@@ -226,19 +226,39 @@
 	
 	<insert id="itemImgUploaded">
 		INSERT INTO itemImgUploaded (
-			pseq
+			seq
+			,type
+			,defaultNy
 			,sort
 			,path
 			,originalName
 			,uuidName
 			,ext
+			,size
+			,delNy	
+			,pseq
+			,reglp
+			,regSeq
+			,regDeviceCd
+			,regDateTime
+			,regDateTimeSvr
 		) values (
-			#{pseq}
+			#{seq}
+			,#{type}
+			,#{defaultNy}
 			,#{sort}
 			,#{path}
 			,#{originalName}
 			,#{uuidName}
 			,#{ext}
+			,#{size}
+			,#{delNy}
+			,#{pseq}
+			,#{reglp}
+			,#{regSeq}
+			,#{regDeviceCd}
+			,#{regDateTime}
+			,#{regDateTimeSvr}
 		)
 	</insert>
 	
