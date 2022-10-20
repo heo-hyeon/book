@@ -59,6 +59,6 @@ public class MemberDao {
 	public Member selectOneId(Member dto) {return sqlSession.selectOne(namespace + ".selectOneId",dto);}
 
 	// 이미지 업로드
-	public int itemImgUpload(Member dto) {return sqlSession.insert(namespace + "itemImgUpload", dto);}
+	public int itemImgUpload(Member dto) {return sqlSession.insert(namespace + ".itemImgUploaded", dto);}
 		
 	}

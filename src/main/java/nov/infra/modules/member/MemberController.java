@@ -28,7 +28,7 @@ public class MemberController extends BaseController {
 	@Autowired
 	MemberServiceImpl service;
 	
-	@Autowired
+	@Autowired 
 	BookServiceImpl serviceBook;
 
 	@RequestMapping(value = "home")
@@ -79,7 +79,7 @@ public class MemberController extends BaseController {
 	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member result = service.selectOne(vo);
 		model.addAttribute("item", result);
-		return "infra/member/xdmin/test";
+		return "infra/member/xdmin/memberForm";
 	}
 
 	// 회원가입

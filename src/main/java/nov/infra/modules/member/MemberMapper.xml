@@ -225,9 +225,8 @@
 	</select>
 	
 	<insert id="itemImgUploaded">
-		INSERT INTO itemImgUploaded (
-			seq
-			,type
+		INSERT INTO memberUploaded (
+			type
 			,defaultNy
 			,sort
 			,path
@@ -237,14 +236,13 @@
 			,size
 			,delNy	
 			,pseq
-			,reglp
+			,regIp
 			,regSeq
 			,regDeviceCd
 			,regDateTime
 			,regDateTimeSvr
 		) values (
-			#{seq}
-			,#{type}
+			#{type}
 			,#{defaultNy}
 			,#{sort}
 			,#{path}
@@ -252,9 +250,9 @@
 			,#{uuidName}
 			,#{ext}
 			,#{size}
-			,#{delNy}
-			,#{pseq}
-			,#{reglp}
+			,0
+			,10
+			,#{regIp}
 			,#{regSeq}
 			,#{regDeviceCd}
 			,#{regDateTime}

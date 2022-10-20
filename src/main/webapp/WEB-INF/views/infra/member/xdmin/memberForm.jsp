@@ -109,25 +109,28 @@
 
 	<!-- ======= Reg Section ======= -->
 	<section id="hero" class="hero">
-		<form class="row g-4" name="form">
 			<!-- style="margin-left: 30px; margin-top: 50px; color: white;" -->
 			<div class="info d-flex align-items-center">
 				<div class="container" data-aos="fade">
 
+		  <form action="/member/memberInst" method="post" enctype="multipart/form-data">
+		  
 					<div class="card"
 						style="width: 19rem; float: left; margin-left: 30px; margin-top: 100px;">
 						<img src="../resources/images/user.png" class="card-img-top">
 						<div class="card-body">
-							<class="card-title"> <input type="file"
-								name="itemImgUploaded" required multiple />
+							<div class="card-title"> 
+							<input type="file" name="uploadedImage" required multiple />
+							<button>업로드</button>
+							</div>
 						</div>
 					</div>
-
+			</form>
 					<input type="hidden" name="seq" id="seq"
 						value="<c:out value="${item.seq}"/>">
 					<%-- <div class="col-md-5">
 						<label class="job-label" for="job">지원분야 </label>
-						<select class="form-control" name="job" id="job" value="<c:out value="${item.job}"/>">
+						<select class="-control" name="job" id="job" value="<c:out value="${item.job}"/>">
 							<option value="" <c:if test="${empty item.job}">selected</c:if>>지원분야</option>
 							<option value="1" <c:if test="${item.job eq 1}">selected</c:if>>기획/MD</option>
 							<option value="2" <c:if test="${item.job eq 2}">selected</c:if>>IT개발</option>
@@ -382,10 +385,6 @@
 				</div>
 			</div>
 
-
-
-
-
 			<div id="hero-carousel" class="carousel slide"
 				data-bs-ride="carousel" data-bs-interval="5000">
 				<div class="carousel-item"
@@ -458,7 +457,6 @@
 					</div>
 				</div>
 			</div>
-		</form>
 	</section>
 
 	<!-- Vendor JS Files -->

@@ -25,12 +25,21 @@ public class Member {
 		private Integer delNY;
 		
 		// 이미지 업로드
-		private String pseq;
+		private String type;
+		private String defaultNy;
 		private Integer sort;
 		private String path;
 		private String originalName;
 		private String uuidName;
 		private String ext;
+		private String size;
+		private String delNy;
+		private String pseq;
+		private String regIp;
+		private String regSeq;
+		private String regDeviceCd;
+		private String regDateTime;
+		private String regDateTimeSvr;
 		private MultipartFile[] uploadedImage;
 
 		//		book 관련
@@ -228,5 +237,58 @@ public class Member {
 		public void setUploadedImage(MultipartFile[] uploadedImage) {
 			this.uploadedImage = uploadedImage;
 		}
-		
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
+		public String getDefaultNy() {
+			return defaultNy;
+		}
+		public void setDefaultNy(String defaultNy) {
+			this.defaultNy = defaultNy;
+		}
+		public String getSize() {
+			return size;
+		}
+		public void setSize(String size) {
+			this.size = size;
+		}
+		public String getDelNy() {
+			return delNy;
+		}
+		public void setDelNy(String delNy) {
+			this.delNy = delNy;
+		}
+		public String getRegIp() {
+			return regIp;
+		}
+		public void setRegIp(String reglp) {
+			this.regIp = reglp;
+		}
+		public String getRegSeq() {
+			return regSeq;
+		}
+		public void setRegSeq(String regSeq) {
+			this.regSeq = regSeq;
+		}
+		public String getRegDeviceCd() {
+			return regDeviceCd;
+		}
+		public void setRegDevideCd(String regDevideCd) {
+			this.regDeviceCd = regDevideCd;
+		}
+		public String getRegDateTime() {
+			return regDateTime;
+		}
+		public void setRegDateTime(String regDateTime) {
+			this.regDateTime = regDateTime;
+		}
+		public String getRegDateTimeSvr() {
+			return regDateTimeSvr; 
+		}
+		public void setRegDateTimeSvr(String regDateTimeSvr) {
+			this.regDateTimeSvr = regDateTimeSvr;
+		}
 }
