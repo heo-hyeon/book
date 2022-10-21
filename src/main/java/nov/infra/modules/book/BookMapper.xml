@@ -92,7 +92,7 @@
     
     
    <!-- 사진 업로드 --> 
-    <select id="selectOne" resultMap="resultMapObj">
+  <!--   <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			mup.seq
 	        ,mup.pseq
@@ -111,7 +111,7 @@
 		WHERE 1=1
 		AND d.seq = #{seq}
     </select>
-    
+     -->
     <select id="selectlistTag" resultMap="resultMapObj">
 	   SELECT
 			d.name
