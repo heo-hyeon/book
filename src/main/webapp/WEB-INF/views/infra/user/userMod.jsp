@@ -206,13 +206,6 @@
 					</select>
 				</div>
 			</div>
-			<div class="col-md-5">
-				<label class="certification-label" for="certifiNY">자격증</label>
-				<select class="form-control" name="certifiNY" id="certifiNY" value="<c:out value="${item.certifiNY}"/>">
-					<option value="1" <c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
-					<option value="0" <c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
-				</select>
-			</div>
 			<div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label>
 				<br>                                 

@@ -144,7 +144,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-5">
-		   			<label class="pwd-check-label" for="pwdCheck">비밀번호 확인 </label>
+		   			<label class="pwd-check-label" for="pwdCheck"> 비밀번호 확인 </label>
 		   			<input type="hidden" id="formPwdAllowedNY" name="formPwdAllowedNY" value="0">
 		   			<input type="password" class="form-control" id="pwdCheck" name="pwdCheck" value="<c:out value="${item.pwdCheck}"/>" placeholder="영어,숫자,특수문자 포함 8자 이상 ">
 	 				<div class="invliad-feedback" id="pwdCheckFeedback></div>
@@ -196,20 +196,13 @@
 					</select>
 				</div>
 			</div>
-			<div class="col-md-5">
-				<label class="certification-label" for="certifiNY">자격증</label>
-				<select class="form-control" name="certifiNY" id="certifiNY">
-					<option value="1" <c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
-					<option value="0" <c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
-				</select>
-			</div>
 			<div class="form-check form-check-inline">
 				<label class="genre-label">관심 장르 </label>
 				<br>                                 
 				<div class="form-check form-check-inline">
 					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="25" <c:if test="${item.genre eq 25}">selected</c:if>>
 					<label class="form-check-label" for="inlineRadio1">소설</label> 
-					<!-- value="<c:out value="${item.genre}"/>"> -->
+					<!-- value="<c:out value="${item.genre}"/>">
 				</div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="26" <c:if test="${item.genre eq 26}">selected</c:if>>
@@ -244,7 +237,7 @@
 	
 			<div style="width: 83%; margin: 20px 0 20px 0px;">
 				<button class="btn btn-warning" type="button" id="btnList" style="float: left; color: white;">
-					<i class="fa-solid fa-chart-bar"></i></a>
+					<i class="fa-solid fa-chart-bar"></i>
 				</button>
 				<button type="button" class="btn btn-danger" style="margin-left: 6px;" id="uelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: white;">
 					<i class="fa-solid fa-x"></i> 

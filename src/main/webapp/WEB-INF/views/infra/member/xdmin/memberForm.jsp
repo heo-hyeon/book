@@ -243,15 +243,6 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-5">
-						<label class="certification-label" for="certifiNY">자격증</label> 
-						<select class="form-control" name="certifiNY" id="certifiNY">
-							<option value="1"
-								<c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
-							<option value="0"
-								<c:if test="${item.certifiNY eq 0}">selected</c:if>>무</option>
-						</select>
-					</div>
 					<%--  <div class="col-md-3">
 			  	<label class="zipcode-label">우편번호</label>
 			  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
@@ -653,9 +644,8 @@
 			form.attr("action", goUrlDele).submit();
 		});
 	</script>
-
+	
 	<script type="text/javascript" src="../resources/js/Validator.js"></script>
-
 
 </body>
 </html>

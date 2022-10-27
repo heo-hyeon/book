@@ -88,7 +88,7 @@ public class MemberController extends BaseController {
 	public String MemberJoin(Member dto) throws Exception {
 
 		service.insert(dto);
-		return "redirect:/member/memberList";
+		return "redirect:/member/memberForm";
 	}
 
 //	@RequestMapping(value = "memberUpdt")
