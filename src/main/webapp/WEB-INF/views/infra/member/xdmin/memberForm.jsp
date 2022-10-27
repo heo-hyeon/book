@@ -126,44 +126,20 @@
 						</div>
 					</div>
 			</form>
+			
 					<input type="hidden" name="seq" id="seq"
 						value="<c:out value="${item.seq}"/>">
-					<%-- <div class="col-md-5">
-						<label class="job-label" for="job">지원분야 </label>
-						<select class="-control" name="job" id="job" value="<c:out value="${item.job}"/>">
-							<option value="" <c:if test="${empty item.job}">selected</c:if>>지원분야</option>
-							<option value="1" <c:if test="${item.job eq 1}">selected</c:if>>기획/MD</option>
-							<option value="2" <c:if test="${item.job eq 2}">selected</c:if>>IT개발</option>
-							<option value="3" <c:if test="${item.job eq 3}">selected</c:if>>기술/전략</option>
-							<option value="4" <c:if test="${item.job eq 4}">selected</c:if>>마케팅/홍보</option>
-							<option value="5" <c:if test="${item.job eq 5}">selected</c:if>>회계/총무</option>
-							<option value="6" <c:if test="${item.job eq 6}">selected</c:if>>영업/판매</option>
-						</select>
+					<div class="col-md-5">
+						<label class="name-label" for="memberName">이름 </label> 
+						<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
 					</div>
 					<div class="col-md-5">
-						<label class="career-label" for="career">경력사항</label>
-						<select class="form-control" name="career" id="career" value="<c:out value="${item.career}"/>">
-							<option value="" <c:if test="${empty item.career}">selected</c:if>>경력사항</option>
-							<option value="7" <c:if test="${item.career eq 7}">selected</c:if>>경력</option>
-							<option value="8" <c:if test="${item.career eq 8}">selected</c:if>>신입</option>
-						</select>
-					</div>  --%>
-
-					<div class="col-md-5">
-						<label class="name-label" for="memberName">이름 </label> <input
-							type="text" class="form-control" id="memberName"
-							name="memberName" value="<c:out value="${item.memberName}"/>">
+						<label class="nameEn-label" for="memberName_en">영문이름 </label>
+						<input type="text" class="form-control" id="memberName_en" name="memberName_en" value="<c:out value="${item.memberName_en}"/>">
 					</div>
 					<div class="col-md-5">
-						<label class="nameEn-label" for="memberName_en">영문이름 </label> <input
-							type="text" class="form-control" id="memberName_en"
-							name="memberName_en"
-							value="<c:out value="${item.memberName_en}"/>">
-					</div>
-					<div class="col-md-5">
-						<label class="region-label" for="region">지역</label> <select
-							class="form-control" name="region" id="region"
-							value="<c:out value="${item.region}"/>">
+						<label class="region-label" for="region">지역</label> 
+						<select class="form-control" name="region" id="region" value="<c:out value="${item.region}"/>">
 							<option value=""
 								<c:if test="${empty item.region}">selected</c:if>>지역</option>
 							<option value="13"
@@ -257,8 +233,7 @@
 						</div>
 						@
 						<div class="col-5">
-							<select class="form-control" id="email_code" name="email_code"
-								value="<c:out value="${item.email_code}"/>">
+							<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 								<option value="">도메인</option>
 								<option value="19"
 									<c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>
@@ -270,8 +245,8 @@
 						</div>
 					</div>
 					<div class="col-md-5">
-						<label class="certification-label" for="certifiNY">자격증</label> <select
-							class="form-control" name="certifiNY" id="certifiNY">
+						<label class="certification-label" for="certifiNY">자격증</label> 
+						<select class="form-control" name="certifiNY" id="certifiNY">
 							<option value="1"
 								<c:if test="${item.certifiNY eq 1}">selected</c:if>>유</option>
 							<option value="0"

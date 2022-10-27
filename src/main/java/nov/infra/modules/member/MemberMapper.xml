@@ -34,8 +34,6 @@
 				a.seq
 				,a.memberID
 				,a.pwd
-				,a.job
-				,a.career
 				,a.memberName
 				,a.memberName_en
 				,a.dob
@@ -63,8 +61,6 @@
 		INSERT INTO member (
 			memberID
 			,pwd
-			,job
-			,career
 			,memberName
 			,memberName_en
 			,dob
@@ -81,8 +77,6 @@
 		) VALUES (
 			#{memberID}
 			,#{pwd}
-			,#{job}
-			,#{career}
 			,#{memberName}
 			,#{memberName_en}
 			,#{dob}
