@@ -97,6 +97,7 @@
               <li><a onclick="logout()">로그아웃</a></li>
             </ul>
           </li>
+        </ul>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->

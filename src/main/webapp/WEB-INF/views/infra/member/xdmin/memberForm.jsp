@@ -126,9 +126,8 @@
 						</div>
 					</div>
 			</form>
-			
-					<input type="hidden" name="seq" id="seq"
-						value="<c:out value="${item.seq}"/>">
+					<form class="row g-4" name="form">
+					<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>">
 					<div class="col-md-5">
 						<label class="name-label" for="memberName">이름 </label> 
 						<input type="text" class="form-control" id="memberName" name="memberName" value="<c:out value="${item.memberName}"/>">
@@ -356,7 +355,8 @@
 						</button>
 
 					</div>
-
+					
+					</form>
 				</div>
 			</div>
 
