@@ -69,7 +69,6 @@ public class MemberController extends BaseController {
 		System.out.println("vo : " + vo);
 		service.insert(dto);
 //		vo.setSeq(dto.getSeq());
-//
 //		redirectAttributes.addFlashAttribute("vo", vo);
 
 		return "redirect:memberForm";

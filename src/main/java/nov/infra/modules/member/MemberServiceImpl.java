@@ -4,10 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import nov.infra.common.util.UtilSecurity;
-import nov.infra.common.util.UtilUpload;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -23,35 +21,32 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int insert(Member dto) throws Exception {
-		//이미지 업로드
-		int j = 0;
-		System.out.println();
-		for (MultipartFile multipartFile : dto.getUploadedImage()) {
-
-			if (!multipartFile.isEmpty()) {
-
-				String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
-				UtilUpload.upload(multipartFile, pathModule, dto);
-
-//				dto.setType(2);
-//				dto.setDefaultNy(1);
-				dto.setSort(j + 1);
-				dto.setPseq(dto.getSeq());
-
-				dao.itemImgUpload(dto);
-			}
-			j++;
-		}
+//		이미지 업로드
+//		int j = 0;
+//		for (MultipartFile multipartFile : dto.getUploadedImage()) {
+//
+//			if (!multipartFile.isEmpty()) {
+//
+//				String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+//				UtilUpload.upload(multipartFile, pathModule, dto);
+//
+////				dto.setType(2);
+////				dto.setDefaultNy(1);
+//				dto.setSort(j + 1);
+//				dto.setPseq(dto.getSeq());
+//
+//				dao.itemImgUpload(dto);
+//			}
+//			j++;
+//		}
 
 		// 암호화
-//		System.out.println("pwd : " + dto.getPwd());
-//		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
-//		dto.setMemberName(dto.getMemberName());
-//
-//		int result = dao.insert(dto);
-//		System.out.println("service result : " + result);
+		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
+		dto.setMemberName(dto.getMemberName());
 
-		int result = 0;
+		int result = dao.insert(dto);
+
+//		int result = 0;
 		return result;
 	}
 

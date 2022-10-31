@@ -187,11 +187,11 @@
 								class="fa-solid fa-circle-info"></i>비밀번호가 일치하지 않습니다.</span>
 						</div>
 					</div>
-					<div class="col-md-5">
+					<%-- <div class="col-md-5">
 						<label class="birth-label" for="dob">생년월일 </label> <input
 							type="date" class="form-control" id="datepicker" name="dob"
 							value="<c:out value="${item.dob}"/>">
-					</div>
+					</div> --%>
 					<div class="col-md-5">
 						<label class="hobby-label" for="hobby">취미</label> <select
 							class="form-control" name="hobby" id="hobby"
@@ -350,7 +350,7 @@
 					</form>
 				</div>
 			</div>
-
+<!-- 
 			<div id="hero-carousel" class="carousel slide"
 				data-bs-ride="carousel" data-bs-interval="5000">
 				<div class="carousel-item"
@@ -375,7 +375,7 @@
 					class="carousel-control-next-icon bi bi-chevron-right"
 					aria-hidden="true"></span>
 				</a>
-			</div>
+			</div> -->
 
 			<div class="modal fade" id="exampleModal2" data-bs-keyboard="false"
 				tabindex="-1" aria-labelledby="exampleModalLabel2"

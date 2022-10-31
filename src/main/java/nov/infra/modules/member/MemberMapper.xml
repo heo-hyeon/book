@@ -63,7 +63,7 @@
 			,pwd
 			,memberName
 			,memberName_en
-			,dob
+			<!-- ,dob -->
 			,telecom
 			,phone
 			,email
@@ -79,12 +79,11 @@
 			,#{pwd}
 			,#{memberName}
 			,#{memberName_en}
-			,#{dob}
+			<!-- ,#{dob} -->
 			,#{telecom}
 			,#{phone}
 			,#{email}
 			,#{email_code}
-			<!-- ,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code})) -->
 			,#{hobby}
 			,#{region}
 			,#{certifiNY}

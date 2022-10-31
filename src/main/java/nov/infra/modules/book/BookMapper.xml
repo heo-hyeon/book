@@ -74,6 +74,7 @@
 			AND seq = #{seq}
     </update>
      -->
+
 <!--     <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			d.seq
@@ -88,11 +89,11 @@
 		left join writer c on c.seq = d.bookWriter
 		where 1=1
         and d.seq = #{seq}	
-    </select> -->
+    </select>  -->
     
     
    <!-- 사진 업로드 --> 
-  <!--   <select id="selectOne" resultMap="resultMapObj">
+    <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			mup.seq
 	        ,mup.pseq
@@ -111,7 +112,8 @@
 		WHERE 1=1
 		AND d.seq = #{seq}
     </select>
-     -->
+     
+     
     <select id="selectlistTag" resultMap="resultMapObj">
 	   SELECT
 			d.name
