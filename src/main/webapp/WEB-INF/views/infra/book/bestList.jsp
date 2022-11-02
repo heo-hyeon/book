@@ -127,7 +127,7 @@
               <div class="content">
                 <blockquote>
                   <p>
-                  	<c:out value="${item.title}" />
+                  	<c:out value="${item.title }" />
                   </p>
                 </blockquote>
 
