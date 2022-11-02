@@ -109,7 +109,7 @@
 		FROM memberUploaded mup 
 		join book d on d.seq = mup.pseq
 		join writer c on c.seq = d.bookWriter
-		WHERE 1=1
+		WHERE 1=1 
 		AND d.seq = #{seq}
     </select>
      
