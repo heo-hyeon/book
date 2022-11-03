@@ -165,16 +165,17 @@
               		<h4 class="comments-count">리뷰 </h4>
              		<div id="comment-1" class="comment">
 	                  <div>
-	                    <h5>DA88_9RYu </h5>
+	                    <h5>
+	                    	<c:out value="${item.memberName}"/>
+	                    </h5>
 	                    <time datetime="2022-06-29">29 Jun,2022</time>
 	                    <p>
-	                    그래서 무언가가 되고 싶으면, 나 스스로를 믿기보다 환경설정을 더 중요시했다. 
-	                    내 머리를 믿기보다는 인간의 심리와 본성을 이해하는 것에 투자했다.
+	                    	<c:out value="${item.reviewContents}" />
 	                    </p>
 	                  </div>
                 	</div>
              	 </div><!-- End comment #1 -->
-             	 <div id="comment-2" class="comment">
+             <!-- 	 <div id="comment-2" class="comment">
                   	<div>
 	                    <h5>galeuice</h5>
 	                    <time datetime="2022-05-12">12 May,2022</time>
@@ -184,7 +185,7 @@
 						단 5퍼센트만이라도 남들보다 좋은 결정을 할 수만 있다면 그 인생은 성공으로 향할 수밖에 없다.
 	                    </p>
                   </div>
-                </div>
+                </div> -->
               </div><!-- End comment #2-->
 
 				<div class="post-author align-items-center">

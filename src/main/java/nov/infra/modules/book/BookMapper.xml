@@ -78,6 +78,9 @@
      <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			d.seq
+	        ,mup.pseq
+			,mup.path
+			,mup.uuidName
 		    ,d.name
 		    ,c.writer_name
 		    ,d.title
@@ -85,12 +88,16 @@
 		    ,c.writer_exp
 		    ,d.publisher
 		    ,d.explanation
+		    ,rv.reviewContents
+		    ,mb.memberName
 		FROM book d
-		left join writer c on c.seq = d.bookWriter
+		join writer c on c.seq = d.bookWriter
+		join memberUploaded mup on mup.pseq = d.seq
+		join review rv on rv.bookSeq = d.seq
+		join member mb on mb.seq = rv.memberSeq
 		where 1=1
         and d.seq = #{seq}	
     </select>  
-    
     
    <!-- 사진 업로드 --> 
   <!--   <select id="selectOne" resultMap="resultMapObj">

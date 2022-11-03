@@ -1,5 +1,7 @@
 package nov.infra.modules.book;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Book {
 	
 	private String seq;
@@ -14,10 +16,28 @@ public class Book {
 	private String writer_exp;
 	private String keyword;
 	
+	private String bookSeq;
+	private String memberSeq;
+	private String reviewContents;
+	
 	
 	//이미지 업로드
+	private String type;
+	private String defaultNy;
+	private Integer sort;
 	private String path;
+	private String originalName;
 	private String uuidName;
+	private String ext;
+	private String size;
+	private String delNy;
+	private String pseq;
+	private String regIp;
+	private String regSeq;
+	private String regDeviceCd;
+	private String regDateTime;
+	private String regDateTimeSvr;
+	private MultipartFile[] uploadedImage;
 	
 	public String getWriter_name() {
 		return writer_name;
@@ -97,6 +117,108 @@ public class Book {
 	}
 	public void setUuidName(String uuidName) {
 		this.uuidName = uuidName;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getDefaultNy() {
+		return defaultNy;
+	}
+	public void setDefaultNy(String defaultNy) {
+		this.defaultNy = defaultNy;
+	}
+	public Integer getSort() {
+		return sort;
+	}
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public String getOriginalName() {
+		return originalName;
+	}
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
+	}
+	public String getExt() {
+		return ext;
+	}
+	public void setExt(String ext) {
+		this.ext = ext;
+	}
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	public String getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(String delNy) {
+		this.delNy = delNy;
+	}
+	public String getPseq() {
+		return pseq;
+	}
+	public void setPseq(String pseq) {
+		this.pseq = pseq;
+	}
+	public String getRegIp() {
+		return regIp;
+	}
+	public void setRegIp(String regIp) {
+		this.regIp = regIp;
+	}
+	public String getRegSeq() {
+		return regSeq;
+	}
+	public void setRegSeq(String regSeq) {
+		this.regSeq = regSeq;
+	}
+	public String getRegDeviceCd() {
+		return regDeviceCd;
+	}
+	public void setRegDeviceCd(String regDeviceCd) {
+		this.regDeviceCd = regDeviceCd;
+	}
+	public String getRegDateTime() {
+		return regDateTime;
+	}
+	public void setRegDateTime(String regDateTime) {
+		this.regDateTime = regDateTime;
+	}
+	public String getRegDateTimeSvr() {
+		return regDateTimeSvr;
+	}
+	public void setRegDateTimeSvr(String regDateTimeSvr) {
+		this.regDateTimeSvr = regDateTimeSvr;
+	}
+	public MultipartFile[] getUploadedImage() {
+		return uploadedImage;
+	}
+	public void setUploadedImage(MultipartFile[] uploadedImage) {
+		this.uploadedImage = uploadedImage;
+	}
+	public String getBookSeq() {
+		return bookSeq;
+	}
+	public void setBookSeq(String bookSeq) {
+		this.bookSeq = bookSeq;
+	}
+	public String getMemberSeq() {
+		return memberSeq;
+	}
+	public void setMemberSeq(String memberSeq) {
+		this.memberSeq = memberSeq;
+	}
+	public String getReviewContents() {
+		return reviewContents;
+	}
+	public void setReviewContents(String reviewContents) {
+		this.reviewContents = reviewContents;
 	}
 	
 }
