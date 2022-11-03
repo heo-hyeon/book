@@ -17,7 +17,7 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -127,7 +127,7 @@
               <div class="content">
                 <blockquote>
                   <p>
-                  	<c:out value="${item.title }" />
+                  	<c:out value="${item.title}" />
                   </p>
                 </blockquote>
 
@@ -147,7 +147,7 @@
             </article>
 
             <div class="post-author d-flex align-items-center">
-              <div class="float:right";>
+              <div class="float:right">
               	<img src="../resources/images/ja.jpg">
               </div>
 	              <div>
@@ -209,6 +209,8 @@
 	          </div>
          	 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:10px;"><a href="/member/home">돌아가기</a></button>
           </div>
+         </div>
+        </div>
 	    <%--  <form name="formVo" id="formVo" method="post">
 				<input type="hidden" name="seq" value="<c:out value="${vo.seq}"/>"/>
 			  </form> --%>
@@ -223,6 +225,7 @@
         <div class="copyright">
           © Copyright <strong><span>With Book</span></strong>. All Rights Reserved
         </div>
+       </div>
     </div>
   </footer>
   <!-- End Footer -->
