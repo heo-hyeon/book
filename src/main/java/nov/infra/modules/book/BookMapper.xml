@@ -24,7 +24,6 @@
 		    ,d.publisher
 		FROM book d
 		left join writer c on c.seq = d.bookWriter
-
 	</select>
  	
 	<select id="selectOneCount" resultType="Integer">
