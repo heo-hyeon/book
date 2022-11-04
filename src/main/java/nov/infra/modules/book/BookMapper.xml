@@ -16,14 +16,17 @@
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			d.seq
+			,mup.pseq
+			,mup.path
+			,mup.uuidName
 		    ,d.name
 		    ,c.writer_name
-		    ,d.title
 		    ,d.sub_title
-		    ,c.writer_exp
-		    ,d.publisher
 		FROM book d
-		left join writer c on c.seq = d.bookWriter
+		join writer c on c.seq = d.bookWriter
+		join memberUploaded mup on mup.pseq = d.seq
+		WHERE 1=1
+		and d.seq = #{seq}
 	</select>
  	
 	<select id="selectOneCount" resultType="Integer">
