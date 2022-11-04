@@ -162,19 +162,18 @@
 			<div class="post-author align-items-center">
             	<div class="comments">
               		<h4 class="comments-count">리뷰 </h4>
-             		<div id="comment-1" class="comment">
-	                  <div>
-	                    <h5>
-	                    galeuice
-	                    	<%-- <c:out value="${item.memberName}"/> --%>
-	                    </h5>
-	                    <time datetime="2022-06-29">29 Jun,2022</time>
-	                    <p>
-	                     	리뷰 내용
-	                  		<c:out value="${list.reviewContents}" /> 
-	                    </p>
-	                  </div>
-                	</div>
+             		
+	             		<div id="comment-1" class="comment">
+	             			<div>
+	             				<h5>멤버이름</h5>
+	             				<ul>
+				                <c:forEach items="${list1}" var="list1" varStatus="status">
+			                 	   <li><c:out value="${list1.reviewContents}"/></li>
+					            </c:forEach>
+						        </ul>
+				          	</div>
+		             	 </div>
+                	
              	 </div>
              	 
              <!-- 	 <div id="comment-2" class="comment">
