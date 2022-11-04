@@ -76,7 +76,7 @@
 
      <select id="selectOne" resultMap="resultMapObj">
 		SELECT
-	        d.seq
+			d.seq
 	        ,mup.pseq
 			,mup.path
 			,mup.uuidName
