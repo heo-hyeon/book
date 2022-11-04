@@ -8,6 +8,8 @@ public interface BookService {
 	
 	public List<Book> selectlistTag(BookVo vo) throws Exception;
 	
+	public List<Book> selectlistReview(BookVo vo) throws Exception;
+	
 	public List<Book> selectList(BookVo vo) throws Exception;
 	 
 }

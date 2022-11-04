@@ -30,5 +30,11 @@ public class BookServiceImpl implements BookService{
 		List<Book> result = dao.selectList(vo);
 		return result;
 	}
+	
+	@Override
+	public List<Book> selectlistReview(BookVo vo) throws Exception {
+		List<Book> result = dao.selectlistReview(vo);
+		return result;
+	}
 
 }

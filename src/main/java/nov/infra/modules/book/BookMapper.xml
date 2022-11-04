@@ -88,11 +88,9 @@
 		    ,c.writer_exp
 		    ,d.publisher
 		    ,d.explanation
-		    ,rev.reviewContents
 		FROM book d
 		join writer c on c.seq = d.bookWriter
 		join memberUploaded mup on mup.pseq = d.seq
-		join review rev on rev.bookSeq = d.seq
 		where 1=1
         and d.seq = #{seq}	
     </select>  
@@ -128,5 +126,16 @@
 			JOIN book d ON d.seq = bt.bookSeq
 		where 1=1
         and d.seq = #{seq}	
+   </select>
+   
+   <select id="selectlistReview" resultMap="resultMapObj">
+   		SELECT 
+   			d.name
+   			,rev.reviewContents
+   		FROM review rev
+   			JOIN bookNreview br on br.reviewSeq = rev.seq
+   			JOIN book d ON d.seq = br.bookSeq
+   		WHERE 1=1
+   		and d.seq = #{seq}
    </select>
 </mapper>		

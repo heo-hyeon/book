@@ -30,6 +30,11 @@ public class BookDao {
 		return list;
 	}
 	
+	public List<Book> selectlistReview(BookVo vo) {
+		List<Book> list = sqlSession.selectList(namespace + ".selectlistReview", vo);
+		return list;
+	}
+	
 	public List<Book> selectList(BookVo vo) { 
 		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
 		return list;

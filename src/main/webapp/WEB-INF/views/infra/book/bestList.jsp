@@ -171,7 +171,7 @@
 	                    <time datetime="2022-06-29">29 Jun,2022</time>
 	                    <p>
 	                     리뷰 내용
-	                  	<%-- 	<c:out value="${item.reviewContents}" />  --%>
+	                  	<%-- 	<c:out value="${list1.reviewContents}" />  --%>
 	                    </p>
 	                  </div>
                 	</div>
