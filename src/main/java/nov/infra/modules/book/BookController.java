@@ -28,7 +28,7 @@ public class BookController {
 		model.addAttribute("list", list);
 		
 		List<Book> list1 = service.selectlistReview(vo);
-		model.addAttribute("list", list1);
+		model.addAttribute("list1", list1);
 		
 		return "infra/book/bestList";
 	}
