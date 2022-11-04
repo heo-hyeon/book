@@ -164,13 +164,11 @@
               		<h4 class="comments-count">리뷰 </h4>
              		
 	             		<div id="comment-1" class="comment">
-	             			<div>
-	             			  <ul>
-	             			  <c:forEach items="${list1}" var="list1" varStatus="status">
- 			                 	<li><c:out value="${list1.reviewContents}"/></li>
-             				  </c:forEach>
-						      </ul>
-				          	</div>
+             			  <ul>
+             			  <c:forEach items="${list1}" var="list1" varStatus="status">
+			                 	<li><c:out value="${list1.reviewContents}"/></li>
+            				  </c:forEach>
+					      </ul>
 		             	 </div>
 		             	 
              	 </div>
