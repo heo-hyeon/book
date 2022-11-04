@@ -105,10 +105,9 @@
                 <ul class="d-flex justify-content-center">
                   <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
                   <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
-                  <li><i class="bi bi-heart"></i><a href=" ">찜하기</a></li>
                 </ul>
               </div><!-- End meta top -->
-
+<!-- 
        		  <div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
 						<div class="row gy-4">
@@ -124,7 +123,7 @@
 						</div> 
 					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/member/home">추천하기</a></button>  
 	              </div>
-           	  </div>
+           	  </div> -->
 
               <div class="content">
                 <blockquote>
@@ -166,15 +165,18 @@
              		<div id="comment-1" class="comment">
 	                  <div>
 	                    <h5>
-	                    	<c:out value="${item.memberName}"/>
+	                    galeuice
+	                    	<%-- <c:out value="${item.memberName}"/> --%>
 	                    </h5>
 	                    <time datetime="2022-06-29">29 Jun,2022</time>
 	                    <p>
-	                    	<c:out value="${item.reviewContents}" />
+	                     리뷰 내용
+	                  	<%-- 	<c:out value="${item.reviewContents}" />  --%>
 	                    </p>
 	                  </div>
                 	</div>
-             	 </div><!-- End comment #1 -->
+             	 </div>
+             	 
              <!-- 	 <div id="comment-2" class="comment">
                   	<div>
 	                    <h5>galeuice</h5>

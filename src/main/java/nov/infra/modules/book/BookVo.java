@@ -4,6 +4,7 @@ public class BookVo {
 	
 	private String name;
 	private String seq;
+	
 	public String getName() {
 		return name;
 	}
