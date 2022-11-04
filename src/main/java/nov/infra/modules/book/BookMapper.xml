@@ -111,12 +111,9 @@
    		SELECT 
    			d.name
    			,rev.reviewContents
-   			,mb.memberID
    		FROM review rev
    			JOIN bookNreview br on br.reviewSeq = rev.seq
    			JOIN book d ON d.seq = br.bookSeq
-   			JOIN bookNmember bm on bm.reviewSeq = rev.seq
-   			JOIN member mb on mb.seq = bm.memberSeq
  		WHERE 1=1
    		and d.seq = #{seq}
    </select>
