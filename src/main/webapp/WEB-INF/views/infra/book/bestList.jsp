@@ -165,28 +165,18 @@
              		
 	             		<div id="comment-1" class="comment">
 	             			<div>
-	             				<h5>멤버이름</h5>
-	             				<ul>
-				                <c:forEach items="${list1}" var="list1" varStatus="status">
-			                 	   <li><c:out value="${list1.reviewContents}"/></li>
-					            </c:forEach>
-						        </ul>
+	             			  <ul>
+	             			  <c:forEach items="${list1}" var="list1" varStatus="status">
+	                 	   	  	<li><c:out value="${list1.memberID}"/></li>
+<%--              				  	<c:forEach items="${list1}" var="list1" varStatus="status"> --%>
+ 			                 	<li><c:out value="${list1.reviewContents}"/></li>
+					           <%--  </c:forEach> --%>
+             				  </c:forEach>
+						      </ul>
 				          	</div>
 		             	 </div>
-                	
+		             	 
              	 </div>
-             	 
-             <!-- 	 <div id="comment-2" class="comment">
-                  	<div>
-	                    <h5>galeuice</h5>
-	                    <time datetime="2022-05-12">12 May,2022</time>
-	                    <p>
-						남들보다 아주 조금이라도 의사 결정력이 높으면
-						인생에서 내려야 할 수백 번의 의사결정에서 좋은 선택을 할 확률이 높아진다...
-						단 5퍼센트만이라도 남들보다 좋은 결정을 할 수만 있다면 그 인생은 성공으로 향할 수밖에 없다.
-	                    </p>
-                  </div>
-                </div> -->
               </div><!-- End comment #2-->
 
 				<div class="post-author align-items-center">

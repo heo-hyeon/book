@@ -111,10 +111,24 @@
    		SELECT 
    			d.name
    			,rev.reviewContents
+   			,mb.memberID
    		FROM review rev
    			JOIN bookNreview br on br.reviewSeq = rev.seq
    			JOIN book d ON d.seq = br.bookSeq
-   		WHERE 1=1
+   			JOIN bookNmember bm on bm.reviewSeq = rev.seq
+   			JOIN member mb on mb.seq = bm.memberSeq
+ 		WHERE 1=1
    		and d.seq = #{seq}
    </select>
+   
+<!--    <select id="selectlistMember" resultMap="resultMapObj">
+   		SELECT
+   			d.name
+   			,mb.memberID
+   		FROM member mb
+   			JOIN bookNmember bm ON bm.memberSeq = mb.seq
+   			JOIN book d ON d.seq = bm.bookSeq
+   		WHERE 1=1
+   		and d.seq = #{seq}
+   </select>  -->
 </mapper>		

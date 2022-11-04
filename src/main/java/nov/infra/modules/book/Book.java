@@ -18,6 +18,7 @@ public class Book {
 	
 	private String bookSeq;
 	private String memberSeq;
+	private String memberID;
 	private String reviewContents;
 	
 	
@@ -219,6 +220,12 @@ public class Book {
 	}
 	public void setReviewContents(String reviewContents) {
 		this.reviewContents = reviewContents;
+	}
+	public String getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
 	}
 	
 }

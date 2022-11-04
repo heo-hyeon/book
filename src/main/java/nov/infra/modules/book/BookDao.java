@@ -39,5 +39,4 @@ public class BookDao {
 		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
 		return list;
 	}
-
 }

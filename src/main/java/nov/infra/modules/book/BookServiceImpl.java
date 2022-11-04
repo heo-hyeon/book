@@ -36,5 +36,4 @@ public class BookServiceImpl implements BookService{
 		List<Book> result = dao.selectlistReview(vo);
 		return result;
 	}
-
 }
