@@ -170,8 +170,8 @@
 	                    </h5>
 	                    <time datetime="2022-06-29">29 Jun,2022</time>
 	                    <p>
-	                     리뷰 내용
-	                  	<%-- 	<c:out value="${list1.reviewContents}" />  --%>
+	                     	리뷰 내용
+	                  		<c:out value="${list.reviewContents}" /> 
 	                    </p>
 	                  </div>
                 	</div>
