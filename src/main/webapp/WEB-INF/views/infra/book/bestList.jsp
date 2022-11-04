@@ -168,7 +168,7 @@
 	             			  <ul>
 	             			  <c:forEach items="${list1}" var="list1" varStatus="status">
 	                 	   	  	<li><c:out value="${list1.memberID}"/></li>
-<%--              				  	<c:forEach items="${list1}" var="list1" varStatus="status"> --%>
+								<%-- <c:forEach items="${list1}" var="list1" varStatus="status"> --%>
  			                 	<li><c:out value="${list1.reviewContents}"/></li>
 					           <%--  </c:forEach> --%>
              				  </c:forEach>
