@@ -28,10 +28,10 @@ public class MemberServiceImpl implements MemberService {
 //			if (!multipartFile.isEmpty()) {
 //
 //				String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
-//				UtilUpload.upload(multipartFile, pathModule, dto);
+//			UtilUpload.upload(multipartFile, pathModule, dto);
 //
-////				dto.setType(2);
-////				dto.setDefaultNy(1);
+//				dto.setType(2);
+//				dto.setDefaultNy(1);
 //				dto.setSort(j + 1);
 //				dto.setPseq(dto.getSeq());
 //
@@ -39,14 +39,13 @@ public class MemberServiceImpl implements MemberService {
 //			}
 //			j++;
 //		}
+//		int result = 0;
 
 		// 암호화
 		dto.setPwd(UtilSecurity.encryptSha256(dto.getPwd()));
 		dto.setMemberName(dto.getMemberName());
-
+		
 		int result = dao.insert(dto);
-
-//		int result = 0;
 		return result;
 	}
 

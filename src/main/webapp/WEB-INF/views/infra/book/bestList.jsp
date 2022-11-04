@@ -31,7 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="../resources/css/main.css" rel="stylesheet">
   
-
   <!-- =======================================================
   * Template Name: UpConstruction - v1.1.0
   * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
@@ -164,12 +163,12 @@
               		<h4 class="comments-count">리뷰 </h4>
              		
 	             		<div id="comment-1" class="comment">
-             			  <ul>
+             			  <ol>
              			  <c:forEach items="${list1}" var="list1" varStatus="status">
 			                 	<li><c:out value="${list1.reviewContents}"/></li>
             			  </c:forEach>
-					      </ul>
-		             	 </div>
+					      </ol>
+		             	 </div><br>
 		             	 
              	 </div>
               </div><!-- End comment #2-->
