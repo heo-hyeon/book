@@ -190,7 +190,8 @@
              	    </div><br>
 					
 				</div><!-- End comment #1 -->
-				<div class="comments">
+			 	
+				<!-- <div class="comments">
 					<div id="comment-2" class="comment">
 						<div>
 						<h5>bbkk</h5>
@@ -200,8 +201,8 @@
 						읽으면서 눈물도 많이 흘리고 공감도 많이 하고 또 도발적인 내용들에 놀라기도 하면서 정말 재밌게 읽었습니다.
 						</p>
 						</div>
-					</div><!-- End comment #2-->
-				</div>
+					</div>End comment #2
+				</div> -->
 			</div><!-- End post comments -->
 			
 			<div class="post-author align-items-center">
@@ -222,26 +223,27 @@
 		                    <p>"여러분의 인간성을 인정하기를 거부하는 사람들 앞에서 매일 사는 것은 큰 용기를 필요로 합니다."</p>
 		                  </div>   
              		  	</div>
-           			</div>
-               </div><br>
-              <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/likebook">목록</a></button>
-	  		</main><!-- End #main -->
+          			</div>
+            	</div>
+               </div>
+              <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/book/likebook">목록</a></button>
+	  		  </div>
+	  		 </div>
 		</form>
 	</section>
-  <!-- ======= Footer ======= -->
+	</main><!-- End #main -->
+	
   <footer id="footer" class="footer">
     <div class="footer-legal text-center position-relative">
       <div class="container">
         <div class="copyright">
           © Copyright <strong><span>With Book</span></strong>. All Rights Reserved
         </div>
+      </div>
     </div>
   </footer>
-  <!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  
 
   <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
