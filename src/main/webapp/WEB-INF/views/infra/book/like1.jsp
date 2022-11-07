@@ -150,7 +150,7 @@
             </article>
 
             <div class="post-author d-flex align-items-center">
-             <div class="float:right";>
+             <div class="float:right">
               	<img src="../resources/images/leeminjin.jpg">
              </div>
               <div>
