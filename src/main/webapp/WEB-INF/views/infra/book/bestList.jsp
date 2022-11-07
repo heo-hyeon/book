@@ -66,7 +66,6 @@
           </li>
         </ul>
       </nav><!-- .navbar -->
-
    
     </div>
   </header><!-- End Header -->
