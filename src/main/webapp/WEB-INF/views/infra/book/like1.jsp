@@ -52,6 +52,7 @@
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      
        <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/member/home" class="active">Home</a></li>
@@ -81,27 +82,28 @@
         </ol>
       </div>
     </div><!-- End Breadcrumbs -->
-    <input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
+    
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
     	<form method="post" name="form">
+    	<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
 	      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 	        <div class="row g-5">
 	          <div class="col-lg-8" style="margin:auto; text-align:center;">
+	          
 	            <article class="blog-details">
 	              <div class="post-images" style="text-align:center; margin-top:3px;">
 	                <img src="../resources/images/pachinko.jpg" class="images-fluid" style="width:400px; height:500px;">
 	              </div>
-	              <h2 class="title" style="text-align:center;"><c:out value="${item.seq}"/></h2>
+	              <h2 class="title" style="text-align:center;"><c:out value="${item.name}"/></h2>
 	              <div class="meta-top">
-	             	 <ul class="d-flex justify-content-center">
-	                  <li><i class="bi bi-person"></i>이민진</li>
-	                  <li><i class="fa-regular fa-bookmark"></i><a href="blog-details.html">찜하기</a></li>
-	             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
-	                </ul>
+		            <ul class="d-flex justify-content-center">
+	                  <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
+	                  <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
+	               	</ul>
 	              </div><!-- End meta top -->
 
-       		<div class="post-author d-flex align-items-center">
+       	<!-- 	<div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
 						<div class="row gy-4">
 							<div class="col-lg-7 form-group">
@@ -116,34 +118,36 @@
 						</div> 
 					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="/likebook">추천하기</a></button>  
 	              </div>
-           	 </div>
+           	 </div> -->
             
               <div class="content">
                 <blockquote>
                   <p>
-                  전 세계인의 마음을 뒤흔든 우리의 이야기
-                  <br>문화와 세대를 가로지르는 새로운 고전의 탄생!
+                  	<c:out value="${item.title}"/>
+                 <!--  전 세계인의 마음을 뒤흔든 우리의 이야기
+                  <br>문화와 세대를 가로지르는 새로운 고전의 탄생! -->
                   </p>
                 </blockquote>
 
                 <p>
-                《파친코》는 ‘집’에 대한 이야기’인 동시에, 평범한 사람들의 이야기이다. 
+                	<c:out value="${item.explanation}"/>
+                <!-- 《파친코》는 ‘집’에 대한 이야기’인 동시에, 평범한 사람들의 이야기이다. 
                 역사의 거대한 파도에 휩쓸리면서도 굴하지 않고 꿋꿋하게 삶을 헤쳐나가는 이민자 가족의 연대기를 담고 있다.
                 고향을 떠나 타국에 뿌리내리고 편견과 차별 속에서 영원한 이방인으로 살아야 하는 이민자의 삶을 작가는 특유의 통찰력과 공감 어린 시선으로 탐구해간다. 
                 나아가 역사의 비극을 가장 평범한 사람들이 어떻게 겪고 견뎌내는지를 담담한 목소리로 풀어내면서 “한 가족의 이야기가 어떻게 모두의 이야기가 될 수 있는지” 보여준다.
-                가족, 사랑, 상실, 돈과 같은 인생의 모든 문제를 다루면서 동시대를 살아가는 독자에게 가장 시의적절한 질문을 던지는 작품, 《파친코》는 세대와 문화를 뛰어넘는 이야기의 힘을 증명하며 하나의 아이콘으로 떠올랐다. 
+                가족, 사랑, 상실, 돈과 같은 인생의 모든 문제를 다루면서 동시대를 살아가는 독자에게 가장 시의적절한 질문을 던지는 작품, 《파친코》는 세대와 문화를 뛰어넘는 이야기의 힘을 증명하며 하나의 아이콘으로 떠올랐다.  -->
                 </p>
               </div>
 
               <div class="meta-bottom">
-     
                 <i class="bi bi-tags"></i>
-                <ul class="tags">
-                  <li><a href="#">재일동포 </a></li>
-                  <li><a href="#">가족 </a></li>
-                </ul>
-              </div><!-- End meta bottom -->
-            </article><!-- End blog post -->
+	                <ul class="tags">
+		              <c:forEach items="${list}" var="list" varStatus="status">
+	                  <li><c:out value="${list.keyword }"/></li>
+			          </c:forEach>
+	                </ul>
+              </div>
+            </article>
 
             <div class="post-author d-flex align-items-center">
              <div class="float:right";>
