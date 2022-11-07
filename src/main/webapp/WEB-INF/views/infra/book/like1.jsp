@@ -153,11 +153,13 @@
              <div class="float:right">
               	<img src="../resources/images/leeminjin.jpg">
              </div>
+             
               <div>
-                <h4>저자 '이민진' </h4> <br>
+                <h4>저자 '<c:out value="${item.writer_name}"/>'</h4> <br>
                 <p>
-                2004년 단편소설 〈행복의 축Axis of Happiness〉, 〈조국Motherland〉 등을 발표해 작가의 입지를 굳히기 시작했다.
-                2008년 첫 장편소설 《백만장자를 위한 공짜 음식Free Food for Millionaires》을 발표, 한국을 비롯하여 11개국에 번역 출판되었으며 전미 편집자들이 뽑은 올해의 책, 미국 픽션 부문 ‘비치상’, 신인작가를 위한 ‘내러티브상’ 등을 수상했다.
+                	<c:out value="${item.writer_exp}"/>
+               <!--  2004년 단편소설 〈행복의 축Axis of Happiness〉, 〈조국Motherland〉 등을 발표해 작가의 입지를 굳히기 시작했다.
+                2008년 첫 장편소설 《백만장자를 위한 공짜 음식Free Food for Millionaires》을 발표, 한국을 비롯하여 11개국에 번역 출판되었으며 전미 편집자들이 뽑은 올해의 책, 미국 픽션 부문 ‘비치상’, 신인작가를 위한 ‘내러티브상’ 등을 수상했다. -->
                 </p>
               </div>
             </div><!-- End post author -->
@@ -165,7 +167,8 @@
 			<div class="post-author align-items-center">
 				<div class="comments">
 					<h4 class="comments-count">리뷰 </h4>
-					<div id="comment-1" class="comment">
+					
+		<!-- 			<div id="comment-1" class="comment">
 						<div>
 						<h5>yejin</h5>
 						<time datetime="2022-03-30">30 Mar,2022</time>
@@ -176,7 +179,16 @@
 						막상 끝내니 아쉬울정도에요. 추천!!
 						</p>
 						</div>
-					</div>
+					</div> -->
+					
+					<div id="comment-1" class="comment">
+             			  <ol>
+             			  <c:forEach items="${list1}" var="list1" varStatus="status">
+			                 	<li><c:out value="${list1.reviewContents}"/></li>
+            			  </c:forEach>
+					      </ol>
+             	    </div><br>
+					
 				</div><!-- End comment #1 -->
 				<div class="comments">
 					<div id="comment-2" class="comment">
