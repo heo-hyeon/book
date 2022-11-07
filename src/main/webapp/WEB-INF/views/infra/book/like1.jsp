@@ -69,7 +69,7 @@
 
     </div>
   </header><!-- End Header -->
-
+<%-- 
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -231,7 +231,7 @@
 	  		 </div>
 		</form>
 	</section>
-	</main><!-- End #main -->
+	</main><!-- End #main --> --%>
 	
   <footer id="footer" class="footer">
     <div class="footer-legal text-center position-relative">
