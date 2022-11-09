@@ -21,7 +21,6 @@ public class BookDao {
 	
 	public Book selectOne(BookVo vo) {
 		Book result = sqlSession.selectOne(namespace + ".selectOne", vo);
-		System.out.println("dao result : " + result);
 		return result;
 	}
 	
