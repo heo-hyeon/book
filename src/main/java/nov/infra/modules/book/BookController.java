@@ -62,8 +62,4 @@ public class BookController {
 		return "infra/book/recommendList";
 	}
 	
-	@RequestMapping(value = "bestSeller")
-	public String bestSeller () {
-		return "infra/book/bestSeller";
-	}
 }
