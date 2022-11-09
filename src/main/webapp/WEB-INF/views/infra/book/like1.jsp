@@ -69,7 +69,7 @@
 
     </div>
   </header><!-- End Header -->
-<%-- 
+ 
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -86,7 +86,7 @@
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
     	<form method="post" name="form">
-    	<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
+    	<input type="hidden" name="seq1" id="seq1" value="<c:out value="${item.seq1}"/>"/>
 	      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 	        <div class="row g-5">
 	          <div class="col-lg-8" style="margin:auto; text-align:center;">
@@ -231,7 +231,7 @@
 	  		 </div>
 		</form>
 	</section>
-	</main><!-- End #main --> --%>
+	</main><!-- End #main --> 
 	
   <footer id="footer" class="footer">
     <div class="footer-legal text-center position-relative">

@@ -106,12 +106,12 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">인플루엔셜</span>
                   </div>
                 </div>
-                <br><a href="like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/book/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End post list item -->
 
-          <div class="col-xl-4 col-md-6">
+         <!--  <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
                 <img src="../resources/images/gentile.jpg" style="width:350px; height:500px;">
@@ -131,7 +131,7 @@
                 <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End post list item -->
+          </div>End post list item
 
          <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
@@ -150,10 +150,10 @@
                     <i class="bi bi-folder2"></i> <span class="ps-2">곰출판</span>
                   </div>
                 </div>
-                <br><a href=".like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End post list item -->    
+          </div>End post list item    
           
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
@@ -175,7 +175,7 @@
                 <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End post list item -->
+          </div>End post list item
          
           <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
@@ -197,7 +197,7 @@
                 <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End post list item -->
+          </div>End post list item
           
 		 <div class="col-xl-4 col-md-6">
             <div class="post-item position-relative h-100">
@@ -219,15 +219,8 @@
                 <br><a href="/like1" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End post list item -->
+          </div>End post list item -->
  
-        <div class="blog-pagination">
-          <ul class="justify-content-center">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div><!-- End blog pagination -->
        	<div class="text-center">
        		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/like1">책 추가</a></button>
        	</div>
