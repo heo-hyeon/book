@@ -92,7 +92,6 @@
             <div class="post-item position-relative h-100">
               <div class="post-images position-relative overflow-hidden">
                 <img src="../resources/images/pachinko.jpg" style="width:350px; height:500px;">
-                   <span class="post-date">평점 4.9</span>
 
               </div>
               <div class="post-content d-flex flex-column">
@@ -220,10 +219,6 @@
               </div>
             </div>
           </div>End post list item -->
- 
-       	<div class="text-center">
-       		<button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/like1">책 추가</a></button>
-       	</div>
         </div>
       </div>
     </section><!-- End Blog Section -->
