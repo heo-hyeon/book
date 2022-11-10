@@ -19,9 +19,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link
-	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="../resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -98,18 +96,45 @@
 
 			<a href="/" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo -->
 				<!-- <images src="../resources/images/logo.png" alt=""> -->
-				<h1>
-					With Book<span>.</span>
-				</h1>
-			</a> <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> 
+				<h1>With Book<span>.</span></h1>
+			</a> 
+			
+			<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> 
 			<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-		</div>
+		
+		 <nav id="navbar" class="navbar">
+		        <ul>
+		          <li><a href="/member/home" class="active">Home</a></li>
+		          <li><a href="/book/likebook">찜한 책 </a></li>
+		          <li><a href="/book/recommendList">추천목록</a></li>
+		          <c:if test="${not empty sessSeq}">
+	         	  <li class="dropdown"><a href="#"><span>내 정보 </span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+	          		  <ul>
+	              		<li><a href="/user/userMod?seq=<c:out value="${item.seq}"/>">기본정보</a></li>
+	              		<li><a onclick="logout()">로그아웃</a></li>
+	              	  </ul>
+	          	 </li>
+	          	 </c:if> 
+	            </ul>
+	      </nav>
+    	</div>
 	</header>
 	<!-- End Header -->
+	
+  	<main id="main">
+    	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
+	      <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
+	
+	        <h2>회원가입</h2>
+	        <ol>
+	          <li><a href="/member/home">Home</a></li>
+	          <li>회원가입</li>
+	        </ol>
+	      </div>
+	    </div><!-- End Breadcrumbs -->
 
 	<!-- ======= Reg Section ======= -->
-	<section id="hero" class="hero">
-			<!-- style="margin-left: 30px; margin-top: 50px; color: white;" -->
+	<section id="blog" class="blog">
 			<div class="info d-flex align-items-center">
 				<div class="container" data-aos="fade">
 
@@ -412,7 +437,19 @@
 				</div>
 			</div>
 	</section>
-
+	</main>
+	
+	 <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          © Copyright <strong><span>With Book</span></strong>. All Rights Reserved
+        </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+	
 	<!-- Vendor JS Files -->
 	<script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="../resources/vendor/aos/aos.js"></script>
