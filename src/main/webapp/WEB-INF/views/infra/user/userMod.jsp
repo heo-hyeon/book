@@ -129,11 +129,6 @@
 		    <h5 class="card-title">
 		    <c:out value="${sessName}"/>님, 좋은 하루 보내세요</h5>
 		  </div>
-		  <ul class="list-group list-group-flush">
-		    <li class="list-group-item"><a href="/user/userMod" class="active">관심장르는 '소설' , '인문' 입니다.</a></li>
-		    <li class="list-group-item"><a href="/book/likebook">좋아요 누른책은 '6'권 입니다.</a></li>
-		    <li class="list-group-item"><a href="/book/recommendList">추천하신 책은 총 '6'권 입니다.</a></li>
-		  </ul>
 		</div>
 	   
 		<form class="row g-4" name="form" style="margin-left:30px; margin-top:50px; color:white;">
@@ -167,16 +162,6 @@
 			<div class="col-md-5">
 				<label class="birth-label" for="dob">생년월일 </label>
 				<input type="text" class="form-control" id="datepicker" name="dob" value="<c:out value="${item.dob}"/>">
-			</div>
-			<div class="col-md-5">
-				<label class="hobby-label" for="hobby">취미</label>
-				<select class="form-control" name="hobby" id="hobby" value="<c:out value="${item.hobby}"/>">
-					<option value="" <c:if test="${empty item.hobby}">selected</c:if>>취미</option>
-					<option value="9" <c:if test="${item.hobby eq 9}">selected</c:if>>낚시</option>
-					<option value="10" <c:if test="${item.hobby eq 10}">selected</c:if>>독서</option>
-					<option value="11" <c:if test="${item.hobby eq 11}">selected</c:if>>노래</option>
-					<option value="12" <c:if test="${item.hobby eq 12}">selected</c:if>>운동</option>
-				</select>
 			</div>
 			<div class="row">
 				<label class="phone-label" for="phone">휴대전화 </label>

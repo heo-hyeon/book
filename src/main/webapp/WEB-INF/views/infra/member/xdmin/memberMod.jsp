@@ -158,16 +158,6 @@
 				<label class="birth-label" for="dob">생년월일 </label>
 				<input type="date" class="form-control" id="datepicker" name="dob" value="<c:out value="${item.dob}"/>">
 			</div>
-			<div class="col-md-5">
-				<label class="hobby-label" for="hobby">취미</label>
-				<select class="form-control" name="hobby" id="hobby" value="<c:out value="${item.hobby}"/>">
-					<option value="" <c:if test="${empty item.hobby}">selected</c:if>>취미</option>
-					<option value="9" <c:if test="${item.hobby eq 9}">selected</c:if>>낚시</option>
-					<option value="10" <c:if test="${item.hobby eq 10}">selected</c:if>>독서</option>
-					<option value="11" <c:if test="${item.hobby eq 11}">selected</c:if>>노래</option>
-					<option value="12" <c:if test="${item.hobby eq 12}">selected</c:if>>운동</option>
-				</select>
-			</div>
 			<div class="row">
 				<label class="phone-label" for="phone">휴대전화 </label>
 				<div class="col-1">

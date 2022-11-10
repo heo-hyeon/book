@@ -83,12 +83,10 @@
 		<p style="font-style: oblique; font-size:17px;">독서는 완성된 사람을 만든다. '프란시스 베이컨'</p>
 		<input type="text" class="id" name="memberID" id="memberID" style="border:solid silver 0.5px; border-radius:3px;" sessSeq: <c:out value="${sessSeq }"/>>
 		<br>
-		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px; margin-top:10px;">
+		<br><input type="password" name="pwd" id="pwd" style="border:solid silver 0.5px; border-radius:3px;">
 		<br><button class="btn btn-secondary" type="button" id="btnLogin" name="btnLogin" style="width:80px; height:35px; margin:20px;">login</button>
-		<div class="find" style="margin-left:20px;">
-							<a href="/find_id">아이디 찾기</a>|
-							<a href="/find_pwd">비밀번호 찾기</a>|
-							<a href="/member/memberForm">회원가입</a>
+		<div class="find" style="margin-left:10px;">
+							<a href="/member/memberForm">아직 회원이 아니신가요?</a>
 						</div>
 					</div>
 				</div>
