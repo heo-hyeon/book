@@ -29,11 +29,6 @@ public class BookController {
 		List<Book> list1 = service.selectlistReview(vo);
 		model.addAttribute("list1", list1);
 		
-//		if ("bestList".equals(url)) {
-//			return "infra/book/bestList";
-//		} else {
-//			return "infra/book/like1";
-//		}
 		return "infra/book/bestList";
 	}
 	
