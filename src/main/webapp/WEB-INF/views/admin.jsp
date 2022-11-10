@@ -57,7 +57,7 @@
 				</span>
 			</c:if>
 			<h1 class="fw-bold" style="clear: both;">Index</h1>
-			<h6 class="fw-bold">회원관리 / 책 추천 페이지</h6>
+			<h6 class="fw-bold">코드관리 / 책 추천 페이지</h6>
 		</div>
 	</div>
 	 
@@ -77,14 +77,13 @@
                     </div>
                     <!--Content-body-->
                     <div class="card-body pb-5 position-relative">
-                        <h3 class="py-3 mb-0 fw-bold">회원관리 페이지</h3>
+                        <h3 class="py-3 mb-0 fw-bold">코드관리 페이지</h3>
                         <p class="mb-0 text-truncate px-lg-4">
-                            회원목록, 회원상세, 회원수정, 회원삭제
+                            코드목록, 코드상세, 코드수정, 코드삭제
                         </p>
                     </div>
-
                     <!--Article link-->
-                    <a href="/member/login" class="stretched-link"></a>
+                    <a href="/codeGroup/codeGroupList" class="stretched-link"></a>
                 </article>
             </div>
             
