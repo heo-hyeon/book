@@ -126,7 +126,7 @@
 						</div>
 					</div>
 			</form>
-					<form class="row g-4" name="form">
+					<form class="row g-4" name="form" style="margin-top:70px;">
 					<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>">
 					<div class="col-md-5">
 						<label class="name-label" for="memberName">이름 </label> 
@@ -233,13 +233,13 @@
 					<!--주소 api -->
 				    <div class="col-md-3">
 					  	<label class="zipcode-label">우편번호</label>
-					  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
+					  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>">
 				  	 </div>
-				  	 <div style="margin-top:20px;">
+				  	 <div style="margin-top:10px;">
 					  	<button type="button" id="btnAddress"  onclick="sample6_execDaumPostcode()"  class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
 					  	<button type="button" id="btnAddressClear" class="btn btn-outline-secondary"><i class="fa-solid fa-x"></i></button>
 					  </div>
-					  <div class="col-md-7">
+					  <div class="col-md-5">
 					  	<label class="address-label">주소</label>
 					  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.address1}"/>" >
 					  </div>
@@ -251,16 +251,16 @@
 					  	<label class="address-datail-label">참고항목</label>
 					  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.address3}"/>" >
 					  </div>
-					  <div class="col-md-4">
+					  <div class="col-md-3">
 					  	<label class="address-datail-label">위도</label>
 					  		<input type="text" class="form-control"  id="Lat" name="Lat" value="<c:out value="${item.Lat}"/>" >
 					  </div>
-					  <div class="col-md-4">
+					  <div class="col-md-3">
 					  	<label class="address-datail-label">경도</label>
 					  		<input type="text" class="form-control"  id="Lng" name="Lng" value="<c:out value="${item.Lng}"/>" >
 					  </div> 
 					  
-					<div class="form-check form-check-inline">
+					<%-- <div class="form-check form-check-inline">
 						<label class="genre-label">관심 장르 </label> <br>
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio"
@@ -311,7 +311,7 @@
 								<c:if test="${item.genre eq 32}">selected</c:if>> <label
 								class="form-check-label" for="inlineRadio4">건강/스포츠</label>
 						</div>
-					</div>
+					</div> --%>
 
 					<div style="width: 83%; margin: 20px 0 20px 0px;">
 						<button class="btn btn-warning" type="button" id="btnList"
