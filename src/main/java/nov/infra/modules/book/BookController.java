@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BookController {
 
 	 @Autowired 
-	 BookServiceImpl service; 
+	 BookServiceImpl service;
 	
 
 	@RequestMapping(value = "bestList")
-	public String bestList (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
+	public String bestlist (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
 		
 		Book item = service.selectOne(vo);
 		model.addAttribute("item", item);
@@ -29,6 +29,11 @@ public class BookController {
 		List<Book> list1 = service.selectlistReview(vo);
 		model.addAttribute("list1", list1);
 		
+//		if ("bestList".equals(url)) {
+//			return "infra/book/bestList";
+//		} else {
+//			return "infra/book/like1";
+//		}
 		return "infra/book/bestList";
 	}
 	
