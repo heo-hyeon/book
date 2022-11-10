@@ -229,35 +229,37 @@
 							</select>
 						</div>
 					</div>
-					<%--  <div class="col-md-3">
-			  	<label class="zipcode-label">우편번호</label>
-			  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
-		  	 </div>
-		  	 <div style="margin-top:20px;">
-			  	<button type="button" id="btnAddress"  onclick="sample6_execDaumPostcode()"  class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
-			  	<button type="button" id="btnAddressClear" class="btn btn-outline-secondary"><i class="fa-solid fa-x"></i></button>
-			  </div>
-			  <div class="col-md-7">
-			  	<label class="address-label">주소</label>
-			  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.address1}"/>" >
-			  </div>
-			  <div class="col-md-5">
-			  	<label class="address-label">상세주소</label>
-			  		<input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" value="<c:out value="${item.address2}"/>" >
-			  </div>
-			  <div class="col-md-4">
-			  	<label class="address-datail-label">참고항목</label>
-			  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.address3}"/>" >
-			  </div>
-			  <div class="col-md-4">
-			  	<label class="address-datail-label">위도</label>
-			  		<input type="text" class="form-control"  id="Lat" name="Lat" value="<c:out value="${item.Lat}"/>" >
-			  </div
-			  </div>
-			  <div class="col-md-4">
-			  	<label class="address-datail-label">경도</label>
-			  		<input type="text" class="form-control"  id="Lng" name="Lng" value="<c:out value="${item.Lng}"/>" >
-			  </div> --%>
+					
+					<!--주소 api -->
+				    <div class="col-md-3">
+					  	<label class="zipcode-label">우편번호</label>
+					  	<input type="text" class="form-control" id="sample6_postcode" name="zipCodeArray" value="<c:out value="${item.zipCode}"/>" >
+				  	 </div>
+				  	 <div style="margin-top:20px;">
+					  	<button type="button" id="btnAddress"  onclick="sample6_execDaumPostcode()"  class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+					  	<button type="button" id="btnAddressClear" class="btn btn-outline-secondary"><i class="fa-solid fa-x"></i></button>
+					  </div>
+					  <div class="col-md-7">
+					  	<label class="address-label">주소</label>
+					  	<input type="text" class="form-control" id="sample6_address" name="sample6_address" value="<c:out value="${item.address1}"/>" >
+					  </div>
+					  <div class="col-md-5">
+					  	<label class="address-label">상세주소</label>
+					  		<input type="text" class="form-control" id="sample6_detailAddress" name="sample6_detailAddress" value="<c:out value="${item.address2}"/>" >
+				  	  </div>
+					  <div class="col-md-4">
+					  	<label class="address-datail-label">참고항목</label>
+					  		<input type="text" class="form-control"  id="sample6_extraAddress" name="sample6_extraAddress" value="<c:out value="${item.address3}"/>" >
+					  </div>
+					  <div class="col-md-4">
+					  	<label class="address-datail-label">위도</label>
+					  		<input type="text" class="form-control"  id="Lat" name="Lat" value="<c:out value="${item.Lat}"/>" >
+					  </div>
+					  <div class="col-md-4">
+					  	<label class="address-datail-label">경도</label>
+					  		<input type="text" class="form-control"  id="Lng" name="Lng" value="<c:out value="${item.Lng}"/>" >
+					  </div> 
+					  
 					<div class="form-check form-check-inline">
 						<label class="genre-label">관심 장르 </label> <br>
 						<div class="form-check form-check-inline">
@@ -431,8 +433,8 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-	<!--주소 관련 -->
-	<!-- <script>
+	
+	 <script>
 		function sample6_execDaumPostcode() {
 			new daum.Postcode(
 					{
@@ -499,6 +501,7 @@
 						}).open();
 					}
 	</script>
+	
 	<script type="text/javascript">
 		$("#btnAddressClear").on("click", function() {
 			$("#sample6_postcode").val(null);
