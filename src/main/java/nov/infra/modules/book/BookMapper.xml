@@ -113,7 +113,17 @@
     	AND fv.seq = #{seq}
     </select>
  
-     
+    <select id="selectlistFv" resultMap="resultMapObj">
+    	SELECT
+			d.name
+			,tg.keyword
+		FROM tag tg
+			JOIN bookNtag bt ON bt.tagSeq = tg.seq
+			JOIN fvBook fv ON fv.seq = bt.bookSeq
+		where 1=1
+        and d.seq = #{seq}	
+    </select>
+    
     <select id="selectlistTag" resultMap="resultMapObj">
 	  	SELECT
 			d.name
