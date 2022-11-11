@@ -19,7 +19,7 @@ public class BookController {
 
 	@RequestMapping(value = "bestList")
 	public String bestlist (@ModelAttribute("vo") BookVo vo ,Model model) throws Exception {
-		
+	
 		Book item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		

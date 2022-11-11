@@ -6,23 +6,24 @@ public class Book {
 	
 	private String seq;
 	private String name;
-	private String sub_title;
+	private String subTitle;
 	private String title;
 	private String explanation;
 	private String publisher;
 	private String category;
-	private String writer_name;
+	private String writerName;
 	private String bookWriter;
-	private String writer_exp;
+	private String writerExp;
 	private String keyword;
-	private String fvName;
+	private String fvName; 
 	private String fvTitle;
-	private String fvSub_title;
+	private String fvSubTitle;
 	private String fvPublisher;
-	private String fvBookWriter;
-	private String fvExplanation;
 	private String fvCategory;
+	private String fvExplanation;
+	private String fvBookWriter;
 	private String fvKeyword;
+	private String fvseq;
 	private String bookSeq;
 	private String memberSeq;
 	private String memberID;
@@ -46,19 +47,6 @@ public class Book {
 	private String regDateTime;
 	private String regDateTimeSvr;
 	private MultipartFile[] uploadedImage;
-	
-	public String getWriter_name() {
-		return writer_name;
-	}
-	public String getBookWriter() {
-		return bookWriter;
-	}
-	public void setBookWriter(String bookWriter) {
-		this.bookWriter = bookWriter;
-	}
-	public void setWriter_name(String writer_name) {
-		this.writer_name = writer_name;
-	}
 	public String getSeq() {
 		return seq;
 	}
@@ -71,12 +59,11 @@ public class Book {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getSub_title() {
-		return sub_title;
+	public String getSubTitle() {
+		return subTitle;
 	}
-	public void setSub_title(String sub_title) {
-		this.sub_title = sub_title;
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
 	}
 	public String getTitle() {
 		return title;
@@ -102,11 +89,23 @@ public class Book {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getWriter_exp() {
-		return writer_exp;
+	public String getWriterName() {
+		return writerName;
 	}
-	public void setWriter_exp(String writer_exp) {
-		this.writer_exp = writer_exp;
+	public void setWriterName(String writerName) {
+		this.writerName = writerName;
+	}
+	public String getBookWriter() {
+		return bookWriter;
+	}
+	public void setBookWriter(String bookWriter) {
+		this.bookWriter = bookWriter;
+	}
+	public String getWriterExp() {
+		return writerExp;
+	}
+	public void setWriterExp(String writerExp) {
+		this.writerExp = writerExp;
 	}
 	public String getKeyword() {
 		return keyword;
@@ -114,17 +113,83 @@ public class Book {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-	public String getPath() {
-		return path;
+	public String getFvName() {
+		return fvName;
 	}
-	public void setPath(String path) {
-		this.path = path;
+	public void setFvName(String fvName) {
+		this.fvName = fvName;
 	}
-	public String getUuidName() {
-		return uuidName;
+	public String getFvTitle() {
+		return fvTitle;
 	}
-	public void setUuidName(String uuidName) {
-		this.uuidName = uuidName;
+	public void setFvTitle(String fvTitle) {
+		this.fvTitle = fvTitle;
+	}
+	public String getFvSubTitle() {
+		return fvSubTitle;
+	}
+	public void setFvSubTitle(String fvSubTitle) {
+		this.fvSubTitle = fvSubTitle;
+	}
+	public String getFvPublisher() {
+		return fvPublisher;
+	}
+	public void setFvPublisher(String fvPublisher) {
+		this.fvPublisher = fvPublisher;
+	}
+	public String getFvCategory() {
+		return fvCategory;
+	}
+	public void setFvCategory(String fvCategory) {
+		this.fvCategory = fvCategory;
+	}
+	public String getFvExplanation() {
+		return fvExplanation;
+	}
+	public void setFvExplanation(String fvExplanation) {
+		this.fvExplanation = fvExplanation;
+	}
+	public String getFvBookWriter() {
+		return fvBookWriter;
+	}
+	public void setFvBookWriter(String fvBookWriter) {
+		this.fvBookWriter = fvBookWriter;
+	}
+	public String getFvKeyword() {
+		return fvKeyword;
+	}
+	public void setFvKeyword(String fvKeyword) {
+		this.fvKeyword = fvKeyword;
+	}
+	public String getFvseq() {
+		return fvseq;
+	}
+	public void setFvseq(String fvseq) {
+		this.fvseq = fvseq;
+	}
+	public String getBookSeq() {
+		return bookSeq;
+	}
+	public void setBookSeq(String bookSeq) {
+		this.bookSeq = bookSeq;
+	}
+	public String getMemberSeq() {
+		return memberSeq;
+	}
+	public void setMemberSeq(String memberSeq) {
+		this.memberSeq = memberSeq;
+	}
+	public String getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
+	}
+	public String getReviewContents() {
+		return reviewContents;
+	}
+	public void setReviewContents(String reviewContents) {
+		this.reviewContents = reviewContents;
 	}
 	public String getType() {
 		return type;
@@ -144,11 +209,23 @@ public class Book {
 	public void setSort(Integer sort) {
 		this.sort = sort;
 	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
 	public String getOriginalName() {
 		return originalName;
 	}
 	public void setOriginalName(String originalName) {
 		this.originalName = originalName;
+	}
+	public String getUuidName() {
+		return uuidName;
+	}
+	public void setUuidName(String uuidName) {
+		this.uuidName = uuidName;
 	}
 	public String getExt() {
 		return ext;
@@ -210,77 +287,4 @@ public class Book {
 	public void setUploadedImage(MultipartFile[] uploadedImage) {
 		this.uploadedImage = uploadedImage;
 	}
-	public String getBookSeq() {
-		return bookSeq;
-	}
-	public void setBookSeq(String bookSeq) {
-		this.bookSeq = bookSeq;
-	}
-	public String getMemberSeq() {
-		return memberSeq;
-	}
-	public void setMemberSeq(String memberSeq) {
-		this.memberSeq = memberSeq;
-	}
-	public String getReviewContents() {
-		return reviewContents;
-	}
-	public void setReviewContents(String reviewContents) {
-		this.reviewContents = reviewContents;
-	}
-	public String getMemberID() {
-		return memberID;
-	}
-	public void setMemberID(String memberID) {
-		this.memberID = memberID;
-	}
-	public String getFvName() {
-		return fvName;
-	}
-	public void setFvName(String fvName) {
-		this.fvName = fvName;
-	}
-	public String getFvTitle() {
-		return fvTitle;
-	}
-	public void setFvTitle(String fvTitle) {
-		this.fvTitle = fvTitle;
-	}
-	public String getFvSub_title() {
-		return fvSub_title;
-	}
-	public void setFvSub_title(String fvSub_title) {
-		this.fvSub_title = fvSub_title;
-	}
-	public String getFvPublisher() {
-		return fvPublisher;
-	}
-	public void setFvPublisher(String fvPublisher) {
-		this.fvPublisher = fvPublisher;
-	}
-	public String getFvBookWriter() {
-		return fvBookWriter;
-	}
-	public void setFvBookWriter(String fvBookWriter) {
-		this.fvBookWriter = fvBookWriter;
-	}
-	public String getFvExplanation() {
-		return fvExplanation;
-	}
-	public void setFvExplanation(String fvExplanation) {
-		this.fvExplanation = fvExplanation;
-	}
-	public String getFvCategory() {
-		return fvCategory;
-	}
-	public void setFvCategory(String fvCategory) {
-		this.fvCategory = fvCategory;
-	}
-	public String getFvKeyword() {
-		return fvKeyword;
-	}
-	public void setFvKeyword(String fvKeyword) {
-		this.fvKeyword = fvKeyword;
-	}
-	
 }
