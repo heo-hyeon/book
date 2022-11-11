@@ -11,5 +11,7 @@ public interface BookService {
 	public List<Book> selectlistReview(BookVo vo) throws Exception;
 	
 	public List<Book> selectList(BookVo vo) throws Exception;
+	
+	public Book selecOneFv(BookVo vo) throws Exception;
 }
 
