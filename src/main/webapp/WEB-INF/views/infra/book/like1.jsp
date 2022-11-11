@@ -88,15 +88,15 @@
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
     	<form method="post" name="form">
-    	<input type="hidden" name="seq" id="seq" value="<c:out value="${item.seq}"/>"/>
+    	<input type="hidden" name="fvseq" id="fvseq" value="<c:out value="${item.fvseq}"/>"/>
 	      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 	        <div class="row g-5">
 	          <div class="col-lg-8" style="margin:auto; text-align:center;">
 	          
 	            <article class="blog-details">
-<!-- 	              <div class="post-images" style="text-align:center; margin-top:3px;">
+ 	              <div class="post-images" style="text-align:center; margin-top:3px;">
 	                <img src="../resources/images/pachinko.jpg" class="images-fluid" style="width:400px; height:500px;">
-	              </div> -->
+	              </div>
 	              
 	              <h2 class="title" style="text-align:center;"><c:out value="${item.fvName}"/></h2>
 	              <div class="meta-top">
@@ -171,19 +171,19 @@
 				<div class="comments">
 					<h4 class="comments-count">리뷰 </h4>
 					
-				<div id="comment-1" class="comment">
-						<div>
-						<h5>yejin</h5>
-						<time datetime="2022-03-30">30 Mar,2022</time>
-						<p>
-						재밌다고 표현하기에는 내용이 좀 무겁긴 한데. 
-						끝까지 지루한 부분 없이 잘 읽었어요.
-						처음에 두꺼워서 언제 읽나 했는데 잘 읽히는 책이고. 여운이 많이 남네요.
-						막상 끝내니 아쉬울정도에요. 추천!!
-						</p>
-						</div>
-				</div> 
-					
+					<div id="comment-1" class="comment">
+							<div>
+							<h5>yejin</h5>
+							<time datetime="2022-03-30">30 Mar,2022</time>
+							<p>
+							재밌다고 표현하기에는 내용이 좀 무겁긴 한데. 
+							끝까지 지루한 부분 없이 잘 읽었어요.
+							처음에 두꺼워서 언제 읽나 했는데 잘 읽히는 책이고. 여운이 많이 남네요.
+							막상 끝내니 아쉬울정도에요. 추천!!
+							</p>
+							</div>
+					</div> 
+				</div>
 				<%-- 	<div id="comment-1" class="comment">
              			  <ol>
              			  <c:forEach items="${list1}" var="list1" varStatus="status">
