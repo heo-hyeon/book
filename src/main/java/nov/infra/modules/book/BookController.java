@@ -35,7 +35,7 @@ public class BookController {
 	@RequestMapping(value = "like1")
 	public String like1 (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
 		
-		Book item = service.selectOne(vo);
+		Book item = service.selecOneFv(vo);
 		model.addAttribute("item", item);
 		
 		List<Book> list = service.selectlistTag(vo);
@@ -46,7 +46,7 @@ public class BookController {
 
 		return "infra/book/like1";
 	}
-
+	 
 	@RequestMapping(value = "likebook" )
 	public String likebook () {
 		return "infra/book/likebook";

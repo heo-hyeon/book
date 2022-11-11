@@ -15,6 +15,11 @@ public class Book {
 	private String bookWriter;
 	private String writer_exp;
 	private String keyword;
+	private String fnName;
+	private String fnTitle;
+	private String fnSub_title;
+	private String fnPublisher;
+	private String fnBookWriter;
 	
 	private String bookSeq;
 	private String memberSeq;
@@ -226,6 +231,36 @@ public class Book {
 	}
 	public void setMemberID(String memberID) {
 		this.memberID = memberID;
+	}
+	public String getFnName() {
+		return fnName;
+	}
+	public void setFnName(String fnName) {
+		this.fnName = fnName;
+	}
+	public String getFnTitle() {
+		return fnTitle;
+	}
+	public void setFnTitle(String fnTitle) {
+		this.fnTitle = fnTitle;
+	}
+	public String getFnSub_title() {
+		return fnSub_title;
+	}
+	public void setFnSub_title(String fnSub_title) {
+		this.fnSub_title = fnSub_title;
+	}
+	public String getFnPublisher() {
+		return fnPublisher;
+	}
+	public void setFnPublisher(String fnPublisher) {
+		this.fnPublisher = fnPublisher;
+	}
+	public String getFnBookWriter() {
+		return fnBookWriter;
+	}
+	public void setFnBookWriter(String fnBookWriter) {
+		this.fnBookWriter = fnBookWriter;
 	}
 	
 }
