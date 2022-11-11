@@ -50,7 +50,7 @@ public class BookDao {
 	}
 	
 	public List<Book> selectlistTagFv(BookVo vo) {
-		List<Book> list = sqlSession.selectList(namespace + "selectlistTagFv", vo);
+		List<Book> list = sqlSession.selectList(namespace + ".selectlistTagFv", vo);
 		return list;
 	}
 }

@@ -13,6 +13,11 @@
 		WHERE 1=1
 	</sql> 
 	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>
+	</select>
+	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			d.seq
@@ -20,8 +25,8 @@
 			,mup.path
 			,mup.uuidName
 		    ,d.name
-		    ,c.writer_name
-		    ,d.sub_title
+		    ,c.writerName
+		    ,d.subTitle 
 		FROM book d
 		join writer c on c.seq = d.bookWriter
 		join memberUploaded mup on mup.pseq = d.seq
@@ -31,25 +36,22 @@
 	
 	<select id="selectListFv" resultMap="resultMapObj">
 		SELECT
-			fv.seq
-			,fv.name
-			,c.writer_name
-			,fv.sub_title
+			fv.fvseq
+			,fv.fvName
+			,c.writerName
+			,fv.fvSubTitle
 		FROM fvBook fv
-		JOIN writer c ON c.seq = fv.bookWriter
+		JOIN writer c ON c.seq = fv.fvBookWriter
+		WHERE 1=1
+    	AND fv.fvseq = #{fvseq}
 	</select>
  	
-	<select id="selectOneCount" resultType="Integer">
-		SELECT COUNT(*)
-		<include refid="selectCommon"/>
-	</select>
-	
 <!-- 	<insert id="insert">
 		INSERT INTO book (
 			seq
 			,name
-			,writer_name
-			,sub_title
+			,writerName
+			,subTitle
 			,title
 			,explanation
 			,publisher
@@ -58,8 +60,8 @@
 		VALUES (
 			#{seq}
 			,#{name}
-			,#{writer_name}
-			,#{sub_title}
+			,#{writerName}
+			,#{subTitle}
 			,#{title}
 			,#{explanation}
 			,#{publisher}
@@ -75,8 +77,8 @@
     	SET 	
     		seq = #{seq}
     		,name = #{name}
-    		,writer_name = #{writer_name}
-			,sub_title = #{sub_title}
+    		,writerName = #{writerName}
+			,subTitle = #{subTitle}
 			,title = #{title}
 			,explanation = #{explanation}
 			,publisher = #{publisher}
@@ -93,10 +95,10 @@
 			,mup.path
 			,mup.uuidName
 		    ,d.name
-		    ,c.writer_name
+		    ,c.writerName
 		    ,d.title
-		    ,d.sub_title
-		    ,c.writer_exp
+		    ,d.subTitle
+		    ,c.writerExp
 		    ,d.publisher
 		    ,d.explanation
 		FROM book d
@@ -108,30 +110,30 @@
     
     <select id="selecOneFv" resultMap="resultMapObj">
     	SELECT
-    		fv.seq
+    		fv.fvseq
     		,fv.fvName
-    		,c.writer_name
+    		,c.writerName
     		,fv.fvTitle
-    		,fv.fvSub_title
-    		,c.writer_exp
+    		,fv.fvSubTitle
+    		,c.writerExp
     		,fv.fvPublisher
     		,fv.fvExplanation
     		,fv.fvBookWriter
     	FROM fvBook fv
     	JOIN writer c ON c.seq = fv.fvBookWriter
     	WHERE 1=1
-    	AND fv.seq = #{seq}
+    	AND fv.fvseq = #{fvseq}
     </select>
  
     <select id="selectlistTagFv" resultMap="resultMapObj">
     	SELECT
-			fv.name
+			fv.fvName
 			,ftg.fvkeyword
 		FROM fvTag ftg
 			JOIN fvBookNtag fbt ON fbt.fvTagSeq = ftg.seq
-			JOIN fvBook fv ON fv.seq = fbt.fvBookSeq
+			JOIN fvBook fv ON fv.fvseq = fbt.fvBookSeq
 		where 1=1
-        and fv.seq = #{seq}	
+        and fv.fvseq = #{fvseq}	
     </select>
     
     <select id="selectlistTag" resultMap="resultMapObj">
