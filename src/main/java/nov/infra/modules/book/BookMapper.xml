@@ -28,6 +28,16 @@
 		WHERE 1=1
 		and d.seq = #{seq}
 	</select>
+	
+	<select id="selectListFv" resultMap="resultMapObj">
+		SELECT
+			fv.seq
+			,fv.name
+			,c.writer_name
+			,fv.sub_title
+		FROM fvBook fv
+		JOIN writer c ON c.seq = fv.bookWriter
+	</select>
  	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
@@ -109,19 +119,19 @@
     		,fv.fvBookWriter
     	FROM fvBook fv
     	JOIN writer c ON c.seq = fv.fvBookWriter
-    	WHERE 1=1}
+    	WHERE 1=1
     	AND fv.seq = #{seq}
     </select>
  
-    <select id="selectlistFv" resultMap="resultMapObj">
+    <select id="selectlistTagFv" resultMap="resultMapObj">
     	SELECT
-			d.name
-			,tg.keyword
-		FROM tag tg
-			JOIN bookNtag bt ON bt.tagSeq = tg.seq
-			JOIN fvBook fv ON fv.seq = bt.bookSeq
+			fv.name
+			,ftg.fvkeyword
+		FROM fvTag ftg
+			JOIN fvBookNtag fbt ON fbt.fvTagSeq = ftg.seq
+			JOIN fvBook fv ON fv.seq = fbt.fvBookSeq
 		where 1=1
-        and d.seq = #{seq}	
+        and fv.seq = #{seq}	
     </select>
     
     <select id="selectlistTag" resultMap="resultMapObj">
