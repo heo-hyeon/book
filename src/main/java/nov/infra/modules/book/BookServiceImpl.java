@@ -42,4 +42,16 @@ public class BookServiceImpl implements BookService{
 		Book result = dao.selecOneFv(vo);
 		return result;
 	}
+	
+	@Override
+	public List<Book> selectListFv(BookVo vo) throws Exception {
+		List<Book> result = dao.selectListFv(vo);
+		return result;
+	}
+	
+	@Override
+	public List<Book> selectlistTagFv(BookVo vo) throws Exception {
+		List<Book> result = dao.selectlistTagFv(vo);
+		return result;
+	}
 }
