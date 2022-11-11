@@ -38,4 +38,9 @@ public class BookDao {
 		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
 		return list;
 	}
+
+	public Book selecOneFv(BookVo vo) {
+		Book result = sqlSession.selectOne(namespace + ".selecOneFv", vo);
+		return result;
+	}
 }

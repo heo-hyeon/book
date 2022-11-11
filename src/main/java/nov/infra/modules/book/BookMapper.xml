@@ -95,6 +95,23 @@
 		where 1=1
         and d.seq = #{seq}	
     </select>  
+    
+    <select id="selecOneFv" resultMap="resultMapObj">
+    	SELECT
+    		fv.seq
+    		,fv.fvName
+    		,c.writer_name
+    		,fv.fvTitle
+    		,fv.fvSub_title
+    		,c.writer_exp
+    		,fv.fvPublisher
+    		,fv.fvExplanation
+    		,fv.fvBookWriter
+    	FROM fvBook fv
+    	JOIN writer c ON c.seq = fv.fvBookWriter
+    	WHERE 1=1}
+    	AND fv.seq = #{seq}
+    </select>
  
      
     <select id="selectlistTag" resultMap="resultMapObj">
