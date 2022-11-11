@@ -94,14 +94,15 @@
 	          <div class="col-lg-8" style="margin:auto; text-align:center;">
 	          
 	            <article class="blog-details">
-	              <div class="post-images" style="text-align:center; margin-top:3px;">
+<!-- 	              <div class="post-images" style="text-align:center; margin-top:3px;">
 	                <img src="../resources/images/pachinko.jpg" class="images-fluid" style="width:400px; height:500px;">
-	              </div>
-	              <h2 class="title" style="text-align:center;"><c:out value="${item.name}"/></h2>
+	              </div> -->
+	              
+	              <h2 class="title" style="text-align:center;"><c:out value="${item.fvName}"/></h2>
 	              <div class="meta-top">
 		            <ul class="d-flex justify-content-center">
 	                  <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
-	                  <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
+	                  <li><i class="bi bi-pen"></i><c:out value="${item.fvPublisher}"/></li>
 	               	</ul>
 	              </div><!-- End meta top -->
 
@@ -125,14 +126,14 @@
               <div class="content">
                 <blockquote>
                   <p>
-                  	<c:out value="${item.title}"/>
+                  	<c:out value="${item.fvTitle}"/>
                  <!--  전 세계인의 마음을 뒤흔든 우리의 이야기
                   <br>문화와 세대를 가로지르는 새로운 고전의 탄생! -->
                   </p>
                 </blockquote>
 
                 <p>
-                	<c:out value="${item.explanation}"/>
+                	<c:out value="${item.fvExplanation}"/>
                 <!-- 《파친코》는 ‘집’에 대한 이야기’인 동시에, 평범한 사람들의 이야기이다. 
                 역사의 거대한 파도에 휩쓸리면서도 굴하지 않고 꿋꿋하게 삶을 헤쳐나가는 이민자 가족의 연대기를 담고 있다.
                 고향을 떠나 타국에 뿌리내리고 편견과 차별 속에서 영원한 이방인으로 살아야 하는 이민자의 삶을 작가는 특유의 통찰력과 공감 어린 시선으로 탐구해간다. 
@@ -144,8 +145,8 @@
               <div class="meta-bottom">
                 <i class="bi bi-tags"></i>
 	                <ul class="tags">
-		              <c:forEach items="${list}" var="list" varStatus="status">
-	                  <li><c:out value="${list.keyword }"/></li>
+		              <c:forEach items="${list2}" var="list" varStatus="status">
+	                  <li><c:out value="${list2.fvkeyword }"/></li>
 			          </c:forEach>
 	                </ul>
               </div>
@@ -170,7 +171,7 @@
 				<div class="comments">
 					<h4 class="comments-count">리뷰 </h4>
 					
-		<!-- 			<div id="comment-1" class="comment">
+				<div id="comment-1" class="comment">
 						<div>
 						<h5>yejin</h5>
 						<time datetime="2022-03-30">30 Mar,2022</time>
@@ -181,9 +182,9 @@
 						막상 끝내니 아쉬울정도에요. 추천!!
 						</p>
 						</div>
-					</div> -->
+				</div> 
 					
-					<div id="comment-1" class="comment">
+				<%-- 	<div id="comment-1" class="comment">
              			  <ol>
              			  <c:forEach items="${list1}" var="list1" varStatus="status">
 			                 	<li><c:out value="${list1.reviewContents}"/></li>
@@ -191,7 +192,7 @@
 					      </ol>
              	    </div><br>
 					
-				</div><!-- End comment #1 -->
+				</div><!-- End comment #1 --> --%>
 			 	
 				<!-- <div class="comments">
 					<div id="comment-2" class="comment">
