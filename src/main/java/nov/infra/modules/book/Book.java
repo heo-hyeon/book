@@ -15,12 +15,14 @@ public class Book {
 	private String bookWriter;
 	private String writer_exp;
 	private String keyword;
-	private String fnName;
-	private String fnTitle;
-	private String fnSub_title;
-	private String fnPublisher;
-	private String fnBookWriter;
-	
+	private String fvName;
+	private String fvTitle;
+	private String fvSub_title;
+	private String fvPublisher;
+	private String fvBookWriter;
+	private String fvExplanation;
+	private String fvCategory;
+	private String fvKeyword;
 	private String bookSeq;
 	private String memberSeq;
 	private String memberID;
@@ -232,35 +234,53 @@ public class Book {
 	public void setMemberID(String memberID) {
 		this.memberID = memberID;
 	}
-	public String getFnName() {
-		return fnName;
+	public String getFvName() {
+		return fvName;
 	}
-	public void setFnName(String fnName) {
-		this.fnName = fnName;
+	public void setFvName(String fvName) {
+		this.fvName = fvName;
 	}
-	public String getFnTitle() {
-		return fnTitle;
+	public String getFvTitle() {
+		return fvTitle;
 	}
-	public void setFnTitle(String fnTitle) {
-		this.fnTitle = fnTitle;
+	public void setFvTitle(String fvTitle) {
+		this.fvTitle = fvTitle;
 	}
-	public String getFnSub_title() {
-		return fnSub_title;
+	public String getFvSub_title() {
+		return fvSub_title;
 	}
-	public void setFnSub_title(String fnSub_title) {
-		this.fnSub_title = fnSub_title;
+	public void setFvSub_title(String fvSub_title) {
+		this.fvSub_title = fvSub_title;
 	}
-	public String getFnPublisher() {
-		return fnPublisher;
+	public String getFvPublisher() {
+		return fvPublisher;
 	}
-	public void setFnPublisher(String fnPublisher) {
-		this.fnPublisher = fnPublisher;
+	public void setFvPublisher(String fvPublisher) {
+		this.fvPublisher = fvPublisher;
 	}
-	public String getFnBookWriter() {
-		return fnBookWriter;
+	public String getFvBookWriter() {
+		return fvBookWriter;
 	}
-	public void setFnBookWriter(String fnBookWriter) {
-		this.fnBookWriter = fnBookWriter;
+	public void setFvBookWriter(String fvBookWriter) {
+		this.fvBookWriter = fvBookWriter;
+	}
+	public String getFvExplanation() {
+		return fvExplanation;
+	}
+	public void setFvExplanation(String fvExplanation) {
+		this.fvExplanation = fvExplanation;
+	}
+	public String getFvCategory() {
+		return fvCategory;
+	}
+	public void setFvCategory(String fvCategory) {
+		this.fvCategory = fvCategory;
+	}
+	public String getFvKeyword() {
+		return fvKeyword;
+	}
+	public void setFvKeyword(String fvKeyword) {
+		this.fvKeyword = fvKeyword;
 	}
 	
 }

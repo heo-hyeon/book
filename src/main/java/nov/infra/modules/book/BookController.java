@@ -38,12 +38,9 @@ public class BookController {
 		Book item = service.selecOneFv(vo);
 		model.addAttribute("item", item);
 		
-		List<Book> list = service.selectlistTag(vo);
-		model.addAttribute("list", list);
+		List<Book> list2 = service.selectlistTagFv(vo);
+		model.addAttribute("list2", list2);
 		
-		List<Book> list1 = service.selectlistReview(vo);
-		model.addAttribute("list1", list1);
-
 		return "infra/book/like1";
 	}
 	 
