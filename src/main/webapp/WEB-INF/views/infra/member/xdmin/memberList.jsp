@@ -405,7 +405,7 @@
 					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 				}
 			});
-		} 
+		}   
 	</script>
 </body>
 </html>
