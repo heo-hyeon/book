@@ -40,6 +40,7 @@
 			,fv.fvName
 			,c.writerName
 			,fv.fvSubTitle
+			,fv.fvPublisher
 		FROM fvBook fv
 		JOIN writer c ON c.seq = fv.fvBookWriter
 		WHERE 1=1
