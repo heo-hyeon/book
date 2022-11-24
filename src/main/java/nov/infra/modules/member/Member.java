@@ -8,8 +8,6 @@ public class Member {
 		private String memberID;
 		private String pwd;
 		private String pwdCheck;
-		private Integer job;
-		private Integer career;
 		private String memberName;
 		private String memberName_en;
 		private String dob;
@@ -17,7 +15,6 @@ public class Member {
 		private String phone;
 		private String email;
 		private Integer email_code;
-		private Integer hobby;
 		private Integer region;
 		private Integer certifiNY;
 		private Integer genre;
@@ -74,18 +71,6 @@ public class Member {
 		public void setPwdCheck(String pwdCheck) {
 			this.pwdCheck = pwdCheck;
 		}
-		public Integer getJob() {
-			return job;
-		}
-		public void setJob(Integer job) {
-			this.job = job;
-		}
-		public Integer getCareer() {
-			return career;
-		}
-		public void setCareer(Integer career) {
-			this.career = career;
-		}
 		public String getMemberName() {
 			return memberName;
 		}
@@ -127,12 +112,6 @@ public class Member {
 		}
 		public void setEmail_code(Integer email_code) {
 			this.email_code = email_code;
-		}
-		public Integer getHobby() {
-			return hobby;
-		}
-		public void setHobby(Integer hobby) {
-			this.hobby = hobby;
 		}
 		public Integer getRegion() {
 			return region;
