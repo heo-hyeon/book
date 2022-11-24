@@ -14,8 +14,6 @@
 				a.seq
 				,a.memberID
 				,a.pwd
-				,a.job
-				,a.career
 				,a.memberName
 				,a.memberName_en
 				<!-- ,a.dob -->
@@ -23,7 +21,6 @@
 				,a.phone
 				,a.email
 				,a.email_code
-				,a.hobby
 				,a.region
 				,a.certifiNY 
 				,a.genre
@@ -40,8 +37,6 @@
 		INSERT INTO member (
 			memberID
 			,pwd
-			,job
-			,career
 			,memberName
 			,memberName_en
 			<!-- ,dob -->
@@ -49,7 +44,6 @@
 			,phone
 			,email
 			,email_code
-			,hobby
 			,region
 			,certifiNY
 			,genre
@@ -58,8 +52,6 @@
 		) VALUES (
 			#{memberID}
 			,#{pwd}
-			,#{job}
-			,#{career}
 			,#{memberName}
 			,#{memberName_en}
 			<!-- ,#{dob} -->
@@ -68,7 +60,6 @@
 			,#{email}
 			,#{email_code}
 			<!-- ,CONCAT(#{email},'@',(SELECT d.name FROM CC d WHERE d.seq = #{email_code})) -->
-			,#{hobby}
 			,#{region}
 			,#{certifiNY}
 			,#{genre}
@@ -85,8 +76,6 @@
 		SET
 			memberID = #{memberID}
 			,pwd = #{pwd}
-			,job = #{job}
-			,career = #{career}
 			,memberName= #{memberName}
 			,memberName_en = #{memberName_en}
 			<!-- ,dob = #{dob} -->
@@ -94,7 +83,6 @@
 			,phone = #{phone}
 			,email = #{email}
 			,email_code = #{email_code}
-			,hobby = #{hobby}
 			,region = #{region}
 			,certifiNY = #{certifiNY}
 			,genre = #{genre}
@@ -109,8 +97,6 @@
 			a.seq
 			,a.memberID
 			,a.pwd
-			,a.job
-			,a.career
 			,a.memberName
 			,a.memberName_en
 		<!-- 	,a.dob -->
@@ -118,7 +104,6 @@
 			,a.phone
 			,a.email
 			,a.email_code
-			,a.hobby
 			,a.region
 			,a.certifiNY
 			,a.genre
