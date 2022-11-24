@@ -43,7 +43,7 @@
 		FROM fvBook fv
 		JOIN writer c ON c.seq = fv.fvBookWriter
 		WHERE 1=1
-    	AND fv.fvseq = #{fvseq}
+    	AND fv.fvseq = 1
 	</select>
  	
 <!-- 	<insert id="insert">
