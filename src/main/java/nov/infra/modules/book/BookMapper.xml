@@ -44,7 +44,7 @@
 		FROM fvBook fv
 		JOIN writer c ON c.seq = fv.fvBookWriter
 		WHERE 1=1
-    	AND fv.fvseq = #{fvseq}
+    	AND fv.fvseq = #{seq}
 	</select>
  	
 <!-- 	<insert id="insert">
@@ -123,7 +123,7 @@
     	FROM fvBook fv
     	JOIN writer c ON c.seq = fv.fvBookWriter
     	WHERE 1=1
-    	AND fv.fvseq = #{fvseq}
+    	AND fv.fvseq = #{seq}
     </select>
  
     <select id="selectlistTagFv" resultMap="resultMapObj">
@@ -134,7 +134,7 @@
 			JOIN fvBookNtag fbt ON fbt.fvTagSeq = ftg.seq
 			JOIN fvBook fv ON fv.fvseq = fbt.fvBookSeq
 		where 1=1
-        and fv.fvseq = #{fvseq}	
+        and fv.fvseq = #{seq}	
     </select>
     
     <select id="selectlistTag" resultMap="resultMapObj">

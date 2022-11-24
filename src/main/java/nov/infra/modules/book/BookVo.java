@@ -5,9 +5,6 @@ public class BookVo {
 	private String name;
 	private String seq;
 	
-	private String fvseq;
-	private String fvName;
-	
 	public String getName() {
 		return name;
 	}
@@ -19,18 +16,6 @@ public class BookVo {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
-	}
-	public String getFvseq() {
-		return fvseq;
-	}
-	public void setFvseq(String fvseq) {
-		this.fvseq = fvseq;
-	}
-	public String getFvName() {
-		return fvName;
-	}
-	public void setFvName(String fvName) {
-		this.fvName = fvName;
 	}
 	
 }
