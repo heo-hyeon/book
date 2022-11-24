@@ -145,8 +145,8 @@
               <div class="meta-bottom">
                 <i class="bi bi-tags"></i>
 	                <ul class="tags">
-		              <c:forEach items="${list2}" var="list" varStatus="status">
-	                  <li><c:out value="${list2.fvkeyword }"/></li>
+		              <c:forEach items="${list}" var="list" varStatus="status">
+	                  <li><c:out value="${list.fvkeyword }"/></li>
 			          </c:forEach>
 	                </ul>
               </div>

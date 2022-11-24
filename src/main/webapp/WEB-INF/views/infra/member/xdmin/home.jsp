@@ -133,7 +133,7 @@
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body" >
 			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
-			                            <c:out value="${list.name }" />
+		                            <c:out value="${list.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
 			                        <c:out value="${list.writer_name}" />
