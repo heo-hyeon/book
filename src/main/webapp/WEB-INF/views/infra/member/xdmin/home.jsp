@@ -167,13 +167,13 @@
 			                            <c:out value="${list.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
-			                        <c:out value="${list.writer_name}" />
+			                        <c:out value="${list.writerName}" />
 			                    </h6>
 			                    <p style="color:red;">
 			                        <c:out value="${list.category}" />
 			                    </p>
 			                    <p>
-			                        <c:out value="${list.sub_title }" />
+			                        <c:out value="${list.subTitle }" />
 			                    </p>
 			                </div>
 			            </div>

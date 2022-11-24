@@ -158,9 +158,9 @@
              </div>
              
               <div>
-                <h4>저자 '<c:out value="${item.writer_name}"/>'</h4> <br>
+                <h4>저자 '<c:out value="${item.writerName}"/>'</h4> <br>
                 <p>
-                	<c:out value="${item.writer_exp}"/>
+                	<c:out value="${item.writerExp}"/>
                <!--  2004년 단편소설 〈행복의 축Axis of Happiness〉, 〈조국Motherland〉 등을 발표해 작가의 입지를 굳히기 시작했다.
                 2008년 첫 장편소설 《백만장자를 위한 공짜 음식Free Food for Millionaires》을 발표, 한국을 비롯하여 11개국에 번역 출판되었으며 전미 편집자들이 뽑은 올해의 책, 미국 픽션 부문 ‘비치상’, 신인작가를 위한 ‘내러티브상’ 등을 수상했다. -->
                 </p>
