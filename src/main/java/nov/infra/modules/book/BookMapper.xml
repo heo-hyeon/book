@@ -34,7 +34,7 @@
 		and d.seq = #{seq}
 	</select>
 	
-	<select id="selectListFv" resultMap="resultMapObj">
+<!-- 	<select id="selectListFv" resultMap="resultMapObj">
 		SELECT
 			fv.fvseq
 			,fv.fvName
@@ -45,7 +45,7 @@
 		JOIN writer c ON c.seq = fv.fvBookWriter
 		WHERE 1=1
     	AND fv.fvseq = #{seq}
-	</select>
+	</select> -->
  	
 <!-- 	<insert id="insert">
 		INSERT INTO book (
@@ -109,7 +109,7 @@
         and d.seq = #{seq}	
     </select>  
     
-    <select id="selecOneFv" resultMap="resultMapObj">
+ <!--    <select id="selecOneFv" resultMap="resultMapObj">
     	SELECT
     		fv.fvseq
     		,fv.fvName
@@ -124,8 +124,8 @@
     	JOIN writer c ON c.seq = fv.fvBookWriter
     	WHERE 1=1
     	AND fv.fvseq = #{seq}
-    </select>
- 
+    </select> -->
+ <!-- 
     <select id="selectlistTagFv" resultMap="resultMapObj">
     	SELECT
 			fv.fvName
@@ -136,7 +136,7 @@
 		where 1=1
         and fv.fvseq = #{seq}	
     </select>
-    
+     -->
     <select id="selectlistTag" resultMap="resultMapObj">
 	  	SELECT
 			d.name

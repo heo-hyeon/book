@@ -32,9 +32,7 @@ public class BookController {
 		return "infra/book/bestList";
 	}
 	
-	@RequestMapping(value = "like1")
-	public String like1 () {
-		return "infra/book/like1";
+//	@RequestMapping(value = "like1")
 //	public String like1 (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
 //		
 //		Book item = service.selecOneFv(vo);
@@ -44,18 +42,17 @@ public class BookController {
 //		model.addAttribute("list", list);
 //		
 //		return "infra/book/like1";
-	}
+//	}
 	 
-	@RequestMapping(value = "likebook" )
-	public String likebook () {
-		return "infra/book/likebook";
+//	@RequestMapping(value = "likebook" )
+//	
 //	public String likebook (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
 //		
 //		List<Book> list = service.selectListFv(vo);
 //		model.addAttribute("list",list);
 //		
 //		return "infra/book/likebook";
-	}
+//	}
 	
 	@RequestMapping(value = "recommend1")
 	public String recommend1 () {
