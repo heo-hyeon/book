@@ -47,12 +47,14 @@ public class BookController {
 	}
 	 
 	@RequestMapping(value = "likebook" )
-	public String likebook (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
-		
-		List<Book> list = service.selectListFv(vo);
-		model.addAttribute("list",list);
-		
+	public String likebook () {
 		return "infra/book/likebook";
+//	public String likebook (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
+//		
+//		List<Book> list = service.selectListFv(vo);
+//		model.addAttribute("list",list);
+//		
+//		return "infra/book/likebook";
 	}
 	
 	@RequestMapping(value = "recommend1")
@@ -64,5 +66,4 @@ public class BookController {
 	public String recommendList () {
 		return "infra/book/recommendList";
 	}
-	
 }
