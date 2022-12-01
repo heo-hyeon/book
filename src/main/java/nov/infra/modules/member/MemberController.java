@@ -44,11 +44,6 @@ public class MemberController extends BaseController {
 
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-
-		System.out.println("vo.getShValue():" + vo.getShValue());
-		System.out.println("vo.getShOption():" + vo.getShOption());
-		System.out.println("vo.getShcertifiNY():" + vo.getShcertifiNY());
-
 		/* vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY()); */
 		setSearchAndPaging(vo);
 
@@ -225,6 +220,4 @@ public class MemberController extends BaseController {
 	 */
 	
 	// public 자료형(data type) 함수 이름 ( 파라미터 ) 
-	
-	
 }
