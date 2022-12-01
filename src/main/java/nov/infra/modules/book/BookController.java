@@ -33,15 +33,17 @@ public class BookController {
 	}
 	
 	@RequestMapping(value = "like1")
-	public String like1 (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
-		
-		Book item = service.selecOneFv(vo);
-		model.addAttribute("item", item);
-		
-		List<Book> list = service.selectlistTagFv(vo);
-		model.addAttribute("list", list);
-		
+	public String like1 () {
 		return "infra/book/like1";
+//	public String like1 (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
+//		
+//		Book item = service.selecOneFv(vo);
+//		model.addAttribute("item", item);
+//		
+//		List<Book> list = service.selectlistTagFv(vo);
+//		model.addAttribute("list", list);
+//		
+//		return "infra/book/like1";
 	}
 	 
 	@RequestMapping(value = "likebook" )
