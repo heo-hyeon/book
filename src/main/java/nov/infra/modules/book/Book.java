@@ -47,6 +47,7 @@ public class Book {
 	private String regDateTime;
 	private String regDateTimeSvr;
 	private MultipartFile[] uploadedImage;
+	
 	public String getSeq() {
 		return seq;
 	}
