@@ -103,7 +103,7 @@
               <h2 class="title" style="text-align:center;"><c:out value="${item.name}"/> </h2>
               <div class="meta-top">
                 <ul class="d-flex justify-content-center">
-                  <li><i class="bi bi-person"></i><c:out value="${item.writer_name}"/></li>
+                  <li><i class="bi bi-person"></i><c:out value="${item.writerName}"/></li>
                   <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
                 </ul>
               </div><!-- End meta top -->
@@ -152,9 +152,9 @@
               	<img src="../resources/images/ja.jpg">
               </div>
 	              <div>
-	                <h4>저자 '<c:out value="${item.writer_name}"/>' </h4>
+	                <h4>저자 '<c:out value="${item.writerName}"/>' </h4>
 	                <p>
-	                	<c:out value="${item.writer_exp}" />
+	                	<c:out value="${item.writerExp}" />
 	                </p>
 	              </div>
             </div><!-- End post author -->
