@@ -260,6 +260,8 @@
 				}
 			});
 		}
+		
+		var form = $("form[name=form]");
 	</script>
 
 </body>
