@@ -160,8 +160,9 @@
  		WHERE 1=1
    		and d.seq = #{seq} 
    </select>
-   
-<!--    <select id="selectlistMember" resultMap="resultMapObj">
+   	
+   <!-- 리뷰 관련 
+   <select id="selectlistMember" resultMap="resultMapObj">
    		SELECT
    			d.name
    			,mb.memberID
