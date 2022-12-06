@@ -26,8 +26,8 @@ public class BookController {
 		List<Book> list = service.selectlistTag(vo);
 		model.addAttribute("list", list);
 		
-//		List<Book> list1 = service.selectlistReview(vo);
-//		model.addAttribute("list1", list1);
+		List<Book> list1 = service.selectlistReview(vo);
+		model.addAttribute("list1", list1);
 		
 		return "infra/book/bestList";
 	}
