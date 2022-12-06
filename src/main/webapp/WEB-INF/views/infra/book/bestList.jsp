@@ -240,6 +240,8 @@
 	</script> -->
   
   	<script>
+		var form = $("form[name=form]");
+		
 		function logout(){
 			$.ajax({
 				async: true 
@@ -261,7 +263,6 @@
 			});
 		}
 		
-		var form = $("form[name=form]");
 	</script>
 
 </body>
