@@ -34,18 +34,6 @@
 		and d.seq = #{seq}
 	</select>
 	
-	<select id="selectListFv" resultMap="resultMapObj">
-		SELECT
-			fv.fvseq
-			,fv.fvName
-			,c.writerName
-			,fv.fvSubTitle
-			,fv.fvPublisher
-		FROM fvBook fv
-		JOIN writer c ON c.seq = fv.fvBookWriter
-		WHERE 1=1
-    	AND fv.fvseq = #{seq}
-	</select>
  	
 
      <select id="selectOne" resultMap="resultMapObj">
@@ -68,35 +56,6 @@
         and d.seq = #{seq}	
     </select>  
     
-    <select id="selecOneFv" resultMap="resultMapObj">
-    	SELECT
-    		fv.fvseq
-    		,fv.fvName
-    		,c.writerName
-    		,fv.fvTitle
-    		,fv.fvSubTitle
-    		,c.writerExp
-    		,fv.fvPublisher
-    		,fv.fvExplanation
-    		,fv.fvBookWriter
-    	FROM fvBook fv
-    	JOIN writer c ON c.seq = fv.fvBookWriter
-    	WHERE 1=1
-    	AND fv.fvseq = #{seq}
-    </select> 
-  
-    <select id="selectlistTagFv" resultMap="resultMapObj">
-    	SELECT
-			fv.fvName
-			,ftg.fvkeyword
-		FROM fvTag ftg
-			JOIN fvBookNtag fbt ON fbt.fvTagSeq = ftg.seq
-			JOIN fvBook fv ON fv.fvseq = fbt.fvBookSeq
-		where 1=1
-        and fv.fvseq = #{seq}	
-    </select>
-     
-     
     <select id="selectlistTag" resultMap="resultMapObj">
 	  	SELECT
 			d.name
@@ -120,6 +79,47 @@
    		and d.seq = #{seq} 
    </select>
    	
+    <select id="selecOneFv" resultMap="resultMapObj">
+    	SELECT
+    		fv.fvseq
+    		,fv.fvName
+    		,c.writerName
+    		,fv.fvTitle
+    		,fv.fvSubTitle
+    		,c.writerExp
+    		,fv.fvPublisher
+    		,fv.fvExplanation
+    		,fv.fvBookWriter
+    	FROM fvBook fv
+    	JOIN writer c ON c.seq = fv.fvBookWriter
+    	WHERE 1=1
+    	AND fv.fvseq = #{seq}
+    </select> 
+    
+	<select id="selectListFv" resultMap="resultMapObj">
+		SELECT
+			fv.fvseq
+			,fv.fvName
+			,c.writerName
+			,fv.fvSubTitle
+			,fv.fvPublisher
+		FROM fvBook fv
+		JOIN writer c ON c.seq = fv.fvBookWriter
+		WHERE 1=1
+    	AND fv.fvseq = #{seq}
+	</select>
+    
+    <select id="selectlistTagFv" resultMap="resultMapObj">
+    	SELECT
+			fv.fvName
+			,ftg.fvkeyword
+		FROM fvTag ftg
+			JOIN fvBookNtag fbt ON fbt.fvTagSeq = ftg.seq
+			JOIN fvBook fv ON fv.fvseq = fbt.fvBookSeq
+		where 1=1
+        and fv.fvseq = #{seq}	
+    </select>
+    
    <!-- 리뷰 관련 
    <select id="selectlistMember" resultMap="resultMapObj">
    		SELECT
@@ -131,6 +131,8 @@
    		WHERE 1=1
    		and d.seq = #{seq}
    </select>  -->
+   
+   
 	<!-- INSERT , UPDATE
 	<insert id="insert">
 		INSERT INTO book (
