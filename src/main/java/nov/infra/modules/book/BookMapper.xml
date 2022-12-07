@@ -47,48 +47,6 @@
     	AND fv.fvseq = #{seq}
 	</select>
  	
-	<!-- INSERT , UPDATE
-	<insert id="insert">
-		INSERT INTO book (
-			seq
-			,name
-			,writerName
-			,subTitle
-			,title
-			,explanation
-			,publisher
-			,category
-		)
-		VALUES (
-			#{seq}
-			,#{name}
-			,#{writerName}
-			,#{subTitle}
-			,#{title}
-			,#{explanation}
-			,#{publisher}
-			,#{category}
-		)
-			<selectKey resultType="String" keyProperty="seq" order="AFTER">
-				SELECT last_insert_id()
-			</selectKey>
-	</insert>
-    
-    <update id="update">
-    	UPDATE book
-    	SET 	
-    		seq = #{seq}
-    		,name = #{name}
-    		,writerName = #{writerName}
-			,subTitle = #{subTitle}
-			,title = #{title}
-			,explanation = #{explanation}
-			,publisher = #{publisher}
-			,category = #{category}
-		WHERE 1=1
-			AND seq = #{seq}
-    </update>
-     -->
 
      <select id="selectOne" resultMap="resultMapObj">
 		SELECT
@@ -173,4 +131,47 @@
    		WHERE 1=1
    		and d.seq = #{seq}
    </select>  -->
+	<!-- INSERT , UPDATE
+	<insert id="insert">
+		INSERT INTO book (
+			seq
+			,name
+			,writerName
+			,subTitle
+			,title
+			,explanation
+			,publisher
+			,category
+		)
+		VALUES (
+			#{seq}
+			,#{name}
+			,#{writerName}
+			,#{subTitle}
+			,#{title}
+			,#{explanation}
+			,#{publisher}
+			,#{category}
+		)
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+    
+    <update id="update">
+    	UPDATE book
+    	SET 	
+    		seq = #{seq}
+    		,name = #{name}
+    		,writerName = #{writerName}
+			,subTitle = #{subTitle}
+			,title = #{title}
+			,explanation = #{explanation}
+			,publisher = #{publisher}
+			,category = #{category}
+		WHERE 1=1
+			AND seq = #{seq}
+    </update>
+     -->
+     
 </mapper>		
