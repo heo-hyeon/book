@@ -20,14 +20,14 @@ public class BookServiceImpl implements BookService{
 	}
 	
 	@Override
-	public List <Book> selectlistTag(BookVo vo) throws Exception {
-		List<Book> result = dao.selectlistTag(vo);
+	public List<Book> selectList(BookVo vo) throws Exception {
+		List<Book> result = dao.selectList(vo);
 		return result;
 	}
 	
 	@Override
-	public List<Book> selectList(BookVo vo) throws Exception {
-		List<Book> result = dao.selectList(vo);
+	public List <Book> selectlistTag(BookVo vo) throws Exception {
+		List<Book> result = dao.selectlistTag(vo);
 		return result;
 	}
 	
