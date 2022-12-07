@@ -47,7 +47,8 @@
     	AND fv.fvseq = #{seq}
 	</select>
  	
-<!-- 	<insert id="insert">
+	<!-- INSERT , UPDATE
+	<insert id="insert">
 		INSERT INTO book (
 			seq
 			,name
