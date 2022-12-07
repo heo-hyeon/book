@@ -12,7 +12,7 @@ public interface BookService {
 	
 	public List<Book> selectlistReview(BookVo vo) throws Exception;
 	
-	
+	//좋아요 누른 책
 	public Book selecOneFv(BookVo vo) throws Exception;
 	
 	public List<Book> selectListFv(BookVo vo) throws Exception;
