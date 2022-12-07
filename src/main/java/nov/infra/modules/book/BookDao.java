@@ -24,6 +24,11 @@ public class BookDao {
 		return result;
 	}
 	
+	public List<Book> selectList(BookVo vo) { 
+		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
+		return list;
+	}
+	
 	public List<Book> selectlistTag(BookVo vo) { 
 		List<Book> list = sqlSession.selectList(namespace + ".selectlistTag", vo);
 		return list;
@@ -34,11 +39,7 @@ public class BookDao {
 		return list;
 	}
 	
-	public List<Book> selectList(BookVo vo) { 
-		List<Book> list = sqlSession.selectList(namespace + ".selectList", vo);
-		return list;
-	}
-
+	//좋아요 누른 
 	public Book selecOneFv(BookVo vo) {
 		Book result = sqlSession.selectOne(namespace + ".selecOneFv", vo);
 		return result;
