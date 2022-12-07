@@ -34,8 +34,6 @@
 		and d.seq = #{seq}
 	</select>
 	
- 	
-
      <select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			d.seq
