@@ -106,7 +106,7 @@
                   <li><i class="bi bi-person"></i><c:out value="${item.writerName}"/></li>
                   <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
                 </ul>
-              </div><!-- End meta top -->
+              </div>
 <!-- 
        		  <div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
