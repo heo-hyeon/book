@@ -107,8 +107,8 @@
                   <li><i class="bi bi-pen"></i><c:out value="${item.publisher}"/></li>
                 </ul>
               </div>
-<!-- 
-       		  <div class="post-author d-flex align-items-center">
+              
+			  <!-- <div class="post-author d-flex align-items-center">
 	              <div class="align-items-center" style="margin:auto;">
 						<div class="row gy-4">
 							<div class="col-lg-7 form-group">
@@ -157,7 +157,7 @@
 	                	<c:out value="${item.writerExp}" />
 	                </p>
 	              </div>
-            </div><!-- End post author -->
+            </div>
 
 			<div class="post-author align-items-center">
             	<div class="comments">
