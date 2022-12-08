@@ -30,6 +30,7 @@ public class MemberController extends BaseController {
 	
 	@Autowired 
 	BookServiceImpl serviceBook;
+	
 
 	@RequestMapping(value = "home")
 	public String home(MemberVo vo, BookVo voBook, HttpSession httpSession, Model model) throws Exception {
@@ -86,7 +87,7 @@ public class MemberController extends BaseController {
 //	public String memberUpdt(MemberVo vo, Member dto,Model model, RedirectAttributes redirectAttributes) throws Exception {
 //		
 //		
-////		dto.setSeq(seq);
+//		dto.setSeq(seq);
 //		model.addAttribute("item", result);
 //		service.update(dto);
 //		vo.setSeq(dto.getSeq());
