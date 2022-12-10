@@ -132,7 +132,7 @@
 			            
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body" >
-			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
+			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
 			                            <c:out value="${listBook.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
@@ -163,7 +163,7 @@
 			            </div>
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body">
-			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
+			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
 			                            <c:out value="${listBook.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
