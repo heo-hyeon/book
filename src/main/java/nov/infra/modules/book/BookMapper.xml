@@ -77,7 +77,8 @@
    		and d.seq = #{seq} 
    </select>
    	
-    <!-- <select id="selecOneFv" resultMap="resultMapObj">
+    <!--  좋아요 누른 책
+    <select id="selecOneFv" resultMap="resultMapObj">
     	SELECT
     		fv.fvseq
     		,fv.fvName
