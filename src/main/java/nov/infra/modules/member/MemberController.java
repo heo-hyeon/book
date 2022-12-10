@@ -37,6 +37,7 @@ public class MemberController extends BaseController {
 
 		List<Book> list = serviceBook.selectList(voBook);
 		model.addAttribute("listBook", list);
+		
 		return "infra/member/xdmin/home";
 	}
 
