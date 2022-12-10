@@ -133,16 +133,16 @@
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body" >
 			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
-			                            <c:out value="${list.name }" />
+			                            <c:out value="${listBook.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
-			                        <c:out value="${list.writer_name}" />
+			                        <c:out value="${listBook.writer_name}" />
 			                    </h6>
 			                    <p style="color:red;">
-			                        <c:out value="${list.category}" />
+			                        <c:out value="${listBook.category}" />
 			                    </p>
 			                    <p>
-			                        <c:out value="${list.sub_title }" />
+			                        <c:out value="${listBook.sub_title }" />
 			                    </p>
 			                </div>
 			            </div>
@@ -164,16 +164,16 @@
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body">
 			                    <h3 class="card-title"><a href="javascript:goBook('${list.seq }')">
-			                            <c:out value="${list.name }" />
+			                            <c:out value="${listBook.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
-			                        <c:out value="${list.writer_name}" />
+			                        <c:out value="${listBook.writer_name}" />
 			                    </h6>
 			                    <p style="color:red;">
-			                        <c:out value="${list.category}" />
+			                        <c:out value="${listBook.category}" />
 			                    </p>
 			                    <p>
-			                        <c:out value="${list.sub_title }" />
+			                        <c:out value="${listBook.sub_title }" />
 			                    </p>
 			                </div>
 			            </div>
