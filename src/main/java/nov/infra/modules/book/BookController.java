@@ -32,7 +32,6 @@ public class BookController {
 		return "infra/book/bestList";
 	}
 	
-	 
 //	@RequestMapping(value = "likebook" )
 //	
 //	public String likebook (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
