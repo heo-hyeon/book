@@ -39,19 +39,19 @@ public class BookDao {
 		return list;
 	}
 	
-	//좋아요 누른 
-	public Book selecOneFv(BookVo vo) {
-		Book result = sqlSession.selectOne(namespace + ".selecOneFv", vo);
-		return result;
-	}
-	
-	public List<Book> selectListFv(BookVo vo) {
-		List<Book> list = sqlSession.selectList(namespace + ".selectListFv", vo);
-		return list;
-	}
-	
-	public List<Book> selectlistTagFv(BookVo vo) {
-		List<Book> list = sqlSession.selectList(namespace + ".selectlistTagFv", vo);
-		return list;
-	}
+//
+//	public Book selecOneFv(BookVo vo) {
+//		Book result = sqlSession.selectOne(namespace + ".selecOneFv", vo);
+//		return result;
+//	}
+//	
+//	public List<Book> selectListFv(BookVo vo) {
+//		List<Book> list = sqlSession.selectList(namespace + ".selectListFv", vo);
+//		return list;
+//	}
+//	
+//	public List<Book> selectlistTagFv(BookVo vo) {
+//		List<Book> list = sqlSession.selectList(namespace + ".selectlistTagFv", vo);
+//		return list;
+//	}
 }
