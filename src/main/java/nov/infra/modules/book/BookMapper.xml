@@ -77,7 +77,7 @@
    		and d.seq = #{seq} 
    </select>
    	
-    <select id="selecOneFv" resultMap="resultMapObj">
+    <!-- <select id="selecOneFv" resultMap="resultMapObj">
     	SELECT
     		fv.fvseq
     		,fv.fvName
@@ -117,7 +117,8 @@
 		where 1=1
         and fv.fvseq = #{seq}	
     </select>
-    
+     -->
+     
    <!-- 리뷰 관련 
    <select id="selectlistMember" resultMap="resultMapObj">
    		SELECT
