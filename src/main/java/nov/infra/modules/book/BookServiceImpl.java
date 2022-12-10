@@ -37,22 +37,21 @@ public class BookServiceImpl implements BookService{
 		return result;
 	}
 	
-	//좋아요 누른 책 
-	@Override
-	public Book selecOneFv(BookVo vo) throws Exception {
-		Book result = dao.selecOneFv(vo);
-		return result;
-	}
-
-	@Override
-	public List<Book> selectListFv(BookVo vo) throws Exception {
-		List<Book> result = dao.selectListFv(vo);
-		return result;
-	}
-	
-	@Override
-	public List<Book> selectlistTagFv(BookVo vo) throws Exception {
-		List<Book> result = dao.selectlistTagFv(vo);
-		return result;
-	}
+//	@Override
+//	public Book selecOneFv(BookVo vo) throws Exception {
+//		Book result = dao.selecOneFv(vo);
+//		return result;
+//	}
+//
+//	@Override
+//	public List<Book> selectListFv(BookVo vo) throws Exception {
+//		List<Book> result = dao.selectListFv(vo);
+//		return result;
+//	}
+//	
+//	@Override
+//	public List<Book> selectlistTagFv(BookVo vo) throws Exception {
+//		List<Book> result = dao.selectlistTagFv(vo);
+//		return result;
+//	}
 }
