@@ -146,7 +146,6 @@ public class MemberController extends BaseController {
 		/* service.update(dto); */
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		
 		return "infra/member/xdmin/memberMod";
 	}
 
