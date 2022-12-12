@@ -28,6 +28,7 @@ public class Book {
 	private String memberSeq;
 	private String memberID;
 	private String reviewContents;
+	private String homeSeq;
 	
 	
 	//이미지 업로드
@@ -288,4 +289,11 @@ public class Book {
 	public void setUploadedImage(MultipartFile[] uploadedImage) {
 		this.uploadedImage = uploadedImage;
 	}
+	public String getHomeSeq() {
+		return homeSeq;
+	}
+	public void setHomeSeq(String homeSeq) {
+		this.homeSeq = homeSeq;
+	}
+	
 }
