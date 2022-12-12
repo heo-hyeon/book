@@ -12,9 +12,9 @@ public interface BookService {
 	
 	public List<Book> selectlistReview(BookVo vo) throws Exception;
 	
-//	public Book selecOneFv(BookVo vo) throws Exception;
-//	
-//	public List<Book> selectListFv(BookVo vo) throws Exception;
+	public Book selecOneFv(BookVo vo) throws Exception;
+	
+	public List<Book> selectListFv(BookVo vo) throws Exception;
 //	
 //	public List<Book> selectlistTagFv(BookVo vo) throws Exception;
 }
