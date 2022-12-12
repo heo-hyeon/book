@@ -108,7 +108,7 @@
   
    <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
-     <input type="hidden" name="seq" id="bookSeq" value="<c:out value="${item.seq}"/>"/>
+     <input type="hidden" name="homeSeq" id="homeSeq" value="<c:out value="${item.seq}"/>"/>
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-header">
@@ -199,13 +199,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	
 	<script>
-	goBook = function(bookSeq) {
+	goBook = function(homeSeq) {
 		
 		var form = $("#mainForm");
 		
-		var seq = $("#bookSeq");
+		var seq = $("#homeSeq");
 		
-		seq.val(bookSeq);		
+		seq.val(homeSeq);		
 		
 		form.attr("action","/book/bestList").submit();
 	}; 
