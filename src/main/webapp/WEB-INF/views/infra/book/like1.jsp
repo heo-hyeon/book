@@ -87,8 +87,8 @@
     
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
-    	<form method="post" name="form">
-    	<input type="hidden" name="fvseq" id="fvseq" value="<c:out value="${item.fvseq}"/>"/>
+    	<form method="post" name="fvform">
+    	<input type="hidden" name="fvseq" id="fvseq" value="<c:out value="${item.seq}"/>"/>
 	      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 	        <div class="row g-5">
 	          <div class="col-lg-8" style="margin:auto; text-align:center;">
@@ -261,6 +261,8 @@
   <script src="../resources/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
     <script>
+    
+    	var form = $("form[name=fvform]");
 		function logout(){
 			$.ajax({
 				async: true 
