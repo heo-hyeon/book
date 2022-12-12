@@ -30,7 +30,6 @@ public class Book {
 	private String reviewContents;
 	private String homeSeq;
 	
-	
 	//이미지 업로드
 	private String type;
 	private String defaultNy;
