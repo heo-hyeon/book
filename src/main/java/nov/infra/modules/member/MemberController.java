@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import nov.infra.common.base.BaseController;
-import nov.infra.modules.book.Book;
-import nov.infra.modules.book.BookServiceImpl;
 import nov.infra.modules.book.BookVo;
 
 @Controller
@@ -28,15 +26,15 @@ public class MemberController extends BaseController {
 	@Autowired
 	MemberServiceImpl service;
 	
-	@Autowired 
-	BookServiceImpl serviceBook;
-	
+//	@Autowired 
+//	BookServiceImpl serviceBook;
+//	
 
 	@RequestMapping(value = "home")
 	public String home(MemberVo vo, BookVo voBook, HttpSession httpSession, Model model) throws Exception {
 
-		List<Book> list = serviceBook.selectList(voBook);
-		model.addAttribute("listBook", list);
+//		List<Book> list = serviceBook.selectList(voBook);
+//		model.addAttribute("listBook", list);
 		
 		return "infra/member/xdmin/home";
 	}
