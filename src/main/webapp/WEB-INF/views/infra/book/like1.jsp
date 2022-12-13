@@ -260,8 +260,7 @@
   <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
-    <script>
-    
+  <script>
     	var form = $("form[name=fvform]");
 		function logout(){
 			$.ajax({
@@ -283,7 +282,7 @@
 				}
 			});
 		}
-	</script>
+   </script>
 
 </body>
 </html>
