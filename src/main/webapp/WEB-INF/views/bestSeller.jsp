@@ -76,19 +76,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
   
-    <div class="info d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down" class="aos-init aos-animate">Welcome <br><span>WITH BOOK</span></h2>
-             <p data-aos="fade-up" class="aos-init aos-animate">베스트셀러를 바로 확인해보세요!</p>
-              <!-- home이랑 bestSeller controller	 합치기... -->
-           	 <button class="btn btn-outline-warning" type="button" style="width:100px; height:35px; margin:20px; color:white;"><a href="/member/login">로그인</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
       <div class="carousel-item" style="background-image: url(../resources/images/book.jpg)"></div>
@@ -114,11 +101,6 @@
     <form id="mainForm" method = "POST">
     <input type ="hidden" id="bookSeq" name = "seq" >
       <div class="container aos-init" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Best seller</h2>
-          <p>이번달 베스트셀러를 만나보세요.</p>
-        </div>
 
         <div class="row gy-4">
 
