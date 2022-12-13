@@ -99,11 +99,43 @@
 
     <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
-    <input type ="hidden" id="bookSeq" name = "seq" >
+    <input type="hidden" name="homeSeq" id="homeSeq" value="<c:out value="${item.seq}"/>"/>
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="row gy-4">
+         <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
 
+			<c:forEach items="${listBook}" var="list" varStatus="status" begin="0" end="1">
+			    <div class="card-item" style="margin-top:20px;">
+			        <div class="row">
+			        
+			            <div class="col">
+			                <div class="card-bg">
+			                      <img src="<c:out value="${item.path}"/><c:out value="${item.uuidName}"/>" style="width:400px; height:500px;" class="images-fluid">
+			                </div>
+			            </div>
+			            
+			            <div class="col d-flex align-items-center">
+			                <div class="card-body" >
+			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
+			                            <c:out value="${listBook.name }" />
+			                        </a></h3>
+			                    <h6 style="color:silver">
+			                        <c:out value="${listBook.writer_name}" />
+			                    </h6>
+			                    <p style="color:red;">
+			                        <c:out value="${listBook.category}" />
+			                    </p>
+			                    <p>
+			                        <c:out value="${listBook.sub_title }" />
+			                    </p>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</c:forEach>
+          </div>
+          
  <%--          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
             <div class="card-item">
               <div class="row">
@@ -198,13 +230,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	<script>
 	
-	goBook = function(bookSeq) {
+	goBook = function(homeSeq) {
 		
 		var form = $("#mainForm");
 		
-		var seq = $("#bookSeq");
+		var seq = $("#homeSeq");
 		
-		seq.val(bookSeq);		
+		seq.val(homeSeq);		
 		
 		form.attr("action","/book/bestList").submit();
 	}; 
