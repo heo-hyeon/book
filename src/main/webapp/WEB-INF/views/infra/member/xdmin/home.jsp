@@ -105,7 +105,7 @@
     </div>
 
   </section>
-  
+  <%-- 
    <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
      <input type="hidden" name="homeSeq" id="homeSeq" value="<c:out value="${item.seq}"/>"/>
@@ -185,7 +185,7 @@
         </div>
       </div>
       </form>
-    </section><!-- End BestSeller Section -->
+    </section><!-- End BestSeller Section --> --%>
 
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>

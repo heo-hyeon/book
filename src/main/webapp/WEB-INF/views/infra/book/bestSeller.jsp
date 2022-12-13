@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Best Sellers</title>
+  <title>Best Seller</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -234,21 +234,24 @@
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
-	<script>
-	var form = $("form[name=mainForm]");
 	
-	goBook = function(homeSeq) {
-		
+	<script>
 		var form = $("form[name=mainForm]");
 		
-		var seq = $("#homeSeq");
-		
-		seq.val(homeSeq);		
-		
-		form.attr("action","/book/bestList").submit();
-	}; 
+		goBook = function(homeSeq) {
+			
+			var form = $("form[name=mainForm]");
+			
+			var seq = $("#homeSeq");
+			
+			seq.val(homeSeq);		
+			
+			form.attr("action","/book/bestList").submit();
+		};
+	</script>
 	
-	$("#btnLogout").on("click", function(){
+	 <script>
+		function logout(){
 			$.ajax({
 				async: true 
 				,cache: false
@@ -267,7 +270,7 @@
 					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 				}
 			});
-		});
+		}
 	</script>
   <script src="../resources/js/main.js"></script>
 </body>
