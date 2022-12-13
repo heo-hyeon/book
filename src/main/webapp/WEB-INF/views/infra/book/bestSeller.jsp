@@ -236,21 +236,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	
 	<script>
-		var form = $("form[name=mainForm]");
-		
 		goBook = function(homeSeq) {
-			
-			var form = $("form[name=mainForm]");
-			
+			var form = $("#mainForm");
 			var seq = $("#homeSeq");
-			
 			seq.val(homeSeq);		
-			
 			form.attr("action","/book/bestList").submit();
 		};
-	</script>
-	
-	 <script>
+		
 		function logout(){
 			$.ajax({
 				async: true 
@@ -272,6 +264,7 @@
 			});
 		}
 	</script>
+	
   <script src="../resources/js/main.js"></script>
 </body>
 </html>
