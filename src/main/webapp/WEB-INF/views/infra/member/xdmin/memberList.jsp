@@ -99,20 +99,6 @@
 					<h2 style="margin-left: 90px;">회원 리스트</h2>
 					<div class="d-grid gap-2 justify-content-md-end" style="width: 90%; margin: auto; border: 0.7px solid silver; padding: 10px;">
 						<div class="form form-inline">
-<%-- 							<select class="job-select" id="shjob" name="shjob" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value="" <c:if test="${empty vo.shjob eq null}">selected</c:if>>지원분야</option>
-								<option value="1" <c:if test="${vo.shjob eq 1}">selected</c:if>>기획/MD</option>
-								<option value="2" <c:if test="${vo.shjob eq 2}">selected</c:if>>IT개발</option>
-								<option value="3" <c:if test="${vo.shjob eq 3}">selected</c:if>>기술/전략</option>
-								<option value="4" <c:if test="${vo.shjob eq 4}">selected</c:if>>마케팅/홍보</option>
-								<option value="5" <c:if test="${vo.shjob eq 5}">selected</c:if>>회계/총무</option>
-								<option value="6" <c:if test="${vo.shjob eq 6}">selected</c:if>>영업/판매</option>
-							</select> 
-							<select class="career-select" id="shcareer" name="shcareer" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
-								<option value=""  <c:if test="${empty vo.shcareer eq null}">selected</c:if>>경력사항</option>
-								<option value="8" <c:if test="${vo.shcareer eq 8}">selected</c:if>>경력</option>
-								<option value="7" <c:if test="${vo.shcareer eq 7}">selected</c:if>>신입</option>
-							</select>  --%>
 							<select class="search-select" id="shOption" name="shOption" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value="">검색구분</option>
 								<option value="1">코드</option>
@@ -150,17 +136,12 @@
 							<th>선택</th>
 							<th>번호</th>
 							<th>아이디</th>
-							<!-- <th>패스워드</th> 
-							<th>지원분야</th>
-							<th>경력사항</th> -->
 							<th>이름</th>
 							<th>영문 이름</th>
 							<th>생년월일</th>
 							<th>통신사</th>
 							<th width=120px;>핸드폰 번호</th>
 							<th width=180px;>이메일</th>
-							<th>이메일 코드</th>
-							<th>취미</th>
 							<th>지역</th>
 							<th>자격증 유무</th>
 							<th>관심장르</th>
@@ -178,7 +159,7 @@
 						<c:choose>
 							<c:when test="${fn:length(list) eq 0}">
 								<tr>
-									<td class="text-center" colspan="18">There is no data!</td>
+									<td class="text-center" colspan="16">There is no data!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -191,23 +172,6 @@
 										<td>
 											<c:out value="${list.memberID }" />
 										</td>
-									<%-- 	<td>
-											<c:out value="${list.pwd }" />
-										</td> 
-										<td>
-											<c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
-												<c:if test="${list.job eq listJob.seq}">
-													<c:out value="${listJob.codename_ko }" />
-												</c:if>
-											</c:forEach>
-										</td>	
-										<td>
-											<c:choose>
-												<c:when test="${list.career eq 7}">신입</c:when>
-												<c:otherwise>경력</c:otherwise>
-											</c:choose>
-										</td>	
-										</td>  --%>       
 										<td>
 											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
@@ -239,13 +203,6 @@
 											</c:forEach>
 										</td>
 										<td>
-											<c:forEach items="${listCodeHobby}" var="listHobby" varStatus="statusHobby">
-												<c:if test="${list.hobby eq listHobby.seq}">
-													<c:out value="${listHobby.codename_ko }" />
-												</c:if>
-											</c:forEach>
-										</td>
-										<td>
 											<c:forEach items="${listCodeRegion}" var="listRegion" varStatus="statusRegion">
 												<c:if test="${list.region eq listRegion.seq}">
 													<c:out value="${listRegion.codename_ko }" />
@@ -258,13 +215,13 @@
 												<c:otherwise>무</c:otherwise>
 											</c:choose>
 										</td>
-										<td> 
+									<%-- 	<td> 
 											<c:forEach items="${listCodeGenre}" var="listGenreCode" varStatus="statusGenreCode">
 												<c:if test="${list.genre eq listGenre.seq}">
 													<c:out value="${listGenre.codename_ko }" />
 												</c:if>
 											</c:forEach>
-										</td>
+										</td> --%>
 										<td>
 											<c:choose>
 												<c:when test="${list.useNY eq 1}">Y</c:when>

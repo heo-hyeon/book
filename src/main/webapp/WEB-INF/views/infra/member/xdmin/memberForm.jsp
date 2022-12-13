@@ -167,17 +167,17 @@
 							<option value=""
 								<c:if test="${empty item.region}">selected</c:if>>지역</option>
 							<option value="13"
-								<c:if test="${item.region eq 13}">selected</c:if>>서울</option>
+								<c:if test="${item.region eq 1}">selected</c:if>>서울</option>
 							<option value="14"
-								<c:if test="${item.region eq 14}">selected</c:if>>경기</option>
+								<c:if test="${item.region eq 2}">selected</c:if>>경기</option>
 							<option value="15"
-								<c:if test="${item.region eq 15}">selected</c:if>>대전</option>
+								<c:if test="${item.region eq 3}">selected</c:if>>대전</option>
 							<option value="16"
-								<c:if test="${item.region eq 16}">selected</c:if>>대구</option>
+								<c:if test="${item.region eq 4}">selected</c:if>>대구</option>
 							<option value="17"
-								<c:if test="${item.region eq 17}">selected</c:if>>부산</option>
+								<c:if test="${item.region eq 5}">selected</c:if>>부산</option>
 							<option value="18"
-								<c:if test="${item.region eq 18}">selected</c:if>>광주</option>
+								<c:if test="${item.region eq 6}">selected</c:if>>광주</option>
 						</select>
 					</div>
 					<div class="col-md-5">
@@ -223,11 +223,11 @@
 							<select class="form-control" name="telecom" id="telecom"
 								value="<c:out value="${item.telecom}"/>">
 								<option value="22"
-									<c:if test="${item.telecom eq 22}">selected</c:if>>SKT</option>
+									<c:if test="${item.telecom eq 7}">selected</c:if>>SKT</option>
 								<option value="23"
-									<c:if test="${item.telecom eq 23}">selected</c:if>>KT</option>
+									<c:if test="${item.telecom eq 8}">selected</c:if>>KT</option>
 								<option value="24"
-									<c:if test="${item.telecom eq 24}">selected</c:if>>LGT</option>
+									<c:if test="${item.telecom eq 9}">selected</c:if>>LGT</option>
 							</select>
 						</div>
 						<div class="col-4">
@@ -246,11 +246,11 @@
 							<select class="form-control" id="email_code" name="email_code" value="<c:out value="${item.email_code}"/>">
 								<option value="">도메인</option>
 								<option value="19"
-									<c:if test="${item.email_code eq 19}">selected</c:if>>naver.com</option>
+									<c:if test="${item.email_code eq 10}">selected</c:if>>naver.com</option>
 								<option value="20"
-									<c:if test="${item.email_code eq 20}">selected</c:if>>hanmail.net</option>
+									<c:if test="${item.email_code eq 11}">selected</c:if>>hanmail.net</option>
 								<option value="21"
-									<c:if test="${item.email_code eq 21}">selected</c:if>>gmail.com</option>
+									<c:if test="${item.email_code eq 12}">selected</c:if>>gmail.com</option>
 							</select>
 						</div>
 					</div>
@@ -549,7 +549,7 @@
 			$("#Lng").val(null);
 		});
 	</script>
- -->
+ 
 	<script>
 		$("#memberID")
 				.on(

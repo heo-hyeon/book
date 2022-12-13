@@ -12,11 +12,9 @@
 		FROM member a
 		WHERE 1=1
 	
-		<if test="shcareer != null and !shcareer.equals('')">AND a.career = #{shcareer}</if>
 		<if test="shcertifiNY != null and !shcertifiNY.equals('')">AND a.certifiNY = #{shcertifiNY}</if>
 		<if test="shuseNY != null and !shuseNY.equals('')"> AND a.useNY = #{shuseNY}</if>
 		<if test="shdelNY != null and !shdelNY.equals('')"> AND a.delNY = #{shdelNY}</if>
-		<if test="shjob != null and !shjob.equals('')"> AND a.job = #{shjob}</if>
 		<if test="shValue != null"></if>
 		
 		<choose>

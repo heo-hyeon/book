@@ -114,7 +114,6 @@
 
   </section><!-- End Hero Section -->
   
-   <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
   <script src="../resources/vendor/glightbox/js/glightbox.min.js"></script>
@@ -124,7 +123,6 @@
   <script src="../resources/vendor/php-email-form/validate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
   
-  <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
 <!--  	<script>
 	function openZipSearch() {
@@ -154,7 +152,7 @@
 				,success: (res) => {
 					alert(res.rt)
 					if(res.rt == "success") {
-						location.href = "/member/home"
+						location.href = "/"
 					} else {
 						alert("회원없음");
 					}
