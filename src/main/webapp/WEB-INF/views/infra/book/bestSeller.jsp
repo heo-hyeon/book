@@ -136,23 +136,35 @@
 			</c:forEach>
           </div>
           
- <%--          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <div class="row">
-                <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"></div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-center">
-                  <div class="card-body">
-                    <h3 class="card-title"><a href="javascript:goBook(1)"><c:out value="${item.name}"/></a></h3>
-                    <h6 style="color:silver"><c:out value="${item.writer_name}"/></h6>
-                    <p style="color:red;"><c:out value="${item.keyword}"/></p>
-                    <p>"<c:out value="${item.sub_title}"/>"</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> --%>
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
+			<c:forEach items="${listBook}" var="list" varStatus="status" begin="2" end="3">
+			    <div class="card-item" style="margin-top:20px;">
+			        <div class="row">
+			            <div class="col">
+			                <div class="card-bg">
+			                    <img src="<c:out value="${item.path}"/><c:out value="${item.uuidName}"/>" style="width:400px; height:500px;" class="images-fluid">
+			                </div>
+			            </div>
+			            <div class="col d-flex align-items-center">
+			                <div class="card-body">
+			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
+			                            <c:out value="${listBook.name }" />
+			                        </a></h3>
+			                    <h6 style="color:silver">
+			                        <c:out value="${listBook.writer_name}" />
+			                    </h6>
+			                    <p style="color:red;">
+			                        <c:out value="${listBook.category}" />
+			                    </p>
+			                    <p>
+			                        <c:out value="${listBook.sub_title }" />
+			                    </p>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</c:forEach>
+          </div>
 
           <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="200">
             <div class="card-item">
@@ -212,13 +224,8 @@
 
       </div>
       </form>
-    </section><!-- End BestSeller Section -->
+    </section>
 
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-  <!-- Vendor JS Files -->
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
   <script src="../resources/vendor/glightbox/js/glightbox.min.js"></script>
@@ -226,7 +233,6 @@
   <script src="../resources/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="../resources/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="../resources/vendor/php-email-form/validate.js"></script>
-	
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	<script>
 	
