@@ -57,8 +57,8 @@ public class BookController {
 	@RequestMapping(value = "bestSeller")
 	public String bestSeller (@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
 		
-		List<Book> list = service.selectList(vo);
-		model.addAttribute("listBook", list);
+		List<Book> list3 = service.selectList(vo);
+		model.addAttribute("list", list3);
 		
 		return "infra/book/bestSeller";
 	}

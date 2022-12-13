@@ -98,14 +98,14 @@
   </section>
 
     <section id="constructions" class="constructions">
-    <form id="mainForm" method = "POST">
+    <form id="mainForm" method = "post">
     <input type="hidden" name="homeSeq" id="homeSeq" value="<c:out value="${item.seq}"/>"/>
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="row gy-4">
          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
 
-			<c:forEach items="${listBook}" var="list" varStatus="status" begin="0" end="1">
+			<c:forEach items="${list3}" var="list" varStatus="status" begin="0" end="1">
 			    <div class="card-item" style="margin-top:20px;">
 			        <div class="row">
 			        
@@ -117,17 +117,17 @@
 			            
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body" >
-			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
-			                            <c:out value="${listBook.name }" />
+			                    <h3 class="card-title"><a href="javascript:goBook('${list3.seq }')">
+			                            <c:out value="${list3.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
-			                        <c:out value="${listBook.writer_name}" />
+			                        <c:out value="${list3.writer_name}" />
 			                    </h6>
 			                    <p style="color:red;">
-			                        <c:out value="${listBook.category}" />
+			                        <c:out value="${list3.category}" />
 			                    </p>
 			                    <p>
-			                        <c:out value="${listBook.sub_title }" />
+			                        <c:out value="${list3.sub_title }" />
 			                    </p>
 			                </div>
 			            </div>
@@ -137,7 +137,7 @@
           </div>
           
           <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-			<c:forEach items="${listBook}" var="list" varStatus="status" begin="2" end="3">
+			<c:forEach items="${llist3}" var="list" varStatus="status" begin="2" end="3">
 			    <div class="card-item" style="margin-top:20px;">
 			        <div class="row">
 			            <div class="col">
@@ -147,17 +147,17 @@
 			            </div>
 			            <div class="col d-flex align-items-center">
 			                <div class="card-body">
-			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
-			                            <c:out value="${listBook.name }" />
+			                    <h3 class="card-title"><a href="javascript:goBook('${list3.seq }')">
+			                            <c:out value="${list3.name }" />
 			                        </a></h3>
 			                    <h6 style="color:silver">
-			                        <c:out value="${listBook.writer_name}" />
+			                        <c:out value="${list3.writer_name}" />
 			                    </h6>
 			                    <p style="color:red;">
-			                        <c:out value="${listBook.category}" />
+			                        <c:out value="${list3.category}" />
 			                    </p>
 			                    <p>
-			                        <c:out value="${listBook.sub_title }" />
+			                        <c:out value="${list3.sub_title }" />
 			                    </p>
 			                </div>
 			            </div>
@@ -235,10 +235,11 @@
   <script src="../resources/vendor/php-email-form/validate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 	<script>
+	var form = $("form[name=mainForm]");
 	
 	goBook = function(homeSeq) {
 		
-		var form = $("#mainForm");
+		var form = $("form[name=mainForm]");
 		
 		var seq = $("#homeSeq");
 		
@@ -268,7 +269,6 @@
 			});
 		});
 	</script>
-  <!-- Template Main JS File -->
   <script src="../resources/js/main.js"></script>
 </body>
 </html>
