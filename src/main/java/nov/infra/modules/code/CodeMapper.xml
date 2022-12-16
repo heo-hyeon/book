@@ -40,8 +40,6 @@
 		    ,b.codename_en
 		    ,b.useNY
 		    ,b.delNY
-		    ,b.reg_date
-		    ,b.mod_date
 		<include refid="selectCommon" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
@@ -58,7 +56,6 @@
 			,codename_en
 			,useNY
 			,delNY
-			,reg_date
 		)
 		VALUES (
 			#{ccg_seq}
@@ -66,7 +63,6 @@
 			,#{codename_en}
 			,1
 			,0
-			,now()
 		)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()
@@ -82,7 +78,6 @@
 			,codename_en = #{codename_en}
 			,useNY = #{useNY}
 			,delNY = #{delNY}
-			,mod_date = now()
 		WHERE 1=1
 			AND seq = #{seq}
 	</update>
@@ -117,8 +112,6 @@
 			,b.codename_en
 			,b.useNY
 		    ,b.delNY
-		    ,b.reg_date
-		    ,b.mod_date
 		FROM
 			CC b
 		WHERE 1=1
