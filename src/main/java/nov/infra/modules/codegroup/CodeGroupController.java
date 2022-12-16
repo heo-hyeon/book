@@ -53,7 +53,6 @@ public class CodeGroupController extends BaseController{
 	public void setSearchAndPaging(CodeGroupVo vo) throws Exception {
 		
 		vo.setShuseNY(vo.getShuseNY() == null ? 1 : vo.getShuseNY());
-//		
 //		datepicker
 //		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
 //		vo.setShDateStart(vo.getShDateStart() == null ? UtilDateTime.calculateDayString(UtilDateTime.nowLocalDateTime(), Constants.DATE_INTERVAL) : vo.getShDateStart());  	
