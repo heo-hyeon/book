@@ -30,7 +30,7 @@ public class CodeGroupController extends BaseController{
 //			model.addAttribute("list", list);
 //		}
 //	
-//	return "infra/codegroup/xdmin/codeGroupList";
+//		return "infra/codegroup/xdmin/codeGroupList";
 // } 
 	
 	@RequestMapping(value = "codeGroupList")
