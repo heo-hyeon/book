@@ -363,32 +363,6 @@
 					</form>
 				</div>
 			</div>
-<!-- 
-			<div id="hero-carousel" class="carousel slide"
-				data-bs-ride="carousel" data-bs-interval="5000">
-				<div class="carousel-item"
-					style="background-image: url(../resources/images/book.jpg)"></div>
-				<div class="carousel-item"
-					style="background-image: url(../resources/images/library.jpg)"></div>
-				<div class="carousel-item"
-					style="background-image: url(../resources/images/book2.jpg)"></div>
-				<div class="carousel-item"
-					style="background-image: url(../resources/images/book3.jpg)"></div>
-				<div class="carousel-item active"
-					style="background-image: url(../resources/images/book4.jpg)"></div>
-				<div class="carousel-item"
-					style="background-image: url(../resources/images/glasses.jpg)"></div>
-
-				<a class="carousel-control-prev" href="#hero-carousel" role="button"
-					data-bs-slide="prev"> <span
-					class="carousel-control-prev-icon bi bi-chevron-left"
-					aria-hidden="true"></span>
-				</a> <a class="carousel-control-next" href="#hero-carousel"
-					role="button" data-bs-slide="next"> <span
-					class="carousel-control-next-icon bi bi-chevron-right"
-					aria-hidden="true"></span>
-				</a>
-			</div> -->
 
 			<div class="modal fade" id="exampleModal2" data-bs-keyboard="false"
 				tabindex="-1" aria-labelledby="exampleModalLabel2"
