@@ -107,11 +107,6 @@
 							</select>
 								<input type="text" id="shValue" name="shValue" placeholder="이름" style="height: 30px; width: 180px; margin-right: 7px; margin-top: 10px;" value="<c:out value="${vo.shValue}"/>">
 								<br>
-							<select class="certification-select" id="shcertifiNY" name="shcertifiNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px; margin-top:7px;">
-								<option value="" <c:if test="${empty vo.shcertifiNY eq null}">selected</c:if>>자격증 유무</option>
-								<option value="1" <c:if test="${vo.shcertifiNY eq 1}">selected</c:if>>유</option>
-								<option value="0" <c:if test="${vo.shcertifiNY eq 0}">selected</c:if>>무</option>
-							</select>
 							<select class="use-select" id="shuseNY" name="shuseNY" aria-label="Default select example" style="height: 30px; width: 180px; margin-right: 7px;">
 								<option value=""  <c:if test="${empty vo.shuseNY eq null}">selected</c:if>>사용여부</option>
 								<option value="1" <c:if test="${vo.shuseNY eq 1}">selected</c:if>>YES</option>
@@ -143,8 +138,6 @@
 							<th width=120px;>핸드폰 번호</th>
 							<th width=180px;>이메일</th>
 							<th>지역</th>
-							<th>자격증 유무</th>
-							<th>관심장르</th>
 							<th>사용여부</th>
 							<th>삭제여부</th>
 						</tr>
@@ -159,7 +152,7 @@
 						<c:choose>
 							<c:when test="${fn:length(list) eq 0}">
 								<tr>
-									<td class="text-center" colspan="16">There is no data!</td>
+									<td class="text-center" colspan="14">There is no data!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
@@ -196,26 +189,19 @@
 											<c:out value="${list.email}" />
 										</td>
 										<td>
-											<c:forEach items="${listCodeEmailCode}" var="listEmailCode" varStatus="statusEmailCode">
-												<c:if test="${list.email_code eq listEmailCode.seq}">
-													<c:out value="${listEmailCode.codename_ko }" />
-												</c:if>
-											</c:forEach>
-										</td>
-										<td>
 											<c:forEach items="${listCodeRegion}" var="listRegion" varStatus="statusRegion">
 												<c:if test="${list.region eq listRegion.seq}">
 													<c:out value="${listRegion.codename_ko }" />
 												</c:if>
 											</c:forEach>
 										</td>
-										<td> 
+								<%-- 		<td> 
 											<c:choose>
 												<c:when test="${list.certifiNY eq 1}">유</c:when>
 												<c:otherwise>무</c:otherwise>
 											</c:choose>
 										</td>
-									<%-- 	<td> 
+										<td> 
 											<c:forEach items="${listCodeGenre}" var="listGenreCode" varStatus="statusGenreCode">
 												<c:if test="${list.genre eq listGenre.seq}">
 													<c:out value="${listGenre.codename_ko }" />
@@ -247,30 +233,9 @@
 				</div>
 				</div>
 				<div style="width: 90%; margin: auto;">
-					<button type="button" class="btn btn-warning" style="float: left; color: white;">
-						<i class="fa-solid fa-square-check"></i>
-					</button>
-					<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 10px;">
-						<i class="fa-solid fa-trash-can-arrow-up"></i>
-					</button>
 					<button type="button" class="btn btn-outline-warning" style="float: right; margin-right: 10px;">
 						<a href="/member/memberForm"><i class="fa-solid fa-user-plus"></i></a>
 					</button>
-				</div>
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">삭제</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">정말 삭제하시겠습니까?</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger" id="btndelModal">삭제</button>
-								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</form>
 		</section>
