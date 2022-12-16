@@ -26,10 +26,10 @@
 				<when test="shOption == 3">AND a.name_en LIKE CONCAT('%',#{shValue}, '%')</when>
 			</choose>
 			
-			<choose>
+		<!-- 	<choose>
 				<when test="shOptionDate == 4">AND a.reg_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 5">AND a.mod_date BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-			</choose> 
+			</choose>  -->
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
@@ -38,8 +38,6 @@
 				 a.seq
 				 ,a.name
 				 ,a.name_en
-				 ,a.reg_date
-				 ,a.mod_date
 				 ,a.useNY
 				 ,a.delNY 
 		<include refid="selectCommon" />
@@ -55,7 +53,6 @@
 		INSERT INTO CCG (
 			name
 			,name_en
-			,reg_date
 			,useNY
 			,delNY
 			
@@ -63,7 +60,6 @@
 		VALUES (
 			#{name}
 			,#{name_en}
-			,now()
 			,1
 			,0
 		)
@@ -79,8 +75,6 @@
 			 ,a.name_en
 			 ,a.useNY
 			 ,a.delNY
-			 ,a.reg_date
-			 ,a.mod_date
 		FROM CCG a
 		WHERE 1=1
 			AND seq = #{seq}
@@ -93,7 +87,6 @@
 			,name_en = #{name_en}
 			,useNY = #{useNY}
 			,delNY = #{delNY}
-			,mod_date = now()
 		WHERE 1=1
 			AND seq = #{seq}
 	</update>
