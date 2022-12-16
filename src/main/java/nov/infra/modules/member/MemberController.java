@@ -107,7 +107,8 @@ public class MemberController extends BaseController {
 
 	@RequestMapping(value = "memberUele")
 	public String memberUele(Member dto, RedirectAttributes redirectAttributes) throws Exception {
-		int result = service.uelete(dto);
+		//!!!!!!!!!!원래 쓰던 줄 int result = service.uelete(dto);
+		service.uelete(dto);
 		return "redirect:/member/memberList";
 	}
 
