@@ -120,10 +120,10 @@
     	<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../resources/images/book.jpg');">
 	      <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 	
-	        <h2>회원가입</h2>
+	        <h2>회원 상세페이지</h2>
 	        <ol>
 	          <li><a href="/member/home">Home</a></li>
-	          <li>회원가입</li>
+	          <li>정보 수정</li>
 	        </ol>
 	      </div>
 	    </div><!-- End Breadcrumbs -->
@@ -254,11 +254,6 @@
 						<button class="btn btn-warning" type="button" id="btnList"
 							style="float: left; color: white;">
 							<i class="fa-solid fa-chart-bar"></i>
-						</button>
-						<button type="button" class="btn btn-danger"
-							style="margin-left: 6px;" id="uelBtn" data-bs-toggle="modal"
-							data-bs-target="#exampleModal2" style="color: white;">
-							<i class="fa-solid fa-x"></i>
 						</button>
 						<button class="btn btn-success" type="button" id="btnSave"
 							style="float: right;">
