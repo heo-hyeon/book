@@ -228,6 +228,27 @@
 				}
 			});
 		});
+	
+	function logout(){
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			,url: "/member/logoutProc"
+			,data: {}
+			,success: function(response) {
+				if(response.rt == "success") {
+					alert(response.rt);
+					location.href = "/member/login"
+				} else {
+					// by pass
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	}   
 	</script>
 
   <script src="../resources/js/main.js"></script>

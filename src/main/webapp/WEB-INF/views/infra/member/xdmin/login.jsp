@@ -138,30 +138,26 @@
   -->
   
 <script type="text/javascript">
-		
-		$("#btnLogin").on("click", function(){
-			
-			$.ajax({
-				async: true
-				,cache: false
-				,type: "post"
-				/* ,dataType:"json" */
-				,url: "/member/loginProc"
-				/* ,data : $("#formLogin").serialize() */
-				,data : { "memberID" : $("#memberID").val(), "pwd" : $("#pwd").val()}
-				,success: (res) => {
-					alert(res.rt)
-					if(res.rt == "success") {
-						location.href = "/"
-					} else {
-						alert("회원없음");
-					}
+	function logout(){
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			,url: "/member/logoutProc"
+			,data: {}
+			,success: function(response) {
+				if(response.rt == "success") {
+					alert(response.rt);
+					location.href = "/member/login"
+				} else {
+					// by pass
 				}
-				,error : function(jqXHR, textStatus, errorThrown){
-					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-				}
-			});
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
 		});
+	}   
 </script>
 
 </body>
