@@ -80,13 +80,8 @@
 }
 </style>
 
-<!-- =======================================================
-  * Template Name: UpConstruction - v1.1.0
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
+
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
 	<!-- ======= Header ======= -->
@@ -181,9 +176,9 @@
 						</select>
 					</div>
 					<div class="col-md-5">
-						<label class="id-label" for="memberID">아이디 </label> <input
-							type="hidden" id="formIdAllowedNY" name="formIdAllowedNY"
-							value="0"> <input type="text" class="form-control"
+						<label class="id-label" for="memberID">아이디 </label> 
+						<input type="hidden" id="formIdAllowedNY" name="formIdAllowedNY" value="0"> 
+						<input type="text" class="form-control"
 							id="memberID" name="memberID"
 							value="<c:out value="${item.memberID}"/>">
 						<div class="invalid-feedback" id="ifIDFeedback"></div>
@@ -357,9 +352,7 @@
 							data-bs-toggle="modal" data-bs-target="#exampleModal">
 							<i class="fa-solid fa-trash-can-arrow-up"></i>
 						</button>
-
-					</div>
-					
+						</div>
 					</form>
 				</div>
 			</div>
