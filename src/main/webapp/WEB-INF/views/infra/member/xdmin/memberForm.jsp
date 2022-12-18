@@ -338,11 +338,6 @@
 							style="float: left; color: white;">
 							<i class="fa-solid fa-chart-bar"></i>
 						</button>
-						<button type="button" class="btn btn-danger"
-							style="margin-left: 6px;" id="uelBtn" data-bs-toggle="modal"
-							data-bs-target="#exampleModal2" style="color: white;">
-							<i class="fa-solid fa-x"></i>
-						</button>
 						<button class="btn btn-success" type="button" id="btnSave"
 							style="float: right;">
 							<i class="fa-regular fa-bookmark"></i>
