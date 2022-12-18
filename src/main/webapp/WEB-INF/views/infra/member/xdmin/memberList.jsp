@@ -195,19 +195,6 @@
 												</c:if>
 											</c:forEach>
 										</td>
-								<%-- 		<td> 
-											<c:choose>
-												<c:when test="${list.certifiNY eq 1}">유</c:when>
-												<c:otherwise>무</c:otherwise>
-											</c:choose>
-										</td>
-										<td> 
-											<c:forEach items="${listCodeGenre}" var="listGenreCode" varStatus="statusGenreCode">
-												<c:if test="${list.genre eq listGenre.seq}">
-													<c:out value="${listGenre.codename_ko }" />
-												</c:if>
-											</c:forEach>
-										</td> --%>
 										<td>
 											<c:choose>
 												<c:when test="${list.useNY eq 1}">Y</c:when>
