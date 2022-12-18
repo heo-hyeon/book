@@ -166,7 +166,7 @@
 											<c:out value="${list.memberID }" />
 										</td>
 										<td>
-											<a href="/member/memberForm?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
+											<a href="/member/memberMod?seq=<c:out value="${list.seq }"/>"><c:out value="${list.memberName}" /></a>
 											<%-- <c:out value="${list.memberName }" /> --%>
 										</td>
 										<td>
@@ -275,7 +275,7 @@
 		var goUrlUpdt = "/member/memberUpdt";
 		var goUrlUele = "/member/memberUele";
 		var goUrlDele = "/member/memberDele";
-		var goUrlForm = "/member/memberForm";
+		var goUrlForm = "/member/memberMod";
 		
 		var form = $("form[name=formList]");
 
