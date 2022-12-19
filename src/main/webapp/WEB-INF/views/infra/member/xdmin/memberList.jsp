@@ -126,6 +126,7 @@
 						</div>
 					</div>
 					<br>
+					
 					<table class="table table-striped" style="width: 90%; margin: auto;">
 						<tr style="text-align: center; background-color: #D2D2FF">
 							<th>선택</th>
