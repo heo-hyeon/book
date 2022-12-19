@@ -236,6 +236,7 @@
 					© Copyright <strong><span>With Book</span></strong>. All Rights Reserved
 				</div>
 			</div>
+		</div>
 	</footer>
 	<!-- End Footer -->
 
