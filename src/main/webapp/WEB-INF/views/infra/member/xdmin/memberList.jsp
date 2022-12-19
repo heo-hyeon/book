@@ -172,9 +172,6 @@
 											<c:out value="${list.memberName_en}" />
 										</td>
 										<td>
-											<c:out value="${list.dob}" />
-										</td>
-										<td>
 											<c:forEach items="${listCodeTelecom}" var="listTelecom" varStatus="statusTelecom">
 												<c:if test="${list.telecom eq listTelecom.seq}">
 													<c:out value="${listTelecom.codename_ko }" />
