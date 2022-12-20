@@ -156,11 +156,12 @@ $("#btnLogin").on("click", function(){
 			} else {
 				alert("회원없음");
 			}
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
-
+		}
+		,error : function(jqXHR, textStatus, errorThrown){
+			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+		}
+	});
+			
 			
 	function logout(){
 		$.ajax({
