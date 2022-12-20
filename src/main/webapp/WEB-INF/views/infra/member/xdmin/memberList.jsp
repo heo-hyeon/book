@@ -134,7 +134,6 @@
 							<th>아이디</th>
 							<th>이름</th>
 							<th>영문 이름</th>
-							<th>생년월일</th>
 							<th>통신사</th>
 							<th width=120px;>핸드폰 번호</th>
 							<th width=180px;>이메일</th>
