@@ -134,7 +134,7 @@
 				<div class="container" data-aos="fade">
 
 		  <form action="/member/memberInst" method="post" enctype="multipart/form-data">
-		  
+		  	<%@include file="memberVo.jsp"%>	
 					<div class="card"
 						style="width: 19rem; float: left; margin-left: 30px; margin-top: 100px;">
 						<img src="../resources/images/user.png" class="card-img-top">
@@ -265,9 +265,8 @@
 							<i class="fa-solid fa-trash-can-arrow-up"></i>
 						</button>
 						</div>
-					</form>
+					</div>
 				</div>
-			</div>
 
 			<div class="modal fade" id="exampleModal2" data-bs-keyboard="false"
 				tabindex="-1" aria-labelledby="exampleModalLabel2"
@@ -315,6 +314,14 @@
 					</div>
 				</div>
 			</div>
+			</form>
+			
+		<form name="formVo" id="formVo" method="post">
+		<!-- *Vo.jsp s -->
+		<%@include file="memberVo.jsp"%>	
+		<!-- *Vo.jsp e -->
+		</form>
+		
 	</section>
 	</main>
 	
@@ -325,7 +332,8 @@
         <div class="copyright">
           © Copyright <strong><span>With Book</span></strong>. All Rights Reserved
         </div>
-    </div>
+       </div>
+     </div>
   </footer>
   <!-- End Footer -->
 	
@@ -414,6 +422,7 @@
 		var seq = $("input:hidden[name=seq]"); /* #-> */
 
 		var form = $("form[name=form]");
+		var formVo = $("form[name=formVo]");
 
 		$("#btnSave").on("click", function() {
 
