@@ -212,7 +212,6 @@
 					<%@include file="../../../common/xdmin/includeV1/pagination.jsp"%>
 					<!-- pagination e -->
 				</div>
-				</div>
 				<div style="width: 90%; margin: auto;">
 					<button type="button" class="btn btn-outline-warning" style="float: right; margin-right: 10px;">
 						<a href="/member/memberForm"><i class="fa-solid fa-user-plus"></i></a>
