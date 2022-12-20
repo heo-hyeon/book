@@ -161,8 +161,9 @@ $("#btnLogin").on("click", function(){
 			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 		}
 	});
-			
-			
+</script>
+
+<script>	
 	function logout(){
 		$.ajax({
 			async: true 
