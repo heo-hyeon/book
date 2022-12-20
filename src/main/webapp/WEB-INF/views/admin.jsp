@@ -102,9 +102,9 @@
                     </div>
                     <!--Article text-->
                     <div class="card-body pb-5 position-relative">
-                        <h3 class="py-3 mb-0 fw-bold">책 추천 페이지</h3>
+                        <h3 class="py-3 mb-0 fw-bold">메인 페이지</h3>
                         <p class="mb-0 text-truncate px-lg-4">
-                            베스트셀러, 추천 목록, 책 상세, 책 등록 
+                            베스트셀러, 책 상세
                         </p>
                     </div>
 
