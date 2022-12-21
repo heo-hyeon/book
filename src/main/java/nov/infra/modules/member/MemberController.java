@@ -209,8 +209,6 @@ public class MemberController extends BaseController {
 	}
 	
 	/*
-	 * // ------------------------
-	 * 
 	 * @RequestMapping(value = "userMod") public String
 	 * userMod(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 	 * return "infra/member/user/UserMod"; }
