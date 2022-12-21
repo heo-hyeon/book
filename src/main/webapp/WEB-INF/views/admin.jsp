@@ -115,6 +115,7 @@
         </div>
 </div>
 </body>
+
 	<script>
 	$("#btnLogout").on("click", function(){
 			$.ajax({
