@@ -120,7 +120,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/retrogression.jpg); width:230px; height:100px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/retrogression.jpg); width:230px; height:100px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -138,7 +138,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/convenience.jpg); width:210px; height:90px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/convenience.jpg); width:210px; height:90px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -156,7 +156,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/225.jpg); width:230px; height:100px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/225.jpg); width:230px; height:100px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -174,7 +174,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(../resources/img/last.jpg); width:210px; height:90px;"></div>
+                  <div class="card-bg" style="background-image: url(../resources/images/last.jpg); width:210px; height:90px;"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -193,88 +193,6 @@
       </div>
     </section><!-- End BestSeller Section -->
   
-  <%-- 
-   <section id="constructions" class="constructions">
-    <form id="mainForm" method = "POST">
-     <input type="hidden" name="homeSeq" id="homeSeq" value="<c:out value="${item.seq}"/>"/>
-      <div class="container aos-init" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Best seller</h2>
-          <p>이번달 베스트셀러를 만나보세요.</p>
-        </div>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-
-			<c:forEach items="${listBook}" var="list" varStatus="status" begin="0" end="1">
-			    <div class="card-item" style="margin-top:20px;">
-			        <div class="row">
-			        
-			            <div class="col">
-			                <div class="card-bg">
-			                      <img src="<c:out value="${item.path}"/><c:out value="${item.uuidName}"/>" style="width:400px; height:500px;" class="images-fluid">
-			                </div>
-			            </div>
-			            
-			            <div class="col d-flex align-items-center">
-			                <div class="card-body" >
-			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
-			                            <c:out value="${listBook.name }" />
-			                        </a></h3>
-			                    <h6 style="color:silver">
-			                        <c:out value="${listBook.writer_name}" />
-			                    </h6>
-			                    <p style="color:red;">
-			                        <c:out value="${listBook.category}" />
-			                    </p>
-			                    <p>
-			                        <c:out value="${listBook.sub_title }" />
-			                    </p>
-			                </div>
-			            </div>
-			        </div>
-			    </div>
-			</c:forEach>
-          </div>
-          
-          
-          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
-			<c:forEach items="${listBook}" var="list" varStatus="status" begin="2" end="3">
-			    <div class="card-item" style="margin-top:20px;">
-			        <div class="row">
-			            <div class="col">
-			                <div class="card-bg">
-			                    <img src="<c:out value="${item.path}"/><c:out value="${item.uuidName}"/>" style="width:400px; height:500px;" class="images-fluid">
-			                </div>
-			            </div>
-			            <div class="col d-flex align-items-center">
-			                <div class="card-body">
-			                    <h3 class="card-title"><a href="javascript:goBook('${listBook.seq }')">
-			                            <c:out value="${listBook.name }" />
-			                        </a></h3>
-			                    <h6 style="color:silver">
-			                        <c:out value="${listBook.writer_name}" />
-			                    </h6>
-			                    <p style="color:red;">
-			                        <c:out value="${listBook.category}" />
-			                    </p>
-			                    <p>
-			                        <c:out value="${listBook.sub_title }" />
-			                    </p>
-			                </div>
-			            </div>
-			        </div>
-			    </div>
-			</c:forEach>
-          </div>
-          
-        </div>
-      </div>
-      </form>
-    </section><!-- End BestSeller Section --> --%>
-
   <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../resources/vendor/aos/aos.js"></script>
   <script src="../resources/vendor/glightbox/js/glightbox.min.js"></script>
