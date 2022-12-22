@@ -105,23 +105,6 @@
                 </ul>
               </div><!-- End meta top -->
               
-       		  <div class="post-author d-flex align-items-center">
-	              <div class="align-items-center" style="margin:auto;">
-						<div class="row gy-4">
-							<div class="col-lg-7 form-group">
-							<textarea class="form-control" placeholder="책에 대한 리뷰를 남겨주세요." style="width:500px; margin-bottom:10px;"></textarea>
-							</div>
-						</div>
-						<div class="col-lg-7 form-group">
-							<textarea class="form-control" placeholder="인상깊었던 구절(문장수집)을 남겨주세요." style="width:500px; margin-bottom:10px;"></textarea>
-						</div>
-						<div class="col-lg-7 form-group">
-							<textarea  class="form-control" placeholder="책과 어울리는 해시태그를 자유롭게 남겨주세요." style="width:500px;"></textarea>
-						</div> 
-					 <button type="button" class="btn btn-outline-warning" style="float:right; margin-top:15px;"><a href="recommendList.html">추천하기</a></button>  
-	              </div>
-           	  </div>
-           	   
               <div class="content">
                 <blockquote>
                   <p>
