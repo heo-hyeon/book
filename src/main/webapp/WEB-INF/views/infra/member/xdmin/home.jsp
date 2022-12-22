@@ -105,6 +105,94 @@
     </div>
 
   </section>
+  
+   <section id="constructions" class="constructions">
+      <div class="container aos-init" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Best seller</h2>
+          <p>이번달 베스트셀러를 만나보세요.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/img/retrogression.jpg); width:230px; height:100px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="best1.html">역행자</a></h3>
+                    <h6 style="color:silver">자청</h6>
+                    <p style="color:red;">성공/처세</p>
+                    <p>"출판 즉시 베스트셀러 종합1위"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/img/convenience.jpg); width:210px; height:90px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="best1.html">불편한 편의점</a></h3>
+                    <h6 style="color:silver">김호연</h6>
+                    <p style="color:red;">한국소설</p>
+                    <p>"2022년 가장 사랑받는 소설"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/img/225.jpg); width:230px; height:100px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="best1.html">작별인사</a></h3>
+                    <h6 style="color:silver;">김영하</h6>
+                    <p style="color:red;">한국소설</p>
+                    <p>"3년만에 돌아온 김영하의 신작"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 aos-init" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url(../resources/img/last.jpg); width:210px; height:90px;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h3 class="card-title"><a href="best1.html">세상의 마지막 기차역</a></h3>
+                    <h6 style="color:silver;">무라케 다케시</h6>
+                    <p style="color:red;">일본소설</p>
+                    <p>"일본 SNS 화제의 책"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End BestSeller Section -->
+  
   <%-- 
    <section id="constructions" class="constructions">
     <form id="mainForm" method = "POST">
