@@ -100,11 +100,8 @@
               <h2 class="title" style="text-align:center;">역행자 </h2>
               <div class="meta-top">
                 <ul class="d-flex justify-content-center">
-                
-                
                   <li><i class="bi bi-person"></i>자청</li>
-                  <li><i class="bi bi-pen"></i>웅진지식하우</li>
-             	  <li><i class="fa-solid fa-heart"></i><a href="blog-details.html">추천하기</a></li>
+                  <li><i class="bi bi-pen"></i>웅진지식하우스</li>
                 </ul>
               </div><!-- End meta top -->
               
