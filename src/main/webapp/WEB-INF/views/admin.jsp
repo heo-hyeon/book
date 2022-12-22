@@ -83,7 +83,7 @@
                         </p>
                     </div>
                     <!--Article link-->
-                    <a href="/codeGroup/codeGroupList" class="stretched-link"></a>
+                    <a href="/code/codeList" class="stretched-link"></a>
                 </article>
             </div>
             
