@@ -95,7 +95,7 @@
           <div class="col-lg-8" style="margin:auto; text-align:center;">
             <article class="blog-details">
               <div class="post-img" style="text-align:center; margin-top:3px;">
-                <img src="../resources/img/best1.jpeg" style="width:400px; height:500px;" class="img-fluid">
+                <img src="../resources/images/retrogression.jpg" style="width:400px; height:500px;" class="img-fluid">
               </div>
               <h2 class="title" style="text-align:center;">역행자 </h2>
               <div class="meta-top">
@@ -146,7 +146,7 @@
               		<h4 class="comments-count">리뷰 </h4>
              		<div id="comment-1" class="comment">
 	                  <div>
-	                    <h5>DA88_9RYu </h5>
+	                    <h5> hh </h5>
 	                    <time datetime="2022-06-29">29 Jun,2022</time>
 	                    <p>
 	                    그래서 무언가가 되고 싶으면, 나 스스로를 믿기보다 환경설정을 더 중요시했다. 
@@ -157,7 +157,7 @@
              	 </div><!-- End comment #1 -->
              	 <div id="comment-2" class="comment">
                   	<div>
-	                    <h5>galeuice</h5>
+	                    <h5> hh1 </h5>
 	                    <time datetime="2022-05-12">12 May,2022</time>
 	                    <p>
 						남들보다 아주 조금이라도 의사 결정력이 높으면
@@ -166,7 +166,7 @@
 	                    </p>
                   </div>
                 </div>
-              </div><!-- End comment #2-->
+              </div><br><!-- End comment #2-->
 	          <button type="button" class="btn btn-outline-warning" style="float:right;"><a href="/member/home">돌아가기</a></button>
     
    <!-- <section id="blog" class="blog">
